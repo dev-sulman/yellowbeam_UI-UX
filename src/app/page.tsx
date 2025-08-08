@@ -173,7 +173,7 @@ const MarqueeItem = ({ text }: { text: string }) => (
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <section className="w-full py-20 md:py-32 lg:py-40 xl:py-56 bg-secondary/50">
+      <section className="w-full bg-secondary/50">
         <div className="container px-4 md:px-6">
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
             <div className="flex flex-col justify-center space-y-6">

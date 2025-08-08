@@ -10,6 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { ContactForm } from '@/components/contact-form';
 import { Switch } from '@/components/ui/switch';
 import { Badge } from '@/components/ui/badge';
+import { cn } from '@/lib/utils';
 
 const services = [
     { title: 'Portfolio Optimization', description: 'Optimizing investment portfolios and assets.' },
@@ -78,7 +79,6 @@ const pricingTiers = {
             ],
             buttonText: 'Choose Plan',
             popular: false,
-            buttonVariant: 'default'
         },
         {
             name: 'Platinum',
@@ -94,7 +94,6 @@ const pricingTiers = {
             ],
             buttonText: 'Choose Plan',
             popular: true,
-            buttonVariant: 'outline'
         }
     ],
     yearly: [
@@ -112,7 +111,6 @@ const pricingTiers = {
             ],
             buttonText: 'Choose Plan',
             popular: false,
-            buttonVariant: 'default'
         },
         {
             name: 'Platinum',
@@ -128,7 +126,6 @@ const pricingTiers = {
             ],
             buttonText: 'Choose Plan',
             popular: true,
-            buttonVariant: 'outline'
         }
     ]
 };
@@ -149,7 +146,7 @@ export default function FinanceBankingPage() {
     }, []);
 
     if (!hasMounted) {
-        return null; // Or a loading spinner
+        return null;
     }
 
     return (
@@ -309,14 +306,14 @@ export default function FinanceBankingPage() {
                             <h2 className="text-4xl md:text-5xl font-bold text-black">Reach Out For Support!</h2>
                             <p className="text-black">A comprehensive solution for your technical support needs. With this package, you'll experience dedicated assistance from our professional technical experts.</p>
                             <div className="flex items-center gap-4">
-                                <span className={`font-medium text-black`}>Pay Monthly</span>
+                                <span className={cn('font-medium', !isYearly ? 'text-[#2D4FE1]' : 'text-black')}>Pay Monthly</span>
                                 <Switch checked={isYearly} onCheckedChange={setIsYearly} aria-label="billing cycle toggle" />
-                                <span className={`font-medium text-black`}>Pay Yearly (Save 10%)</span>
+                                <span className={cn('font-medium', isYearly ? 'text-[#2D4FE1]' : 'text-black')}>Pay Yearly (Save 10%)</span>
                             </div>
                             <ul className="space-y-3 pt-4">
                                 {supportFeatures.map(feature => (
                                     <li key={feature} className="flex items-center gap-3">
-                                        <Check className="w-5 h-5 text-accent" />
+                                        <Check className="w-5 h-5 text-[#2D4FE1]" />
                                         <span className="text-black">{feature}</span>
                                     </li>
                                 ))}
@@ -331,21 +328,25 @@ export default function FinanceBankingPage() {
                                     </CardHeader>
                                     <CardContent className="flex-grow space-y-6">
                                         <div className="text-center">
-                                            <span className={`text-5xl font-bold ${tier.name === 'Gold' && isYearly ? 'text-[#2D4FE1]' : 'text-black'}`}>{tier.price.split('.')[0]}.</span>
-                                            <span className={`text-3xl font-bold ${tier.name === 'Gold' && isYearly ? 'text-[#2D4FE1]' : 'text-black'}`}>{tier.price.split('.')[1]}</span>
+                                            <span className={cn('text-5xl font-bold', (tier.name === 'Gold' && !isYearly) || (tier.name === 'Gold' && isYearly) ? 'text-[#2D4FE1]' : 'text-black')}>{tier.price.split('.')[0]}.</span>
+                                            <span className={cn('text-3xl font-bold', (tier.name === 'Gold' && !isYearly) || (tier.name === 'Gold' && isYearly) ? 'text-[#2D4FE1]' : 'text-black')}>{tier.price.split('.')[1]}</span>
                                             <span className="text-black">{tier.period}</span>
                                         </div>
                                         <ul className="space-y-3">
                                             {tier.features.map(feature => (
                                                 <li key={feature} className="flex items-center gap-3">
-                                                    <Check className="w-5 h-5 text-accent" />
+                                                    <Check className="w-5 h-5 text-[#2D4FE1]" />
                                                     <span className="text-black">{feature}</span>
                                                 </li>
                                             ))}
                                         </ul>
                                     </CardContent>
                                     <div className="p-6">
-                                        <Button className="w-full" variant={tier.buttonVariant as 'default' | 'outline'}>{tier.buttonText}</Button>
+                                      {tier.name === 'Gold' ? (
+                                          <Button className="w-full bg-[#2D4FE1] hover:bg-[#2139a6] text-white">{tier.buttonText}</Button>
+                                      ) : (
+                                          <Button className="w-full bg-transparent border border-black text-black hover:bg-[#2D4FE1] hover:text-white hover:border-transparent">{tier.buttonText}</Button>
+                                      )}
                                     </div>
                                 </Card>
                             ))}

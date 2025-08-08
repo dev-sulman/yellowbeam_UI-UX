@@ -270,7 +270,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="industries" className="w-full py-16 md:py-24 lg:py-32 bg-background">
+      <section id="industries" className="w-full pt-16 md:pt-24 bg-background">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
             <div className="space-y-4">
@@ -295,20 +295,10 @@ export default function Home() {
               </Link>
             ))}
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-             <Link href="#" className="group">
-                <Card className="bg-secondary/30 hover:bg-[#2D4FE1] text-black hover:text-white transition-all duration-300 shadow-sm hover:shadow-md">
-                    <CardContent className="p-4 flex items-center gap-4">
-                    <Wrench className="w-5 h-5" />
-                    <h3 className="text-lg font-medium text-black group-hover:text-white transition-transform duration-300 group-hover:translate-x-1">And many more...</h3>
-                    </CardContent>
-                </Card>
-             </Link>
-          </div>
         </div>
       </section>
 
-      <section id="latest-projects" className="w-full py-16 md:py-24 lg:py-32 bg-secondary/50">
+      <section id="latest-projects" className="w-full pt-16 md:pt-24 lg:pt-32 pb-16 md:pb-24 lg:pb-32 bg-secondary/50">
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-start">
             <div className="space-y-4">

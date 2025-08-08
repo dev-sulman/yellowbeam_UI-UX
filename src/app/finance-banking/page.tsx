@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -142,6 +142,15 @@ const supportFeatures = [
 export default function FinanceBankingPage() {
     const [isYearly, setIsYearly] = useState(false);
     const plans = isYearly ? pricingTiers.yearly : pricingTiers.monthly;
+    const [hasMounted, setHasMounted] = useState(false);
+
+    useEffect(() => {
+        setHasMounted(true);
+    }, []);
+
+    if (!hasMounted) {
+        return null; // Or a loading spinner
+    }
 
     return (
         <div className="bg-background text-foreground">
@@ -298,17 +307,17 @@ export default function FinanceBankingPage() {
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-6">
                             <h2 className="text-4xl md:text-5xl font-bold text-black">Reach Out For Support!</h2>
-                            <p className="text-muted-foreground">A comprehensive solution for your technical support needs. With this package, you'll experience dedicated assistance from our professional technical experts.</p>
+                            <p className="text-black">A comprehensive solution for your technical support needs. With this package, you'll experience dedicated assistance from our professional technical experts.</p>
                             <div className="flex items-center gap-4">
-                                <span className={`font-medium ${!isYearly ? 'text-accent' : 'text-muted-foreground'}`}>Pay Monthly</span>
+                                <span className={`font-medium text-black`}>Pay Monthly</span>
                                 <Switch checked={isYearly} onCheckedChange={setIsYearly} aria-label="billing cycle toggle" />
-                                <span className={`font-medium ${isYearly ? 'text-accent' : 'text-muted-foreground'}`}>Pay Yearly (Save 10%)</span>
+                                <span className={`font-medium text-black`}>Pay Yearly (Save 10%)</span>
                             </div>
                             <ul className="space-y-3 pt-4">
                                 {supportFeatures.map(feature => (
                                     <li key={feature} className="flex items-center gap-3">
                                         <Check className="w-5 h-5 text-accent" />
-                                        <span className="text-muted-foreground">{feature}</span>
+                                        <span className="text-black">{feature}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -322,15 +331,15 @@ export default function FinanceBankingPage() {
                                     </CardHeader>
                                     <CardContent className="flex-grow space-y-6">
                                         <div className="text-center">
-                                            <span className="text-5xl font-bold text-black">{tier.price.split('.')[0]}.</span>
-                                            <span className="text-3xl font-bold text-black">{tier.price.split('.')[1]}</span>
-                                            <span className="text-muted-foreground">{tier.period}</span>
+                                            <span className={`text-5xl font-bold ${tier.name === 'Gold' && isYearly ? 'text-[#2D4FE1]' : 'text-black'}`}>{tier.price.split('.')[0]}.</span>
+                                            <span className={`text-3xl font-bold ${tier.name === 'Gold' && isYearly ? 'text-[#2D4FE1]' : 'text-black'}`}>{tier.price.split('.')[1]}</span>
+                                            <span className="text-black">{tier.period}</span>
                                         </div>
                                         <ul className="space-y-3">
                                             {tier.features.map(feature => (
                                                 <li key={feature} className="flex items-center gap-3">
                                                     <Check className="w-5 h-5 text-accent" />
-                                                    <span className="text-muted-foreground">{feature}</span>
+                                                    <span className="text-black">{feature}</span>
                                                 </li>
                                             ))}
                                         </ul>

@@ -81,7 +81,7 @@ export default function Footer() {
 
         </div>
 
-        <div className="mt-8 pt-4 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between text-[11px] text-gray-500">
+        <div className="mt-8 pt-4 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between text-[11px] text-muted-foreground">
             <p>© {new Date().getFullYear()} SulzaX Digital Hub. All Rights Reserved.</p>
             <div className="flex gap-4 mt-4 sm:mt-0">
                 <AnimatedLink href="#">Privacy Policy</AnimatedLink>

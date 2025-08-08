@@ -31,22 +31,22 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-20 items-center">
-        <Link href="/" className="mr-6 flex items-center space-x-2">
-          <SulzaXLogo />
-          <span className="font-bold sm:inline-block font-headline text-2xl text-primary">
-            SulzaX
-          </span>
-        </Link>
-        
-        <div className="flex flex-1 items-center justify-end space-x-2">
-           <nav className="hidden md:flex items-center space-x-8 text-sm font-medium -ml-50">
+      <div className="container flex h-20 items-center justify-between">
+        <div className="flex items-center">
+            <Link href="/" className="mr-6 flex items-center space-x-2">
+              <SulzaXLogo />
+              <span className="font-bold sm:inline-block font-headline text-2xl text-primary">
+                SulzaX
+              </span>
+            </Link>
+            
+           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'transition-colors text-primary hover:text-accent pb-1 border-b-2 border-transparent hover:border-accent',
+                  'transition-colors text-base font-bold text-black hover:text-accent pb-1 border-b-2 border-transparent',
                   pathname === link.href ? 'text-accent border-accent' : ''
                 )}
               >
@@ -54,7 +54,9 @@ export default function Header() {
               </Link>
             ))}
           </nav>
-
+        </div>
+        
+        <div className="flex items-center space-x-2">
           <div className="md:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
@@ -90,7 +92,7 @@ export default function Header() {
             </Sheet>
           </div>
           
-          <div className="hidden md:flex items-center space-x-4 pl-8">
+          <div className="hidden md:flex items-center space-x-4">
             <a href="tel:+12013740018" className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-accent">
                 <Phone className="w-5 h-5 text-accent" />
                 +1(201) 374-0018

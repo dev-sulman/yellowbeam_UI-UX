@@ -174,7 +174,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
        <section className="w-full pt-16 md:pt-24">
-        <div className="px-4 md:px-6">
+        <div className="container px-4 md:px-6">
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
             <div className="flex flex-col justify-center space-y-6">
               <div className="space-y-4">
@@ -212,7 +212,7 @@ export default function Home() {
       </section>
 
        <section id="about-us" className="w-full py-16 md:py-24 mb-[5px]">
-        <div className="px-4 md:px-6">
+        <div className="container px-4 md:px-6">
           <div className="rounded-xl p-8 md:p-12" style={{ background: 'linear-gradient(to right, #464F62, #7F5D5D)' }}>
             <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="text-white space-y-8">
@@ -262,7 +262,7 @@ export default function Home() {
       </section>
 
       <section id="expertise" className="w-full py-16 md:py-24 lg:py-32 bg-secondary/30">
-        <div className="px-4 md:px-6">
+        <div className="container px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {expertisePoints.map((point, index) => (
               <Card key={index} className="bg-transparent shadow-none border-none text-center">
@@ -278,7 +278,7 @@ export default function Home() {
       </section>
 
        <section id="services-grid" className="w-full py-16 md:py-24 lg:py-32 bg-white">
-        <div className="px-4 md:px-6">
+        <div className="container px-4 md:px-6">
           <div className="text-center mb-12">
             <Badge variant="outline" className="border-accent/20 text-accent font-semibold mb-4">We are a team of humans</Badge>
             <h2 className="text-3xl font-normal tracking-tighter sm:text-4xl text-black">
@@ -305,7 +305,7 @@ export default function Home() {
       </section>
 
       <section id="industries" className="w-full pt-16 md:pt-24 pb-16 md:pb-24 lg:pb-32">
-        <div className="px-4 md:px-6">
+        <div className="container px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
             <div className="space-y-4">
               <Badge variant="outline" className="bg-secondary text-accent font-semibold border-accent/20">INDUSTRIES</Badge>
@@ -333,7 +333,7 @@ export default function Home() {
       </section>
 
       <section id="latest-projects" className="w-full bg-secondary/50">
-        <div className="px-4 md:px-6 py-16 md:py-24 lg:py-32">
+        <div className="container px-4 md:px-6 py-16 md:py-24 lg:py-32">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-start">
             <div className="space-y-4">
               <div className="inline-block rounded-lg bg-accent/10 text-accent px-3 py-1 text-sm font-semibold">
@@ -391,7 +391,7 @@ export default function Home() {
             </div>
         </div>
       <section id="consultation" className="w-full py-16 md:py-24 lg:py-32" style={{ background: 'linear-gradient(to right, #464F62, #7F5D5D)' }}>
-        <div className="px-4 md:px-6">
+        <div className="container px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="flex flex-col text-white space-y-8">
                 <div>

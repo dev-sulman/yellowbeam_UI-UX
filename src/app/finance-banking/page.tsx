@@ -153,14 +153,14 @@ export default function FinanceBankingPage() {
         <div className="bg-background text-foreground">
             {/* Hero Section */}
             <section className="relative py-20 md:py-32 bg-secondary/30">
-                <div className="text-center">
+                <div className="container text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-primary">Finance &amp; Banking</h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">Outsourcing IT management and maintenance, including network monitoring, data backup, cybersecurity, and help desk support.</p>
                 </div>
             </section>
 
             {/* History Section */}
-            <section className="py-20 md:py-24">
+            <section className="container py-20 md:py-24">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div className="space-y-6">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">100 Years Of History Serving The Poconos Region</h2>
@@ -184,7 +184,7 @@ export default function FinanceBankingPage() {
             
             {/* Services Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div>
+                <div className="container">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Services</h2>
                         <p className="mt-2 text-muted-foreground">Trusted by specialists all around the world</p>
@@ -201,7 +201,7 @@ export default function FinanceBankingPage() {
             </section>
 
             {/* About Us Snippet */}
-            <section className="py-20 md:py-24">
+            <section className="container py-20 md:py-24">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
                          <Image src="https://placehold.co/600x400.png" alt="Team working" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team collaboration" />
@@ -228,7 +228,7 @@ export default function FinanceBankingPage() {
 
             {/* Why Choose Us Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="container grid lg:grid-cols-2 gap-12 items-center">
                     <div className="space-y-6">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Elevate Productivity with Our Expert Help Desk Services</h2>
                          <p className="text-muted-foreground">Welcome to SulzaX, your trusted companion in the realm of IT services. We are committed to delivering state-of-the-art solutions.</p>
@@ -251,7 +251,7 @@ export default function FinanceBankingPage() {
             </section>
 
              {/* Values Section */}
-            <section className="py-20 md:py-24">
+            <section className="container py-20 md:py-24">
                 <div>
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Journey Through Time</h2>
@@ -270,7 +270,7 @@ export default function FinanceBankingPage() {
 
              {/* Awards Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="text-center">
+                <div className="container text-center">
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Outstanding Customer Service Recognition</h2>
                      <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(5)].map((_, i) => (
@@ -281,7 +281,7 @@ export default function FinanceBankingPage() {
             </section>
 
              {/* Testimonials Section */}
-            <section className="py-20 md:py-24">
+            <section className="container py-20 md:py-24">
                 <div>
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
@@ -300,7 +300,7 @@ export default function FinanceBankingPage() {
 
             {/* Pricing Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div>
+                <div className="container">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-6">
                             <h2 className="text-4xl md:text-5xl font-bold text-black">Reach Out For Support!</h2>
@@ -356,7 +356,7 @@ export default function FinanceBankingPage() {
             </section>
 
             {/* Contact Section */}
-            <section className="py-20 md:py-24">
+            <section className="container py-20 md:py-24">
                  <div className="px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="flex flex-col space-y-8">

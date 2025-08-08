@@ -26,6 +26,7 @@ const navLinks = [
   { href: '/blog', label: 'Blog' },
   { href: '/software-development', label: 'Software'},
   { href: '/graphic-design', label: 'Design' },
+  { href: '/ui-ux-development', label: 'UI/UX' },
 ];
 
 export default function Header() {

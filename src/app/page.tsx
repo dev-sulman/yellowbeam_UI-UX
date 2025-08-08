@@ -99,19 +99,19 @@ const services = [
     icon: <PenSquare className="w-8 h-8 text-accent" />,
     title: 'Software Development',
     description: 'Custom software development and integration services to meet specific business needs.',
-    href: '/services',
+    href: '/software-development',
   },
   {
     icon: <Palette className="w-8 h-8 text-accent" />,
     title: 'Graphic Design',
     description: 'We work with your company to make sure your brand is positioned as a central signature with a consistent identity displayed across multiple media channels and applications.',
-     href: '/services',
+     href: '/graphic-design',
   },
   {
     icon: <AppWindow className="w-8 h-8 text-accent" />,
     title: 'UI/UX Development',
     description: "Enhancing your website's visibility on search engines to attract organic traffic and improve search rankings.",
-     href: '/services',
+     href: '/ui-ux-development',
   },
   {
     icon: <Search className="w-8 h-8 text-accent" />,
@@ -181,8 +181,8 @@ const MarqueeItem = ({ text }: { text: string }) => (
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
-       <section className="w-full pt-16 md:pt-24">
+    <div>
+      <section className="w-full pt-16 md:pt-24">
         <div className="container px-4 md:px-6">
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
             <div className="flex flex-col justify-center space-y-6">

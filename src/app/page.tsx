@@ -75,11 +75,11 @@ const projects = [
 const industries = [
   { name: "Finance & Banking", icon: <Landmark className="w-5 h-5" />, href: "/finance-banking" },
   { name: "Information Technology & Telecommunications", icon: <Rocket className="w-5 h-5" />, href: "/it-telecom" },
-  { name: "Healthcare & Pharmaceuticals", icon: <BriefcaseMedical className="w-5 h-5" />, href: "/healthcare" },
-  { name: "Transportation & Logistics", icon: <Plane className="w-5 h-5" />, href: "/logistics" },
+  { name: "Healthcare & Pharmaceuticals", icon: <BriefcaseMedical className="w-5 h-5" />, href: "/healthcare-pharmaceuticals" },
+  { name: "Transportation & Logistics", icon: <Plane className="w-5 h-5" />, href: "/transportation-logistics" },
   { name: "Real Estate", icon: <Building2 className="w-5 h-5" />, href: "/real-estate" },
-  { name: "Manufacturing & Industry 4.0", icon: <Wrench className="w-5 h-5" />, href: "/manufacturing" },
-  { name: "Education & Training", icon: <School className="w-5 h-5" />, href: "/education" },
+  { name: "Manufacturing & Industry 4.0", icon: <Wrench className="w-5 h-5" />, href: "/manufacturing-industry" },
+  { name: "Education & Training", icon: <School className="w-5 h-5" />, href: "/education-training" },
 ];
 
 const services = [
@@ -92,7 +92,7 @@ const services = [
   {
     icon: <Smartphone className="w-8 h-8 text-accent" />,
     title: 'Mobile Development',
-    description: 'Strategic guidance on IT strategy, digital transformation, software implementation, and project management.',
+    description: 'Strategic guidance on IT strategy, digital transformation, software implementation, and project management for mobile.',
     href: '/mobile-development',
   },
   {

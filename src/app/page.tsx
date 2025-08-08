@@ -286,10 +286,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {industries.map((industry, index) => (
               <Link href={industry.href} key={index} className="group">
-                <Card className="bg-secondary/30 hover:bg-[#2D4FE1] text-black hover:text-white transition-all duration-300 shadow-sm hover:shadow-md">
+                <Card className="bg-secondary/30 hover:bg-[#2D4FE1] text-black hover:text-white transition-all duration-300 shadow-sm hover:shadow-md border-0">
                   <CardContent className="p-4 flex items-center gap-4">
                     {industry.icon}
-                    <h3 className="text-lg font-medium text-black group-hover:text-white transition-transform duration-300 group-hover:translate-x-1">{industry.name}</h3>
+                    <h3 className="text-lg font-normal text-black group-hover:text-white transition-transform duration-300 group-hover:translate-x-1">{industry.name}</h3>
                   </CardContent>
                 </Card>
               </Link>

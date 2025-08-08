@@ -22,9 +22,9 @@ type FormValues = z.infer<typeof FormSchema>;
 
 function SolutionCard({ solution }: { solution: SolutionRecommendation }) {
   return (
-    <Card className="flex flex-col">
+    <Card className="flex flex-col bg-secondary/50">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2 font-headline">
+        <CardTitle className="flex items-center gap-2">
           <Package className="w-6 h-6 text-primary" />
           {solution.solutionName}
         </CardTitle>
@@ -32,7 +32,7 @@ function SolutionCard({ solution }: { solution: SolutionRecommendation }) {
       <CardContent className="flex-grow">
         <p className="text-muted-foreground">{solution.description}</p>
       </CardContent>
-      <CardFooter className="bg-secondary/50 p-4 rounded-b-lg">
+      <CardFooter className="bg-secondary p-4 rounded-b-lg mt-4">
         <div className="flex items-center font-semibold">
           <DollarSign className="w-5 h-5 mr-2 text-accent" />
           Estimated Budget: {solution.estimatedBudget}
@@ -46,17 +46,17 @@ function LoadingSkeleton() {
   return (
     <div className="grid md:grid-cols-2 gap-6">
       {[...Array(2)].map((_, i) => (
-        <Card key={i}>
+        <Card key={i} className="bg-secondary/50">
           <CardHeader>
-            <Skeleton className="h-6 w-3/4" />
+            <Skeleton className="h-6 w-3/4 bg-muted" />
           </CardHeader>
           <CardContent className="space-y-2">
-            <Skeleton className="h-4 w-full" />
-            <Skeleton className="h-4 w-full" />
-            <Skeleton className="h-4 w-5/6" />
+            <Skeleton className="h-4 w-full bg-muted" />
+            <Skeleton className="h-4 w-full bg-muted" />
+            <Skeleton className="h-4 w-5/6 bg-muted" />
           </CardContent>
           <CardFooter>
-            <Skeleton className="h-6 w-1/2" />
+            <Skeleton className="h-8 w-1/2 bg-muted" />
           </CardFooter>
         </Card>
       ))}
@@ -95,10 +95,10 @@ export default function AiSolutionAdvisor() {
   }
 
   return (
-    <Card className="w-full shadow-lg">
+    <Card className="w-full shadow-lg border-accent/20">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2 font-headline">
-          <Lightbulb className="w-6 h-6 text-primary" />
+        <CardTitle className="flex items-center gap-2">
+          <Lightbulb className="w-6 h-6 text-accent" />
           Your Business Needs
         </CardTitle>
         <CardDescription>
@@ -117,7 +117,7 @@ export default function AiSolutionAdvisor() {
                   <FormControl>
                     <Textarea
                       placeholder="e.g., 'We are a growing e-commerce business and need a system to manage our inventory across multiple warehouses, integrate with our Shopify store, and provide sales analytics...'"
-                      className="min-h-[150px] text-base"
+                      className="min-h-[150px] text-base focus:ring-accent"
                       {...field}
                     />
                   </FormControl>
@@ -125,7 +125,7 @@ export default function AiSolutionAdvisor() {
                 </FormItem>
               )}
             />
-            <Button type="submit" disabled={isLoading} size="lg" className="w-full font-semibold">
+            <Button type="submit" disabled={isLoading} size="lg" className="w-full font-semibold bg-accent hover:bg-accent/90 text-accent-foreground">
               {isLoading ? 'Analyzing...' : 'Get Recommendations'}
             </Button>
           </form>
@@ -144,7 +144,7 @@ export default function AiSolutionAdvisor() {
           )}
           {recommendations.length > 0 && (
             <div className="w-full space-y-4">
-              <h3 className="text-xl font-bold font-headline">Recommended Solutions</h3>
+              <h3 className="text-xl font-bold">Recommended Solutions</h3>
               <div className="grid md:grid-cols-2 gap-6">
                 {recommendations.map((rec, index) => (
                   <SolutionCard key={index} solution={rec} />

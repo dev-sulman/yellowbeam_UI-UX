@@ -12,6 +12,8 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
   { href: '/portfolio', label: 'Portfolio' },
+  { href: '/about', label: 'About Us' },
+  { href: '/blog', label: 'Blog' },
 ];
 
 export default function Header() {
@@ -20,31 +22,30 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center">
-        <div className="mr-4 hidden md:flex">
-          <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Mountain className="h-6 w-6 text-primary" />
-            <span className="hidden font-bold sm:inline-block font-headline">
-              SulzaX
-            </span>
-          </Link>
-          <nav className="flex items-center space-x-6 text-sm font-medium">
+      <div className="container flex h-16 items-center">
+        <Link href="/" className="mr-6 flex items-center space-x-2">
+          <Mountain className="h-6 w-6 text-accent" />
+          <span className="font-bold sm:inline-block font-headline text-lg text-primary">
+            SulzaX
+          </span>
+        </Link>
+        
+        <div className="flex flex-1 items-center justify-end space-x-2">
+           <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'transition-colors hover:text-foreground/80',
-                  pathname === link.href ? 'text-foreground' : 'text-foreground/60'
+                  'transition-colors hover:text-accent',
+                  pathname === link.href ? 'text-primary font-semibold' : 'text-muted-foreground'
                 )}
               >
                 {link.label}
               </Link>
             ))}
           </nav>
-        </div>
 
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
           <div className="md:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
@@ -53,10 +54,10 @@ export default function Header() {
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left">
+              <SheetContent side="right">
                 <Link href="/" className="mr-6 flex items-center space-x-2" onClick={() => setIsOpen(false)}>
-                  <Mountain className="h-6 w-6 text-primary" />
-                  <span className="font-bold font-headline">SulzaX</span>
+                  <Mountain className="h-6 w-6 text-accent" />
+                  <span className="font-bold font-headline text-primary">SulzaX</span>
                 </Link>
                 <div className="grid gap-2 py-6">
                   {navLinks.map((link) => (
@@ -66,25 +67,25 @@ export default function Header() {
                       onClick={() => setIsOpen(false)}
                       className={cn(
                         'flex w-full items-center py-2 text-lg font-semibold',
-                        pathname === link.href ? 'text-primary' : 'text-muted-foreground'
+                        pathname === link.href ? 'text-accent' : 'text-muted-foreground'
                       )}
                     >
                       {link.label}
                     </Link>
                   ))}
-                  <Button asChild className="font-semibold" onClick={() => setIsOpen(false)}>
+                  <Button asChild className="font-semibold mt-4 bg-accent hover:bg-accent/90 text-accent-foreground" onClick={() => setIsOpen(false)}>
                     <Link href="/contact">Get Free Consultation</Link>
                   </Button>
                 </div>
               </SheetContent>
             </Sheet>
           </div>
-
-          <div className="w-full flex-1 md:w-auto md:flex-none">
+          
+          <div className="hidden md:flex items-center space-x-4 pl-6">
+            <Button asChild className="font-semibold bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Link href="/contact">Get Free Consultation</Link>
+            </Button>
           </div>
-          <Button asChild className="font-semibold hidden md:inline-flex">
-            <Link href="/contact">Get Free Consultation</Link>
-          </Button>
         </div>
       </div>
     </header>

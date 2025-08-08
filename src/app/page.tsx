@@ -159,7 +159,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className="w-full max-w-2xl mx-auto">
+            <div className="w-full max-w-md mx-auto">
               <ContactForm cardTitle="Schedule A Free Consultation" cardDescription="" />
             </div>
           </div>

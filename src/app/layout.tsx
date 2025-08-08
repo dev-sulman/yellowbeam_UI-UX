@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -24,7 +24,7 @@ export default function RootLayout({
       </head>
       <body className="font-body bg-background text-foreground antialiased flex flex-col min-h-screen">
         <Header />
-        <main className="flex-grow container">{children}</main>
+        <main className="flex-grow">{children}</main>
         <Footer />
         <Toaster />
       </body>

@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -52,28 +53,28 @@ const projects = [
   {
     title: 'USA Best Car Shipping',
     category: 'Website',
-    featuredImage: 'https://placehold.co/600x400.png',
+    featuredImage: '/USA-Best-Car-Shipping.png',
     description: 'A dedicated website for auto transport services in the USA, offering professional vehicle shipping...',
     dataAiHint: 'logistics website'
   },
   {
     title: 'Reilu Kuljetus Customer App',
     category: 'Mobile Application',
-    featuredImage: 'https://placehold.co/600x400.png',
+    featuredImage: '/Reilu-Kuljetus-Customer-App.png',
     description: 'A mobile application for food delivery services in Finland, allowing users to browse menus, place...',
     dataAiHint: 'mobile app logistics'
   },
   {
     title: 'Reilu Kuljetus',
     category: 'Website',
-    featuredImage: 'https://placehold.co/600x400.png',
+    featuredImage: '/Reilu-Kuljetus.png',
     description: 'A food delivery website in Finland, providing an easy-to-use platform for customers to order...',
     dataAiHint: 'food delivery website'
   },
     {
     title: 'Noor Care NGO Platform',
     category: 'Web Development',
-    featuredImage: 'https://placehold.co/600x400.png',
+    featuredImage: '/Noor-Care-NGO-Platform.png',
     description: 'Secure donation processing system to help the NGO increase online contributions.',
     dataAiHint: 'charity website'
   },
@@ -248,3 +249,5 @@ export default function Home() {
     </div>
   );
 }
+
+    

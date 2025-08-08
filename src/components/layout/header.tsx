@@ -94,7 +94,7 @@ export default function Header() {
             </Sheet>
           </div>
           
-          <div className="hidden md:flex items-center space-x-4 -ml-[30px]">
+          <div className="hidden md:flex items-center space-x-4 -ml-[70px]">
             <a href="tel:+12013740018" className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-accent">
                 <Phone className="w-5 h-5 text-accent" />
                 +1(201) 374-0018

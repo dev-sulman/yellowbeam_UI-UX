@@ -22,12 +22,10 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body bg-background text-foreground antialiased">
-        <div className="flex flex-col min-h-screen">
-          <Header />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </div>
+      <body className="font-body bg-background text-foreground antialiased flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-grow container">{children}</main>
+        <Footer />
         <Toaster />
       </body>
     </html>

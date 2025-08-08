@@ -117,7 +117,7 @@ const services = [
     icon: <Search className="w-8 h-8 text-accent" />,
     title: 'Search Engine Optimization',
     description: "Enhancing your website's visibility on search engines to attract organic traffic and improve search rankings.",
-     href: '/services',
+     href: '/search-engine-optimization',
   },
   {
     icon: <Megaphone className="w-8 h-8 text-accent" />,

@@ -23,9 +23,9 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body bg-background text-foreground antialiased">
-        <div className="flex flex-col min-h-screen mx-auto">
+        <div className="flex flex-col min-h-screen">
           <Header />
-          <main className="flex-grow">{children}</main>
+          <main className="flex-grow container">{children}</main>
           <Footer />
         </div>
         <Toaster />

@@ -124,7 +124,7 @@ export default function Home() {
       
       <section id="consultation" className="w-full py-16 md:py-24 lg:py-32" style={{ background: 'linear-gradient(to right, #464F62, #7F5D5D)' }}>
         <div className="container px-4 md:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="flex flex-col text-white space-y-8">
                 <div>
                     <div className="inline-block rounded-md bg-accent text-accent-foreground px-4 py-1 text-sm font-semibold mb-4">CONTACT US</div>
@@ -159,7 +159,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div>
+            <div className="w-full max-w-2xl mx-auto">
               <ContactForm cardTitle="Schedule A Free Consultation" cardDescription="" />
             </div>
           </div>

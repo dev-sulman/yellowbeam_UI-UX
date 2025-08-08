@@ -129,8 +129,7 @@ export default function Home() {
         </div>
       </section>
       
-      <section id="consultation" className="w-full py-16 md:py-24 lg:py-32" style={{ background: 'linear-gradient(to right, #464F62, #7F5D5D)' }}>
-          <div className="bg-[#2D4FE1] text-white py-4 overflow-hidden mb-12">
+        <div className="bg-[#2D4FE1] text-white py-4 overflow-hidden">
             <div className="animate-marquee whitespace-nowrap flex space-x-8">
                 <MarqueeItem text="EXPERIENCE SEAMLESS IT SOLUTIONS" />
                 <MarqueeItem text="REQUEST IT CONSULTATION" />
@@ -142,6 +141,7 @@ export default function Home() {
                 <MarqueeItem text="REQUEST IT CONSULTATION" />
             </div>
         </div>
+      <section id="consultation" className="w-full py-16 md:py-24 lg:py-32" style={{ background: 'linear-gradient(to right, #464F62, #7F5D5D)' }}>
         <div className="container px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="flex flex-col text-white space-y-8">

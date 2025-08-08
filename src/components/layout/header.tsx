@@ -41,13 +41,13 @@ export default function Header() {
               </span>
             </Link>
             
-           <nav className="hidden md:flex items-center space-x-8 ml-16">
+           <nav className="hidden md:flex items-center space-x-8 ml-10">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'relative transition-colors text-base font-bold text-black group',
+                  'relative transition-colors text-lg font-bold text-black group',
                   pathname === link.href ? 'text-accent' : ''
                 )}
               >
@@ -58,7 +58,7 @@ export default function Header() {
           </nav>
         </div>
         
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center gap-4">
           <div className="md:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
@@ -94,7 +94,7 @@ export default function Header() {
             </Sheet>
           </div>
           
-          <div className="hidden md:flex items-center space-x-4 -ml-[70px]">
+          <div className="hidden md:flex items-center space-x-4">
             <a href="tel:+12013740018" className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-accent">
                 <Phone className="w-5 h-5 text-accent" />
                 +1(201) 374-0018

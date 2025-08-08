@@ -58,13 +58,18 @@ export default function Footer() {
           
           <div className="space-y-4">
              <h4 className="font-semibold text-sm text-black mb-3">Newsletter</h4>
-             <div className="relative w-full max-w-sm items-center mx-auto">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
-                <Input type="email" placeholder="Your email" className="bg-gray-100 border-gray-300 text-black placeholder:text-gray-500 focus:bg-white pl-10 pr-10 h-9 text-[11px]" />
-                <Button type="submit" size="icon" className="absolute right-1 top-1/2 -translate-y-1/2 bg-transparent hover:bg-gray-200 text-black h-7 w-7">
-                    <Send className="h-4 w-4" />
-                </Button>
-            </div>
+                <div className="relative w-full max-w-sm items-center mx-auto group">
+                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+                    <Input 
+                        type="email" 
+                        placeholder="Your email address" 
+                        className="bg-transparent border-0 border-b-2 border-gray-300 rounded-none text-black placeholder:text-gray-500 focus:ring-0 focus:border-black focus:outline-none pl-10 pr-10 h-9 text-[11px] transition-all duration-300" 
+                    />
+                     <span className="absolute bottom-0 left-0 h-0.5 bg-black w-0 group-focus-within:w-full transition-all duration-300"></span>
+                    <Button type="submit" size="icon" className="absolute right-1 top-1/2 -translate-y-1/2 bg-transparent hover:bg-transparent text-black h-7 w-7">
+                        <Send className="h-4 w-4" />
+                    </Button>
+                </div>
              <div className="flex space-x-3 justify-center">
                 <Link href="#" aria-label="Facebook" className="p-2 rounded-full border border-gray-300 hover:bg-black hover:border-black hover:text-white transition-colors"><Facebook className="h-3 w-3" /></Link>
                 <Link href="#" aria-label="LinkedIn" className="p-2 rounded-full border border-gray-300 hover:bg-black hover:border-black hover:text-white transition-colors"><Linkedin className="h-3 w-3" /></Link>

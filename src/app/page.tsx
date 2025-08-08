@@ -102,7 +102,7 @@ const services = [
     description: 'Strategic guidance on IT strategy, digital transformation, software implementation, and project management.',
   },
   {
-    icon: <PenTool className="w-8 h-8 text-accent" />,
+    icon: <PenSquare className="w-8 h-8 text-accent" />,
     title: 'Software Development',
     description: 'Custom software development and integration services to meet specific business needs.',
   },
@@ -246,8 +246,8 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {industries.map((industry, index) => (
               <Link href={industry.href} key={index} className="group">
-                <Card className="bg-secondary/30 hover:bg-[#2D4FE1] text-black hover:text-white transition-all duration-300 shadow-sm hover:shadow-md group-hover:translate-x-1">
-                  <CardContent className="p-6 flex items-center gap-4">
+                <Card className="bg-secondary/30 hover:bg-[#2D4FE1] text-black hover:text-white transition-all duration-300 shadow-sm hover:shadow-md">
+                  <CardContent className="p-6 flex items-center gap-4 transition-transform duration-300 group-hover:translate-x-1">
                     {industry.icon}
                     <h3 className="text-lg font-semibold text-black group-hover:text-white">{industry.name}</h3>
                   </CardContent>
@@ -257,8 +257,8 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
              <Link href="#" className="group">
-                <Card className="bg-secondary/30 hover:bg-[#2D4FE1] text-black hover:text-white transition-all duration-300 shadow-sm hover:shadow-md group-hover:translate-x-1">
-                    <CardContent className="p-6 flex items-center gap-4">
+                <Card className="bg-secondary/30 hover:bg-[#2D4FE1] text-black hover:text-white transition-all duration-300 shadow-sm hover:shadow-md">
+                    <CardContent className="p-6 flex items-center gap-4 transition-transform duration-300 group-hover:translate-x-1">
                     <Wrench className="w-5 h-5" />
                     <h3 className="text-lg font-semibold text-black group-hover:text-white">And many more...</h3>
                     </CardContent>

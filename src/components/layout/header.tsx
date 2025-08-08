@@ -25,7 +25,7 @@ const navLinks = [
   { href: '/team', label: 'Clients'},
   { href: '/blog', label: 'Blog' },
   { href: '/software-development', label: 'Software'},
-  { href: '/mobile-development', label: 'Membership'},
+  { href: '/graphic-design', label: 'Design' },
 ];
 
 export default function Header() {
@@ -35,33 +35,31 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-20 items-center justify-between">
-        <div className="flex items-center">
-            <Link href="/" className="mr-6 flex items-center space-x-2">
-              <SulzaXLogo />
-              <span className="font-bold sm:inline-block font-headline text-2xl text-primary">
-                SulzaX
-              </span>
-            </Link>
-            
-           <nav className="hidden md:flex items-center space-x-8 ml-10">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                  'relative transition-colors text-lg font-bold text-black group',
-                  pathname === link.href ? 'text-accent' : ''
-                )}
-              >
-                {link.label}
-                <span className={cn(
-                  'absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full',
-                   pathname === link.href ? 'w-full' : ''
-                )}></span>
-              </Link>
-            ))}
-          </nav>
-        </div>
+        <Link href="/" className="flex items-center space-x-2">
+          <SulzaXLogo />
+          <span className="font-bold sm:inline-block font-headline text-2xl text-primary">
+            SulzaX
+          </span>
+        </Link>
+        
+        <nav className="hidden md:flex items-center space-x-8">
+        {navLinks.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className={cn(
+              'relative transition-colors text-lg font-bold text-black group',
+              pathname === link.href ? 'text-accent' : ''
+            )}
+          >
+            {link.label}
+            <span className={cn(
+              'absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full',
+                pathname === link.href ? 'w-full' : ''
+            )}></span>
+          </Link>
+        ))}
+        </nav>
         
         <div className="flex items-center gap-4">
           <div className="md:hidden">

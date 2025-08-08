@@ -3,7 +3,7 @@ import { Twitter, Linkedin, Facebook, Send, Mail, Youtube, Instagram } from 'luc
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
-const ZeoFixLogo = () => (
+const SulzaXLogo = () => (
     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M11.9999 0L24.7999 12.8L19.1999 18.4L11.9999 25.6L0 13.6C0 13.6 5.59999 8 11.9999 0Z" fill="black"/>
         <path d="M19.2 18.4L24.8 12.8L32 20C32 20 26.4 25.6 20 32L12 25.6L19.2 18.4Z" fill="black"/>
@@ -24,13 +24,13 @@ export default function Footer() {
           
           <div className="space-y-3">
              <Link href="/" className="flex flex-col items-center space-y-2">
-                <ZeoFixLogo />
+                <SulzaXLogo />
                 <span className="text-lg font-bold">
-                  ZeoFix
+                  SulzaX
                 </span>
               </Link>
             <p className="text-black max-w-sm mx-auto">
-                Welcome to ZeoFix! We provide diverse IT solutions with a team of experts.
+                Welcome to SulzaX! We provide diverse IT solutions with a team of experts.
             </p>
           </div>
           
@@ -82,7 +82,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 pt-4 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between text-[11px] text-muted-foreground">
-            <p>© {new Date().getFullYear()} ZeoFix Digital Hub. All Rights Reserved.</p>
+            <p>© {new Date().getFullYear()} SulzaX Digital Hub. All Rights Reserved.</p>
             <div className="flex gap-4 mt-4 sm:mt-0">
                 <AnimatedLink href="#">Privacy Policy</AnimatedLink>
                 <AnimatedLink href="#">Terms of Service</AnimatedLink>

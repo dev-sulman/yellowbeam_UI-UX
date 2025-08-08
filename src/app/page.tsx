@@ -154,7 +154,7 @@ const expertisePoints = [
 ];
 
 
-const ZeoFixLogo = () => (
+const SulzaXLogo = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
         <path d="M7.152 16.278C5.68 15.402 4.5 13.848 4.5 12C4.5 9.24 6.74 7 9.5 7h5c2.76 0 5 2.24 5 5 0 2.4-1.743 4.416-4 4.899"/>
         <path d="M16.848 7.722C18.32 8.598 19.5 10.152 19.5 12c0 2.76-2.24 5-5 5h-5c-2.76 0-5-2.24-5-5 0-.4.053-.79.152-1.166"/>
@@ -165,7 +165,7 @@ const ZeoFixLogo = () => (
 const MarqueeItem = ({ text }: { text: string }) => (
     <div className="flex items-center space-x-4">
         <span className="text-xl font-semibold">{text}</span>
-        <ZeoFixLogo />
+        <SulzaXLogo />
     </div>
 );
 
@@ -178,7 +178,7 @@ export default function Home() {
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
             <div className="flex flex-col justify-center space-y-6">
               <div className="space-y-4">
-                <h1 className="text-4xl tracking-tighter text-primary sm:text-5xl xl:text-6xl/none">
+                <h1 className="text-4xl tracking-tighter text-primary sm:text-5xl xl:text-6xl/none font-normal">
                   IT Services
                   <br />
                   For Small
@@ -190,7 +190,7 @@ export default function Home() {
                   Companies
                 </h1>
                 <p className="max-w-[600px] text-muted-foreground md:text-lg">
-                  At ZeoFix, we create high-quality, custom websites that are both visually appealing and functional. We also integrate SEO to boost your site's visibility and help attract the right audience, driving business growth.
+                  At SulzaX, we create high-quality, custom websites that are both visually appealing and functional. We also integrate SEO to boost your site's visibility and help attract the right audience, driving business growth.
                 </p>
               </div>
               <div className="flex flex-col gap-4 min-[400px]:flex-row">

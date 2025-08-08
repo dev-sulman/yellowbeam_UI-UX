@@ -15,7 +15,7 @@
     --secondary: 225 33% 90%; /* #E1E5F8 - Lighter version of CBD3F8 */
     --secondary-foreground: 217 22% 33%;
     --muted: 225 33% 90%;
-    --muted-foreground: 0 0% 45.1%;
+    --muted-foreground: 220 13% 20%; /* #2A2D33 */
     --accent: 231 84% 59%; /* #2D4FE1 */
     --accent-foreground: 0 0% 100%;
     --destructive: 6 78% 57%; /* #E74C3C */

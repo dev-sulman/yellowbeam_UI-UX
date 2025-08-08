@@ -11,7 +11,7 @@ const ZeoFixLogo = () => (
 );
 
 const AnimatedLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <Link href={href} className="relative text-gray-600 after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">
+  <Link href={href} className="relative text-black after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">
     {children}
   </Link>
 );
@@ -29,7 +29,7 @@ export default function Footer() {
                   SulzaX
                 </span>
               </Link>
-            <p className="text-gray-600 max-w-sm mx-auto">
+            <p className="text-black max-w-sm mx-auto">
                 Welcome to SulzaX! We provide diverse IT solutions with a team of experts.
             </p>
           </div>

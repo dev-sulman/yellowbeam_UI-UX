@@ -227,8 +227,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about-us" className="w-full py-16 md:py-24 lg:py-32" style={{ background: 'linear-gradient(to right, #464F62, #7F5D5D)' }}>
+       <section id="about-us" className="w-full py-16 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
+          <div className="rounded-xl p-8 md:p-12 lg:p-16" style={{ background: 'linear-gradient(to right, #464F62, #7F5D5D)' }}>
             <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="text-white space-y-8">
                     <Badge className="bg-accent text-accent-foreground">ABOUT US</Badge>
@@ -258,6 +259,7 @@ export default function Home() {
                     <Link href="/contact" className="font-semibold text-white hover:underline">Join us today!</Link>
                 </div>
             </div>
+          </div>
         </div>
       </section>
 

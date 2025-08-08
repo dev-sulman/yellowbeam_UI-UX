@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Briefcase, Users, BarChart2, CheckCircle, ArrowRight, Mail, Phone, MapPin, Landmark, Rocket, BriefcaseMedical, Plane, Building2, Wrench, ShoppingBasket, School, Code, Smartphone, Database, PenTool, TrendingUp, Search, MessageCircle, Megaphone, Pointer } from 'lucide-react';
+import { Briefcase, Users, BarChart2, CheckCircle, ArrowRight, Mail, Phone, MapPin, Landmark, Rocket, BriefcaseMedical, Plane, Building2, Wrench, School, Code, Smartphone, Database, PenTool, TrendingUp, Search, MessageCircle, Megaphone, Pointer, Globe, Palette, Target, BarChart3, Bot, ShoppingCart, CircleDollarSign, Tv, LayoutTemplate, PenSquare, AppWindow } from 'lucide-react';
 import { ContactForm } from '@/components/contact-form';
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -92,7 +92,7 @@ const industries = [
 
 const services = [
   {
-    icon: <Code className="w-10 h-10 text-accent" />,
+    icon: <AppWindow className="w-10 h-10 text-accent" />,
     title: 'Web Development',
     description: 'Your website is a tool that should be used in order to draw traffic, convert traffic into customers, and maintain the relationship you have with your customers.',
   },
@@ -102,42 +102,41 @@ const services = [
     description: 'Strategic guidance on IT strategy, digital transformation, software implementation, and project management.',
   },
   {
-    icon: <Database className="w-10 h-10 text-accent" />,
+    icon: <Code className="w-10 h-10 text-accent" />,
     title: 'Software Development',
     description: 'Custom software development and integration services to meet specific business needs.',
   },
   {
-    icon: <PenTool className="w-10 h-10 text-accent" />,
+    icon: <Palette className="w-10 h-10 text-accent" />,
     title: 'Graphic Design',
     description: 'We work with your company to make sure your brand is positioned as a central signature with a consistent identity displayed across multiple media channels and applications.',
   },
   {
-    icon: <TrendingUp className="w-10 h-10 text-accent" />,
+    icon: <LayoutTemplate className="w-10 h-10 text-accent" />,
     title: 'UI/UX Development',
     description: "Enhancing your website's visibility on search engines to attract organic traffic and improve search rankings.",
   },
   {
-    icon: <Search className="w-10 h-10 text-accent" />,
+    icon: <BarChart3 className="w-10 h-10 text-accent" />,
     title: 'Search Engine Optimization',
     description: "Enhancing your website's visibility on search engines to attract organic traffic and improve search rankings.",
   },
   {
-    icon: <MessageCircle className="w-10 h-10 text-accent" />,
+    icon: <Megaphone className="w-10 h-10 text-accent" />,
     title: 'Social Media Marketing',
     description: 'Creating and managing engaging social media campaigns to connect with your audience, increase brand awareness.',
   },
   {
-    icon: <Megaphone className="w-10 h-10 text-accent" />,
+    icon: <Target className="w-10 h-10 text-accent" />,
     title: 'Pay-Per-Click Advertising',
     description: 'Running targeted advertising campaigns on platforms like Google Ads to drive immediate traffic and conversions.',
   },
   {
-    icon: <Pointer className="w-10 h-10 text-accent" />,
+    icon: <PenSquare className="w-10 h-10 text-accent" />,
     title: 'Content Marketing',
     description: 'Creating valuable and relevant content to attract and engage your target audience, building trust and authority.',
   },
 ];
-
 
 const ZeoFixLogo = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
@@ -204,12 +203,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services-grid" className="w-full py-16 md:py-24 lg:py-32 bg-white">
+       <section id="services-grid" className="w-full py-16 md:py-24 lg:py-32 bg-white">
         <div className="container px-4 md:px-6">
           <div className="text-center mb-12">
             <Badge variant="outline" className="border-accent/20 text-accent font-semibold mb-4">We are a team of humans</Badge>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-black">
+            <h2 className="group text-3xl font-semibold tracking-tighter sm:text-4xl text-black relative inline-block">
               Our Services for Growing Your Business
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -220,7 +220,7 @@ export default function Home() {
                     {service.icon}
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-black mb-2">{service.title}</h3>
+                <h3 className="text-xl font-semibold text-black mb-2">{service.title}</h3>
                 <p className="text-muted-foreground">{service.description}</p>
               </Card>
             ))}

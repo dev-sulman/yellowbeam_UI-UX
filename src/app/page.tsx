@@ -123,13 +123,13 @@ const services = [
     icon: <Megaphone className="w-8 h-8 text-accent" />,
     title: 'Social Media Marketing',
     description: 'Creating and managing engaging social media campaigns to connect with your audience, increase brand awareness.',
-     href: '/services',
+     href: '/social-media-marketing',
   },
   {
     icon: <Target className="w-8 h-8 text-accent" />,
     title: 'Pay-Per-Click Advertising',
     description: 'Running targeted advertising campaigns on platforms like Google Ads to drive immediate traffic and conversions.',
-     href: '/services',
+     href: '/pay-per-click-advertising',
   },
   {
     icon: <MessageCircle className="w-8 h-8 text-accent" />,

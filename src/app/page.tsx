@@ -65,7 +65,7 @@ const projects = [
     dataAiHint: 'mobile app logistics'
   },
   {
-    title: 'Reilu Kuljetus',
+    title: 'Reilu-Kuljetus',
     category: 'Website',
     featuredImage: '/Reilu-Kuljetus.png',
     description: 'A food delivery website in Finland, providing an easy-to-use platform for customers to order...',
@@ -160,29 +160,29 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
             <div className="space-y-4">
               <Badge variant="outline" className="bg-secondary text-accent font-semibold border-accent/20">INDUSTRIES</Badge>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-primary">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-black">
                 We Help Power Industries Of All Kinds To <br /> Boost ROI And Find New Clients
               </h2>
             </div>
-            <Link href="/services" className="text-sm font-semibold text-primary hover:underline mt-4 md:mt-0">
+            <Link href="/services" className="text-sm font-semibold text-black hover:underline mt-4 md:mt-0">
               View All Industries <ArrowRight className="inline-block ml-1 h-4 w-4" />
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {industries.map((industry, index) => (
-              <Card key={index} className="bg-secondary/30 hover:bg-accent text-muted-foreground hover:text-accent-foreground transition-all duration-300 shadow-sm hover:shadow-md group">
+              <Card key={index} className="bg-secondary/30 hover:bg-[#2D4FE1] text-muted-foreground hover:text-white transition-all duration-300 shadow-sm hover:shadow-md group">
                 <CardContent className="p-6 flex items-center gap-4">
                   {industry.icon}
-                  <h3 className="text-lg font-semibold text-primary/90 group-hover:text-accent-foreground">{industry.name}</h3>
+                  <h3 className="text-lg font-semibold text-black group-hover:text-white">{industry.name}</h3>
                 </CardContent>
               </Card>
             ))}
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-             <Card className="bg-secondary/30 hover:bg-accent text-muted-foreground hover:text-accent-foreground transition-all duration-300 shadow-sm hover:shadow-md group">
+             <Card className="bg-secondary/30 hover:bg-[#2D4FE1] text-muted-foreground hover:text-white transition-all duration-300 shadow-sm hover:shadow-md group">
                 <CardContent className="p-6 flex items-center gap-4">
                   <Wrench className="w-5 h-5" />
-                  <h3 className="text-lg font-semibold text-primary/90 group-hover:text-accent-foreground">And many more...</h3>
+                  <h3 className="text-lg font-semibold text-black group-hover:text-white">And many more...</h3>
                 </CardContent>
               </Card>
           </div>

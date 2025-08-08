@@ -13,6 +13,7 @@ import { useToast } from '@/hooks/use-toast';
 import { handleContactForm } from '@/app/actions/contact';
 
 const services = [
+    "Financial Planning",
     "Custom Software Development",
     "Web Development",
     "Mobile Solutions",
@@ -28,12 +29,18 @@ const formSchema = z.object({
   company: z.string().optional(),
   service: z.string({ required_error: 'Please select a service.' }),
   message: z.string().min(10, 'Message must be at least 10 characters.'),
+  phone: z.string().optional(),
   websiteUrl: z.string().url('Please enter a valid URL.').optional().or(z.literal('')),
 });
 
 type FormValues = z.infer<typeof formSchema>;
 
-export function ContactForm() {
+interface ContactFormProps {
+    cardTitle?: string;
+    cardDescription?: string;
+}
+
+export function ContactForm({ cardTitle = "Send us a Message", cardDescription = "We are here to help and answer any question you might have."}: ContactFormProps) {
   const { toast } = useToast();
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -42,6 +49,7 @@ export function ContactForm() {
       email: '',
       company: '',
       message: '',
+      phone: '',
       websiteUrl: ''
     },
   });
@@ -69,27 +77,31 @@ export function ContactForm() {
   return (
     <Card className="shadow-lg border-accent/20">
       <CardHeader>
-        <CardTitle className="text-2xl text-primary">Send us a Message</CardTitle>
-        <CardDescription>We are here to help and answer any question you might have.</CardDescription>
+        {cardTitle && <CardTitle className="text-2xl text-primary">{cardTitle}</CardTitle>}
+        {cardDescription && <CardDescription>{cardDescription}</CardDescription>}
       </CardHeader>
       <CardContent>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             <FormField name="name" control={form.control} render={({ field }) => (
-              <FormItem><FormLabel>Full Name</FormLabel><FormControl><Input placeholder="John Doe" {...field} className="focus:ring-accent" /></FormControl><FormMessage /></FormItem>
+              <FormItem><FormLabel>Name</FormLabel><FormControl><Input placeholder="" {...field} className="focus:ring-accent" /></FormControl><FormMessage /></FormItem>
+            )} />
+            
+            <FormField name="phone" control={form.control} render={({ field }) => (
+              <FormItem><FormLabel>Phone</FormLabel><FormControl><Input placeholder="" {...field} className="focus:ring-accent"/></FormControl><FormMessage /></FormItem>
             )} />
 
             <FormField name="email" control={form.control} render={({ field }) => (
-              <FormItem><FormLabel>Email Address</FormLabel><FormControl><Input placeholder="john.doe@example.com" {...field} className="focus:ring-accent"/></FormControl><FormMessage /></FormItem>
+              <FormItem><FormLabel>Company Email</FormLabel><FormControl><Input placeholder="" {...field} className="focus:ring-accent"/></FormControl><FormMessage /></FormItem>
             )} />
 
             <FormField name="company" control={form.control} render={({ field }) => (
-              <FormItem><FormLabel>Company (Optional)</FormLabel><FormControl><Input placeholder="Your Company Inc." {...field} className="focus:ring-accent"/></FormControl><FormMessage /></FormItem>
+              <FormItem><FormLabel>Company/ Organization</FormLabel><FormControl><Input placeholder="" {...field} className="focus:ring-accent"/></FormControl><FormMessage /></FormItem>
             )} />
             
             <FormField name="service" control={form.control} render={({ field }) => (
               <FormItem>
-                <FormLabel>Service of Interest</FormLabel>
+                <FormLabel>How can we help you?</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                   <FormControl><SelectTrigger className="focus:ring-accent"><SelectValue placeholder="Select a service" /></SelectTrigger></FormControl>
                   <SelectContent>
@@ -107,11 +119,11 @@ export function ContactForm() {
             )}
 
             <FormField name="message" control={form.control} render={({ field }) => (
-              <FormItem><FormLabel>Your Message</FormLabel><FormControl><Textarea placeholder="Tell us about your project..." className="min-h-[100px] focus:ring-accent" {...field} /></FormControl><FormMessage /></FormItem>
+              <FormItem><FormLabel>Message</FormLabel><FormControl><Textarea placeholder="" className="min-h-[100px] focus:ring-accent" {...field} /></FormControl><FormMessage /></FormItem>
             )} />
 
             <Button type="submit" size="lg" className="w-full font-semibold bg-accent hover:bg-accent/90 text-accent-foreground" disabled={form.formState.isSubmitting}>
-              {form.formState.isSubmitting ? 'Sending...' : 'Send Message'}
+              {form.formState.isSubmitting ? 'Submitting...' : 'Submit'}
             </Button>
           </form>
         </Form>

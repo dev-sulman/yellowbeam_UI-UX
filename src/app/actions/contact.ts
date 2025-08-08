@@ -8,6 +8,7 @@ const formSchema = z.object({
   company: z.string().optional(),
   service: z.string({ required_error: 'Please select a service.' }),
   message: z.string().min(10, 'Message must be at least 10 characters.'),
+  phone: z.string().optional(),
   websiteUrl: z.string().url('Please enter a valid URL.').optional().or(z.literal('')),
 });
 

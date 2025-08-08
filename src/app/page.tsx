@@ -1,8 +1,8 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import AiSolutionAdvisor from '@/components/ai-solution-advisor';
 import Image from 'next/image';
-import { Briefcase, Users, BarChart2, CheckCircle, ArrowRight } from 'lucide-react';
+import { Briefcase, Users, BarChart2, CheckCircle, ArrowRight, Mail, Phone, MapPin } from 'lucide-react';
+import { ContactForm } from '@/components/contact-form';
 
 const features = [
   {
@@ -34,6 +34,17 @@ const clientLogos = [
   { src: 'https://placehold.co/150x60.png', alt: 'Client D', hint: 'company logo' },
   { src: 'https://placehold.co/150x60.png', alt: 'Client E', hint: 'company logo' },
 ];
+
+const consultationPoints = [
+    "Confirmation of appointment details",
+    "Research and preparation by the IT services company",
+    "Consultation to discuss technology solutions",
+    "Needs assessment for tailored solutions",
+    "Presentation of proposed solutions",
+    "Project execution and ongoing support",
+    "Follow-up to evaluate effectiveness and satisfaction",
+];
+
 
 export default function Home() {
   return (
@@ -111,19 +122,46 @@ export default function Home() {
         </div>
       </section>
       
-      <section id="ai-advisor" className="w-full py-16 md:py-24 lg:py-32 bg-background">
+      <section id="consultation" className="w-full py-16 md:py-24 lg:py-32" style={{ backgroundColor: '#434F62' }}>
         <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-4">
-              <div className="inline-block rounded-lg bg-primary text-primary-foreground px-3 py-1 text-sm font-semibold">AI-Powered Solutions</div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Find Your Perfect IT Solution</h2>
-              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Describe your business needs, and our AI Solution Advisor will analyze your requirements and recommend tailored IT solutions from our extensive portfolio, complete with estimated budgets.
-              </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="flex flex-col text-white space-y-8">
+                <div>
+                    <div className="inline-block rounded-md bg-accent text-accent-foreground px-4 py-1 text-sm font-semibold mb-4">CONTACT US</div>
+                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">Free Consultation - Discover IT Solutions For Your Business</h2>
+                    <p className="mt-4 max-w-2xl text-gray-300">
+                        Unlock the full potential of your business with our free consultation. Our expert team will assess your IT needs, recommend tailored solutions, and chart a path to success. Book your consultation now and take the first step towards empowering your business with cutting-edge technology.
+                    </p>
+                </div>
+                <ul className="space-y-4">
+                    {consultationPoints.map((point, index) => (
+                        <li key={index} className="flex items-center gap-3">
+                            <CheckCircle className="w-5 h-5 text-accent" />
+                            <span className="text-gray-300">{point}</span>
+                        </li>
+                    ))}
+                </ul>
+                <div className="border-t border-gray-500 pt-8 space-y-6">
+                     <div className="flex items-center gap-4">
+                        <Mail className="w-6 h-6 text-accent" />
+                        <a href="mailto:contact@zeofix.com" className="text-lg text-gray-300 hover:text-accent transition-colors">contact@zeofix.com</a>
+                    </div>
+                    <div className="flex items-center gap-4">
+                        <Phone className="w-6 h-6 text-accent" />
+                        <a href="tel:+12013740018" className="text-lg text-gray-300 hover:text-accent transition-colors">+1 (201) 374-0018</a>
+                    </div>
+                    <div className="flex items-center gap-4">
+                        <MapPin className="w-6 h-6 text-accent" />
+                        <div>
+                            <p className="text-lg text-gray-300">5 South Forge Lane Cherry Hill, NJ 08002</p>
+                            <a href="#" className="text-sm text-accent hover:underline">Open map</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div className="mx-auto max-w-4xl mt-12">
-            <AiSolutionAdvisor />
+            <div>
+              <ContactForm cardTitle="Schedule A Free Consultation" cardDescription="" />
+            </div>
           </div>
         </div>
       </section>

@@ -127,7 +127,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="flex flex-col text-white space-y-8">
                 <div>
-                    <div className="inline-block rounded-md bg-white/10 text-white px-4 py-1 text-sm font-semibold mb-4">CONTACT US</div>
+                    <div className="inline-block rounded-md bg-[#2D4FE1] text-white px-4 py-1 text-sm font-semibold mb-4">CONTACT US</div>
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">Free Consultation - Discover IT Solutions For Your Business</h2>
                     <p className="mt-4 max-w-2xl text-gray-300">
                         Unlock the full potential of your business with our free consultation. Our expert team will assess your IT needs, recommend tailored solutions, and chart a path to success. Book your consultation now and take the first step towards empowering your business with cutting-edge technology.

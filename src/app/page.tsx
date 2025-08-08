@@ -92,7 +92,7 @@ const industries = [
 
 const services = [
   {
-    icon: <AppWindow className="w-8 h-8 text-accent" />,
+    icon: <Globe className="w-8 h-8 text-accent" />,
     title: 'Web Development',
     description: 'Your website is a tool that should be used in order to draw traffic, convert traffic into customers, and maintain the relationship you have with your customers.',
   },
@@ -112,12 +112,12 @@ const services = [
     description: 'We work with your company to make sure your brand is positioned as a central signature with a consistent identity displayed across multiple media channels and applications.',
   },
   {
-    icon: <LayoutTemplate className="w-8 h-8 text-accent" />,
+    icon: <Pointer className="w-8 h-8 text-accent" />,
     title: 'UI/UX Development',
     description: "Enhancing your website's visibility on search engines to attract organic traffic and improve search rankings.",
   },
   {
-    icon: <BarChart3 className="w-8 h-8 text-accent" />,
+    icon: <Search className="w-8 h-8 text-accent" />,
     title: 'Search Engine Optimization',
     description: "Enhancing your website's visibility on search engines to attract organic traffic and improve search rankings.",
   },
@@ -132,7 +132,7 @@ const services = [
     description: 'Running targeted advertising campaigns on platforms like Google Ads to drive immediate traffic and conversions.',
   },
   {
-    icon: <PenSquare className="w-8 h-8 text-accent" />,
+    icon: <MessageCircle className="w-8 h-8 text-accent" />,
     title: 'Content Marketing',
     description: 'Creating valuable and relevant content to attract and engage your target audience, building trust and authority.',
   },
@@ -221,7 +221,7 @@ export default function Home() {
                 </div>
                 <h3 className="group text-xl font-normal text-black mb-2 relative inline-block">
                   {service.title}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-px bg-black transition-all duration-300 group-hover:w-full"></span>
                 </h3>
                 <p className="text-muted-foreground">{service.description}</p>
               </Card>

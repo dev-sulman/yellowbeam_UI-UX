@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Briefcase, Users, BarChart2, CheckCircle, ArrowRight, Mail, Phone, MapPin } from 'lucide-react';
+import { Briefcase, Users, BarChart2, CheckCircle, ArrowRight, Mail, Phone, MapPin, Code } from 'lucide-react';
 import { ContactForm } from '@/components/contact-form';
 
 const features = [
@@ -44,6 +44,13 @@ const consultationPoints = [
     "Project execution and ongoing support",
     "Follow-up to evaluate effectiveness and satisfaction",
 ];
+
+const MarqueeItem = ({ text }: { text: string }) => (
+    <div className="flex items-center space-x-4">
+        <span className="text-xl font-semibold">{text}</span>
+        <Code className="w-6 h-6" />
+    </div>
+);
 
 
 export default function Home() {
@@ -123,11 +130,23 @@ export default function Home() {
       </section>
       
       <section id="consultation" className="w-full py-16 md:py-24 lg:py-32" style={{ background: 'linear-gradient(to right, #464F62, #7F5D5D)' }}>
+          <div className="bg-[#2D4FE1] text-white py-4 overflow-hidden mb-12">
+            <div className="animate-marquee whitespace-nowrap flex space-x-8">
+                <MarqueeItem text="EXPERIENCE SEAMLESS IT SOLUTIONS" />
+                <MarqueeItem text="REQUEST IT CONSULTATION" />
+                <MarqueeItem text="EXPERIENCE SEAMLESS IT SOLUTIONS" />
+                <MarqueeItem text="REQUEST IT CONSULTATION" />
+                <MarqueeItem text="EXPERIENCE SEAMLESS IT SOLUTIONS" />
+                <MarqueeItem text="REQUEST IT CONSULTATION" />
+                <MarqueeItem text="EXPERIENCE SEAMLESS IT SOLUTIONS" />
+                <MarqueeItem text="REQUEST IT CONSULTATION" />
+            </div>
+        </div>
         <div className="container px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="flex flex-col text-white space-y-8">
                 <div>
-                    <div className="inline-block rounded-md bg-[#2D4FE1] text-white px-4 py-1 text-sm font-semibold mb-4">CONTACT US</div>
+                    
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">Free Consultation - Discover IT Solutions For Your Business</h2>
                     <p className="mt-4 max-w-2xl text-gray-300">
                         Unlock the full potential of your business with our free consultation. Our expert team will assess your IT needs, recommend tailored solutions, and chart a path to success. Book your consultation now and take the first step towards empowering your business with cutting-edge technology.

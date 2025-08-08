@@ -122,7 +122,7 @@ export default function Home() {
         </div>
       </section>
       
-      <section id="consultation" className="w-full py-16 md:py-24 lg:py-32" style={{ backgroundColor: '#434F62' }}>
+      <section id="consultation" className="w-full py-16 md:py-24 lg:py-32" style={{ background: 'linear-gradient(to right, #464F62, #7F5D5D)' }}>
         <div className="container px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="flex flex-col text-white space-y-8">

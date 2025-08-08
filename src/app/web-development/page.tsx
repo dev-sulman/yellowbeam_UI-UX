@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -61,7 +62,7 @@ export default function WebDevelopmentPage() {
     }
 
     return (
-        <div className="bg-background text-foreground">
+        <div className="bg-background text-foreground font-body text-base">
             {/* Hero Section */}
             <section className="relative py-20 md:py-32 bg-secondary/30">
                 <div className="container text-center">
@@ -247,5 +248,3 @@ export default function WebDevelopmentPage() {
         </div>
     )
 }
-
-    

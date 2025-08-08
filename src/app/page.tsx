@@ -1,4 +1,5 @@
 
+
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -181,7 +182,7 @@ const MarqueeItem = ({ text }: { text: string }) => (
 
 export default function Home() {
   return (
-    <div>
+    <div className="font-body text-base">
       <section className="w-full pt-16 md:pt-24">
         <div className="container px-4 md:px-6">
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">

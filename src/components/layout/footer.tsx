@@ -1,4 +1,5 @@
 
+
 import Link from 'next/link';
 import { Twitter, Linkedin, Facebook, Send, Mail, Youtube, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -20,7 +21,7 @@ const AnimatedLink = ({ href, children }: { href: string; children: React.ReactN
 export default function Footer() {
   return (
     <footer className="w-full bg-white text-black border-t border-gray-200">
-      <div className="container py-8 text-xs max-h-[250px] flex flex-col justify-center">
+      <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8 text-xs flex flex-col justify-center max-h-[250px]">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center items-center">
           
           <div className="space-y-3">

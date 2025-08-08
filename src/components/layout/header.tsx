@@ -40,13 +40,13 @@ export default function Header() {
               </span>
             </Link>
             
-           <nav className="hidden md:flex items-center space-x-8">
+           <nav className="hidden md:flex items-center space-x-8 ml-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'transition-colors text-base font-bold text-black hover:text-accent pb-1 border-b-2 border-transparent',
+                  'transition-colors text-base font-bold text-black pb-1 border-b-2 border-transparent',
                   pathname === link.href ? 'text-accent border-accent' : ''
                 )}
               >

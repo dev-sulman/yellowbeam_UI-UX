@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Twitter, Linkedin, Facebook, Send, Mail } from 'lucide-react';
+import { Twitter, Linkedin, Facebook, Send, Mail, Youtube, Instagram, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -74,6 +74,9 @@ export default function Footer() {
                 <Link href="#" aria-label="Facebook" className="p-2 rounded-full border border-gray-300 hover:bg-black hover:border-black hover:text-white transition-colors"><Facebook className="h-3 w-3" /></Link>
                 <Link href="#" aria-label="LinkedIn" className="p-2 rounded-full border border-gray-300 hover:bg-black hover:border-black hover:text-white transition-colors"><Linkedin className="h-3 w-3" /></Link>
                 <Link href="#" aria-label="Twitter" className="p-2 rounded-full border border-gray-300 hover:bg-black hover:border-black hover:text-white transition-colors"><Twitter className="h-3 w-3" /></Link>
+                <Link href="#" aria-label="Instagram" className="p-2 rounded-full border border-gray-300 hover:bg-black hover:border-black hover:text-white transition-colors"><Instagram className="h-3 w-3" /></Link>
+                <Link href="#" aria-label="GitHub" className="p-2 rounded-full border border-gray-300 hover:bg-black hover:border-black hover:text-white transition-colors"><Github className="h-3 w-3" /></Link>
+                <Link href="#" aria-label="YouTube" className="p-2 rounded-full border border-gray-300 hover:bg-black hover:border-black hover:text-white transition-colors"><Youtube className="h-3 w-3" /></Link>
             </div>
           </div>
 

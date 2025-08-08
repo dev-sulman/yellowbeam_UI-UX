@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Briefcase, Users, BarChart2, CheckCircle, ArrowRight, Mail, Phone, MapPin, Landmark, Rocket, BriefcaseMedical, Plane, Building2, Wrench, ShoppingBasket } from 'lucide-react';
+import { Briefcase, Users, BarChart2, CheckCircle, ArrowRight, Mail, Phone, MapPin, Landmark, Rocket, BriefcaseMedical, Plane, Building2, Wrench, ShoppingBasket, School } from 'lucide-react';
 import { ContactForm } from '@/components/contact-form';
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -81,13 +81,13 @@ const projects = [
 ];
 
 const industries = [
-  { name: "Finance & Banking", icon: <Landmark className="w-5 h-5" /> },
-  { name: "Information Technology & Telecommunications", icon: <Rocket className="w-5 h-5" /> },
-  { name: "Healthcare & Pharmaceuticals", icon: <BriefcaseMedical className="w-5 h-5" /> },
-  { name: "Transportation & Logistics", icon: <Plane className="w-5 h-5" /> },
-  { name: "Real Estate", icon: <Building2 className="w-5 h-5" /> },
-  { name: "Manufacturing & Industry 4.0", icon: <Wrench className="w-5 h-5" /> },
-  { name: "Education & Training", icon: <ShoppingBasket className="w-5 h-5" /> },
+  { name: "Finance & Banking", icon: <Landmark className="w-5 h-5" />, href: "/finance-banking" },
+  { name: "Information Technology & Telecommunications", icon: <Rocket className="w-5 h-5" />, href: "/it-telecom" },
+  { name: "Healthcare & Pharmaceuticals", icon: <BriefcaseMedical className="w-5 h-5" />, href: "/healthcare" },
+  { name: "Transportation & Logistics", icon: <Plane className="w-5 h-5" />, href: "/logistics" },
+  { name: "Real Estate", icon: <Building2 className="w-5 h-5" />, href: "/real-estate" },
+  { name: "Manufacturing & Industry 4.0", icon: <Wrench className="w-5 h-5" />, href: "/manufacturing" },
+  { name: "Education & Training", icon: <School className="w-5 h-5" />, href: "/education" },
 ];
 
 const ZeoFixLogo = () => (
@@ -170,12 +170,14 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {industries.map((industry, index) => (
-              <Card key={index} className="bg-secondary/30 hover:bg-[#2D4FE1] text-muted-foreground hover:text-white transition-all duration-300 shadow-sm hover:shadow-md group">
-                <CardContent className="p-6 flex items-center gap-4">
-                  {industry.icon}
-                  <h3 className="text-lg font-semibold text-black group-hover:text-white">{industry.name}</h3>
-                </CardContent>
-              </Card>
+              <Link href={industry.href} key={index}>
+                <Card className="bg-secondary/30 hover:bg-[#2D4FE1] text-muted-foreground hover:text-white transition-all duration-300 shadow-sm hover:shadow-md group">
+                  <CardContent className="p-6 flex items-center gap-4">
+                    {industry.icon}
+                    <h3 className="text-lg font-semibold text-black group-hover:text-white">{industry.name}</h3>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
@@ -269,7 +271,7 @@ export default function Home() {
                 <div className="border-t border-gray-500 pt-8 space-y-6">
                      <div className="flex items-center gap-4">
                         <Mail className="w-6 h-6 text-white" />
-                        <a href="mailto:contact@zeofix.com" className="text-lg text-gray-300 hover:text-white transition-colors">contact@zeofix.com</a>
+                        <a href="mailto:contact@sulzax.com" className="text-lg text-gray-300 hover:text-white transition-colors">contact@sulzax.com</a>
                     </div>
                     <div className="flex items-center gap-4">
                         <Phone className="w-6 h-6 text-white" />

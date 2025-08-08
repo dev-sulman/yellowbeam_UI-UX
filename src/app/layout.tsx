@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import Header from '@/components/layout/header';
@@ -22,9 +23,9 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body bg-background text-foreground antialiased flex flex-col min-h-screen" suppressHydrationWarning>
+      <body className="font-body bg-background text-foreground antialiased flex flex-col items-center min-h-screen" suppressHydrationWarning>
         <Header />
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow w-full">{children}</main>
         <Footer />
         <Toaster />
       </body>

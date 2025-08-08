@@ -19,7 +19,7 @@ const AnimatedLink = ({ href, children }: { href: string; children: React.ReactN
 
 export default function Footer() {
   return (
-    <footer className="bg-white text-black border-t border-gray-200">
+    <footer className="w-full bg-white text-black border-t border-gray-200">
       <div className="container py-8 text-xs max-h-[250px] flex flex-col justify-center">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center items-center">
           

@@ -297,7 +297,7 @@ export default function FinanceBankingPage() {
                 <div className="container mx-auto">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-6">
-                            <h2 className="text-4xl md:text-5xl font-bold text-primary">Reach Out For Support!</h2>
+                            <h2 className="text-4xl md:text-5xl font-bold text-black">Reach Out For Support!</h2>
                             <p className="text-muted-foreground">A comprehensive solution for your technical support needs. With this package, you'll experience dedicated assistance from our professional technical experts.</p>
                             <div className="flex items-center gap-4">
                                 <span className={`font-medium ${!isYearly ? 'text-accent' : 'text-muted-foreground'}`}>Pay Monthly</span>
@@ -315,15 +315,15 @@ export default function FinanceBankingPage() {
                         </div>
                         <div className="flex flex-col md:flex-row gap-8">
                              {plans.map(tier => (
-                                <Card key={tier.name} className={`w-full flex flex-col relative ${tier.popular ? 'border-accent shadow-accent/20' : 'border-border'}`}>
+                                <Card key={tier.name} className={`w-full flex flex-col relative shadow-none border-0 ${tier.popular ? 'bg-card' : 'bg-transparent'}`}>
                                     {tier.popular && <Badge className="absolute -top-3 right-4 bg-accent text-accent-foreground">SAVE 25%</Badge>}
                                     <CardHeader className="text-center">
-                                        <CardTitle className="text-2xl text-primary">{tier.name}</CardTitle>
+                                        <CardTitle className="text-2xl text-black">{tier.name}</CardTitle>
                                     </CardHeader>
                                     <CardContent className="flex-grow space-y-6">
                                         <div className="text-center">
-                                            <span className="text-5xl font-bold text-primary">{tier.price.split('.')[0]}.</span>
-                                            <span className="text-3xl font-bold text-primary">{tier.price.split('.')[1]}</span>
+                                            <span className="text-5xl font-bold text-black">{tier.price.split('.')[0]}.</span>
+                                            <span className="text-3xl font-bold text-black">{tier.price.split('.')[1]}</span>
                                             <span className="text-muted-foreground">{tier.period}</span>
                                         </div>
                                         <ul className="space-y-3">

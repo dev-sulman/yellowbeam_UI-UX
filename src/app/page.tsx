@@ -178,7 +178,7 @@ export default function Home() {
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
             <div className="flex flex-col justify-center space-y-6">
               <div className="space-y-4">
-                <h1 className="text-4xl font-bold tracking-tighter text-primary sm:text-5xl xl:text-7xl/none">
+                <h1 className="text-4xl tracking-tighter text-primary sm:text-5xl xl:text-7xl/none">
                   IT services for small to mid-Sized companies
                 </h1>
                 <p className="max-w-[600px] text-muted-foreground md:text-xl">

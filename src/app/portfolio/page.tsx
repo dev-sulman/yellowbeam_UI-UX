@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useMemo } from 'react';
@@ -26,7 +27,7 @@ const projects = [
     technologies: ['Flutter', 'Firebase'],
     industry: 'Technology',
     year: '2023',
-    featuredImage: '/images/sim.png', // Using your actual file
+    featuredImage: '/images/sim.png',
     description: 'Cross-platform mobile application development.',
     results: '65% faster performance than native apps',
     dataAiHint: 'mobile app'
@@ -38,7 +39,7 @@ const projects = [
     technologies: ['React', 'Node.js'],
     industry: 'Business',
     year: '2023',
-    featuredImage: '/images/customapp.png', // Using your actual file
+    featuredImage: '/images/customapp.png',
     description: 'Custom business application with advanced features.',
     results: '300% workflow improvement',
     dataAiHint: 'business app'
@@ -50,7 +51,7 @@ const projects = [
     technologies: ['React', 'Python'],
     industry: 'Education',
     year: '2023',
-    featuredImage: '/images/mdu.jpg', // Using your actual file
+    featuredImage: '/images/mdu.jpg',
     description: 'Online learning platform for university students.',
     results: '150% increase in student engagement',
     dataAiHint: 'education platform'
@@ -62,7 +63,7 @@ const projects = [
     technologies: ['React', 'AWS'],
     industry: 'Healthcare',
     year: '2023',
-    featuredImage: '/images/nocv.png', // Using your actual file (assuming this is healthcare related)
+    featuredImage: '/images/nocv.png',
     description: 'HIPAA-compliant healthcare management system.',
     results: '10,000+ patient records managed',
     dataAiHint: 'healthcare system'
@@ -72,7 +73,7 @@ const projects = [
 const allIndustries = [...new Set(projects.map(p => p.industry))];
 const allTechnologies = [...new Set(projects.flatMap(p => p.technologies))];
 
-export default function PortfolioPage() {
+const PortfolioPage = () => {
   const [filters, setFilters] = useState({
     industry: 'all',
     technology: 'all'
@@ -152,3 +153,5 @@ export default function PortfolioPage() {
     </div>
   );
 }
+
+export default PortfolioPage;

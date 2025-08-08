@@ -92,7 +92,7 @@ const industries = [
 
 const services = [
   {
-    icon: <Globe className="w-8 h-8 text-accent" />,
+    icon: <Code className="w-8 h-8 text-accent" />,
     title: 'Web Development',
     description: 'Your website is a tool that should be used in order to draw traffic, convert traffic into customers, and maintain the relationship you have with your customers.',
   },
@@ -102,7 +102,7 @@ const services = [
     description: 'Strategic guidance on IT strategy, digital transformation, software implementation, and project management.',
   },
   {
-    icon: <Code className="w-8 h-8 text-accent" />,
+    icon: <PenTool className="w-8 h-8 text-accent" />,
     title: 'Software Development',
     description: 'Custom software development and integration services to meet specific business needs.',
   },
@@ -112,7 +112,7 @@ const services = [
     description: 'We work with your company to make sure your brand is positioned as a central signature with a consistent identity displayed across multiple media channels and applications.',
   },
   {
-    icon: <Pointer className="w-8 h-8 text-accent" />,
+    icon: <AppWindow className="w-8 h-8 text-accent" />,
     title: 'UI/UX Development',
     description: "Enhancing your website's visibility on search engines to attract organic traffic and improve search rankings.",
   },
@@ -221,7 +221,7 @@ export default function Home() {
                 </div>
                 <h3 className="group text-xl font-normal text-black mb-2 relative inline-block">
                   {service.title}
-                  <span className="absolute bottom-0 left-0 w-0 h-px bg-black transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-black transition-all duration-300 group-hover:w-full"></span>
                 </h3>
                 <p className="text-muted-foreground">{service.description}</p>
               </Card>
@@ -235,7 +235,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
             <div className="space-y-4">
               <Badge variant="outline" className="bg-secondary text-accent font-semibold border-accent/20">INDUSTRIES</Badge>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-black">
+              <h2 className="text-3xl font-normal tracking-tighter sm:text-4xl text-black">
                 We Help Power Industries Of All Kinds To <br /> Boost ROI And Find New Clients
               </h2>
             </div>
@@ -245,8 +245,8 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {industries.map((industry, index) => (
-              <Link href={industry.href} key={index}>
-                <Card className="bg-secondary/30 hover:bg-[#2D4FE1] text-muted-foreground hover:text-white transition-all duration-300 shadow-sm hover:shadow-md group">
+              <Link href={industry.href} key={index} className="group">
+                <Card className="bg-secondary/30 hover:bg-[#2D4FE1] text-black hover:text-white transition-all duration-300 shadow-sm hover:shadow-md group-hover:translate-x-1">
                   <CardContent className="p-6 flex items-center gap-4">
                     {industry.icon}
                     <h3 className="text-lg font-semibold text-black group-hover:text-white">{industry.name}</h3>
@@ -256,12 +256,14 @@ export default function Home() {
             ))}
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-             <Card className="bg-secondary/30 hover:bg-[#2D4FE1] text-muted-foreground hover:text-white transition-all duration-300 shadow-sm hover:shadow-md group">
-                <CardContent className="p-6 flex items-center gap-4">
-                  <Wrench className="w-5 h-5" />
-                  <h3 className="text-lg font-semibold text-black group-hover:text-white">And many more...</h3>
-                </CardContent>
-              </Card>
+             <Link href="#" className="group">
+                <Card className="bg-secondary/30 hover:bg-[#2D4FE1] text-black hover:text-white transition-all duration-300 shadow-sm hover:shadow-md group-hover:translate-x-1">
+                    <CardContent className="p-6 flex items-center gap-4">
+                    <Wrench className="w-5 h-5" />
+                    <h3 className="text-lg font-semibold text-black group-hover:text-white">And many more...</h3>
+                    </CardContent>
+                </Card>
+             </Link>
           </div>
         </div>
       </section>

@@ -42,7 +42,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                         <h3 className="font-semibold">Office</h3>
-                        <p className="text-lg text-muted-foreground">123 Tech Avenue, Silicon Valley, CA</p>
+                        <p className="text-lg text-muted-foreground">123 Tech Avenue, Silicon Valley, CA, 94000</p>
                     </div>
                 </div>
             </div>

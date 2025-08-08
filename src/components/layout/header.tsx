@@ -47,11 +47,12 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'transition-colors text-base font-bold text-black',
+                  'relative transition-colors text-base font-bold text-black group',
                   pathname === link.href ? 'text-accent' : ''
                 )}
               >
                 {link.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
           </nav>
@@ -93,12 +94,12 @@ export default function Header() {
             </Sheet>
           </div>
           
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-4 -ml-[30px]">
             <a href="tel:+12013740018" className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-accent">
                 <Phone className="w-5 h-5 text-accent" />
                 +1(201) 374-0018
             </a>
-            <Button asChild className="font-semibold bg-accent hover:bg-accent/90 text-accent-foreground rounded-full px-6">
+            <Button asChild className="font-semibold bg-accent hover:bg-accent/90 text-accent-foreground rounded-[5px] px-6">
               <Link href="/contact">Contact</Link>
             </Button>
           </div>

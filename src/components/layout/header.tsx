@@ -24,12 +24,6 @@ const navLinks = [
   { href: '/portfolio', label: 'Project' },
   { href: '/team', label: 'Clients'},
   { href: '/blog', label: 'Blog' },
-  { href: '/software-development', label: 'Software'},
-  { href: '/graphic-design', label: 'Design' },
-  { href: '/ui-ux-development', label: 'UI/UX' },
-  { href: '/search-engine-optimization', label: 'SEO' },
-  { href: '/social-media-marketing', label: 'Marketing' },
-  { href: '/pay-per-click-advertising', label: 'PPC' },
 ];
 
 export default function Header() {

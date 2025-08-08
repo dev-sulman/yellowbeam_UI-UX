@@ -1,10 +1,15 @@
 
+'use client';
+
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
-import { CheckCircle, Award, Star, Phone, Mail, MapPin } from 'lucide-react';
+import { CheckCircle, Award, Star, Phone, Mail, MapPin, Check } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { ContactForm } from '@/components/contact-form';
+import { Switch } from '@/components/ui/switch';
+import { Badge } from '@/components/ui/badge';
 
 const services = [
     { title: 'Portfolio Optimization', description: 'Optimizing investment portfolios and assets.' },
@@ -57,40 +62,87 @@ const values = [
     { title: 'Integrity Always', description: 'Integrity is the foundation of trust. We operate with complete transparency, ensuring the highest ethical standards in all our IT operations. Our clients rely on us for honesty and fairness.' }
 ];
 
-const pricingTiers = [
-    {
-        name: 'Gold',
-        price: '$149.00',
-        period: '/ per month',
-        features: [
-            '60 keywords',
-            '6,000 monthly website visitors',
-            '8 blogs / month',
-            '10 quality backlinks / month',
-            'Dedicated expert team',
-            'Monitoring & reporting'
-        ],
-        buttonText: 'Choose Plan',
-        popular: false
-    },
-    {
-        name: 'Platinum',
-        price: '$379.00',
-        period: '/ per month',
-        features: [
-            '150 keywords',
-            '20,000 monthly website visitors',
-            '15 blogs / month',
-            '20 quality backlinks / month',
-            'Dedicated expert team',
-            'Monitoring & reporting'
-        ],
-        buttonText: 'Choose Plan',
-        popular: true
-    }
-]
+const pricingTiers = {
+    monthly: [
+        {
+            name: 'Gold',
+            price: '$149.00',
+            period: '/ per month',
+            features: [
+                '60 keywords',
+                '6,000 monthly website visitors',
+                '8 blogs / month',
+                '10 quality backlinks / month',
+                'Dedicated expert team',
+                'Monitoring & reporting'
+            ],
+            buttonText: 'Choose Plan',
+            popular: false,
+            buttonVariant: 'default'
+        },
+        {
+            name: 'Platinum',
+            price: '$379.00',
+            period: '/ per month',
+            features: [
+                '150 keywords',
+                '20,000 monthly website visitors',
+                '15 blogs / month',
+                '20 quality backlinks / month',
+                'Dedicated expert team',
+                'Monitoring & reporting'
+            ],
+            buttonText: 'Choose Plan',
+            popular: true,
+            buttonVariant: 'outline'
+        }
+    ],
+    yearly: [
+        {
+            name: 'Gold',
+            price: '$1609.20',
+            period: '/ per year',
+            features: [
+                '60 keywords',
+                '6,000 monthly website visitors',
+                '8 blogs / month',
+                '10 quality backlinks / month',
+                'Dedicated expert team',
+                'Monitoring & reporting'
+            ],
+            buttonText: 'Choose Plan',
+            popular: false,
+            buttonVariant: 'default'
+        },
+        {
+            name: 'Platinum',
+            price: '$4093.20',
+            period: '/ per year',
+            features: [
+                '150 keywords',
+                '20,000 monthly website visitors',
+                '15 blogs / month',
+                '20 quality backlinks / month',
+                'Dedicated expert team',
+                'Monitoring & reporting'
+            ],
+            buttonText: 'Choose Plan',
+            popular: true,
+            buttonVariant: 'outline'
+        }
+    ]
+};
+
+const supportFeatures = [
+    "24/7 Support",
+    "Professional Expertise",
+    "Time And Resource Savings"
+];
 
 export default function FinanceBankingPage() {
+    const [isYearly, setIsYearly] = useState(false);
+    const plans = isYearly ? pricingTiers.yearly : pricingTiers.monthly;
+
     return (
         <div className="bg-background text-foreground">
             {/* Hero Section */}
@@ -243,35 +295,52 @@ export default function FinanceBankingPage() {
             {/* Pricing Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
                 <div className="container mx-auto">
-                     <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Reach Out for Support!</h2>
-                        <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">A comprehensive solution for your technical support needs. With this package, you'll experience dedicated assistance from our professional technical experts.</p>
-                    </div>
-                    <div className="flex justify-center gap-8 flex-wrap">
-                        {pricingTiers.map(tier => (
-                            <Card key={tier.name} className={`w-full max-w-sm flex flex-col ${tier.popular ? 'border-accent' : ''}`}>
-                                <CardHeader className="text-center">
-                                    <CardTitle className="text-2xl">{tier.name}</CardTitle>
-                                </CardHeader>
-                                <CardContent className="flex-grow space-y-6">
-                                    <div className="text-center">
-                                        <span className="text-4xl font-bold">{tier.price}</span>
-                                        <span className="text-muted-foreground">{tier.period}</span>
+                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-4xl md:text-5xl font-bold text-primary">Reach Out For Support!</h2>
+                            <p className="text-muted-foreground">A comprehensive solution for your technical support needs. With this package, you'll experience dedicated assistance from our professional technical experts.</p>
+                            <div className="flex items-center gap-4">
+                                <span className={`font-medium ${!isYearly ? 'text-accent' : 'text-muted-foreground'}`}>Pay Monthly</span>
+                                <Switch checked={isYearly} onCheckedChange={setIsYearly} aria-label="billing cycle toggle" />
+                                <span className={`font-medium ${isYearly ? 'text-accent' : 'text-muted-foreground'}`}>Pay Yearly (Save 10%)</span>
+                            </div>
+                            <ul className="space-y-3 pt-4">
+                                {supportFeatures.map(feature => (
+                                    <li key={feature} className="flex items-center gap-3">
+                                        <Check className="w-5 h-5 text-accent" />
+                                        <span className="text-muted-foreground">{feature}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="flex flex-col md:flex-row gap-8">
+                             {plans.map(tier => (
+                                <Card key={tier.name} className={`w-full flex flex-col relative ${tier.popular ? 'border-accent shadow-accent/20' : 'border-border'}`}>
+                                    {tier.popular && <Badge className="absolute -top-3 right-4 bg-accent text-accent-foreground">SAVE 25%</Badge>}
+                                    <CardHeader className="text-center">
+                                        <CardTitle className="text-2xl text-primary">{tier.name}</CardTitle>
+                                    </CardHeader>
+                                    <CardContent className="flex-grow space-y-6">
+                                        <div className="text-center">
+                                            <span className="text-5xl font-bold text-primary">{tier.price.split('.')[0]}.</span>
+                                            <span className="text-3xl font-bold text-primary">{tier.price.split('.')[1]}</span>
+                                            <span className="text-muted-foreground">{tier.period}</span>
+                                        </div>
+                                        <ul className="space-y-3">
+                                            {tier.features.map(feature => (
+                                                <li key={feature} className="flex items-center gap-3">
+                                                    <Check className="w-5 h-5 text-accent" />
+                                                    <span className="text-muted-foreground">{feature}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </CardContent>
+                                    <div className="p-6">
+                                        <Button className="w-full" variant={tier.buttonVariant as 'default' | 'outline'}>{tier.buttonText}</Button>
                                     </div>
-                                    <ul className="space-y-3">
-                                        {tier.features.map(feature => (
-                                            <li key={feature} className="flex items-center gap-3">
-                                                <CheckCircle className="w-5 h-5 text-accent" />
-                                                <span>{feature}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </CardContent>
-                                <div className="p-6">
-                                     <Button className={`w-full ${tier.popular ? '' : 'bg-primary'}`}>{tier.buttonText}</Button>
-                                </div>
-                            </Card>
-                        ))}
+                                </Card>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>

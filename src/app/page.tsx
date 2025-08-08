@@ -81,13 +81,13 @@ const projects = [
 ];
 
 const industries = [
-  { name: "Finance & Banking", icon: <Landmark className="w-5 h-5 text-muted-foreground" /> },
-  { name: "Information Technology & Telecommunications", icon: <Rocket className="w-5 h-5 text-muted-foreground" /> },
-  { name: "Healthcare & Pharmaceuticals", icon: <BriefcaseMedical className="w-5 h-5 text-muted-foreground" /> },
-  { name: "Transportation & Logistics", icon: <Plane className="w-5 h-5 text-muted-foreground" /> },
-  { name: "Real Estate", icon: <Building2 className="w-5 h-5 text-muted-foreground" /> },
-  { name: "Manufacturing & Industry 4.0", icon: <Wrench className="w-5 h-5 text-muted-foreground" /> },
-  { name: "Education & Training", icon: <ShoppingBasket className="w-5 h-5 text-muted-foreground" /> },
+  { name: "Finance & Banking", icon: <Landmark className="w-5 h-5" /> },
+  { name: "Information Technology & Telecommunications", icon: <Rocket className="w-5 h-5" /> },
+  { name: "Healthcare & Pharmaceuticals", icon: <BriefcaseMedical className="w-5 h-5" /> },
+  { name: "Transportation & Logistics", icon: <Plane className="w-5 h-5" /> },
+  { name: "Real Estate", icon: <Building2 className="w-5 h-5" /> },
+  { name: "Manufacturing & Industry 4.0", icon: <Wrench className="w-5 h-5" /> },
+  { name: "Education & Training", icon: <ShoppingBasket className="w-5 h-5" /> },
 ];
 
 const ZeoFixLogo = () => (
@@ -170,19 +170,19 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {industries.map((industry, index) => (
-              <Card key={index} className="bg-secondary/30 hover:bg-secondary/70 transition-colors duration-300 shadow-sm hover:shadow-md">
+              <Card key={index} className="bg-secondary/30 hover:bg-accent text-muted-foreground hover:text-accent-foreground transition-all duration-300 shadow-sm hover:shadow-md group">
                 <CardContent className="p-6 flex items-center gap-4">
                   {industry.icon}
-                  <h3 className="text-lg font-semibold text-primary/90">{industry.name}</h3>
+                  <h3 className="text-lg font-semibold text-primary/90 group-hover:text-accent-foreground">{industry.name}</h3>
                 </CardContent>
               </Card>
             ))}
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-             <Card className="bg-secondary/30 hover:bg-secondary/70 transition-colors duration-300 shadow-sm hover:shadow-md">
+             <Card className="bg-secondary/30 hover:bg-accent text-muted-foreground hover:text-accent-foreground transition-all duration-300 shadow-sm hover:shadow-md group">
                 <CardContent className="p-6 flex items-center gap-4">
-                  <Wrench className="w-5 h-5 text-muted-foreground" />
-                  <h3 className="text-lg font-semibold text-primary/90">And many more...</h3>
+                  <Wrench className="w-5 h-5" />
+                  <h3 className="text-lg font-semibold text-primary/90 group-hover:text-accent-foreground">And many more...</h3>
                 </CardContent>
               </Card>
           </div>

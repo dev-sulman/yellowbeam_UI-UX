@@ -227,6 +227,40 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="about-us" className="w-full py-16 md:py-24 lg:py-32" style={{ background: 'linear-gradient(to right, #464F62, #7F5D5D)' }}>
+        <div className="container px-4 md:px-6">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div className="text-white space-y-8">
+                    <Badge className="bg-accent text-accent-foreground">ABOUT US</Badge>
+                    <h2 className="text-4xl lg:text-5xl font-bold tracking-tight">We Solve Technology Challenges.</h2>
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
+                        <div className="text-center">
+                            <p className="text-4xl font-bold">20</p>
+                            <p className="text-sm text-gray-300">Years experiences</p>
+                        </div>
+                        <div className="text-center">
+                            <p className="text-4xl font-bold">1.8k</p>
+                            <p className="text-sm text-gray-300">Happy customers</p>
+                        </div>
+                        <div className="text-center">
+                            <p className="text-4xl font-bold">460</p>
+                            <p className="text-sm text-gray-300">Project completed</p>
+                        </div>
+                        <div className="text-center">
+                            <p className="text-4xl font-bold">15</p>
+                            <p className="text-sm text-gray-300">Awards achievement</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="text-gray-200 space-y-6">
+                    <h3 className="text-xl font-semibold text-white">Your IT Services Partner!</h3>
+                    <p>We offer customized IT solutions, from managed services to cloud computing and cybersecurity. Empower your business with our expertise for growth and efficiency.</p>
+                    <Link href="/contact" className="font-semibold text-white hover:underline">Join us today!</Link>
+                </div>
+            </div>
+        </div>
+      </section>
+
       <section id="expertise" className="w-full py-16 md:py-24 lg:py-32 bg-secondary/30">
         <div className="container px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

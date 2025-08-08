@@ -176,7 +176,7 @@ export default function Home() {
       <section className="w-full bg-secondary/50 py-12 md:py-16">
         <div className="container px-4 md:px-6">
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
-            <div className="flex flex-col justify-center space-y-6">
+            <div className="flex flex-col justify-center space-y-6 max-w-[272px]">
               <div className="space-y-4">
                 <h1 className="text-3xl font-normal tracking-tighter text-primary sm:text-4xl xl:text-5xl/none">
                   IT services for small to mid-Sized companies

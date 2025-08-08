@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Briefcase, Users, BarChart2, CheckCircle, ArrowRight, Mail, Phone, MapPin, Code } from 'lucide-react';
+import { Briefcase, Users, BarChart2, CheckCircle, ArrowRight, Mail, Phone, MapPin } from 'lucide-react';
 import { ContactForm } from '@/components/contact-form';
 
 const features = [
@@ -45,10 +45,18 @@ const consultationPoints = [
     "Follow-up to evaluate effectiveness and satisfaction",
 ];
 
+const ZeoFixLogo = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+        <path d="M7.152 16.278C5.68 15.402 4.5 13.848 4.5 12C4.5 9.24 6.74 7 9.5 7h5c2.76 0 5 2.24 5 5 0 2.4-1.743 4.416-4 4.899"/>
+        <path d="M16.848 7.722C18.32 8.598 19.5 10.152 19.5 12c0 2.76-2.24 5-5 5h-5c-2.76 0-5-2.24-5-5 0-.4.053-.79.152-1.166"/>
+    </svg>
+);
+
+
 const MarqueeItem = ({ text }: { text: string }) => (
     <div className="flex items-center space-x-4">
         <span className="text-xl font-semibold">{text}</span>
-        <Code className="w-6 h-6" />
+        <ZeoFixLogo />
     </div>
 );
 
@@ -129,7 +137,7 @@ export default function Home() {
         </div>
       </section>
       
-        <div className="bg-[#2D4FE1] text-white py-4 overflow-hidden">
+        <div className="bg-[#2D4FE1] text-white h-[80px] flex items-center overflow-hidden">
             <div className="animate-marquee whitespace-nowrap flex space-x-8">
                 <MarqueeItem text="EXPERIENCE SEAMLESS IT SOLUTIONS" />
                 <MarqueeItem text="REQUEST IT CONSULTATION" />

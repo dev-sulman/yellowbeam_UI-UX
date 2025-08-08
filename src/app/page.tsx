@@ -127,7 +127,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="flex flex-col text-white space-y-8">
                 <div>
-                    <div className="inline-block rounded-md bg-accent text-accent-foreground px-4 py-1 text-sm font-semibold mb-4">CONTACT US</div>
+                    <div className="inline-block rounded-md bg-white/10 text-white px-4 py-1 text-sm font-semibold mb-4">CONTACT US</div>
                     <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">Free Consultation - Discover IT Solutions For Your Business</h2>
                     <p className="mt-4 max-w-2xl text-gray-300">
                         Unlock the full potential of your business with our free consultation. Our expert team will assess your IT needs, recommend tailored solutions, and chart a path to success. Book your consultation now and take the first step towards empowering your business with cutting-edge technology.
@@ -136,30 +136,30 @@ export default function Home() {
                 <ul className="space-y-4">
                     {consultationPoints.map((point, index) => (
                         <li key={index} className="flex items-center gap-3">
-                            <CheckCircle className="w-5 h-5 text-accent" />
+                            <CheckCircle className="w-5 h-5 text-white" />
                             <span className="text-gray-300">{point}</span>
                         </li>
                     ))}
                 </ul>
                 <div className="border-t border-gray-500 pt-8 space-y-6">
                      <div className="flex items-center gap-4">
-                        <Mail className="w-6 h-6 text-accent" />
-                        <a href="mailto:contact@zeofix.com" className="text-lg text-gray-300 hover:text-accent transition-colors">contact@zeofix.com</a>
+                        <Mail className="w-6 h-6 text-white" />
+                        <a href="mailto:contact@zeofix.com" className="text-lg text-gray-300 hover:text-white transition-colors">contact@zeofix.com</a>
                     </div>
                     <div className="flex items-center gap-4">
-                        <Phone className="w-6 h-6 text-accent" />
-                        <a href="tel:+12013740018" className="text-lg text-gray-300 hover:text-accent transition-colors">+1 (201) 374-0018</a>
+                        <Phone className="w-6 h-6 text-white" />
+                        <a href="tel:+12013740018" className="text-lg text-gray-300 hover:text-white transition-colors">+1 (201) 374-0018</a>
                     </div>
                     <div className="flex items-center gap-4">
-                        <MapPin className="w-6 h-6 text-accent" />
+                        <MapPin className="w-6 h-6 text-white" />
                         <div>
                             <p className="text-lg text-gray-300">5 South Forge Lane Cherry Hill, NJ 08002</p>
-                            <a href="#" className="text-sm text-accent hover:underline">Open map</a>
+                            <a href="#" className="text-sm text-white hover:underline">Open map</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="w-full max-w-md mx-auto">
+            <div className="w-full max-w-[200px] mx-auto">
               <ContactForm cardTitle="Schedule A Free Consultation" cardDescription="" />
             </div>
           </div>

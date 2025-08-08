@@ -173,34 +173,39 @@ const MarqueeItem = ({ text }: { text: string }) => (
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <section className="w-full bg-secondary/50 py-12 md:py-16">
+       <section className="w-full py-20 md:py-28">
         <div className="container px-4 md:px-6">
-          <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
-            <div className="flex flex-col justify-center space-y-6 max-w-[272px]">
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
+            <div className="flex flex-col justify-center space-y-6">
               <div className="space-y-4">
-                <h1 className="text-3xl font-normal tracking-tighter text-primary sm:text-4xl xl:text-5xl/none">
-                  IT services for small to mid-Sized companies
+                <h1 className="text-4xl font-bold tracking-tighter text-primary sm:text-5xl xl:text-6xl/none">
+                  IT Services
+                  <br />
+                  For Small
+                  <br />
+                  To Mid-
+                  <br />
+                  Sized
+                  <br />
+                  Companies
                 </h1>
-                <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                  Enterprise-grade technology tailored for growing businesses. We deliver comprehensive digital solutions to help you succeed.
+                <p className="max-w-[600px] text-muted-foreground md:text-lg">
+                  At ZeoFix, we create high-quality, custom websites that are both visually appealing and functional. We also integrate SEO to boost your site's visibility and help attract the right audience, driving business growth.
                 </p>
               </div>
               <div className="flex flex-col gap-4 min-[400px]:flex-row">
-                <Button asChild size="lg" className="font-semibold bg-accent hover:bg-accent/90 text-accent-foreground">
-                  <Link href="/contact">Get Free Consultation <ArrowRight className="ml-2 h-5 w-5" /></Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="font-semibold border-primary text-primary hover:bg-primary/5">
-                  <Link href="/portfolio">View Case Studies</Link>
+                <Button asChild size="lg" className="font-semibold bg-accent hover:bg-accent/90 text-accent-foreground rounded-md px-8">
+                  <Link href="/contact">Get A Free Assessment</Link>
                 </Button>
               </div>
             </div>
             <Image
-              src="https://placehold.co/1000x800.png"
-              width="1000"
-              height="800"
+              src="https://placehold.co/600x500.png"
+              width="600"
+              height="500"
               alt="Hero"
               data-ai-hint="team meeting office"
-              className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full"
+              className="mx-auto overflow-hidden rounded-xl object-cover sm:w-full"
             />
           </div>
         </div>

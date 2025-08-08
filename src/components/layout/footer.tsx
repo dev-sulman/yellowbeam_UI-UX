@@ -4,9 +4,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
 const ZeoFixLogo = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-black mx-auto">
-        <path d="M7.152 16.278C5.68 15.402 4.5 13.848 4.5 12C4.5 9.24 6.74 7 9.5 7h5c2.76 0 5 2.24 5 5 0 2.4-1.743 4.416-4 4.899"/>
-        <path d="M16.848 7.722C18.32 8.598 19.5 10.152 19.5 12c0 2.76-2.24 5-5 5h-5c-2.76 0-5-2.24-5-5 0-.4.053-.79.152-1.166"/>
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11.9999 0L24.7999 12.8L19.1999 18.4L11.9999 25.6L0 13.6C0 13.6 5.59999 8 11.9999 0Z" fill="black"/>
+        <path d="M19.2 18.4L24.8 12.8L32 20C32 20 26.4 25.6 20 32L12 25.6L19.2 18.4Z" fill="black"/>
     </svg>
 );
 
@@ -26,11 +26,11 @@ export default function Footer() {
              <Link href="/" className="flex flex-col items-center space-y-2">
                 <ZeoFixLogo />
                 <span className="text-lg font-bold">
-                  SulzaX
+                  ZeoFix
                 </span>
               </Link>
             <p className="text-black max-w-sm mx-auto">
-                Welcome to SulzaX! We provide diverse IT solutions with a team of experts.
+                Welcome to ZeoFix! We provide diverse IT solutions with a team of experts.
             </p>
           </div>
           
@@ -82,7 +82,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 pt-4 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between text-[11px] text-muted-foreground">
-            <p>© {new Date().getFullYear()} SulzaX Digital Hub. All Rights Reserved.</p>
+            <p>© {new Date().getFullYear()} ZeoFix Digital Hub. All Rights Reserved.</p>
             <div className="flex gap-4 mt-4 sm:mt-0">
                 <AnimatedLink href="#">Privacy Policy</AnimatedLink>
                 <AnimatedLink href="#">Terms of Service</AnimatedLink>

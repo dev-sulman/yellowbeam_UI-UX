@@ -135,7 +135,7 @@ const services = [
     icon: <MessageCircle className="w-8 h-8 text-accent" />,
     title: 'Content Marketing',
     description: 'Creating valuable and relevant content to attract and engage your target audience, building trust and authority.',
-     href: '/services',
+     href: '/content-marketing',
   },
 ];
 

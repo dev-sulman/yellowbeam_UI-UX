@@ -24,6 +24,7 @@ const navLinks = [
   { href: '/portfolio', label: 'Project' },
   { href: '/team', label: 'Clients'},
   { href: '/blog', label: 'Blog' },
+  { href: '/software-development', label: 'Software'},
   { href: '/mobile-development', label: 'Membership'},
 ];
 

@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Twitter, Linkedin, Facebook, Send, Mail, Youtube, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -49,7 +50,7 @@ export default function Footer() {
             <h4 className="font-semibold mb-3 text-sm text-black">Solutions</h4>
              <ul className="space-y-2">
                 <li><Link href="/web-development" className="relative text-black after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Web Development</Link></li>
-                <li><AnimatedLink href="/services#mobile-development">Mobile Development</AnimatedLink></li>
+                <li><Link href="/mobile-development" className="relative text-black after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Mobile Development</Link></li>
                 <li><AnimatedLink href="/services#software-development">Software Development</AnimatedLink></li>
                 <li><AnimatedLink href="/services#ui-ux">UI/UX Development</AnimatedLink></li>
                 <li><AnimatedLink href="/services#seo">Search Engine Optimization</AnimatedLink></li>
@@ -92,5 +93,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-    

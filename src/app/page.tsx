@@ -87,46 +87,55 @@ const services = [
     icon: <Code className="w-8 h-8 text-accent" />,
     title: 'Web Development',
     description: 'Your website is a tool that should be used in order to draw traffic, convert traffic into customers, and maintain the relationship you have with your customers.',
+    href: '/web-development',
   },
   {
     icon: <Smartphone className="w-8 h-8 text-accent" />,
     title: 'Mobile Development',
     description: 'Strategic guidance on IT strategy, digital transformation, software implementation, and project management.',
+    href: '/mobile-development',
   },
   {
     icon: <PenSquare className="w-8 h-8 text-accent" />,
     title: 'Software Development',
     description: 'Custom software development and integration services to meet specific business needs.',
+    href: '/services',
   },
   {
     icon: <Palette className="w-8 h-8 text-accent" />,
     title: 'Graphic Design',
     description: 'We work with your company to make sure your brand is positioned as a central signature with a consistent identity displayed across multiple media channels and applications.',
+     href: '/services',
   },
   {
     icon: <AppWindow className="w-8 h-8 text-accent" />,
     title: 'UI/UX Development',
     description: "Enhancing your website's visibility on search engines to attract organic traffic and improve search rankings.",
+     href: '/services',
   },
   {
     icon: <Search className="w-8 h-8 text-accent" />,
     title: 'Search Engine Optimization',
     description: "Enhancing your website's visibility on search engines to attract organic traffic and improve search rankings.",
+     href: '/services',
   },
   {
     icon: <Megaphone className="w-8 h-8 text-accent" />,
     title: 'Social Media Marketing',
     description: 'Creating and managing engaging social media campaigns to connect with your audience, increase brand awareness.',
+     href: '/services',
   },
   {
     icon: <Target className="w-8 h-8 text-accent" />,
     title: 'Pay-Per-Click Advertising',
     description: 'Running targeted advertising campaigns on platforms like Google Ads to drive immediate traffic and conversions.',
+     href: '/services',
   },
   {
     icon: <MessageCircle className="w-8 h-8 text-accent" />,
     title: 'Content Marketing',
     description: 'Creating valuable and relevant content to attract and engage your target audience, building trust and authority.',
+     href: '/services',
   },
 ];
 
@@ -287,18 +296,20 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="bg-white shadow-lg rounded-lg p-8 text-center hover:shadow-xl transition-shadow duration-300">
-                <div className="flex justify-center items-center mb-4">
-                  <div className="p-3 bg-secondary/50 rounded-full">
-                    {service.icon}
+              <Link key={index} href={service.href || '#'} className="group">
+                <Card className="bg-white shadow-lg rounded-lg p-8 text-center hover:shadow-xl transition-shadow duration-300 h-full">
+                  <div className="flex justify-center items-center mb-4">
+                    <div className="p-3 bg-secondary/50 rounded-full">
+                      {service.icon}
+                    </div>
                   </div>
-                </div>
-                <h3 className="group text-xl font-normal text-black mb-2 relative inline-block">
-                  {service.title}
-                  <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-black transition-all duration-300 group-hover:w-full"></span>
-                </h3>
-                <p className="text-muted-foreground">{service.description}</p>
-              </Card>
+                  <h3 className="text-xl font-normal text-black mb-2 relative inline-block">
+                    {service.title}
+                    <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                  </h3>
+                  <p className="text-muted-foreground">{service.description}</p>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>

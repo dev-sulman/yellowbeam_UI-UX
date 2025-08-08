@@ -24,6 +24,7 @@ const navLinks = [
   { href: '/portfolio', label: 'Project' },
   { href: '/team', label: 'Clients'},
   { href: '/blog', label: 'Blog' },
+  { href: '/mobile-development', label: 'Membership'},
 ];
 
 export default function Header() {
@@ -52,7 +53,10 @@ export default function Header() {
                 )}
               >
                 {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+                <span className={cn(
+                  'absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full',
+                   pathname === link.href ? 'w-full' : ''
+                )}></span>
               </Link>
             ))}
           </nav>

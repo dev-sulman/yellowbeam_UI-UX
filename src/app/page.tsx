@@ -3,6 +3,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Briefcase, Users, BarChart2, CheckCircle, ArrowRight, Mail, Phone, MapPin } from 'lucide-react';
 import { ContactForm } from '@/components/contact-form';
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const features = [
   {
@@ -43,6 +46,37 @@ const consultationPoints = [
     "Presentation of proposed solutions",
     "Project execution and ongoing support",
     "Follow-up to evaluate effectiveness and satisfaction",
+];
+
+const projects = [
+  {
+    title: 'USA Best Car Shipping',
+    category: 'Website',
+    featuredImage: 'https://placehold.co/600x400.png',
+    description: 'A dedicated website for auto transport services in the USA, offering professional vehicle shipping...',
+    dataAiHint: 'logistics website'
+  },
+  {
+    title: 'Reilu Kuljetus Customer App',
+    category: 'Mobile Application',
+    featuredImage: 'https://placehold.co/600x400.png',
+    description: 'A mobile application for food delivery services in Finland, allowing users to browse menus, place...',
+    dataAiHint: 'mobile app logistics'
+  },
+  {
+    title: 'Reilu Kuljetus',
+    category: 'Website',
+    featuredImage: 'https://placehold.co/600x400.png',
+    description: 'A food delivery website in Finland, providing an easy-to-use platform for customers to order...',
+    dataAiHint: 'food delivery website'
+  },
+    {
+    title: 'Noor Care NGO Platform',
+    category: 'Web Development',
+    featuredImage: 'https://placehold.co/600x400.png',
+    description: 'Secure donation processing system to help the NGO increase online contributions.',
+    dataAiHint: 'charity website'
+  },
 ];
 
 const ZeoFixLogo = () => (
@@ -110,29 +144,48 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="w-full py-16 md:py-24 lg:py-32 bg-secondary/50">
+      <section id="latest-projects" className="w-full py-16 md:py-24 lg:py-32 bg-secondary/50">
         <div className="container px-4 md:px-6">
-          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-             <div className="space-y-6">
-              <div className="inline-block rounded-lg bg-accent/10 text-accent px-3 py-1 text-sm font-bold">Why Choose Us</div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Your Partner in Digital Transformation
-              </h2>
-              <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                At SulzaX, we combine cutting-edge technology with deep industry knowledge to deliver solutions that drive growth and efficiency. Our focus is on building long-term partnerships.
-              </p>
+          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-start">
+            <div className="space-y-4">
+              <div className="inline-block rounded-lg bg-accent/10 text-accent px-3 py-1 text-sm font-semibold">
+                EACH PROJECT IS A NEW CHALLENGE
+              </div>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Latest Projects</h2>
             </div>
-            <div className="grid gap-8">
-              {features.map((feature, index) => (
-                <div key={index} className="flex items-start gap-4 p-4 rounded-lg hover:bg-background transition-colors">
-                  <div className="p-3 rounded-full bg-accent/10">{feature.icon}</div>
-                  <div>
-                    <h3 className="text-lg font-bold">{feature.title}</h3>
-                    <p className="text-muted-foreground">{feature.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed">
+              Case studies that showcase the agency's approach, process, and results for specific clients.
+            </p>
+          </div>
+          <div className="mt-12">
+            <Carousel opts={{ align: "start", loop: true }}>
+              <CarouselContent>
+                {projects.map((project, index) => (
+                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                    <Card className="h-full overflow-hidden group">
+                      <Image
+                        src={project.featuredImage}
+                        alt={project.title}
+                        width={600}
+                        height={400}
+                        data-ai-hint={project.dataAiHint}
+                        className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <CardContent className="p-6">
+                        <Badge variant="outline" className="mb-2">{project.category}</Badge>
+                        <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                        <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
+                        <Link href="/portfolio" className="text-sm font-semibold text-accent hover:underline">
+                          Learn more <ArrowRight className="inline-block ml-1 h-4 w-4" />
+                        </Link>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-[-1rem] md:left-[-2rem]" />
+              <CarouselNext className="right-[-1rem] md:right-[-2rem]" />
+            </Carousel>
           </div>
         </div>
       </section>

@@ -10,6 +10,11 @@ const ZeoFixLogo = () => (
     </svg>
 );
 
+const AnimatedLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
+  <Link href={href} className="relative text-gray-600 after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">
+    {children}
+  </Link>
+);
 
 export default function Footer() {
   return (
@@ -32,22 +37,22 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-3 text-sm text-black">Company</h4>
             <ul className="space-y-2">
-              <li><Link href="/about" className="text-gray-600 hover:underline">About Us</Link></li>
-              <li><Link href="/team" className="text-gray-600 hover:underline">Our Team</Link></li>
-              <li><Link href="/services" className="text-gray-600 hover:underline">Services</Link></li>
-              <li><Link href="/portfolio" className="text-gray-600 hover:underline">Case Studies</Link></li>
-              <li><Link href="/contact" className="text-gray-600 hover:underline">Contact</Link></li>
+              <li><AnimatedLink href="/about">About Us</AnimatedLink></li>
+              <li><AnimatedLink href="/team">Our Team</AnimatedLink></li>
+              <li><AnimatedLink href="/services">Services</AnimatedLink></li>
+              <li><AnimatedLink href="/portfolio">Case Studies</AnimatedLink></li>
+              <li><AnimatedLink href="/contact">Contact</AnimatedLink></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold mb-3 text-sm text-black">Solutions</h4>
              <ul className="space-y-2">
-                <li><Link href="/services#web-development" className="text-gray-600 hover:underline">Web Development</Link></li>
-                <li><Link href="/services#mobile-development" className="text-gray-600 hover:underline">Mobile Development</Link></li>
-                <li><Link href="/services#software-development" className="text-gray-600 hover:underline">Software Development</Link></li>
-                <li><Link href="/services#ui-ux" className="text-gray-600 hover:underline">UI/UX Development</Link></li>
-                <li><Link href="/services#seo" className="text-gray-600 hover:underline">Search Engine Optimization</Link></li>
+                <li><AnimatedLink href="/services#web-development">Web Development</AnimatedLink></li>
+                <li><AnimatedLink href="/services#mobile-development">Mobile Development</AnimatedLink></li>
+                <li><AnimatedLink href="/services#software-development">Software Development</AnimatedLink></li>
+                <li><AnimatedLink href="/services#ui-ux">UI/UX Development</AnimatedLink></li>
+                <li><AnimatedLink href="/services#seo">Search Engine Optimization</AnimatedLink></li>
             </ul>
           </div>
           
@@ -72,8 +77,8 @@ export default function Footer() {
         <div className="mt-8 pt-4 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between text-[10px] text-gray-500">
             <p>© {new Date().getFullYear()} SulzaX Digital Hub. All Rights Reserved.</p>
             <div className="flex gap-4 mt-4 sm:mt-0">
-                <Link href="#" className="hover:underline">Privacy Policy</Link>
-                <Link href="#" className="hover:underline">Terms of Service</Link>
+                <AnimatedLink href="#">Privacy Policy</AnimatedLink>
+                <AnimatedLink href="#">Terms of Service</AnimatedLink>
             </div>
         </div>
       </div>

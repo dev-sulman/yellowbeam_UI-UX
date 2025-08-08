@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Twitter, Linkedin, Facebook, Instagram, Youtube, Send, Mail, PowerOff, Clock } from 'lucide-react';
+import { Twitter, Linkedin, Facebook, Send, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -14,8 +14,8 @@ const ZeoFixLogo = () => (
 export default function Footer() {
   return (
     <footer className="bg-white text-black border-t border-gray-200">
-      <div className="container py-8 text-[11px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      <div className="container py-8 text-[11px] max-h-[250px] flex flex-col justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center items-center">
           
           <div className="space-y-3">
              <Link href="/" className="flex flex-col items-center space-y-2">
@@ -32,22 +32,22 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-3 text-sm text-black">Company</h4>
             <ul className="space-y-2">
-              <li><Link href="/about" className="text-gray-600">About Us</Link></li>
-              <li><Link href="/team" className="text-gray-600">Our Team</Link></li>
-              <li><Link href="/services" className="text-gray-600">Services</Link></li>
-              <li><Link href="/portfolio" className="text-gray-600">Case Studies</Link></li>
-              <li><Link href="/contact" className="text-gray-600">Contact</Link></li>
+              <li><Link href="/about" className="text-gray-600 hover:underline">About Us</Link></li>
+              <li><Link href="/team" className="text-gray-600 hover:underline">Our Team</Link></li>
+              <li><Link href="/services" className="text-gray-600 hover:underline">Services</Link></li>
+              <li><Link href="/portfolio" className="text-gray-600 hover:underline">Case Studies</Link></li>
+              <li><Link href="/contact" className="text-gray-600 hover:underline">Contact</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold mb-3 text-sm text-black">Solutions</h4>
              <ul className="space-y-2">
-                <li><Link href="/services#web-development" className="text-gray-600">Web Development</Link></li>
-                <li><Link href="/services#mobile-development" className="text-gray-600">Mobile Development</Link></li>
-                <li><Link href="/services#software-development" className="text-gray-600">Software Development</Link></li>
-                <li><Link href="/services#ui-ux" className="text-gray-600">UI/UX Development</Link></li>
-                <li><Link href="/services#seo" className="text-gray-600">Search Engine Optimization</Link></li>
+                <li><Link href="/services#web-development" className="text-gray-600 hover:underline">Web Development</Link></li>
+                <li><Link href="/services#mobile-development" className="text-gray-600 hover:underline">Mobile Development</Link></li>
+                <li><Link href="/services#software-development" className="text-gray-600 hover:underline">Software Development</Link></li>
+                <li><Link href="/services#ui-ux" className="text-gray-600 hover:underline">UI/UX Development</Link></li>
+                <li><Link href="/services#seo" className="text-gray-600 hover:underline">Search Engine Optimization</Link></li>
             </ul>
           </div>
           
@@ -72,10 +72,11 @@ export default function Footer() {
         <div className="mt-8 pt-4 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between text-[10px] text-gray-500">
             <p>© {new Date().getFullYear()} SulzaX Digital Hub. All Rights Reserved.</p>
             <div className="flex gap-4 mt-4 sm:mt-0">
-                <Link href="#" className="hover:text-black transition-colors">Privacy Policy</Link>
-                <Link href="#" className="hover:text-black transition-colors">Terms of Service</Link>
+                <Link href="#" className="hover:underline">Privacy Policy</Link>
+                <Link href="#" className="hover:underline">Terms of Service</Link>
             </div>
         </div>
       </div>
     </footer>
   );
+}

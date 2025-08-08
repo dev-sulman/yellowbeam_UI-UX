@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Briefcase, Users, BarChart2, CheckCircle, ArrowRight, Mail, Phone, MapPin, Landmark, Rocket, BriefcaseMedical, Plane, Building2, Wrench, School, Code, Smartphone, Database, PenTool, TrendingUp, Search, MessageCircle, Megaphone, Pointer, Globe, Palette, Target, BarChart3, Bot, ShoppingCart, CircleDollarSign, Tv, LayoutTemplate, PenSquare, AppWindow } from 'lucide-react';
+import { Briefcase, Users, BarChart2, CheckCircle, ArrowRight, Mail, Phone, MapPin, Landmark, Rocket, BriefcaseMedical, Plane, Building2, Wrench, School, Code, Smartphone, Database, PenTool, TrendingUp, Search, MessageCircle, Megaphone, Pointer, Globe, Palette, Target, BarChart3, Bot, ShoppingCart, CircleDollarSign, Tv, LayoutTemplate, PenSquare, AppWindow, BrainCircuit, ShieldCheck, GaugeCircle } from 'lucide-react';
 import { ContactForm } from '@/components/contact-form';
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -138,6 +138,30 @@ const services = [
   },
 ];
 
+const expertisePoints = [
+  {
+    icon: <BrainCircuit className="w-10 h-10 text-accent" />,
+    title: "Expertise",
+    description: "Access to specialized knowledge and technology expertise for effective IT solutions."
+  },
+  {
+    icon: <CircleDollarSign className="w-10 h-10 text-accent" />,
+    title: "Cost Savings",
+    description: "Avoiding expenses associated with maintaining an in-house IT department."
+  },
+  {
+    icon: <ShieldCheck className="w-10 h-10 text-accent" />,
+    title: "Enhanced Security",
+    description: "Robust measures to protect against cyber threats and ensure data security."
+  },
+  {
+    icon: <GaugeCircle className="w-10 h-10 text-accent" />,
+    title: "Increased Efficiency",
+    description: "Streamlined operations, automation, and proactive monitoring for improved productivity."
+  }
+];
+
+
 const ZeoFixLogo = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
         <path d="M7.152 16.278C5.68 15.402 4.5 13.848 4.5 12C4.5 9.24 6.74 7 9.5 7h5c2.76 0 5 2.24 5 5 0 2.4-1.743 4.416-4 4.899"/>
@@ -203,6 +227,22 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="expertise" className="w-full py-16 md:py-24 lg:py-32 bg-secondary/30">
+        <div className="container px-4 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {expertisePoints.map((point, index) => (
+              <Card key={index} className="bg-transparent shadow-none border-none text-center">
+                <div className="flex justify-center items-center mb-4">
+                    {point.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-black mb-2">{point.title}</h3>
+                <p className="text-muted-foreground">{point.description}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
        <section id="services-grid" className="w-full py-16 md:py-24 lg:py-32 bg-white">
         <div className="container px-4 md:px-6">
           <div className="text-center mb-12">
@@ -247,9 +287,9 @@ export default function Home() {
             {industries.map((industry, index) => (
               <Link href={industry.href} key={index} className="group">
                 <Card className="bg-secondary/30 hover:bg-[#2D4FE1] text-black hover:text-white transition-all duration-300 shadow-sm hover:shadow-md">
-                  <CardContent className="p-6 flex items-center gap-4 transition-transform duration-300 group-hover:translate-x-1">
+                  <CardContent className="p-6 flex items-center gap-4">
                     {industry.icon}
-                    <h3 className="text-lg font-semibold text-black group-hover:text-white">{industry.name}</h3>
+                    <h3 className="text-lg font-semibold text-black group-hover:text-white transition-transform duration-300 group-hover:translate-x-1">{industry.name}</h3>
                   </CardContent>
                 </Card>
               </Link>
@@ -258,9 +298,9 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
              <Link href="#" className="group">
                 <Card className="bg-secondary/30 hover:bg-[#2D4FE1] text-black hover:text-white transition-all duration-300 shadow-sm hover:shadow-md">
-                    <CardContent className="p-6 flex items-center gap-4 transition-transform duration-300 group-hover:translate-x-1">
+                    <CardContent className="p-6 flex items-center gap-4">
                     <Wrench className="w-5 h-5" />
-                    <h3 className="text-lg font-semibold text-black group-hover:text-white">And many more...</h3>
+                    <h3 className="text-lg font-semibold text-black group-hover:text-white transition-transform duration-300 group-hover:translate-x-1">And many more...</h3>
                     </CardContent>
                 </Card>
              </Link>

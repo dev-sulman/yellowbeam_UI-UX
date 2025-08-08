@@ -31,14 +31,6 @@ const features = [
   },
 ];
 
-const clientLogos = [
-  { src: 'https://placehold.co/150x60.png', alt: 'Client A', hint: 'company logo' },
-  { src: 'https://placehold.co/150x60.png', alt: 'Client B', hint: 'company logo' },
-  { src: 'https://placehold.co/150x60.png', alt: 'Client C', hint: 'company logo' },
-  { src: 'https://placehold.co/150x60.png', alt: 'Client D', hint: 'company logo' },
-  { src: 'https://placehold.co/150x60.png', alt: 'Client E', hint: 'company logo' },
-];
-
 const consultationPoints = [
     "Confirmation of appointment details",
     "Research and preparation by the IT services company",
@@ -187,7 +179,7 @@ export default function Home() {
             <div className="flex flex-col justify-center space-y-6">
               <div className="space-y-4">
                 <h1 className="text-4xl font-bold tracking-tighter text-primary sm:text-5xl xl:text-7xl/none">
-                  Transform Your Business with Custom IT Solutions
+                  IT services for small to mid-Sized companies
                 </h1>
                 <p className="max-w-[600px] text-muted-foreground md:text-xl">
                   Enterprise-grade technology tailored for growing businesses. We deliver comprehensive digital solutions to help you succeed.
@@ -203,26 +195,13 @@ export default function Home() {
               </div>
             </div>
             <Image
-              src="https://placehold.co/800x600.png"
-              width="800"
-              height="600"
+              src="https://placehold.co/1000x800.png"
+              width="1000"
+              height="800"
               alt="Hero"
               data-ai-hint="team meeting office"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full"
             />
-          </div>
-        </div>
-      </section>
-
-      <section id="trust" className="py-16 md:py-24 bg-background">
-        <div className="container">
-          <h3 className="text-center text-lg font-semibold text-muted-foreground tracking-wider mb-10">
-            TRUSTED BY 1800+ BUSINESSES WORLDWIDE
-          </h3>
-          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 md:gap-x-20">
-            {clientLogos.map((logo, index) => (
-              <Image key={index} src={logo.src} alt={logo.alt} data-ai-hint={logo.hint} width={130} height={50} className="opacity-50 hover:opacity-100 transition-opacity" />
-            ))}
           </div>
         </div>
       </section>

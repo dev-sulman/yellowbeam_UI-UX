@@ -364,7 +364,7 @@ export default function Home() {
                   <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                     <Card className="h-full overflow-hidden group">
                       <Image
-                        src="https://placehold.co/600x400.png"
+                        src={project.featuredImage}
                         alt={project.title}
                         width={600}
                         height={400}

@@ -5,10 +5,12 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Phone } from 'lucide-react';
+import { Menu, Phone, ChevronDown } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+
 
 const SulzaXLogo = () => (
     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,10 +22,40 @@ const SulzaXLogo = () => (
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/services', label: 'Services' },
-  { href: '/about', label: 'About Us' },
+  { 
+    label: 'Services', 
+    subLinks: [
+      { href: '/web-development', label: 'Web Development' },
+      { href: '/mobile-development', label: 'Mobile Development' },
+      { href: '/software-development', label: 'Software Development' },
+      { href: '/graphic-design', label: 'Graphic Design' },
+      { href: '/ui-ux-development', label: 'UI/UX Development' },
+      { href: '/search-engine-optimization', label: 'SEO' },
+      { href: '/social-media-marketing', label: 'Social Media Marketing' },
+      { href: '/pay-per-click-advertising', label: 'PPC Advertising' },
+      { href: '/content-marketing', label: 'Content Marketing' },
+    ]
+  },
+  { 
+    label: 'About Us',
+    subLinks: [
+        { href: '/about', label: 'About SulzaX' },
+        { href: '/team', label: 'Our Team' },
+    ]
+  },
   { href: '/portfolio', label: 'Project' },
-  { href: '/team', label: 'Clients'},
+  { 
+    label: 'Clients',
+    subLinks: [
+        { href: '/finance-banking', label: 'Finance & Banking' },
+        { href: '/it-telecom', label: 'IT & Telecom' },
+        { href: '/healthcare-pharmaceuticals', label: 'Healthcare & Pharma' },
+        { href: '/transportation-logistics', label: 'Transportation & Logistics' },
+        { href: '/real-estate', label: 'Real Estate' },
+        { href: '/manufacturing-industry', label: 'Manufacturing & Industry 4.0' },
+        { href: '/education-training', label: 'Education & Training' },
+    ]
+  },
   { href: '/blog', label: 'Blog' },
 ];
 
@@ -44,8 +76,8 @@ export default function Header() {
         <nav className="hidden md:flex items-center space-x-8">
         {navLinks.map((link) => (
           <Link
-            key={link.href}
-            href={link.href}
+            key={link.href || link.label}
+            href={link.href || '#'}
             className={cn(
               'relative transition-colors text-lg font-bold text-black group',
               pathname === link.href ? 'text-accent' : ''
@@ -64,29 +96,55 @@ export default function Header() {
           <div className="md:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="group hover:bg-transparent">
+                <Button variant="ghost" size="icon" className="group hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0">
                   <Menu className="h-5 w-5 transition-transform duration-300 group-hover:rotate-90" />
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right">
+              <SheetContent side="right" className="bg-card">
                 <Link href="/" className="mr-6 flex items-center space-x-2" onClick={() => setIsOpen(false)}>
                   <SulzaXLogo />
                   <span className="font-bold font-headline text-primary">SulzaX</span>
                 </Link>
                 <div className="grid gap-2 py-6">
                   {navLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      onClick={() => setIsOpen(false)}
-                      className={cn(
-                        'flex w-full items-center py-2 text-lg font-semibold',
-                        pathname === link.href ? 'text-accent' : 'text-muted-foreground'
-                      )}
-                    >
-                      {link.label}
-                    </Link>
+                     link.subLinks ? (
+                        <Collapsible key={link.label}>
+                            <CollapsibleTrigger className="flex w-full items-center justify-between py-2 text-lg text-black group">
+                                {link.label}
+                                <ChevronDown className="h-5 w-5 transition-transform duration-300 group-data-[state=open]:rotate-180" />
+                            </CollapsibleTrigger>
+                            <CollapsibleContent>
+                                <div className="grid gap-2 pl-4 pt-2">
+                                    {link.subLinks.map(subLink => (
+                                        <Link
+                                            key={subLink.href}
+                                            href={subLink.href}
+                                            onClick={() => setIsOpen(false)}
+                                            className={cn(
+                                                'flex w-full items-center py-2 text-base',
+                                                pathname === subLink.href ? 'text-accent' : 'text-black/80'
+                                            )}
+                                        >
+                                            {subLink.label}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </CollapsibleContent>
+                        </Collapsible>
+                     ) : (
+                        <Link
+                            key={link.href}
+                            href={link.href!}
+                            onClick={() => setIsOpen(false)}
+                            className={cn(
+                                'flex w-full items-center py-2 text-lg',
+                                pathname === link.href ? 'text-accent' : 'text-black'
+                            )}
+                        >
+                            {link.label}
+                        </Link>
+                     )
                   ))}
                   <Button asChild className="font-semibold mt-4 bg-accent hover:bg-accent/90 text-accent-foreground" onClick={() => setIsOpen(false)}>
                     <Link href="/contact">Contact</Link>

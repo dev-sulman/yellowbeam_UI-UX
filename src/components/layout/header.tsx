@@ -63,6 +63,22 @@ export default function Header() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
+  const NavLinkShine = ({ href, children, active }: { href: string; children: React.ReactNode, active: boolean }) => (
+    <Link
+        href={href}
+        onClick={() => setIsOpen(false)}
+        className={cn(
+            'flex w-full items-center py-2 text-lg relative group text-black/80',
+             active ? 'text-accent' : 'text-black/80'
+        )}
+    >
+        <span className="relative">
+            {children}
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
+        </span>
+    </Link>
+  );
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
@@ -73,22 +89,47 @@ export default function Header() {
           </span>
         </Link>
         
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
         {navLinks.map((link) => (
-          <Link
-            key={link.href || link.label}
-            href={link.href || '#'}
-            className={cn(
-              'relative transition-colors text-lg font-bold text-black group',
-              pathname === link.href ? 'text-accent' : ''
-            )}
-          >
-            {link.label}
-            <span className={cn(
-              'absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full',
-                pathname === link.href ? 'w-full' : ''
-            )}></span>
-          </Link>
+             link.subLinks ? (
+                <div key={link.label} className="group relative">
+                    <span className={cn('relative transition-colors text-lg font-bold text-black group flex items-center gap-1 cursor-pointer')}>
+                       {link.label}
+                       <ChevronDown className="h-5 w-5 transition-transform duration-300 group-hover:rotate-180" />
+                    </span>
+                    <div className="absolute top-full left-0 mt-2 w-56 bg-card rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 invisible group-hover:visible">
+                        <div className="py-2">
+                            {link.subLinks.map(subLink => (
+                                <Link
+                                    key={subLink.href}
+                                    href={subLink.href}
+                                    className={cn(
+                                        'block px-4 py-2 text-base hover:bg-secondary/50',
+                                        pathname === subLink.href ? 'text-accent' : 'text-black/80'
+                                    )}
+                                >
+                                    {subLink.label}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            ) : (
+                <Link
+                    key={link.href}
+                    href={link.href!}
+                    className={cn(
+                    'relative transition-colors text-lg font-bold text-black group',
+                    pathname === link.href ? 'text-accent' : ''
+                    )}
+                >
+                    {link.label}
+                    <span className={cn(
+                    'absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full',
+                        pathname === link.href ? 'w-full' : ''
+                    )}></span>
+                </Link>
+            )
         ))}
         </nav>
         
@@ -110,40 +151,24 @@ export default function Header() {
                   {navLinks.map((link) => (
                      link.subLinks ? (
                         <Collapsible key={link.label}>
-                            <CollapsibleTrigger className="flex w-full items-center justify-between py-2 text-lg text-black group">
+                            <CollapsibleTrigger className="flex w-full items-center gap-2 py-2 text-lg text-black group">
                                 {link.label}
                                 <ChevronDown className="h-5 w-5 transition-transform duration-300 group-data-[state=open]:rotate-180" />
                             </CollapsibleTrigger>
                             <CollapsibleContent>
                                 <div className="grid gap-2 pl-4 pt-2">
                                     {link.subLinks.map(subLink => (
-                                        <Link
-                                            key={subLink.href}
-                                            href={subLink.href}
-                                            onClick={() => setIsOpen(false)}
-                                            className={cn(
-                                                'flex w-full items-center py-2 text-base',
-                                                pathname === subLink.href ? 'text-accent' : 'text-black/80'
-                                            )}
-                                        >
+                                         <NavLinkShine key={subLink.href} href={subLink.href} active={pathname === subLink.href}>
                                             {subLink.label}
-                                        </Link>
+                                        </NavLinkShine>
                                     ))}
                                 </div>
                             </CollapsibleContent>
                         </Collapsible>
                      ) : (
-                        <Link
-                            key={link.href}
-                            href={link.href!}
-                            onClick={() => setIsOpen(false)}
-                            className={cn(
-                                'flex w-full items-center py-2 text-lg',
-                                pathname === link.href ? 'text-accent' : 'text-black'
-                            )}
-                        >
+                        <NavLinkShine key={link.href} href={link.href!} active={pathname === link.href}>
                             {link.label}
-                        </Link>
+                        </NavLinkShine>
                      )
                   ))}
                   <Button asChild className="font-semibold mt-4 bg-accent hover:bg-accent/90 text-accent-foreground" onClick={() => setIsOpen(false)}>

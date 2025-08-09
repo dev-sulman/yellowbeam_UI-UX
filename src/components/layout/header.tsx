@@ -4,12 +4,13 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Phone, ChevronDown } from 'lucide-react';
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
+import { Menu, Phone, ChevronDown, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 
 const SulzaXLogo = () => (
@@ -72,7 +73,7 @@ export default function Header() {
              active ? 'text-accent' : ''
         )}
     >
-        <span className="relative animate-shimmer bg-[linear-gradient(110deg,#000,45%,#fff,55%,#000)] bg-[length:200%_100%] bg-clip-text text-transparent">
+        <span className="relative group-hover/link:animate-shimmer group-hover/link:bg-[linear-gradient(110deg,#000,45%,#fff,55%,#000)] group-hover/link:bg-[length:200%_100%] bg-clip-text text-transparent">
             {children}
         </span>
     </Link>
@@ -141,39 +142,53 @@ export default function Header() {
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="bg-card">
-                <Link href="/" className="mr-6 flex items-center space-x-2" onClick={() => setIsOpen(false)}>
-                  <SulzaXLogo />
-                  <span className="font-bold font-headline text-primary">SulzaX</span>
-                </Link>
-                <div className="grid gap-2 py-6">
-                  {navLinks.map((link) => (
-                     link.subLinks ? (
-                        <Collapsible key={link.label}>
-                            <CollapsibleTrigger className="flex w-full items-center gap-1 py-2 text-lg text-black group">
+              <SheetContent side="right" className="bg-card p-0">
+                <div className="flex flex-col h-full">
+                  <div className="p-6">
+                    <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
+                      <SulzaXLogo />
+                      <span className="font-bold font-headline text-primary">SulzaX</span>
+                    </Link>
+                  </div>
+                  <ScrollArea className="flex-grow">
+                    <div className="grid gap-2 py-6 px-6">
+                      {navLinks.map((link) => (
+                         link.subLinks ? (
+                            <Collapsible key={link.label}>
+                                <CollapsibleTrigger className="flex w-full items-center justify-between gap-1 py-2 text-lg text-black group">
+                                    <span className="relative group-hover:animate-shimmer group-hover:bg-[linear-gradient(110deg,#000,45%,#fff,55%,#000)] group-hover:bg-[length:200%_100%] bg-clip-text text-transparent">
+                                        {link.label}
+                                    </span>
+                                    <ChevronDown className="h-5 w-5 transition-transform duration-300 group-data-[state=open]:rotate-180" />
+                                </CollapsibleTrigger>
+                                <CollapsibleContent>
+                                    <div className="grid gap-2 pl-4 pt-2">
+                                        {link.subLinks.map(subLink => (
+                                             <NavLinkShine key={subLink.href} href={subLink.href} active={pathname === subLink.href}>
+                                                {subLink.label}
+                                            </NavLinkShine>
+                                        ))}
+                                    </div>
+                                </CollapsibleContent>
+                            </Collapsible>
+                         ) : (
+                            <NavLinkShine key={link.href} href={link.href!} active={pathname === link.href}>
                                 {link.label}
-                                <ChevronDown className="h-5 w-5 transition-transform duration-300 group-data-[state=open]:rotate-180" />
-                            </CollapsibleTrigger>
-                            <CollapsibleContent>
-                                <div className="grid gap-2 pl-4 pt-2">
-                                    {link.subLinks.map(subLink => (
-                                         <NavLinkShine key={subLink.href} href={subLink.href} active={pathname === subLink.href}>
-                                            {subLink.label}
-                                        </NavLinkShine>
-                                    ))}
-                                </div>
-                            </CollapsibleContent>
-                        </Collapsible>
-                     ) : (
-                        <NavLinkShine key={link.href} href={link.href!} active={pathname === link.href}>
-                            {link.label}
-                        </NavLinkShine>
-                     )
-                  ))}
-                  <Button asChild className="font-semibold mt-4 bg-accent hover:bg-accent/90 text-accent-foreground" onClick={() => setIsOpen(false)}>
-                    <Link href="/contact">Contact</Link>
-                  </Button>
+                            </NavLinkShine>
+                         )
+                      ))}
+                    </div>
+                  </ScrollArea>
+                   <div className="p-6 border-t">
+                      <Button asChild className="w-full font-semibold bg-accent hover:bg-accent/90 text-accent-foreground" onClick={() => setIsOpen(false)}>
+                        <Link href="/contact">Contact</Link>
+                      </Button>
+                    </div>
                 </div>
+                <SheetClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 disabled:pointer-events-none data-[state=open]:bg-secondary">
+                  <X className="h-4 w-4" />
+                  <span className="sr-only">Close</span>
+                </SheetClose>
               </SheetContent>
             </Sheet>
           </div>
@@ -188,7 +203,6 @@ export default function Header() {
             </Button>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
   );
 }

@@ -68,11 +68,11 @@ export default function Header() {
         href={href}
         onClick={() => setIsOpen(false)}
         className={cn(
-            'flex w-full items-center py-2 text-lg relative group/link text-black',
-             active ? 'text-accent' : ''
+            'flex w-full items-center py-2 text-lg font-normal relative group/link',
+             active ? 'text-accent' : 'text-black'
         )}
     >
-        <span className="relative group-hover/link:animate-shimmer group-hover/link:bg-[linear-gradient(110deg,#000,45%,#fff,55%,#000)] group-hover/link:bg-[length:200%_100%] bg-clip-text text-transparent">
+        <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-black to-black group-hover/link:animate-shimmer group-hover/link:bg-[linear-gradient(110deg,black,45%,white,55%,black)] group-hover/link:bg-[length:250%_100%]">
             {children}
         </span>
     </Link>
@@ -142,13 +142,13 @@ export default function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="bg-card p-0">
-                <div className="flex flex-col h-full">
-                    <div className="flex items-center justify-between p-6">
+                <div className="flex h-full flex-col">
+                    <div className="flex items-center justify-between border-b p-6">
                         <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
                             <SulzaXLogo />
                             <span className="font-bold font-headline text-primary">SulzaX</span>
                         </Link>
-                        <SheetClose className="rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 disabled:pointer-events-none">
+                         <SheetClose className="rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-0 focus:ring-offset-0">
                             <X className="h-5 w-5" />
                             <span className="sr-only">Close</span>
                         </SheetClose>
@@ -159,7 +159,7 @@ export default function Header() {
                                 link.subLinks ? (
                                 <Collapsible key={link.label}>
                                     <CollapsibleTrigger className="flex w-full items-center justify-between gap-1 py-2 text-lg text-black group">
-                                        <span className="relative group-hover/link:animate-shimmer group-hover/link:bg-[linear-gradient(110deg,#000,45%,#fff,55%,#000)] group-hover/link:bg-[length:200%_100%] bg-clip-text text-transparent">
+                                        <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-black to-black group-hover/link:animate-shimmer group-hover/link:bg-[linear-gradient(110deg,black,45%,white,55%,black)] group-hover/link:bg-[length:250%_100%]">
                                             {link.label}
                                         </span>
                                         <ChevronDown className="h-5 w-5 transition-transform duration-300 group-data-[state=open]:rotate-180" />

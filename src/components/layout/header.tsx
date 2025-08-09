@@ -7,10 +7,9 @@ import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/s
 import { Menu, Phone, ChevronDown, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { ScrollArea } from '@/components/ui/scroll-area';
-
 
 const SulzaXLogo = () => (
     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -18,7 +17,6 @@ const SulzaXLogo = () => (
         <path d="M19.2 18.4L24.8 12.8L32 20C32 20 26.4 25.6 20 32L12 25.6L19.2 18.4Z" fill="#2D4FE1"/>
     </svg>
 );
-
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -62,6 +60,15 @@ const navLinks = [
 export default function Header() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+      return null;
+  }
 
   const NavLinkShine = ({ href, children, active }: { href: string; children: React.ReactNode, active: boolean }) => (
     <Link
@@ -148,7 +155,7 @@ export default function Header() {
                             <SulzaXLogo />
                             <span className="font-bold font-headline text-primary">SulzaX</span>
                         </Link>
-                         <SheetClose className="rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-0 focus:ring-offset-0">
+                        <SheetClose className="rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-0 focus:ring-offset-0">
                             <X className="h-5 w-5" />
                             <span className="sr-only">Close</span>
                         </SheetClose>

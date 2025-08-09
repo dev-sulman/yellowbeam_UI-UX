@@ -15,7 +15,7 @@ const projects = [
     technologies: ['React', 'WordPress', 'PHP'],
     industry: 'Logistics',
     year: '2023',
-    featuredImage: '/images/urabecarshipping.jpg',
+    featuredImage: 'https://placehold.co/600x400.png',
     description: 'Modern website to handle 500+ daily quote requests with a custom quote calculator.',
     results: '240% increase in lead conversion.',
     dataAiHint: 'logistics website'
@@ -27,7 +27,7 @@ const projects = [
     technologies: ['Flutter', 'Firebase'],
     industry: 'Technology',
     year: '2023',
-    featuredImage: '/images/sim.png',
+    featuredImage: 'https://placehold.co/600x400.png',
     description: 'Cross-platform mobile application development.',
     results: '65% faster performance than native apps',
     dataAiHint: 'mobile app'
@@ -39,7 +39,7 @@ const projects = [
     technologies: ['React', 'Node.js'],
     industry: 'Business',
     year: '2023',
-    featuredImage: '/images/customapp.png',
+    featuredImage: 'https://placehold.co/600x400.png',
     description: 'Custom business application with advanced features.',
     results: '300% workflow improvement',
     dataAiHint: 'business app'
@@ -51,7 +51,7 @@ const projects = [
     technologies: ['React', 'Python'],
     industry: 'Education',
     year: '2023',
-    featuredImage: '/images/mdu.jpg',
+    featuredImage: 'https://placehold.co/600x400.png',
     description: 'Online learning platform for university students.',
     results: '150% increase in student engagement',
     dataAiHint: 'education platform'
@@ -63,7 +63,7 @@ const projects = [
     technologies: ['React', 'AWS'],
     industry: 'Healthcare',
     year: '2023',
-    featuredImage: '/images/nocv.png',
+    featuredImage: 'https://placehold.co/600x400.png',
     description: 'HIPAA-compliant healthcare management system.',
     results: '10,000+ patient records managed',
     dataAiHint: 'healthcare system'

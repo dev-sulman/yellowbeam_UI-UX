@@ -1,5 +1,4 @@
 
-
 'use client';
 
 import Link from 'next/link';
@@ -156,7 +155,7 @@ export default function Header() {
                          link.subLinks ? (
                             <Collapsible key={link.label}>
                                 <CollapsibleTrigger className="flex w-full items-center justify-between gap-1 py-2 text-lg text-black group">
-                                    <span className="relative group-hover:animate-shimmer group-hover:bg-[linear-gradient(110deg,#000,45%,#fff,55%,#000)] group-hover:bg-[length:200%_100%] bg-clip-text text-transparent">
+                                    <span className="relative group-hover/link:animate-shimmer group-hover/link:bg-[linear-gradient(110deg,#000,45%,#fff,55%,#000)] group-hover/link:bg-[length:200%_100%] bg-clip-text text-transparent">
                                         {link.label}
                                     </span>
                                     <ChevronDown className="h-5 w-5 transition-transform duration-300 group-data-[state=open]:rotate-180" />
@@ -203,6 +202,6 @@ export default function Header() {
             </Button>
           </div>
         </div>
-      </header>
+    </header>
   );
 }

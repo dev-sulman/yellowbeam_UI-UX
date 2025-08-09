@@ -65,15 +65,11 @@ export default function Header() {
   useEffect(() => {
     setIsMounted(true);
   }, []);
-
-  if (!isMounted) {
-      return null;
-  }
-
-  const NavLinkShine = ({ href, children, active }: { href: string; children: React.ReactNode, active: boolean }) => (
+  
+  const NavLink = ({ href, children, active, closeSheet }: { href: string; children: React.ReactNode, active: boolean, closeSheet: () => void; }) => (
     <Link
         href={href}
-        onClick={() => setIsOpen(false)}
+        onClick={closeSheet}
         className={cn(
             'flex w-full items-center py-2 text-lg font-normal relative group/link',
              active ? 'text-accent' : 'text-black'
@@ -84,6 +80,12 @@ export default function Header() {
         </span>
     </Link>
   );
+
+  const closeSheet = () => setIsOpen(false);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -151,7 +153,7 @@ export default function Header() {
               <SheetContent side="right" className="bg-card p-0">
                 <div className="flex h-full flex-col">
                     <div className="flex items-center justify-between border-b p-6">
-                        <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
+                        <Link href="/" className="flex items-center space-x-2" onClick={closeSheet}>
                             <SulzaXLogo />
                             <span className="font-bold font-headline text-primary">SulzaX</span>
                         </Link>
@@ -174,23 +176,23 @@ export default function Header() {
                                     <CollapsibleContent>
                                         <div className="grid gap-2 pl-4 pt-2">
                                             {link.subLinks.map(subLink => (
-                                                <NavLinkShine key={subLink.href} href={subLink.href} active={pathname === subLink.href}>
+                                                <NavLink key={subLink.href} href={subLink.href} active={pathname === subLink.href} closeSheet={closeSheet}>
                                                     {subLink.label}
-                                                </NavLinkShine>
+                                                </NavLink>
                                             ))}
                                         </div>
                                     </CollapsibleContent>
                                 </Collapsible>
                                 ) : (
-                                <NavLinkShine key={link.href} href={link.href!} active={pathname === link.href}>
+                                <NavLink key={link.href} href={link.href!} active={pathname === link.href} closeSheet={closeSheet}>
                                     {link.label}
-                                </NavLinkShine>
+                                </NavLink>
                                 )
                             ))}
                         </div>
                     </ScrollArea>
                     <div className="p-6 border-t">
-                        <Button asChild className="w-full font-semibold bg-accent hover:bg-accent/90 text-accent-foreground" onClick={() => setIsOpen(false)}>
+                        <Button asChild className="w-full font-semibold bg-accent hover:bg-accent/90 text-accent-foreground" onClick={closeSheet}>
                             <Link href="/contact">Contact</Link>
                         </Button>
                     </div>

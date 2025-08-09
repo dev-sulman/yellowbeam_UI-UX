@@ -68,13 +68,12 @@ export default function Header() {
         href={href}
         onClick={() => setIsOpen(false)}
         className={cn(
-            'flex w-full items-center py-2 text-lg relative group text-black/80',
-             active ? 'text-accent' : 'text-black/80'
+            'flex w-full items-center py-2 text-lg relative group/link text-black',
+             active ? 'text-accent' : ''
         )}
     >
-        <span className="relative">
+        <span className="relative animate-shimmer bg-[linear-gradient(110deg,#000,45%,#fff,55%,#000)] bg-[length:200%_100%] bg-clip-text text-transparent">
             {children}
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
         </span>
     </Link>
   );
@@ -151,7 +150,7 @@ export default function Header() {
                   {navLinks.map((link) => (
                      link.subLinks ? (
                         <Collapsible key={link.label}>
-                            <CollapsibleTrigger className="flex w-full items-center gap-2 py-2 text-lg text-black group">
+                            <CollapsibleTrigger className="flex w-full items-center gap-1 py-2 text-lg text-black group">
                                 {link.label}
                                 <ChevronDown className="h-5 w-5 transition-transform duration-300 group-data-[state=open]:rotate-180" />
                             </CollapsibleTrigger>

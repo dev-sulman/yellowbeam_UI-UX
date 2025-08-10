@@ -7,21 +7,21 @@ import { CheckCircle, Users, Briefcase, BarChart2 } from "lucide-react";
 
 const teamMembers = [
   {
-    name: 'John Doe',
+    name: 'Sulman',
     role: 'CEO & Founder',
-    image: 'https://placehold.co/400x400.png',
+    image: '/sulmansmallimage.jpeg',
     dataAiHint: 'professional headshot',
   },
   {
-    name: 'Jane Smith',
+    name: 'Sehar',
     role: 'Chief Technology Officer',
-    image: 'https://placehold.co/400x400.png',
+    image: '/seharsmallimage.jpg',
     dataAiHint: 'professional headshot',
   },
   {
-    name: 'Peter Jones',
+    name: 'Leeia',
     role: 'Lead Developer',
-    image: 'https://placehold.co/400x400.png',
+    image: '/three.jpg',
     dataAiHint: 'professional headshot',
   },
 ];
@@ -68,7 +68,7 @@ export default function AboutUsPage() {
                         </div>
                     </div>
                     <div>
-                        <Image src="https://placehold.co/600x450.png" alt="Team working collaboratively" width={600} height={450} className="rounded-lg shadow-lg" data-ai-hint="teamwork collaboration office" />
+                        <Image src="/noor.png" alt="Team working collaboratively" width={600} height={450} className="rounded-lg shadow-lg" data-ai-hint="teamwork collaboration office" />
                     </div>
                 </div>
             </section>

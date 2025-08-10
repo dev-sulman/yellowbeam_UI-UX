@@ -33,41 +33,41 @@ const features = [
 ];
 
 const consultationPoints = [
-    "Confirmation of appointment details",
-    "Research and preparation by the IT services company",
-    "Consultation to discuss technology solutions",
-    "Needs assessment for tailored solutions",
-    "Presentation of proposed solutions",
-    "Project execution and ongoing support",
-    "Follow-up to evaluate effectiveness and satisfaction",
+  "Confirmation of appointment details",
+  "Research and preparation by the IT services company",
+  "Consultation to discuss technology solutions",
+  "Needs assessment for tailored solutions",
+  "Presentation of proposed solutions",
+  "Project execution and ongoing support",
+  "Follow-up to evaluate effectiveness and satisfaction",
 ];
 
 const projects = [
   {
     title: 'USA Best Car Shipping',
     category: 'Website',
-    featuredImage: 'https://placehold.co/600x400.png',
+    featuredImage: '/usabestcarshipping.jpg',
     description: 'A dedicated website for auto transport services in the USA, offering professional vehicle shipping...',
     dataAiHint: 'logistics website'
   },
   {
     title: 'Reilu Kuljetus Customer App',
     category: 'Mobile Application',
-    featuredImage: 'https://placehold.co/600x400.png',
+    featuredImage: '/noor.png',
     description: 'A mobile application for food delivery services in Finland, allowing users to browse menus, place...',
     dataAiHint: 'mobile app logistics'
   },
   {
     title: 'Reilu-Kuljetus',
     category: 'Website',
-    featuredImage: 'https://placehold.co/600x400.png',
+    featuredImage: '/reilu.jpg',
     description: 'A food delivery website in Finland, providing an easy-to-use platform for customers to order...',
     dataAiHint: 'food delivery website'
   },
-    {
+  {
     title: 'Noor Care NGO Platform',
     category: 'Web Development',
-    featuredImage: 'https://placehold.co/600x400.png',
+    featuredImage: '/original-189293cabe56b4411fde1a306b8b9d9b.webp',
     description: 'Secure donation processing system to help the NGO increase online contributions.',
     dataAiHint: 'charity website'
   },
@@ -106,37 +106,37 @@ const services = [
     icon: <Palette className="w-8 h-8 text-accent" />,
     title: 'Graphic Design',
     description: 'We work with your company to make sure your brand is positioned as a central signature with a consistent identity displayed across multiple media channels and applications.',
-     href: '/graphic-design',
+    href: '/graphic-design',
   },
   {
     icon: <AppWindow className="w-8 h-8 text-accent" />,
     title: 'UI/UX Development',
     description: "Enhancing your website's visibility on search engines to attract organic traffic and improve search rankings.",
-     href: '/ui-ux-development',
+    href: '/ui-ux-development',
   },
   {
     icon: <Search className="w-8 h-8 text-accent" />,
     title: 'Search Engine Optimization',
     description: "Enhancing your website's visibility on search engines to attract organic traffic and improve search rankings.",
-     href: '/search-engine-optimization',
+    href: '/search-engine-optimization',
   },
   {
     icon: <Megaphone className="w-8 h-8 text-accent" />,
     title: 'Social Media Marketing',
     description: 'Creating and managing engaging social media campaigns to connect with your audience, increase brand awareness.',
-     href: '/social-media-marketing',
+    href: '/social-media-marketing',
   },
   {
     icon: <Target className="w-8 h-8 text-accent" />,
     title: 'Pay-Per-Click Advertising',
     description: 'Running targeted advertising campaigns on platforms like Google Ads to drive immediate traffic and conversions.',
-     href: '/pay-per-click-advertising',
+    href: '/pay-per-click-advertising',
   },
   {
     icon: <MessageCircle className="w-8 h-8 text-accent" />,
     title: 'Content Marketing',
     description: 'Creating valuable and relevant content to attract and engage your target audience, building trust and authority.',
-     href: '/content-marketing',
+    href: '/content-marketing',
   },
 ];
 
@@ -165,18 +165,18 @@ const expertisePoints = [
 
 
 const SulzaXLogo = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
-        <path d="M7.152 16.278C5.68 15.402 4.5 13.848 4.5 12C4.5 9.24 6.74 7 9.5 7h5c2.76 0 5 2.24 5 5 0 2.4-1.743 4.416-4 4.899"/>
-        <path d="M16.848 7.722C18.32 8.598 19.5 10.152 19.5 12c0 2.76-2.24 5-5 5h-5c-2.76 0-5-2.24-5-5 0-.4.053-.79.152-1.166"/>
-    </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
+    <path d="M7.152 16.278C5.68 15.402 4.5 13.848 4.5 12C4.5 9.24 6.74 7 9.5 7h5c2.76 0 5 2.24 5 5 0 2.4-1.743 4.416-4 4.899" />
+    <path d="M16.848 7.722C18.32 8.598 19.5 10.152 19.5 12c0 2.76-2.24 5-5 5h-5c-2.76 0-5-2.24-5-5 0-.4.053-.79.152-1.166" />
+  </svg>
 );
 
 
 const MarqueeItem = ({ text }: { text: string }) => (
-    <div className="flex items-center space-x-4">
-        <span className="text-xl font-semibold">{text}</span>
-        <SulzaXLogo />
-    </div>
+  <div className="flex items-center space-x-4">
+    <span className="text-xl font-semibold">{text}</span>
+    <SulzaXLogo />
+  </div>
 );
 
 
@@ -210,7 +210,7 @@ export default function Home() {
               </div>
             </div>
             <Image
-              src="https://placehold.co/600x500.png"
+              src="/main.jpeg"
               width="600"
               height="500"
               alt="Hero"
@@ -221,51 +221,51 @@ export default function Home() {
         </div>
       </section>
 
-       <section id="about-us" className="w-full py-16 md:py-24 mb-[5px]">
+      <section id="about-us" className="w-full py-16 md:py-24 mb-[5px]">
         <div className="container px-4 md:px-6">
           <div className="rounded-xl p-8 md:p-12" style={{ background: 'linear-gradient(to right, #464F62, #7F5D5D)' }}>
             <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="text-white space-y-8">
-                    <Badge className="bg-accent text-accent-foreground">ABOUT US</Badge>
-                    <h2 className="text-4xl lg:text-5xl font-bold tracking-tight">We Solve Technology Challenges.</h2>
-                </div>
-                <div className="text-gray-200 space-y-6">
-                    <h3 className="text-xl font-semibold text-white">Your IT Services Partner!</h3>
-                    <p>We offer customized IT solutions, from managed services to cloud computing and cybersecurity. Empower your business with our expertise for growth and efficiency.</p>
-                    <Link href="/contact" className="font-semibold text-white hover:underline">Join us today!</Link>
-                </div>
+              <div className="text-white space-y-8">
+                <Badge className="bg-accent text-accent-foreground">ABOUT US</Badge>
+                <h2 className="text-4xl lg:text-5xl font-bold tracking-tight">We Solve Technology Challenges.</h2>
+              </div>
+              <div className="text-gray-200 space-y-6">
+                <h3 className="text-xl font-semibold text-white">Your IT Services Partner!</h3>
+                <p>We offer customized IT solutions, from managed services to cloud computing and cybersecurity. Empower your business with our expertise for growth and efficiency.</p>
+                <Link href="/contact" className="font-semibold text-white hover:underline">Join us today!</Link>
+              </div>
             </div>
             <div className="border-t border-gray-400/50 mt-8 lg:mt-12 pt-8 pb-4">
-                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-white">
-                        <div className="flex items-center gap-4">
-                            <div className="w-px h-12 bg-gray-400/50"></div>
-                            <div>
-                                <p className="text-4xl font-bold">20</p>
-                                <p className="text-sm text-gray-300">Years experiences</p>
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-4">
-                             <div className="w-px h-12 bg-gray-400/50"></div>
-                            <div>
-                                <p className="text-4xl font-bold">1.8k</p>
-                                <p className="text-sm text-gray-300">Happy customers</p>
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-4">
-                             <div className="w-px h-12 bg-gray-400/50"></div>
-                            <div>
-                                <p className="text-4xl font-bold">460</p>
-                                <p className="text-sm text-gray-300">Project completed</p>
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-4">
-                             <div className="w-px h-12 bg-gray-400/50"></div>
-                            <div>
-                                <p className="text-4xl font-bold">15</p>
-                                <p className="text-sm text-gray-300">Awards achievement</p>
-                            </div>
-                        </div>
-                    </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-white">
+                <div className="flex items-center gap-4">
+                  <div className="w-px h-12 bg-gray-400/50"></div>
+                  <div>
+                    <p className="text-4xl font-bold">20</p>
+                    <p className="text-sm text-gray-300">Years experiences</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-px h-12 bg-gray-400/50"></div>
+                  <div>
+                    <p className="text-4xl font-bold">1.8k</p>
+                    <p className="text-sm text-gray-300">Happy customers</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-px h-12 bg-gray-400/50"></div>
+                  <div>
+                    <p className="text-4xl font-bold">460</p>
+                    <p className="text-sm text-gray-300">Project completed</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-px h-12 bg-gray-400/50"></div>
+                  <div>
+                    <p className="text-4xl font-bold">15</p>
+                    <p className="text-sm text-gray-300">Awards achievement</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -277,7 +277,7 @@ export default function Home() {
             {expertisePoints.map((point, index) => (
               <Card key={index} className="bg-transparent shadow-none border-none text-center">
                 <div className="flex justify-center items-center mb-4">
-                    {point.icon}
+                  {point.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-black mb-2">{point.title}</h3>
                 <p className="text-muted-foreground">{point.description}</p>
@@ -287,7 +287,7 @@ export default function Home() {
         </div>
       </section>
 
-       <section id="services-grid" className="w-full py-16 md:py-24 lg:py-32 bg-white">
+      <section id="services-grid" className="w-full py-16 md:py-24 lg:py-32 bg-white">
         <div className="container px-4 md:px-6">
           <div className="text-center mb-12">
             <Badge variant="outline" className="border-accent/20 text-accent font-semibold mb-4">We are a team of humans</Badge>
@@ -389,55 +389,55 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
-        <div className="bg-[#2D4FE1] text-white h-[80px] flex items-center overflow-hidden">
-            <div className="animate-marquee whitespace-nowrap flex space-x-8">
-                <MarqueeItem text="EXPERIENCE SEAMLESS IT SOLUTIONS" />
-                <MarqueeItem text="REQUEST IT CONSULTATION" />
-                <MarqueeItem text="EXPERIENCE SEAMLESS IT SOLUTIONS" />
-                <MarqueeItem text="REQUEST IT CONSULTATION" />
-                <MarqueeItem text="EXPERIENCE SEAMLESS IT SOLUTIONS" />
-                <MarqueeItem text="REQUEST IT CONSULTATION" />
-                <MarqueeItem text="EXPERIENCE SEAMLESS IT SOLUTIONS" />
-                <MarqueeItem text="REQUEST IT CONSULTATION" />
-            </div>
+
+      <div className="bg-[#2D4FE1] text-white h-[80px] flex items-center overflow-hidden">
+        <div className="animate-marquee whitespace-nowrap flex space-x-8">
+          <MarqueeItem text="EXPERIENCE SEAMLESS IT SOLUTIONS" />
+          <MarqueeItem text="REQUEST IT CONSULTATION" />
+          <MarqueeItem text="EXPERIENCE SEAMLESS IT SOLUTIONS" />
+          <MarqueeItem text="REQUEST IT CONSULTATION" />
+          <MarqueeItem text="EXPERIENCE SEAMLESS IT SOLUTIONS" />
+          <MarqueeItem text="REQUEST IT CONSULTATION" />
+          <MarqueeItem text="EXPERIENCE SEAMLESS IT SOLUTIONS" />
+          <MarqueeItem text="REQUEST IT CONSULTATION" />
         </div>
+      </div>
       <section id="consultation" className="w-full py-16 md:py-24 lg:py-32" style={{ background: 'linear-gradient(to right, #464F62, #7F5D5D)' }}>
         <div className="container px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="flex flex-col text-white space-y-8">
-                <div>
-                    
-                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">Free Consultation - Discover IT Solutions For Your Business</h2>
-                    <p className="mt-4 max-w-2xl text-gray-300">
-                        Unlock the full potential of your business with our free consultation. Our expert team will assess your IT needs, recommend tailored solutions, and chart a path to success. Book your consultation now and take the first step towards empowering your business with cutting-edge technology.
-                    </p>
+              <div>
+
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">Free Consultation - Discover IT Solutions For Your Business</h2>
+                <p className="mt-4 max-w-2xl text-gray-300">
+                  Unlock the full potential of your business with our free consultation. Our expert team will assess your IT needs, recommend tailored solutions, and chart a path to success. Book your consultation now and take the first step towards empowering your business with cutting-edge technology.
+                </p>
+              </div>
+              <ul className="space-y-4">
+                {consultationPoints.map((point, index) => (
+                  <li key={index} className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-white" />
+                    <span className="text-gray-300">{point}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="border-t border-gray-500 pt-8 space-y-6">
+                <div className="flex items-center gap-4">
+                  <Mail className="w-6 h-6 text-white" />
+                  <a href="mailto:contact@sulzax.com" className="text-lg text-gray-300 hover:text-white transition-colors">contact@sulzax.com</a>
                 </div>
-                <ul className="space-y-4">
-                    {consultationPoints.map((point, index) => (
-                        <li key={index} className="flex items-center gap-3">
-                            <CheckCircle className="w-5 h-5 text-white" />
-                            <span className="text-gray-300">{point}</span>
-                        </li>
-                    ))}
-                </ul>
-                <div className="border-t border-gray-500 pt-8 space-y-6">
-                     <div className="flex items-center gap-4">
-                        <Mail className="w-6 h-6 text-white" />
-                        <a href="mailto:contact@sulzax.com" className="text-lg text-gray-300 hover:text-white transition-colors">contact@sulzax.com</a>
-                    </div>
-                    <div className="flex items-center gap-4">
-                        <Phone className="w-6 h-6 text-white" />
-                        <a href="tel:+12013740018" className="text-lg text-gray-300 hover:text-white transition-colors">+1 (201) 374-0018</a>
-                    </div>
-                    <div className="flex items-center gap-4">
-                        <MapPin className="w-6 h-6 text-white" />
-                        <div>
-                            <p className="text-lg text-gray-300">5 South Forge Lane Cherry Hill, NJ 08002</p>
-                            <a href="#" className="text-sm text-white hover:underline">Open map</a>
-                        </div>
-                    </div>
+                <div className="flex items-center gap-4">
+                  <Phone className="w-6 h-6 text-white" />
+                  <a href="tel:+12013740018" className="text-lg text-gray-300 hover:text-white transition-colors">+1 (201) 374-0018</a>
                 </div>
+                <div className="flex items-center gap-4">
+                  <MapPin className="w-6 h-6 text-white" />
+                  <div>
+                    <p className="text-lg text-gray-300">Sector 3 khairan Cantt</p>
+                    <a href="https://maps.app.goo.gl/tsc8z3Tdy2kMg4ve7"  target='_blank' className="text-sm text-white hover:underline">Open map</a>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="w-full max-w-md mx-auto">
               <ContactForm cardTitle="Schedule A Free Consultation" cardDescription="" />

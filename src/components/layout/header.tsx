@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { Menu, Phone, ChevronDown, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -168,6 +168,10 @@ export default function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="bg-card p-0 w-[80vw] sm:w-[350px]">
+                <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+                <SheetDescription className="sr-only">
+                  A list of navigation links for the SulzaX website.
+                </SheetDescription>
                 <div className="flex h-full flex-col">
                     <div className="flex items-center justify-between border-b p-6">
                         <SheetClose asChild>
@@ -230,9 +234,9 @@ export default function Header() {
             <Button asChild className="font-semibold bg-accent hover:bg-accent/90 text-accent-foreground rounded-[5px] px-6">
               <Link href="/contact">Contact</Link>
             </Button>
-          </div>
+            </div>
         </div>
+      </div>
     </header>
   );
 }
-

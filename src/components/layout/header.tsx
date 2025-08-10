@@ -66,22 +66,20 @@ export default function Header() {
     setIsMounted(true);
   }, []);
   
-  const NavLink = ({ href, children, active, closeSheet }: { href: string; children: React.ReactNode, active: boolean, closeSheet: () => void; }) => (
+  const closeSheet = () => setIsOpen(false);
+
+  const MobileNavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
     <Link
         href={href}
         onClick={closeSheet}
         className={cn(
-            'flex w-full items-center py-2 text-lg font-normal relative group/link',
-             active ? 'text-accent' : 'text-black'
+            'block w-full py-2 text-lg font-normal text-black',
+             pathname === href ? 'text-accent' : ''
         )}
     >
-        <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-black to-black group-hover/link:animate-shimmer group-hover/link:bg-[linear-gradient(110deg,black,45%,white,55%,black)] group-hover/link:bg-[length:250%_100%]">
-            {children}
-        </span>
+       {children}
     </Link>
   );
-
-  const closeSheet = () => setIsOpen(false);
 
   if (!isMounted) {
     return null;
@@ -101,7 +99,7 @@ export default function Header() {
         {navLinks.map((link) => (
              link.subLinks ? (
                 <div key={link.label} className="group relative">
-                    <span className={cn('relative transition-colors text-lg font-bold text-black group flex items-center gap-1 cursor-pointer')}>
+                    <span className="relative transition-colors text-lg font-bold text-black group flex items-center gap-1 cursor-pointer">
                        {link.label}
                        <ChevronDown className="h-5 w-5 transition-transform duration-300 group-hover:rotate-180" />
                     </span>
@@ -150,16 +148,18 @@ export default function Header() {
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="bg-card p-0">
+              <SheetContent side="right" className="bg-card p-0 w-full max-w-sm">
                 <div className="flex h-full flex-col">
                     <div className="flex items-center justify-between border-b p-6">
                         <Link href="/" className="flex items-center space-x-2" onClick={closeSheet}>
                             <SulzaXLogo />
                             <span className="font-bold font-headline text-primary">SulzaX</span>
                         </Link>
-                        <SheetClose className="rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-0 focus:ring-offset-0">
-                            <X className="h-5 w-5" />
-                            <span className="sr-only">Close</span>
+                        <SheetClose asChild>
+                           <Button variant="ghost" size="icon">
+                             <X className="h-5 w-5" />
+                             <span className="sr-only">Close</span>
+                           </Button>
                         </SheetClose>
                     </div>
                     <ScrollArea className="flex-grow px-6">
@@ -168,25 +168,23 @@ export default function Header() {
                                 link.subLinks ? (
                                 <Collapsible key={link.label}>
                                     <CollapsibleTrigger className="flex w-full items-center justify-between gap-1 py-2 text-lg text-black group">
-                                        <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-black to-black group-hover/link:animate-shimmer group-hover/link:bg-[linear-gradient(110deg,black,45%,white,55%,black)] group-hover/link:bg-[length:250%_100%]">
-                                            {link.label}
-                                        </span>
+                                        <span>{link.label}</span>
                                         <ChevronDown className="h-5 w-5 transition-transform duration-300 group-data-[state=open]:rotate-180" />
                                     </CollapsibleTrigger>
                                     <CollapsibleContent>
                                         <div className="grid gap-2 pl-4 pt-2">
                                             {link.subLinks.map(subLink => (
-                                                <NavLink key={subLink.href} href={subLink.href} active={pathname === subLink.href} closeSheet={closeSheet}>
+                                                <MobileNavLink key={subLink.href} href={subLink.href}>
                                                     {subLink.label}
-                                                </NavLink>
+                                                </MobileNavLink>
                                             ))}
                                         </div>
                                     </CollapsibleContent>
                                 </Collapsible>
                                 ) : (
-                                <NavLink key={link.href} href={link.href!} active={pathname === link.href} closeSheet={closeSheet}>
+                                <MobileNavLink key={link.href} href={link.href!}>
                                     {link.label}
-                                </NavLink>
+                                </MobileNavLink>
                                 )
                             ))}
                         </div>

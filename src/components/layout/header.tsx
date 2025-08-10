@@ -180,12 +180,6 @@ export default function Header() {
                                 <span className="font-bold font-headline text-primary">SulzaX</span>
                             </Link>
                         </SheetClose>
-                         <SheetClose asChild>
-                           <Button variant="ghost" size="icon">
-                             <X className="h-5 w-5" />
-                             <span className="sr-only">Close</span>
-                           </Button>
-                        </SheetClose>
                     </div>
                     <ScrollArea className="flex-grow px-6">
                         <div className="grid gap-2 py-6">

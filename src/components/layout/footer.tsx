@@ -73,10 +73,10 @@ export default function Footer() {
                     </Button>
                 </div>
              <div className="flex space-x-3 justify-center">
-                <Link href="#" aria-label="Facebook" className="p-2 rounded-full border border-gray-300 hover:bg-black hover:border-black hover:text-white transition-colors"><Facebook className="h-5 w-5" /></Link>
-                <Link href="#" aria-label="LinkedIn" className="p-2 rounded-full border border-gray-300 hover:bg-black hover:border-black hover:text-white transition-colors"><Linkedin className="h-5 w-5" /></Link>
-                <Link href="#" aria-label="Twitter" className="p-2 rounded-full border border-gray-300 hover:bg-black hover:border-black hover:text-white transition-colors"><Twitter className="h-5 w-5" /></Link>
-                <Link href="#" aria-label="Instagram" className="p-2 rounded-full border border-gray-300 hover:bg-black hover:border-black hover:text-white transition-colors"><Instagram className="h-5 w-5" /></Link>
+                <Link href="https://www.facebook.com/profile.php?id=100089670823732" aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-gray-300 hover:bg-black hover:border-black hover:text-white transition-colors"><Facebook className="h-5 w-5" /></Link>
+                <Link href="https://www.linkedin.com/in/sulman-bashir-313a45332" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-gray-300 hover:bg-black hover:border-black hover:text-white transition-colors"><Linkedin className="h-5 w-5" /></Link>
+                <Link href="https://x.com/sulmanmehar007" aria-label="Twitter" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-gray-300 hover:bg-black hover:border-black hover:text-white transition-colors"><Twitter className="h-5 w-5" /></Link>
+                <Link href="https://www.instagram.com/sulmanbashirgujrat777?utm_source=qr" aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-gray-300 hover:bg-black hover:border-black hover:text-white transition-colors"><Instagram className="h-5 w-5" /></Link>
                 <Link href="#" aria-label="YouTube" className="p-2 rounded-full border border-gray-300 hover:bg-black hover:border-black hover:text-white transition-colors"><Youtube className="h-5 w-5" /></Link>
             </div>
           </div>

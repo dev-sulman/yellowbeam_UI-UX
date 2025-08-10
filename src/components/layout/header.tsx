@@ -22,6 +22,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { 
     label: 'Services', 
+    href: '/services',
     subLinks: [
       { href: '/web-development', label: 'Web Development' },
       { href: '/mobile-development', label: 'Mobile Development' },
@@ -36,6 +37,7 @@ const navLinks = [
   },
   { 
     label: 'About Us',
+    href: '/about',
     subLinks: [
         { href: '/about', label: 'About SulzaX' },
         { href: '/team', label: 'Our Team' },
@@ -44,6 +46,7 @@ const navLinks = [
   { href: '/portfolio', label: 'Project' },
   { 
     label: 'Clients',
+    href: '#', // Main link for clients can be non-functional if it's just a category
     subLinks: [
         { href: '/finance-banking', label: 'Finance & Banking' },
         { href: '/it-telecom', label: 'IT & Telecom' },
@@ -115,34 +118,10 @@ export default function Header() {
         </Link>
         
         <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
-        {navLinks.map((link) => (
-             link.subLinks ? (
-                <div key={link.label} className="group relative">
-                    <span className="relative transition-colors text-lg font-bold text-black group flex items-center gap-1 cursor-pointer">
-                       {link.label}
-                       <ChevronDown className="h-5 w-5 transition-transform duration-300 group-hover:rotate-180" />
-                    </span>
-                    <div className="absolute top-full left-0 mt-2 w-56 bg-card rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 invisible group-hover:visible">
-                        <div className="py-2">
-                            {link.subLinks.map(subLink => (
-                                <Link
-                                    key={subLink.href}
-                                    href={subLink.href}
-                                    className={cn(
-                                        'block px-4 py-2 text-base hover:bg-secondary/50',
-                                        pathname === subLink.href ? 'text-accent' : 'text-black/80'
-                                    )}
-                                >
-                                    {subLink.label}
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            ) : (
+            {navLinks.map((link) => (
                 <Link
-                    key={link.href}
-                    href={link.href!}
+                    key={link.label}
+                    href={link.href || '#'}
                     className={cn(
                     'relative transition-colors text-lg font-bold text-black group',
                     pathname === link.href ? 'text-accent' : ''
@@ -154,8 +133,7 @@ export default function Header() {
                         pathname === link.href ? 'w-full' : ''
                     )}></span>
                 </Link>
-            )
-        ))}
+            ))}
         </nav>
         
         <div className="flex items-center gap-4">

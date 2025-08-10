@@ -59,31 +59,50 @@ const navLinks = [
 
 export default function Header() {
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
   
-  const closeSheet = () => setIsOpen(false);
-
-  const MobileNavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-    <Link
-        href={href}
-        onClick={closeSheet}
-        className={cn(
-            'block w-full py-2 text-lg font-normal text-black',
-             pathname === href ? 'text-accent' : ''
-        )}
-    >
-       {children}
-    </Link>
-  );
-
   if (!isMounted) {
     return null;
   }
+
+  const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
+    const isActive = pathname === href;
+    return (
+      <Link
+        href={href}
+        onClick={() => setIsMobileMenuOpen(false)}
+        className={cn(
+            'block py-2 text-lg font-normal',
+             isActive ? 'text-accent' : 'text-black hover:text-accent'
+        )}
+      >
+        {children}
+      </Link>
+    );
+  };
+  
+  const CollapsibleNavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
+    const isActive = pathname === href;
+    return (
+        <SheetClose asChild>
+            <Link
+                href={href}
+                className={cn(
+                    'block py-2 text-lg font-normal',
+                    isActive ? 'text-accent' : 'text-black hover:text-accent'
+                )}
+            >
+                {children}
+            </Link>
+        </SheetClose>
+    );
+};
+
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -141,21 +160,23 @@ export default function Header() {
         
         <div className="flex items-center gap-4">
           <div className="md:hidden">
-            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="group hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0">
                   <Menu className="h-5 w-5 transition-transform duration-300 group-hover:rotate-90" />
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="bg-card p-0 w-full max-w-sm">
+              <SheetContent side="right" className="bg-card p-0 w-[80vw] sm:w-[350px]">
                 <div className="flex h-full flex-col">
                     <div className="flex items-center justify-between border-b p-6">
-                        <Link href="/" className="flex items-center space-x-2" onClick={closeSheet}>
-                            <SulzaXLogo />
-                            <span className="font-bold font-headline text-primary">SulzaX</span>
-                        </Link>
                         <SheetClose asChild>
+                            <Link href="/" className="flex items-center space-x-2">
+                                <SulzaXLogo />
+                                <span className="font-bold font-headline text-primary">SulzaX</span>
+                            </Link>
+                        </SheetClose>
+                         <SheetClose asChild>
                            <Button variant="ghost" size="icon">
                              <X className="h-5 w-5" />
                              <span className="sr-only">Close</span>
@@ -174,25 +195,27 @@ export default function Header() {
                                     <CollapsibleContent>
                                         <div className="grid gap-2 pl-4 pt-2">
                                             {link.subLinks.map(subLink => (
-                                                <MobileNavLink key={subLink.href} href={subLink.href}>
+                                                <CollapsibleNavLink key={subLink.href} href={subLink.href}>
                                                     {subLink.label}
-                                                </MobileNavLink>
+                                                </CollapsibleNavLink>
                                             ))}
                                         </div>
                                     </CollapsibleContent>
                                 </Collapsible>
                                 ) : (
-                                <MobileNavLink key={link.href} href={link.href!}>
+                                <NavLink key={link.href} href={link.href!}>
                                     {link.label}
-                                </MobileNavLink>
+                                </NavLink>
                                 )
                             ))}
                         </div>
                     </ScrollArea>
                     <div className="p-6 border-t">
-                        <Button asChild className="w-full font-semibold bg-accent hover:bg-accent/90 text-accent-foreground" onClick={closeSheet}>
-                            <Link href="/contact">Contact</Link>
-                        </Button>
+                        <SheetClose asChild>
+                            <Button asChild className="w-full font-semibold bg-accent hover:bg-accent/90 text-accent-foreground">
+                                <Link href="/contact">Contact</Link>
+                            </Button>
+                        </SheetClose>
                     </div>
                 </div>
               </SheetContent>
@@ -212,3 +235,4 @@ export default function Header() {
     </header>
   );
 }
+

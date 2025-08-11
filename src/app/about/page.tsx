@@ -37,16 +37,16 @@ export default function AboutUsPage() {
     return (
         <div className="bg-background text-foreground">
             {/* Hero Section */}
-            <section className="relative py-20 md:py-32 bg-secondary/30">
-                <div className="container text-center">
+            <section className="relative w-full py-20 md:py-32 bg-secondary/30">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-primary">About SulzaX</h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">We are a passionate team of innovators and problem-solvers dedicated to delivering top-tier IT solutions that empower businesses to thrive in the digital age.</p>
                 </div>
             </section>
 
             {/* Mission Section */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <section className="w-full py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-16 items-center">
                     <div className="space-y-6">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Mission & Vision</h2>
                         <p className="text-muted-foreground text-lg">Our mission is to be the leading provider of innovative IT solutions, helping businesses of all sizes to leverage technology for growth, efficiency, and success. We envision a world where technology is a seamless and powerful enabler for every organization.</p>
@@ -74,8 +74,8 @@ export default function AboutUsPage() {
             </section>
 
              {/* Values Section */}
-            <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+            <section className="w-full py-20 md:py-24 bg-secondary/30">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Core Values</h2>
                         <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">The principles that guide our work, our relationships, and our commitment to excellence.</p>
@@ -92,30 +92,32 @@ export default function AboutUsPage() {
             </section>
 
             {/* Team Section Snippet */}
-            <section className="container py-20 md:py-24">
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-primary">Meet Our Leadership</h2>
-                    <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">A glimpse of the brilliant minds leading SulzaX forward. Our full team is a powerhouse of talent and dedication.</p>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {teamMembers.map(member => (
-                        <Card key={member.name} className="text-center p-6 border-0 shadow-none">
-                            <Image src={member.image} alt={member.name} width={150} height={150} data-ai-hint={member.dataAiHint} className="rounded-full mx-auto mb-4" />
-                            <h3 className="font-bold text-lg">{member.name}</h3>
-                            <p className="text-accent">{member.role}</p>
-                        </Card>
-                    ))}
-                </div>
-                 <div className="text-center mt-12">
-                    <Button asChild size="lg">
-                        <Link href="/team">View Our Entire Team</Link>
-                    </Button>
+            <section className="w-full py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Meet Our Leadership</h2>
+                        <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">A glimpse of the brilliant minds leading SulzaX forward. Our full team is a powerhouse of talent and dedication.</p>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {teamMembers.map(member => (
+                            <Card key={member.name} className="text-center p-6 border-0 shadow-none">
+                                <Image src={member.image} alt={member.name} width={150} height={150} data-ai-hint={member.dataAiHint} className="rounded-full mx-auto mb-4" />
+                                <h3 className="font-bold text-lg">{member.name}</h3>
+                                <p className="text-accent">{member.role}</p>
+                            </Card>
+                        ))}
+                    </div>
+                    <div className="text-center mt-12">
+                        <Button asChild size="lg">
+                            <Link href="/team">View Our Entire Team</Link>
+                        </Button>
+                    </div>
                 </div>
             </section>
 
              {/* CTA Section */}
-            <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container text-center">
+            <section className="w-full py-20 md:py-24 bg-secondary/30">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Ready to Start Your Project?</h2>
                      <p className="text-muted-foreground max-w-2xl mx-auto mb-8">Let's build something amazing together. Contact us today for a free consultation and let's discuss how we can help you achieve your business goals.</p>
                      <Button asChild size="lg">

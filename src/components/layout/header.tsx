@@ -124,7 +124,7 @@ export default function Header() {
             <Link
                 href={href}
                 className={cn(
-                    'block py-2 text-base font-normal',
+                    'block py-2 text-sm font-normal',
                     isActive ? 'text-accent' : 'text-black hover:text-accent'
                 )}
             >
@@ -141,7 +141,7 @@ export default function Header() {
             <Link
                 href={href}
                 className={cn(
-                    'block py-2 text-base font-normal',
+                    'block py-2 text-sm font-normal',
                     isActive ? 'text-accent' : 'text-black hover:text-accent'
                 )}
             >
@@ -153,7 +153,7 @@ export default function Header() {
 
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-primary/95 backdrop-blur supports-[backdrop-filter]:bg-primary/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-primary">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-2">
           <SulzaXLogo />
@@ -188,49 +188,48 @@ export default function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="bg-card p-0 w-[80vw] sm:w-[350px]">
-                <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
-                <div className="flex h-full flex-col">
-                    <div className="flex items-center justify-between border-b p-6">
-                        <SheetClose asChild>
-                           <Link href="/">
-                            <span className="sr-only">SulzaX</span>
-                           </Link>
-                        </SheetClose>
+                <SheetHeader className="flex items-center justify-between border-b p-4">
+                    <SheetTitle className="text-lg font-semibold text-primary">Menu</SheetTitle>
+                    <SheetClose asChild>
+                        <Button variant="ghost" size="icon">
+                            <X className="h-5 w-5" />
+                            <span className="sr-only">Close</span>
+                        </Button>
+                    </SheetClose>
+                </SheetHeader>
+                <ScrollArea className="flex-grow px-6">
+                    <div className="grid gap-2 py-6">
+                        {navLinks.map((link) => (
+                            link.subLinks ? (
+                            <Collapsible key={link.label}>
+                                <CollapsibleTrigger className="flex w-full items-center justify-between gap-1 py-2 text-sm text-black group">
+                                    <span>{link.label}</span>
+                                    <ChevronDown className="h-4 w-4 transition-transform duration-300 group-data-[state=open]:rotate-180" />
+                                </CollapsibleTrigger>
+                                <CollapsibleContent>
+                                    <div className="grid gap-1 pl-4 pt-2">
+                                        {link.subLinks.map(subLink => (
+                                            <CollapsibleNavLink key={subLink.href} href={subLink.href}>
+                                                {subLink.label}
+                                            </CollapsibleNavLink>
+                                        ))}
+                                    </div>
+                                </CollapsibleContent>
+                            </Collapsible>
+                            ) : (
+                            <NavLink key={link.href} href={link.href!}>
+                                {link.label}
+                            </NavLink>
+                            )
+                        ))}
                     </div>
-                    <ScrollArea className="flex-grow px-6">
-                        <div className="grid gap-2 py-6">
-                            {navLinks.map((link) => (
-                                link.subLinks ? (
-                                <Collapsible key={link.label}>
-                                    <CollapsibleTrigger className="flex w-full items-center justify-between gap-1 py-2 text-base text-black group">
-                                        <span>{link.label}</span>
-                                        <ChevronDown className="h-5 w-5 transition-transform duration-300 group-data-[state=open]:rotate-180" />
-                                    </CollapsibleTrigger>
-                                    <CollapsibleContent>
-                                        <div className="grid gap-2 pl-4 pt-2">
-                                            {link.subLinks.map(subLink => (
-                                                <CollapsibleNavLink key={subLink.href} href={subLink.href}>
-                                                    {subLink.label}
-                                                </CollapsibleNavLink>
-                                            ))}
-                                        </div>
-                                    </CollapsibleContent>
-                                </Collapsible>
-                                ) : (
-                                <NavLink key={link.href} href={link.href!}>
-                                    {link.label}
-                                </NavLink>
-                                )
-                            ))}
-                        </div>
-                    </ScrollArea>
-                    <div className="p-6 border-t">
-                        <SheetClose asChild>
-                            <Button asChild className="w-full font-semibold bg-accent hover:bg-accent/90 text-accent-foreground">
-                                <Link href="/contact">Contact</Link>
-                            </Button>
-                        </SheetClose>
-                    </div>
+                </ScrollArea>
+                <div className="p-6 border-t">
+                    <SheetClose asChild>
+                        <Button asChild className="w-full font-semibold bg-accent hover:bg-accent/90 text-accent-foreground">
+                            <Link href="/contact">Contact</Link>
+                        </Button>
+                    </SheetClose>
                 </div>
               </SheetContent>
             </Sheet>

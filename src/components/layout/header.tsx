@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle, SheetDescription } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { Menu, Phone, ChevronDown, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -12,7 +12,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/component
 import { ScrollArea } from '@/components/ui/scroll-area';
 
 const SulzaXLogo = () => (
-    <svg width="120" height="32" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg">
+    <svg width="180" height="48" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="gBlue" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stopColor="#05D1FF"/>
@@ -61,6 +61,7 @@ const SulzaXLogo = () => (
       </text>
     </svg>
 );
+
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -125,7 +126,7 @@ export default function Header() {
                 href={href}
                 className={cn(
                     'block py-2 text-sm font-normal',
-                    isActive ? 'text-accent' : 'text-black hover:text-accent'
+                    isActive ? 'text-accent' : 'text-primary-foreground hover:text-accent'
                 )}
             >
                 {children}
@@ -142,7 +143,7 @@ export default function Header() {
                 href={href}
                 className={cn(
                     'block py-2 text-sm font-normal',
-                    isActive ? 'text-accent' : 'text-black hover:text-accent'
+                    isActive ? 'text-accent' : 'text-primary-foreground hover:text-accent'
                 )}
             >
                 {children}
@@ -187,11 +188,11 @@ export default function Header() {
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="bg-card p-0 w-[80vw] sm:w-[350px]">
+              <SheetContent side="right" className="bg-primary p-0 w-[80vw] sm:w-[350px]">
                 <SheetHeader className="flex items-center justify-between border-b p-4">
-                    <SheetTitle className="text-lg font-semibold text-primary">Menu</SheetTitle>
+                    <SheetTitle className="text-lg font-semibold text-primary-foreground">Menu</SheetTitle>
                     <SheetClose asChild>
-                        <Button variant="ghost" size="icon">
+                        <Button variant="ghost" size="icon" className="text-primary-foreground">
                             <X className="h-5 w-5" />
                             <span className="sr-only">Close</span>
                         </Button>
@@ -202,7 +203,7 @@ export default function Header() {
                         {navLinks.map((link) => (
                             link.subLinks ? (
                             <Collapsible key={link.label}>
-                                <CollapsibleTrigger className="flex w-full items-center justify-between gap-1 py-2 text-sm text-black group">
+                                <CollapsibleTrigger className="flex w-full items-center justify-between gap-1 py-2 text-sm text-primary-foreground group">
                                     <span>{link.label}</span>
                                     <ChevronDown className="h-4 w-4 transition-transform duration-300 group-data-[state=open]:rotate-180" />
                                 </CollapsibleTrigger>

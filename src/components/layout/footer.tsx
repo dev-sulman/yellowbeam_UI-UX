@@ -72,7 +72,9 @@ export default function Footer() {
           
           <div className="space-y-3">
              <Link href="/" className="flex flex-col items-center space-y-2">
-                <SulzaXLogo />
+                <div className="pl-16">
+                  <SulzaXLogo />
+                </div>
               </Link>
             <p className="text-black max-w-sm mx-auto">
                 Welcome to SulzaX! We provide diverse IT solutions with a team of experts.

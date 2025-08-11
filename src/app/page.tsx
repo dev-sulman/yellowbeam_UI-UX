@@ -436,7 +436,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="bg-[#2D4FE1] text-white h-[80px] flex items-center overflow-hidden">
+      <div className="bg-primary text-white h-[80px] flex items-center overflow-hidden">
         <div className="animate-marquee whitespace-nowrap flex space-x-8">
           <MarqueeItem text="EXPERIENCE SEAMLESS IT SOLUTIONS" />
           <MarqueeItem text="REQUEST IT CONSULTATION" />

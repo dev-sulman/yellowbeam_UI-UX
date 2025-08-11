@@ -1,3 +1,4 @@
+
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Check } from "lucide-react";
 
@@ -36,33 +37,35 @@ const servicesData = [
 
 export default function ServicesPage() {
     return (
-        <div className="container py-12 md:py-24">
-            <div className="flex flex-col items-center text-center mb-12">
-                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">Our Services</h1>
-                <p className="mt-4 max-w-2xl text-xl text-muted-foreground">
-                    We offer a comprehensive suite of IT services designed to empower your business and drive growth.
-                </p>
+        <section className="py-12 md:py-24">
+            <div className="container mx-auto px-4 md:px-6">
+                <div className="flex flex-col items-center text-center mb-12">
+                    <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">Our Services</h1>
+                    <p className="mt-4 max-w-2xl text-xl text-muted-foreground">
+                        We offer a comprehensive suite of IT services designed to empower your business and drive growth.
+                    </p>
+                </div>
+                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    {servicesData.map((service) => (
+                        <Card key={service.category} className="flex flex-col hover:shadow-xl transition-shadow duration-300 border-accent/20 hover:border-accent">
+                            <CardHeader>
+                                <CardTitle className="text-2xl text-primary">{service.category}</CardTitle>
+                                <CardDescription>{service.description}</CardDescription>
+                            </CardHeader>
+                            <CardContent className="flex-grow">
+                                <ul className="space-y-3">
+                                    {service.items.map((item) => (
+                                        <li key={item} className="flex items-center">
+                                            <Check className="h-5 w-5 text-accent mr-3 flex-shrink-0" />
+                                            <span className="text-muted-foreground">{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </CardContent>
+                        </Card>
+                    ))}
+                </div>
             </div>
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                {servicesData.map((service) => (
-                    <Card key={service.category} className="flex flex-col hover:shadow-xl transition-shadow duration-300 border-accent/20 hover:border-accent">
-                        <CardHeader>
-                            <CardTitle className="text-2xl text-primary">{service.category}</CardTitle>
-                            <CardDescription>{service.description}</CardDescription>
-                        </CardHeader>
-                        <CardContent className="flex-grow">
-                            <ul className="space-y-3">
-                                {service.items.map((item) => (
-                                    <li key={item} className="flex items-center">
-                                        <Check className="h-5 w-5 text-accent mr-3 flex-shrink-0" />
-                                        <span className="text-muted-foreground">{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </CardContent>
-                    </Card>
-                ))}
-            </div>
-        </div>
+        </section>
     );
 }

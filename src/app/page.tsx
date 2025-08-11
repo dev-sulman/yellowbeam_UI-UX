@@ -165,10 +165,56 @@ const expertisePoints = [
 
 
 const SulzaXLogo = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white">
-    <path d="M7.152 16.278C5.68 15.402 4.5 13.848 4.5 12C4.5 9.24 6.74 7 9.5 7h5c2.76 0 5 2.24 5 5 0 2.4-1.743 4.416-4 4.899" />
-    <path d="M16.848 7.722C18.32 8.598 19.5 10.152 19.5 12c0 2.76-2.24 5-5 5h-5c-2.76 0-5-2.24-5-5 0-.4.053-.79.152-1.166" />
-  </svg>
+    <svg width="120" height="32" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg" className="text-white">
+      <defs>
+        <linearGradient id="gBlue" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#05D1FF"/>
+          <stop offset="1" stopColor="#0B52FF"/>
+        </linearGradient>
+        <linearGradient id="gSilver" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#FFFFFF"/>
+          <stop offset="0.45" stopColor="#E9F0FA"/>
+          <stop offset="1" stopColor="#A9B7CB"/>
+        </linearGradient>
+        <linearGradient id="gWordFooter" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#FFFFFF"/>
+          <stop offset="1" stopColor="#FFFFFF"/>
+        </linearGradient>
+        <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+          <feOffset dx="0" dy="2" result="offsetblur"/>
+          <feMerge>
+            <feMergeNode/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      <g transform="translate(60,30) scale(0.8)">
+        <g filter="url(#softShadow)">
+            <circle cx="120" cy="130" r="92" fill="none" stroke="url(#gBlue)" strokeWidth="18"/>
+            <circle cx="120" cy="130" r="70" fill="none" stroke="url(#gBlue)" strokeWidth="6" opacity="0.9"/>
+            <g stroke="url(#gBlue)" strokeWidth="8" strokeLinecap="round" fill="url(#gBlue)">
+            <line x1="160" y1="80" x2="194" y2="50"/>
+            <circle cx="194" cy="50" r="7"/>
+            <line x1="170" y1="100" x2="220" y2="84"/>
+            <circle cx="220" cy="84" r="7"/>
+            </g>
+            <text x="120" y="148"
+            textAnchor="middle"
+            fontFamily="Outfit, Poppins, Montserrat, Segoe UI, Arial, sans-serif"
+            fontSize="132"
+            fontWeight="900"
+            fill="url(#gSilver)"
+            letterSpacing="0.5">S</text>
+        </g>
+      </g>
+       <text x="300" y="175"
+            fontFamily="Outfit, Poppins, Montserrat, Segoe UI, Arial, sans-serif"
+            fontSize="120" fontWeight="800"
+            fill="url(#gWordFooter)" letterSpacing="-1">
+        Sulza<tspan fill="url(#gBlue)">X</tspan>
+      </text>
+    </svg>
 );
 
 

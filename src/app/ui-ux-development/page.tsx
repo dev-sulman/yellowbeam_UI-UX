@@ -139,38 +139,40 @@ export default function UiUxDevelopmentPage() {
         <div className="bg-background text-foreground">
             {/* Hero Section */}
             <section className="relative py-20 md:py-32 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-primary">UI/UX Development</h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">Enhancing your website's visibility on search engines to attract organic traffic and improve search rankings.</p>
                 </div>
             </section>
 
             {/* Intro Section */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Designing Experiences Users Love</h2>
-                        <div className="flex items-center gap-4">
-                            <Image src="https://placehold.co/80x80.png" alt="Alex Wright" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
-                            <div>
-                                <p className="font-semibold">Alex Wright, Head of UX, SulzaX</p>
-                                <p className="text-muted-foreground">"Design is not just what it looks like; it's how it works."</p>
+            <section className="w-full py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Designing Experiences Users Love</h2>
+                            <div className="flex items-center gap-4">
+                                <Image src="https://placehold.co/80x80.png" alt="Alex Wright" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                                <div>
+                                    <p className="font-semibold">Alex Wright, Head of UX, SulzaX</p>
+                                    <p className="text-muted-foreground">"Design is not just what it looks like; it's how it works."</p>
+                                </div>
                             </div>
+                            <p className="text-muted-foreground">We are a team of designers and researchers passionate about creating intuitive, beautiful, and effective digital products. We put your users at the heart of everything we do.</p>
+                            <Button asChild>
+                                <Link href="/about">About Us</Link>
+                            </Button>
                         </div>
-                        <p className="text-muted-foreground">We are a team of designers and researchers passionate about creating intuitive, beautiful, and effective digital products. We put your users at the heart of everything we do.</p>
-                        <Button asChild>
-                            <Link href="/about">About Us</Link>
-                        </Button>
-                    </div>
-                    <div>
-                        <Image src="https://placehold.co/600x400.png" alt="UI/UX design workshop" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="design workshop" />
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="UI/UX design workshop" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="design workshop" />
+                        </div>
                     </div>
                 </div>
             </section>
             
             {/* Services Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our UI/UX Services</h2>
                         <p className="mt-2 text-muted-foreground">A complete suite of services to design and validate your product.</p>
@@ -188,58 +190,62 @@ export default function UiUxDevelopmentPage() {
             </section>
 
             {/* About Us Snippet */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                         <Image src="https://placehold.co/600x400.png" alt="Designer sketching wireframes" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="designer sketching wireframe" />
-                    </div>
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Product Design</h2>
-                        <p className="text-muted-foreground">At SulzaX, we don't just create pretty interfaces. We solve complex problems through user-centered design, ensuring your product is both beautiful and functional.</p>
-                        <div className="flex gap-8">
-                            <div>
-                                <p className="text-4xl font-bold text-accent">150+</p>
-                                <p className="text-muted-foreground">Products Designed</p>
-                            </div>
-                            <div>
-                                <p className="text-4xl font-bold text-accent">95%</p>
-                                <p className="text-muted-foreground">User Satisfaction Rate</p>
-                            </div>
+            <section className="w-full py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                             <Image src="https://placehold.co/600x400.png" alt="Designer sketching wireframes" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="designer sketching wireframe" />
                         </div>
-                        <Button asChild variant="outline">
-                            <Link href="/team">Meet our team</Link>
-                        </Button>
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Product Design</h2>
+                            <p className="text-muted-foreground">At SulzaX, we don't just create pretty interfaces. We solve complex problems through user-centered design, ensuring your product is both beautiful and functional.</p>
+                            <div className="flex gap-8">
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">150+</p>
+                                    <p className="text-muted-foreground">Products Designed</p>
+                                </div>
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">95%</p>
+                                    <p className="text-muted-foreground">User Satisfaction Rate</p>
+                                </div>
+                            </div>
+                            <Button asChild variant="outline">
+                                <Link href="/team">Meet our team</Link>
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* Why Choose Us Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Why Choose SulzaX for UI/UX?</h2>
-                         <p className="text-muted-foreground">We blend creativity, psychology, and technology to build digital experiences that drive engagement and business growth.</p>
-                        <div className="space-y-4">
-                            {whyChooseUsPoints.map(point => (
-                                <div key={point.title} className="flex items-start gap-4">
-                                    <CheckCircle className="w-6 h-6 text-accent mt-1" />
-                                    <div>
-                                        <h3 className="font-semibold text-lg">{point.title}</h3>
-                                        <p className="text-muted-foreground">{point.description}</p>
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Why Choose SulzaX for UI/UX?</h2>
+                             <p className="text-muted-foreground">We blend creativity, psychology, and technology to build digital experiences that drive engagement and business growth.</p>
+                            <div className="space-y-4">
+                                {whyChooseUsPoints.map(point => (
+                                    <div key={point.title} className="flex items-start gap-4">
+                                        <CheckCircle className="w-6 h-6 text-accent mt-1" />
+                                        <div>
+                                            <h3 className="font-semibold text-lg">{point.title}</h3>
+                                            <p className="text-muted-foreground">{point.description}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <Image src="https://placehold.co/600x400.png" alt="A/B testing results on a screen" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="ab testing chart" />
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="A/B testing results on a screen" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="ab testing chart" />
+                        </div>
                     </div>
                 </div>
             </section>
 
              {/* Values Section */}
-            <section className="container py-20 md:py-24">
-                <div>
+            <section className="w-full py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Design Principles</h2>
                         <p className="mt-2 text-muted-foreground">The foundation of our approach to creating exceptional user experiences.</p>
@@ -257,7 +263,7 @@ export default function UiUxDevelopmentPage() {
 
              {/* Awards Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Recognized for UX Excellence</h2>
                      <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(3)].map((_, i) => (
@@ -268,8 +274,8 @@ export default function UiUxDevelopmentPage() {
             </section>
 
              {/* Testimonials Section */}
-            <section className="container py-20 md:py-24">
-                <div>
+            <section className="w-full py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
@@ -287,7 +293,7 @@ export default function UiUxDevelopmentPage() {
 
             {/* Pricing Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-6">
                             <h2 className="text-4xl md:text-5xl font-bold text-black">Ready to Build a Better Product?</h2>
@@ -342,8 +348,8 @@ export default function UiUxDevelopmentPage() {
             </section>
 
             {/* Contact Section */}
-            <section className="container py-20 md:py-24">
-                 <div className="px-4 md:px-6">
+            <section className="w-full py-20 md:py-24">
+                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="flex flex-col space-y-8">
                             <div>

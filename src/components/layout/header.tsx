@@ -152,7 +152,7 @@ export default function Header() {
 
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-primary/95 backdrop-blur supports-[backdrop-filter]:bg-primary/60">
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           <SulzaXLogo />
@@ -160,11 +160,11 @@ export default function Header() {
         
         <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navLinks.map((link) => (
-                <Link
+                 <Link
                     key={link.label}
                     href={link.href || '#'}
                     className={cn(
-                    'relative transition-colors text-lg font-bold text-black group',
+                    'relative transition-colors text-lg font-bold text-primary-foreground group',
                     pathname === link.href ? 'text-accent' : ''
                     )}
                 >
@@ -181,7 +181,7 @@ export default function Header() {
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="group hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0">
+                <Button variant="ghost" size="icon" className="text-primary-foreground group hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0">
                   <Menu className="h-5 w-5 transition-transform duration-300 group-hover:rotate-90" />
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
@@ -241,7 +241,7 @@ export default function Header() {
           <div className="hidden md:flex items-center space-x-4">
             <a href="tel:+12013740018" className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-accent">
                 <Phone className="w-5 h-5 text-accent" />
-                +1(201) 374-0018
+                <span className="text-primary-foreground">+1(201) 374-0018</span>
             </a>
             <Button asChild className="font-semibold bg-accent hover:bg-accent/90 text-accent-foreground rounded-[5px] px-6">
               <Link href="/contact">Contact</Link>

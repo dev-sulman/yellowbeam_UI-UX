@@ -139,38 +139,40 @@ export default function MobileDevelopmentPage() {
         <div className="bg-background text-foreground">
             {/* Hero Section */}
             <section className="relative py-20 md:py-32 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-primary">Mobile Development</h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">Strategic guidance on IT strategy, digital transformation, software implementation, and project management for mobile.</p>
                 </div>
             </section>
 
             {/* Intro Section */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Bringing Your Ideas to Life on Mobile</h2>
-                        <div className="flex items-center gap-4">
-                            <Image src="https://placehold.co/80x80.png" alt="Jane Doe" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
-                            <div>
-                                <p className="font-semibold">Jane Doe, Head of Mobile, SulzaX</p>
-                                <p className="text-muted-foreground">"Let's build the next big app together!"</p>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Bringing Your Ideas to Life on Mobile</h2>
+                            <div className="flex items-center gap-4">
+                                <Image src="https://placehold.co/80x80.png" alt="Jane Doe" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                                <div>
+                                    <p className="font-semibold">Jane Doe, Head of Mobile, SulzaX</p>
+                                    <p className="text-muted-foreground">"Let's build the next big app together!"</p>
+                                </div>
                             </div>
+                            <p className="text-muted-foreground">We specialize in creating intuitive, high-performance mobile applications for iOS and Android. From concept to launch, we are your trusted partner in mobile innovation.</p>
+                            <Button asChild>
+                                <Link href="/about">About Us</Link>
+                            </Button>
                         </div>
-                        <p className="text-muted-foreground">We specialize in creating intuitive, high-performance mobile applications for iOS and Android. From concept to launch, we are your trusted partner in mobile innovation.</p>
-                        <Button asChild>
-                            <Link href="/about">About Us</Link>
-                        </Button>
-                    </div>
-                    <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Mobile app development discussion" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="mobile app meeting" />
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="Mobile app development discussion" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="mobile app meeting" />
+                        </div>
                     </div>
                 </div>
             </section>
             
             {/* Services Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Mobile Services</h2>
                         <p className="mt-2 text-muted-foreground">End-to-end mobile application development services.</p>
@@ -188,58 +190,62 @@ export default function MobileDevelopmentPage() {
             </section>
 
             {/* About Us Snippet */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                         <Image src="https://placehold.co/600x400.png" alt="Team working on mobile app" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team mobile app" />
-                    </div>
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Mobile Innovation</h2>
-                        <p className="text-muted-foreground">At SulzaX, we don't just build apps. We build experiences. We are a team of passionate developers and designers dedicated to pushing the boundaries of mobile technology.</p>
-                        <div className="flex gap-8">
-                            <div>
-                                <p className="text-4xl font-bold text-accent">50+</p>
-                                <p className="text-muted-foreground">Apps Delivered</p>
-                            </div>
-                            <div>
-                                <p className="text-4xl font-bold text-accent">5M+</p>
-                                <p className="text-muted-foreground">Users Served</p>
-                            </div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                             <Image src="https://placehold.co/600x400.png" alt="Team working on mobile app" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team mobile app" />
                         </div>
-                        <Button asChild variant="outline">
-                            <Link href="/team">Meet our team</Link>
-                        </Button>
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Mobile Innovation</h2>
+                            <p className="text-muted-foreground">At SulzaX, we don't just build apps. We build experiences. We are a team of passionate developers and designers dedicated to pushing the boundaries of mobile technology.</p>
+                            <div className="flex gap-8">
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">50+</p>
+                                    <p className="text-muted-foreground">Apps Delivered</p>
+                                </div>
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">5M+</p>
+                                    <p className="text-muted-foreground">Users Served</p>
+                                </div>
+                            </div>
+                            <Button asChild variant="outline">
+                                <Link href="/team">Meet our team</Link>
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* Why Choose Us Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Why Build Your App With SulzaX?</h2>
-                         <p className="text-muted-foreground">We combine technical expertise with a creative vision to deliver mobile applications that stand out in a crowded market.</p>
-                        <div className="space-y-4">
-                            {whyChooseUsPoints.map(point => (
-                                <div key={point.title} className="flex items-start gap-4">
-                                    <CheckCircle className="w-6 h-6 text-accent mt-1" />
-                                    <div>
-                                        <h3 className="font-semibold text-lg">{point.title}</h3>
-                                        <p className="text-muted-foreground">{point.description}</p>
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Why Build Your App With SulzaX?</h2>
+                             <p className="text-muted-foreground">We combine technical expertise with a creative vision to deliver mobile applications that stand out in a crowded market.</p>
+                            <div className="space-y-4">
+                                {whyChooseUsPoints.map(point => (
+                                    <div key={point.title} className="flex items-start gap-4">
+                                        <CheckCircle className="w-6 h-6 text-accent mt-1" />
+                                        <div>
+                                            <h3 className="font-semibold text-lg">{point.title}</h3>
+                                            <p className="text-muted-foreground">{point.description}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Mobile app UI design" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="mobile app design" />
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="Mobile app UI design" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="mobile app design" />
+                        </div>
                     </div>
                 </div>
             </section>
 
              {/* Values Section */}
-            <section className="container py-20 md:py-24">
-                <div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Core Values</h2>
                         <p className="mt-2 text-muted-foreground">The principles that guide our mobile development process.</p>
@@ -257,7 +263,7 @@ export default function MobileDevelopmentPage() {
 
              {/* Awards Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Awards for Mobile Excellence</h2>
                      <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(3)].map((_, i) => (
@@ -268,8 +274,8 @@ export default function MobileDevelopmentPage() {
             </section>
 
              {/* Testimonials Section */}
-            <section className="container py-20 md:py-24">
-                <div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
@@ -287,7 +293,7 @@ export default function MobileDevelopmentPage() {
 
             {/* Pricing Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-6">
                             <h2 className="text-4xl md:text-5xl font-bold text-black">Ready to Build Your App?</h2>
@@ -343,8 +349,8 @@ export default function MobileDevelopmentPage() {
             </section>
 
             {/* Contact Section */}
-            <section className="container py-20 md:py-24">
-                 <div className="px-4 md:px-6">
+            <section className="py-20 md:py-24">
+                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="flex flex-col space-y-8">
                             <div>
@@ -380,3 +386,5 @@ export default function MobileDevelopmentPage() {
         </div>
     )
 }
+
+    

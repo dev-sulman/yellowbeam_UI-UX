@@ -120,16 +120,17 @@ export default function Header() {
   const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
     const isActive = pathname === href;
     return (
-      <Link
-        href={href}
-        onClick={() => setIsMobileMenuOpen(false)}
-        className={cn(
-            'block py-2 text-lg font-normal',
-             isActive ? 'text-accent' : 'text-black hover:text-accent'
-        )}
-      >
-        {children}
-      </Link>
+        <SheetClose asChild>
+            <Link
+                href={href}
+                className={cn(
+                    'block py-2 text-base font-normal',
+                    isActive ? 'text-accent' : 'text-black hover:text-accent'
+                )}
+            >
+                {children}
+            </Link>
+        </SheetClose>
     );
   };
   
@@ -140,7 +141,7 @@ export default function Header() {
             <Link
                 href={href}
                 className={cn(
-                    'block py-2 text-lg font-normal',
+                    'block py-2 text-base font-normal',
                     isActive ? 'text-accent' : 'text-black hover:text-accent'
                 )}
             >
@@ -153,7 +154,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-primary/95 backdrop-blur supports-[backdrop-filter]:bg-primary/60">
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-2">
           <SulzaXLogo />
         </Link>
@@ -164,13 +165,13 @@ export default function Header() {
                     key={link.label}
                     href={link.href || '#'}
                     className={cn(
-                    'relative transition-colors text-lg font-bold text-primary-foreground group',
-                    pathname === link.href ? 'text-accent' : ''
+                    'relative transition-colors text-sm font-medium text-primary-foreground group',
+                    pathname === link.href ? 'text-accent-foreground' : 'hover:text-primary-foreground/80'
                     )}
                 >
                     {link.label}
                     <span className={cn(
-                    'absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full',
+                    'absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full',
                         pathname === link.href ? 'w-full' : ''
                     )}></span>
                 </Link>
@@ -181,22 +182,19 @@ export default function Header() {
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-primary-foreground group hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0">
-                  <Menu className="h-5 w-5 transition-transform duration-300 group-hover:rotate-90" />
+                <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0">
+                  <Menu className="h-6 w-6" />
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="bg-card p-0 w-[80vw] sm:w-[350px]">
                 <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
-                <SheetDescription className="sr-only">
-                  A list of navigation links for the SulzaX website.
-                </SheetDescription>
                 <div className="flex h-full flex-col">
                     <div className="flex items-center justify-between border-b p-6">
                         <SheetClose asChild>
-                            <Link href="/" className="flex items-center space-x-2">
-                                <SulzaXLogo />
-                            </Link>
+                           <Link href="/">
+                            <span className="sr-only">SulzaX</span>
+                           </Link>
                         </SheetClose>
                     </div>
                     <ScrollArea className="flex-grow px-6">
@@ -204,7 +202,7 @@ export default function Header() {
                             {navLinks.map((link) => (
                                 link.subLinks ? (
                                 <Collapsible key={link.label}>
-                                    <CollapsibleTrigger className="flex w-full items-center justify-between gap-1 py-2 text-lg text-black group">
+                                    <CollapsibleTrigger className="flex w-full items-center justify-between gap-1 py-2 text-base text-black group">
                                         <span>{link.label}</span>
                                         <ChevronDown className="h-5 w-5 transition-transform duration-300 group-data-[state=open]:rotate-180" />
                                     </CollapsibleTrigger>
@@ -239,11 +237,11 @@ export default function Header() {
           </div>
           
           <div className="hidden md:flex items-center space-x-4">
-            <a href="tel:+12013740018" className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-accent">
+            <a href="tel:+12013740018" className="flex items-center gap-2 text-sm font-medium text-primary-foreground hover:text-primary-foreground/80">
                 <Phone className="w-5 h-5 text-accent" />
-                <span className="text-primary-foreground">+1(201) 374-0018</span>
+                <span>+1(201) 374-0018</span>
             </a>
-            <Button asChild className="font-semibold bg-accent hover:bg-accent/90 text-accent-foreground rounded-[5px] px-6">
+            <Button asChild className="font-semibold bg-accent hover:bg-accent/90 text-accent-foreground rounded-md px-6">
               <Link href="/contact">Contact</Link>
             </Button>
             </div>

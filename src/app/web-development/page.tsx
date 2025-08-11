@@ -65,14 +65,14 @@ export default function WebDevelopmentPage() {
         <div className="bg-background text-foreground font-body text-base">
             {/* Hero Section */}
             <section className="relative py-20 md:py-32 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-primary">Web Development</h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">Your website is a tool that should be used in order to draw traffic, convert traffic into customers, and maintain the relationship you have with your customers.</p>
                 </div>
             </section>
 
             {/* History Section */}
-            <section className="container py-20 md:py-24">
+            <section className="container mx-auto px-4 md:px-6 py-20 md:py-24">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div className="space-y-6">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">100 Years Of History Serving The Poconos Region</h2>
@@ -96,7 +96,7 @@ export default function WebDevelopmentPage() {
             
             {/* Services Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Services</h2>
                         <p className="mt-2 text-muted-foreground">Trusted by specialists all around the world</p>
@@ -113,7 +113,7 @@ export default function WebDevelopmentPage() {
             </section>
 
             {/* About Us Snippet */}
-            <section className="container py-20 md:py-24">
+            <section className="container mx-auto px-4 md:px-6 py-20 md:py-24">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
                          <Image src="https://placehold.co/600x400.png" alt="Team working on code" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team coding" />
@@ -140,7 +140,7 @@ export default function WebDevelopmentPage() {
 
             {/* Why Choose Us Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container grid lg:grid-cols-2 gap-12 items-center">
+                <div className="container mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 items-center">
                     <div className="space-y-6">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Elevate Productivity with Our Expert Web Services</h2>
                          <p className="text-muted-foreground">Welcome to SulzaX, your trusted companion in the realm of IT services. We are committed to delivering state-of-the-art solutions.</p>
@@ -163,7 +163,7 @@ export default function WebDevelopmentPage() {
             </section>
 
              {/* Values Section */}
-            <section className="container py-20 md:py-24">
+            <section className="container mx-auto px-4 md:px-6 py-20 md:py-24">
                 <div>
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Journey Through Time</h2>
@@ -182,7 +182,7 @@ export default function WebDevelopmentPage() {
 
              {/* Awards Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Outstanding Customer Service Recognition</h2>
                      <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(5)].map((_, i) => (
@@ -193,7 +193,7 @@ export default function WebDevelopmentPage() {
             </section>
 
              {/* Testimonials Section */}
-            <section className="container py-20 md:py-24">
+            <section className="container mx-auto px-4 md:px-6 py-20 md:py-24">
                 <div>
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
@@ -211,37 +211,35 @@ export default function WebDevelopmentPage() {
             </section>
 
             {/* Contact Section */}
-            <section className="container py-20 md:py-24">
-                 <div className="px-4 md:px-6">
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
-                        <div className="flex flex-col space-y-8">
-                            <div>
-                                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Free Consultation - Discover Web Solutions</h2>
-                                <p className="mt-4 max-w-2xl text-muted-foreground">
-                                    Unlock the full potential of your business with our free consultation. Our expert team will assess your web needs, recommend tailored solutions, and chart a path to success.
-                                </p>
+            <section className="container mx-auto px-4 md:px-6 py-20 md:py-24">
+                 <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    <div className="flex flex-col space-y-8">
+                        <div>
+                            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Free Consultation - Discover Web Solutions</h2>
+                            <p className="mt-4 max-w-2xl text-muted-foreground">
+                                Unlock the full potential of your business with our free consultation. Our expert team will assess your web needs, recommend tailored solutions, and chart a path to success.
+                            </p>
+                        </div>
+                        <div className="space-y-6">
+                            <div className="flex items-center gap-4">
+                                <Mail className="w-6 h-6 text-accent" />
+                                <a href="mailto:contact@sulzax.com" className="text-lg hover:text-accent transition-colors">contact@sulzax.com</a>
                             </div>
-                            <div className="space-y-6">
-                                <div className="flex items-center gap-4">
-                                    <Mail className="w-6 h-6 text-accent" />
-                                    <a href="mailto:contact@sulzax.com" className="text-lg hover:text-accent transition-colors">contact@sulzax.com</a>
-                                </div>
-                                <div className="flex items-center gap-4">
-                                    <Phone className="w-6 h-6 text-accent" />
-                                    <a href="tel:+12013740018" className="text-lg hover:text-accent transition-colors">+1 (201) 374-0018</a>
-                                </div>
-                                <div className="flex items-center gap-4">
-                                    <MapPin className="w-6 h-6 text-accent" />
-                                    <div>
-                                        <p className="text-lg">5 South Forge Lane Cherry Hill, NJ 08002</p>
-                                        <a href="#" className="text-sm text-accent hover:underline">Open map</a>
-                                    </div>
+                            <div className="flex items-center gap-4">
+                                <Phone className="w-6 h-6 text-accent" />
+                                <a href="tel:+12013740018" className="text-lg hover:text-accent transition-colors">+1 (201) 374-0018</a>
+                            </div>
+                            <div className="flex items-center gap-4">
+                                <MapPin className="w-6 h-6 text-accent" />
+                                <div>
+                                    <p className="text-lg">5 South Forge Lane Cherry Hill, NJ 08002</p>
+                                    <a href="#" className="text-sm text-accent hover:underline">Open map</a>
                                 </div>
                             </div>
                         </div>
-                        <div className="w-full max-w-md mx-auto">
-                        <ContactForm cardTitle="Schedule A Free Consultation" cardDescription="" />
-                        </div>
+                    </div>
+                    <div className="w-full max-w-md mx-auto">
+                    <ContactForm cardTitle="Schedule A Free Consultation" cardDescription="" />
                     </div>
                 </div>
             </section>

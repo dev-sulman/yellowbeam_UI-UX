@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
 const SulzaXLogo = () => (
-    <svg width="120" height="32" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg">
+    <svg width="180" height="48" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="gBlue" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stopColor="#05D1FF"/>

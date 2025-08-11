@@ -139,38 +139,40 @@ export default function SeoPage() {
         <div className="bg-background text-foreground">
             {/* Hero Section */}
             <section className="relative py-20 md:py-32 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-primary">Search Engine Optimization</h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">Enhancing your website's visibility on search engines to attract organic traffic and improve search rankings.</p>
                 </div>
             </section>
 
             {/* Intro Section */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Climb the Ranks, Drive Results</h2>
-                        <div className="flex items-center gap-4">
-                            <Image src="https://placehold.co/80x80.png" alt="Kevin Miller" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
-                            <div>
-                                <p className="font-semibold">Kevin Miller, Head of SEO, SulzaX</p>
-                                <p className="text-muted-foreground">"The best place to hide a dead body is page 2 of Google."</p>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Climb the Ranks, Drive Results</h2>
+                            <div className="flex items-center gap-4">
+                                <Image src="https://placehold.co/80x80.png" alt="Kevin Miller" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                                <div>
+                                    <p className="font-semibold">Kevin Miller, Head of SEO, SulzaX</p>
+                                    <p className="text-muted-foreground">"The best place to hide a dead body is page 2 of Google."</p>
+                                </div>
                             </div>
+                            <p className="text-muted-foreground">We help businesses increase their online visibility and attract more customers through strategic, data-driven SEO. Our goal is to get you to the top of the search results and keep you there.</p>
+                            <Button asChild>
+                                <Link href="/about">About Us</Link>
+                            </Button>
                         </div>
-                        <p className="text-muted-foreground">We help businesses increase their online visibility and attract more customers through strategic, data-driven SEO. Our goal is to get you to the top of the search results and keep you there.</p>
-                        <Button asChild>
-                            <Link href="/about">About Us</Link>
-                        </Button>
-                    </div>
-                    <div>
-                        <Image src="https://placehold.co/600x400.png" alt="SEO strategy session" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="seo strategy meeting" />
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="SEO strategy session" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="seo strategy meeting" />
+                        </div>
                     </div>
                 </div>
             </section>
             
             {/* Services Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our SEO Services</h2>
                         <p className="mt-2 text-muted-foreground">A full suite of SEO services to boost your online presence.</p>
@@ -188,58 +190,62 @@ export default function SeoPage() {
             </section>
 
             {/* About Us Snippet */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                         <Image src="https://placehold.co/600x400.png" alt="Analyst reviewing SEO data" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="seo data analysis" />
-                    </div>
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Organic Growth</h2>
-                        <p className="text-muted-foreground">At SulzaX, we are obsessed with search engines. We live and breathe SEO, constantly adapting our strategies to stay ahead of the curve and deliver sustainable growth for our clients.</p>
-                        <div className="flex gap-8">
-                            <div>
-                                <p className="text-4xl font-bold text-accent">500%</p>
-                                <p className="text-muted-foreground">Average ROI for Clients</p>
-                            </div>
-                            <div>
-                                <p className="text-4xl font-bold text-accent">Top 3</p>
-                                <p className="text-muted-foreground">Rankings for 80% of Keywords</p>
-                            </div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                             <Image src="https://placehold.co/600x400.png" alt="Analyst reviewing SEO data" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="seo data analysis" />
                         </div>
-                        <Button asChild variant="outline">
-                            <Link href="/team">Meet our team</Link>
-                        </Button>
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Organic Growth</h2>
+                            <p className="text-muted-foreground">At SulzaX, we are obsessed with search engines. We live and breathe SEO, constantly adapting our strategies to stay ahead of the curve and deliver sustainable growth for our clients.</p>
+                            <div className="flex gap-8">
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">500%</p>
+                                    <p className="text-muted-foreground">Average ROI for Clients</p>
+                                </div>
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">Top 3</p>
+                                    <p className="text-muted-foreground">Rankings for 80% of Keywords</p>
+                                </div>
+                            </div>
+                            <Button asChild variant="outline">
+                                <Link href="/team">Meet our team</Link>
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* Why Choose Us Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Why Choose SulzaX for SEO?</h2>
-                         <p className="text-muted-foreground">We are more than just an agency; we are your strategic partner in achieving digital dominance.</p>
-                        <div className="space-y-4">
-                            {whyChooseUsPoints.map(point => (
-                                <div key={point.title} className="flex items-start gap-4">
-                                    <CheckCircle className="w-6 h-6 text-accent mt-1" />
-                                    <div>
-                                        <h3 className="font-semibold text-lg">{point.title}</h3>
-                                        <p className="text-muted-foreground">{point.description}</p>
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Why Choose SulzaX for SEO?</h2>
+                             <p className="text-muted-foreground">We are more than just an agency; we are your strategic partner in achieving digital dominance.</p>
+                            <div className="space-y-4">
+                                {whyChooseUsPoints.map(point => (
+                                    <div key={point.title} className="flex items-start gap-4">
+                                        <CheckCircle className="w-6 h-6 text-accent mt-1" />
+                                        <div>
+                                            <h3 className="font-semibold text-lg">{point.title}</h3>
+                                            <p className="text-muted-foreground">{point.description}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Graph showing upward trend" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="growth chart" />
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="Graph showing upward trend" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="growth chart" />
+                        </div>
                     </div>
                 </div>
             </section>
 
              {/* Values Section */}
-            <section className="container py-20 md:py-24">
-                <div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our SEO Philosophy</h2>
                         <p className="mt-2 text-muted-foreground">The principles that guide our approach to search engine optimization.</p>
@@ -257,7 +263,7 @@ export default function SeoPage() {
 
              {/* Awards Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Award-Winning SEO Campaigns</h2>
                      <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(2)].map((_, i) => (
@@ -268,8 +274,8 @@ export default function SeoPage() {
             </section>
 
              {/* Testimonials Section */}
-            <section className="container py-20 md:py-24">
-                <div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
@@ -287,7 +293,7 @@ export default function SeoPage() {
 
             {/* Pricing Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-6">
                             <h2 className="text-4xl md:text-5xl font-bold text-black">Ready to Dominate the SERPs?</h2>
@@ -343,8 +349,8 @@ export default function SeoPage() {
             </section>
 
             {/* Contact Section */}
-            <section className="container py-20 md:py-24">
-                 <div className="px-4 md:px-6">
+            <section className="py-20 md:py-24">
+                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="flex flex-col space-y-8">
                             <div>

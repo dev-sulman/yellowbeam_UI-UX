@@ -221,8 +221,8 @@ export default function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="bg-primary p-0 w-[80vw] sm:w-[350px]">
-                <SheetHeader className="flex items-center justify-between border-b p-4">
-                    <SheetTitle className="text-lg font-semibold text-primary-foreground">Menu</SheetTitle>
+                <SheetHeader className="flex items-center justify-end border-b p-4">
+                    
                     <SheetClose asChild>
                         <Button variant="ghost" size="icon" className="text-primary-foreground">
                             <X className="h-5 w-5" />

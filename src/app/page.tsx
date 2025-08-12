@@ -231,7 +231,7 @@ export default function Home() {
     <div className="font-body text-base">
       <section className="w-full pt-16 md:pt-24">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="flex flex-col justify-center space-y-6">
               <div className="space-y-4">
                 <h1 className="text-4xl tracking-tighter text-primary sm:text-5xl xl:text-6xl/none font-normal">

@@ -221,7 +221,7 @@ export default function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="bg-primary p-0 w-[80vw] sm:w-[350px]">
-                <SheetHeader className="flex items-center justify-end border-b p-4">
+                <SheetHeader className="flex items-center justify-end p-4">
                     <SheetClose asChild>
                         <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0">
                             <X className="h-5 w-5" />
@@ -256,7 +256,7 @@ export default function Header() {
                         ))}
                     </div>
                 </ScrollArea>
-                <div className="p-6 border-t">
+                <div className="p-6">
                     <SheetClose asChild>
                         <Button asChild className="w-full font-semibold bg-accent hover:bg-accent/90 text-accent-foreground">
                             <Link href="/contact">Contact</Link>

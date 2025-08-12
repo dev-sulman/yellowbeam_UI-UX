@@ -223,7 +223,7 @@ export default function Header() {
               <SheetContent side="right" className="bg-primary p-0 w-[80vw] sm:w-[350px]">
                 <SheetHeader className="flex items-center justify-end border-b p-4">
                     <SheetClose asChild>
-                        <Button variant="ghost" size="icon" className="text-primary-foreground">
+                        <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0">
                             <X className="h-5 w-5" />
                             <span className="sr-only">Close</span>
                         </Button>

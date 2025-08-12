@@ -139,38 +139,40 @@ export default function ContentMarketingPage() {
         <div className="bg-background text-foreground">
             {/* Hero Section */}
             <section className="relative py-20 md:py-32 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-primary">Content Marketing</h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">Creating valuable, relevant content to attract and engage your target audience, building trust and authority.</p>
                 </div>
             </section>
 
             {/* Intro Section */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Telling Stories That Build Your Brand</h2>
-                        <div className="flex items-center gap-4">
-                            <Image src="https://placehold.co/80x80.png" alt="Anna Kim" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
-                            <div>
-                                <p className="font-semibold">Anna Kim, Head of Content, SulzaX</p>
-                                <p className="text-muted-foreground">"Great content is the best sales tool in the world."</p>
+            <section className="py-20 md:py-24">
+                 <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Telling Stories That Build Your Brand</h2>
+                            <div className="flex items-center gap-4">
+                                <Image src="https://placehold.co/80x80.png" alt="Anna Kim" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                                <div>
+                                    <p className="font-semibold">Anna Kim, Head of Content, SulzaX</p>
+                                    <p className="text-muted-foreground">"Great content is the best sales tool in the world."</p>
+                                </div>
                             </div>
+                            <p className="text-muted-foreground">We help you connect with your audience on a deeper level through strategic content that informs, entertains, and inspires. Let us help you tell your story and grow your business.</p>
+                            <Button asChild>
+                                <Link href="/about">About Us</Link>
+                            </Button>
                         </div>
-                        <p className="text-muted-foreground">We help you connect with your audience on a deeper level through strategic content that informs, entertains, and inspires. Let us help you tell your story and grow your business.</p>
-                        <Button asChild>
-                            <Link href="/about">About Us</Link>
-                        </Button>
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="Person writing in a notebook" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="writing content" />
+                        </div>
                     </div>
-                    <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Person writing in a notebook" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="writing content" />
-                    </div>
-                </div>
+                 </div>
             </section>
             
             {/* Services Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Content Marketing Services</h2>
                         <p className="mt-2 text-muted-foreground">From strategy and creation to distribution and analytics.</p>
@@ -188,58 +190,62 @@ export default function ContentMarketingPage() {
             </section>
 
             {/* About Us Snippet */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                         <Image src="https://placehold.co/600x400.png" alt="Team reviewing content on a screen" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team reviewing content" />
-                    </div>
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Brand Storytelling</h2>
-                        <p className="text-muted-foreground">At SulzaX, we are passionate about the power of content. We combine creativity with data to create content strategies that build brands and drive results.</p>
-                        <div className="flex gap-8">
-                            <div>
-                                <p className="text-4xl font-bold text-accent">200%</p>
-                                <p className="text-muted-foreground">Average Organic Traffic Growth</p>
-                            </div>
-                            <div>
-                                <p className="text-4xl font-bold text-accent">1,000+</p>
-                                <p className="text-muted-foreground">Pieces of Content Published</p>
-                            </div>
+            <section className="py-20 md:py-24">
+                 <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="Team reviewing content on a screen" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team reviewing content" />
                         </div>
-                        <Button asChild variant="outline">
-                            <Link href="/team">Meet our team</Link>
-                        </Button>
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Brand Storytelling</h2>
+                            <p className="text-muted-foreground">At SulzaX, we are passionate about the power of content. We combine creativity with data to create content strategies that build brands and drive results.</p>
+                            <div className="flex gap-8">
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">200%</p>
+                                    <p className="text-muted-foreground">Average Organic Traffic Growth</p>
+                                </div>
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">1,000+</p>
+                                    <p className="text-muted-foreground">Pieces of Content Published</p>
+                                </div>
+                            </div>
+                            <Button asChild variant="outline">
+                                <Link href="/team">Meet our team</Link>
+                            </Button>
+                        </div>
                     </div>
-                </div>
+                 </div>
             </section>
 
             {/* Why Choose Us Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Why Choose SulzaX for Content?</h2>
-                         <p className="text-muted-foreground">We are more than just a content farm; we are your strategic partner in building a powerful brand narrative.</p>
-                        <div className="space-y-4">
-                            {whyChooseUsPoints.map(point => (
-                                <div key={point.title} className="flex items-start gap-4">
-                                    <CheckCircle className="w-6 h-6 text-accent mt-1" />
-                                    <div>
-                                        <h3 className="font-semibold text-lg">{point.title}</h3>
-                                        <p className="text-muted-foreground">{point.description}</p>
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Why Choose SulzaX for Content?</h2>
+                            <p className="text-muted-foreground">We are more than just a content farm; we are your strategic partner in building a powerful brand narrative.</p>
+                            <div className="space-y-4">
+                                {whyChooseUsPoints.map(point => (
+                                    <div key={point.title} className="flex items-start gap-4">
+                                        <CheckCircle className="w-6 h-6 text-accent mt-1" />
+                                        <div>
+                                            <h3 className="font-semibold text-lg">{point.title}</h3>
+                                            <p className="text-muted-foreground">{point.description}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Library of books" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="library books" />
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="Library of books" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="library books" />
+                        </div>
                     </div>
                 </div>
             </section>
 
              {/* Values Section */}
-            <section className="container py-20 md:py-24">
-                <div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Content Principles</h2>
                         <p className="mt-2 text-muted-foreground">The core beliefs that guide our content creation process.</p>
@@ -257,7 +263,7 @@ export default function ContentMarketingPage() {
 
              {/* Awards Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Award-Winning Content</h2>
                      <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(2)].map((_, i) => (
@@ -268,8 +274,8 @@ export default function ContentMarketingPage() {
             </section>
 
              {/* Testimonials Section */}
-            <section className="container py-20 md:py-24">
-                <div>
+            <section className="py-20 md:py-24">
+                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
@@ -282,12 +288,12 @@ export default function ContentMarketingPage() {
                             </Card>
                         ))}
                     </div>
-                </div>
+                 </div>
             </section>
 
             {/* Pricing Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-6">
                             <h2 className="text-4xl md:text-5xl font-bold text-black">Ready to Build Your Audience?</h2>
@@ -343,8 +349,8 @@ export default function ContentMarketingPage() {
             </section>
 
             {/* Contact Section */}
-            <section className="container py-20 md:py-24">
-                 <div className="px-4 md:px-6">
+            <section className="py-20 md:py-24">
+                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="flex flex-col space-y-8">
                             <div>
@@ -379,4 +385,5 @@ export default function ContentMarketingPage() {
             </section>
         </div>
     )
-}
+
+    

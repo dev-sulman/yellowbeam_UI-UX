@@ -124,15 +124,17 @@ export default function Header() {
     return null;
   }
 
-  const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
+  const NavLink = ({ href, children, className }: { href: string; children: React.ReactNode, className?: string }) => {
     const isActive = pathname === href;
     return (
         <SheetClose asChild>
             <Link
                 href={href}
                 className={cn(
-                    'block py-2 text-sm font-normal',
-                    isActive ? 'text-accent' : 'text-primary-foreground hover:text-accent'
+                    'block py-2 text-sm font-normal relative bg-clip-text text-transparent bg-gradient-to-r from-black to-black',
+                    'hover:from-accent hover:to-primary-foreground hover:bg-clip-text hover:animate-shimmer hover:bg-[length:200%_100%]',
+                    isActive ? 'text-accent' : 'text-black',
+                    className
                 )}
             >
                 {children}
@@ -148,8 +150,9 @@ export default function Header() {
             <Link
                 href={href}
                 className={cn(
-                    'block py-2 text-sm font-normal',
-                    isActive ? 'text-accent' : 'text-primary-foreground hover:text-accent'
+                    'block py-2 text-sm font-normal relative bg-clip-text text-transparent bg-gradient-to-r from-black to-black',
+                    'hover:from-accent hover:to-primary-foreground hover:bg-clip-text hover:animate-shimmer hover:bg-[length:200%_100%]',
+                    isActive ? 'text-accent' : 'text-black'
                 )}
             >
                 {children}
@@ -220,10 +223,10 @@ export default function Header() {
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="bg-primary p-0 w-[80vw] sm:w-[350px]">
+              <SheetContent side="right" className="bg-white p-0 w-[80vw] sm:w-[350px]">
                 <SheetHeader className="flex items-center justify-end p-4">
                     <SheetClose asChild>
-                        <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0">
+                        <Button variant="ghost" size="icon" className="text-black hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0">
                             <X className="h-5 w-5" />
                             <span className="sr-only">Close</span>
                         </Button>
@@ -234,7 +237,7 @@ export default function Header() {
                         {navLinks.map((link) => (
                             link.subLinks ? (
                             <Collapsible key={link.label}>
-                                <CollapsibleTrigger className="flex w-full items-center justify-between gap-1 py-2 text-sm text-primary-foreground group">
+                                <CollapsibleTrigger className="flex w-full items-center justify-between gap-1 py-2 text-sm text-black group">
                                     <span>{link.label}</span>
                                     <ChevronDown className="h-4 w-4 transition-transform duration-300 group-data-[state=open]:rotate-180" />
                                 </CollapsibleTrigger>
@@ -249,7 +252,7 @@ export default function Header() {
                                 </CollapsibleContent>
                             </Collapsible>
                             ) : (
-                            <NavLink key={link.href} href={link.href!}>
+                            <NavLink key={link.href} href={link.href!} className="text-black">
                                 {link.label}
                             </NavLink>
                             )

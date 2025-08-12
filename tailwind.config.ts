@@ -93,15 +93,15 @@ export default {
           '100%': { transform: 'translateX(-50%)' },
         },
         shimmer: {
-          '0%, 100%': { backgroundPosition: '-200% 0' },
-          '50%': { backgroundPosition: '200% 0' },
+          '0%': { backgroundPosition: '-200% center' },
+          '100%': { backgroundPosition: '200% center' },
         },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'marquee': 'marquee 20s linear infinite',
-        'shimmer': 'shimmer 5s infinite',
+        'shimmer': 'shimmer 1.5s linear infinite',
       },
     },
   },

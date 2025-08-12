@@ -225,6 +225,7 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="bg-white p-0 w-[80vw] sm:w-[350px]">
                 <SheetHeader className="flex flex-row items-center justify-end p-4">
+                  <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                     <SheetClose asChild>
                         <Button variant="ghost" size="icon" className="text-black hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0">
                             <X className="h-5 w-5" />

@@ -139,38 +139,40 @@ export default function PayPerClickPage() {
         <div className="bg-background text-foreground">
             {/* Hero Section */}
             <section className="relative py-20 md:py-32 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-primary">Pay-Per-Click Advertising</h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">Running targeted advertising campaigns on platforms like Google Ads to drive immediate traffic and conversions.</p>
                 </div>
             </section>
 
             {/* Intro Section */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Immediate Traffic, Measurable Results</h2>
-                        <div className="flex items-center gap-4">
-                            <Image src="https://placehold.co/80x80.png" alt="Daniel Kim" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
-                            <div>
-                                <p className="font-semibold">Daniel Kim, Head of PPC, SulzaX</p>
-                                <p className="text-muted-foreground">"Why wait for customers to find you? Let's go find them."</p>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Immediate Traffic, Measurable Results</h2>
+                            <div className="flex items-center gap-4">
+                                <Image src="https://placehold.co/80x80.png" alt="Daniel Kim" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                                <div>
+                                    <p className="font-semibold">Daniel Kim, Head of PPC, SulzaX</p>
+                                    <p className="text-muted-foreground">"Why wait for customers to find you? Let's go find them."</p>
+                                </div>
                             </div>
+                            <p className="text-muted-foreground">We specialize in creating and managing high-performing PPC campaigns that drive targeted traffic and generate leads. Our data-driven approach ensures your ad spend is working for you.</p>
+                            <Button asChild>
+                                <Link href="/about">About Us</Link>
+                            </Button>
                         </div>
-                        <p className="text-muted-foreground">We specialize in creating and managing high-performing PPC campaigns that drive targeted traffic and generate leads. Our data-driven approach ensures your ad spend is working for you.</p>
-                        <Button asChild>
-                            <Link href="/about">About Us</Link>
-                        </Button>
-                    </div>
-                    <div>
-                        <Image src="https://placehold.co/600x400.png" alt="PPC dashboard with graphs" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="ppc dashboard charts" />
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="PPC dashboard with graphs" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="ppc dashboard charts" />
+                        </div>
                     </div>
                 </div>
             </section>
             
             {/* Services Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our PPC Services</h2>
                         <p className="mt-2 text-muted-foreground">A full-funnel approach to pay-per-click advertising.</p>
@@ -188,58 +190,62 @@ export default function PayPerClickPage() {
             </section>
 
             {/* About Us Snippet */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                         <Image src="https://placehold.co/600x400.png" alt="Team analyzing ad performance" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team analyzing charts" />
-                    </div>
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Paid Advertising</h2>
-                        <p className="text-muted-foreground">At SulzaX, we are passionate about driving measurable results through paid advertising. We combine strategic thinking with technical expertise to create campaigns that deliver a high return on investment.</p>
-                        <div className="flex gap-8">
-                            <div>
-                                <p className="text-4xl font-bold text-accent">3X</p>
-                                <p className="text-muted-foreground">Average Client ROAS</p>
-                            </div>
-                            <div>
-                                <p className="text-4xl font-bold text-accent">$10M+</p>
-                                <p className="text-muted-foreground">Ad Spend Managed</p>
-                            </div>
+            <section className="py-20 md:py-24">
+                 <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="Team analyzing ad performance" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team analyzing charts" />
                         </div>
-                        <Button asChild variant="outline">
-                            <Link href="/team">Meet our team</Link>
-                        </Button>
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Paid Advertising</h2>
+                            <p className="text-muted-foreground">At SulzaX, we are passionate about driving measurable results through paid advertising. We combine strategic thinking with technical expertise to create campaigns that deliver a high return on investment.</p>
+                            <div className="flex gap-8">
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">3X</p>
+                                    <p className="text-muted-foreground">Average Client ROAS</p>
+                                </div>
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">$10M+</p>
+                                    <p className="text-muted-foreground">Ad Spend Managed</p>
+                                </div>
+                            </div>
+                            <Button asChild variant="outline">
+                                <Link href="/team">Meet our team</Link>
+                            </Button>
+                        </div>
                     </div>
-                </div>
+                 </div>
             </section>
 
             {/* Why Choose Us Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Why Choose SulzaX for PPC?</h2>
-                         <p className="text-muted-foreground">We are more than just a PPC agency; we are your strategic partner in growth, dedicated to maximizing your return on ad spend.</p>
-                        <div className="space-y-4">
-                            {whyChooseUsPoints.map(point => (
-                                <div key={point.title} className="flex items-start gap-4">
-                                    <CheckCircle className="w-6 h-6 text-accent mt-1" />
-                                    <div>
-                                        <h3 className="font-semibold text-lg">{point.title}</h3>
-                                        <p className="text-muted-foreground">{point.description}</p>
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Why Choose SulzaX for PPC?</h2>
+                            <p className="text-muted-foreground">We are more than just a PPC agency; we are your strategic partner in growth, dedicated to maximizing your return on ad spend.</p>
+                            <div className="space-y-4">
+                                {whyChooseUsPoints.map(point => (
+                                    <div key={point.title} className="flex items-start gap-4">
+                                        <CheckCircle className="w-6 h-6 text-accent mt-1" />
+                                        <div>
+                                            <h3 className="font-semibold text-lg">{point.title}</h3>
+                                            <p className="text-muted-foreground">{point.description}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Conversion funnel diagram" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="conversion funnel" />
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="Conversion funnel diagram" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="conversion funnel" />
+                        </div>
                     </div>
                 </div>
             </section>
 
              {/* Values Section */}
-            <section className="container py-20 md:py-24">
-                <div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our PPC Principles</h2>
                         <p className="mt-2 text-muted-foreground">The core beliefs that guide our advertising strategies.</p>
@@ -257,7 +263,7 @@ export default function PayPerClickPage() {
 
              {/* Awards Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Award-Winning PPC Management</h2>
                      <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(2)].map((_, i) => (
@@ -268,8 +274,8 @@ export default function PayPerClickPage() {
             </section>
 
              {/* Testimonials Section */}
-            <section className="container py-20 md:py-24">
-                <div>
+            <section className="py-20 md:py-24">
+                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
@@ -282,12 +288,12 @@ export default function PayPerClickPage() {
                             </Card>
                         ))}
                     </div>
-                </div>
+                 </div>
             </section>
 
             {/* Pricing Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-6">
                             <h2 className="text-4xl md:text-5xl font-bold text-black">Ready to Drive Growth?</h2>
@@ -343,8 +349,8 @@ export default function PayPerClickPage() {
             </section>
 
             {/* Contact Section */}
-            <section className="container py-20 md:py-24">
-                 <div className="px-4 md:px-6">
+            <section className="py-20 md:py-24">
+                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="flex flex-col space-y-8">
                             <div>
@@ -375,8 +381,9 @@ export default function PayPerClickPage() {
                         <ContactForm cardTitle="Schedule A Free Consultation" cardDescription="" />
                         </div>
                     </div>
-                </div>
+                 </div>
             </section>
         </div>
     )
 }
+

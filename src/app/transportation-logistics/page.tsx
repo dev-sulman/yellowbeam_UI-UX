@@ -131,38 +131,40 @@ export default function LogisticsPage() {
         <div className="bg-background text-foreground">
             {/* Hero Section */}
             <section className="relative py-20 md:py-32 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-primary">Transportation & Logistics</h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">Driving efficiency and visibility in your supply chain with our advanced logistics and transportation IT solutions.</p>
                 </div>
             </section>
 
             {/* Intro Section */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Optimizing Your Supply Chain</h2>
-                        <div className="flex items-center gap-4">
-                            <Image src="https://placehold.co/80x80.png" alt="Robert Brown" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
-                            <div>
-                                <p className="font-semibold">Robert Brown, Head of Logistics Tech, SulzaX</p>
-                                <p className="text-muted-foreground">"Delivering the future of logistics, today."</p>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Optimizing Your Supply Chain</h2>
+                            <div className="flex items-center gap-4">
+                                <Image src="https://placehold.co/80x80.png" alt="Robert Brown" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                                <div>
+                                    <p className="font-semibold">Robert Brown, Head of Logistics Tech, SulzaX</p>
+                                    <p className="text-muted-foreground">"Delivering the future of logistics, today."</p>
+                                </div>
                             </div>
+                            <p className="text-muted-foreground">We provide comprehensive IT solutions for the transportation and logistics industry, from fleet management to supply chain optimization. Let us help you move your business forward.</p>
+                            <Button asChild>
+                                <Link href="/about">About Us</Link>
+                            </Button>
                         </div>
-                        <p className="text-muted-foreground">We provide comprehensive IT solutions for the transportation and logistics industry, from fleet management to supply chain optimization. Let us help you move your business forward.</p>
-                        <Button asChild>
-                            <Link href="/about">About Us</Link>
-                        </Button>
-                    </div>
-                    <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Cargo ship and trucks" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="logistics transport" />
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="Cargo ship and trucks" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="logistics transport" />
+                        </div>
                     </div>
                 </div>
             </section>
             
             {/* Services Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Logistics & Transportation Services</h2>
                         <p className="mt-2 text-muted-foreground">End-to-end solutions for a smarter supply chain.</p>
@@ -179,58 +181,62 @@ export default function LogisticsPage() {
             </section>
 
             {/* About Us Snippet */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                         <Image src="https://placehold.co/600x400.png" alt="Warehouse with workers" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="warehouse logistics" />
-                    </div>
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Logistics Innovation</h2>
-                        <p className="text-muted-foreground">At SulzaX, we are passionate about solving the complex challenges of the logistics industry. We build technology that delivers efficiency, visibility, and a competitive edge.</p>
-                        <div className="flex gap-8">
-                            <div>
-                                <p className="text-4xl font-bold text-accent">30%</p>
-                                <p className="text-muted-foreground">Average Reduction in Fuel Costs</p>
-                            </div>
-                            <div>
-                                <p className="text-4xl font-bold text-accent">50+</p>
-                                <p className="text-muted-foreground">Logistics Companies Served</p>
-                            </div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="Warehouse with workers" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="warehouse logistics" />
                         </div>
-                        <Button asChild variant="outline">
-                            <Link href="/team">Meet our team</Link>
-                        </Button>
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Logistics Innovation</h2>
+                            <p className="text-muted-foreground">At SulzaX, we are passionate about solving the complex challenges of the logistics industry. We build technology that delivers efficiency, visibility, and a competitive edge.</p>
+                            <div className="flex gap-8">
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">30%</p>
+                                    <p className="text-muted-foreground">Average Reduction in Fuel Costs</p>
+                                </div>
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">50+</p>
+                                    <p className="text-muted-foreground">Logistics Companies Served</p>
+                                </div>
+                            </div>
+                            <Button asChild variant="outline">
+                                <Link href="/team">Meet our team</Link>
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* Why Choose Us Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Why SulzaX for Logistics Tech?</h2>
-                         <p className="text-muted-foreground">We provide scalable, data-driven solutions with a deep understanding of the logistics industry.</p>
-                        <div className="space-y-4">
-                            {whyChooseUsPoints.map(point => (
-                                <div key={point.title} className="flex items-start gap-4">
-                                    <CheckCircle className="w-6 h-6 text-accent mt-1" />
-                                    <div>
-                                        <h3 className="font-semibold text-lg">{point.title}</h3>
-                                        <p className="text-muted-foreground">{point.description}</p>
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Why SulzaX for Logistics Tech?</h2>
+                            <p className="text-muted-foreground">We provide scalable, data-driven solutions with a deep understanding of the logistics industry.</p>
+                            <div className="space-y-4">
+                                {whyChooseUsPoints.map(point => (
+                                    <div key={point.title} className="flex items-start gap-4">
+                                        <CheckCircle className="w-6 h-6 text-accent mt-1" />
+                                        <div>
+                                            <h3 className="font-semibold text-lg">{point.title}</h3>
+                                            <p className="text-muted-foreground">{point.description}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Analytics dashboard for logistics" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="logistics dashboard" />
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="Analytics dashboard for logistics" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="logistics dashboard" />
+                        </div>
                     </div>
                 </div>
             </section>
 
              {/* Values Section */}
-            <section className="container py-20 md:py-24">
-                <div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Core Values</h2>
                         <p className="mt-2 text-muted-foreground">The principles that drive our logistics technology solutions.</p>
@@ -248,7 +254,7 @@ export default function LogisticsPage() {
 
              {/* Awards Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Award-Winning Logistics Solutions</h2>
                      <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(3)].map((_, i) => (
@@ -259,8 +265,8 @@ export default function LogisticsPage() {
             </section>
 
              {/* Testimonials Section */}
-            <section className="container py-20 md:py-24">
-                <div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
@@ -278,7 +284,7 @@ export default function LogisticsPage() {
 
             {/* Pricing Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-6">
                             <h2 className="text-4xl md:text-5xl font-bold text-black">Logistics Solution Plans</h2>
@@ -334,8 +340,8 @@ export default function LogisticsPage() {
             </section>
 
             {/* Contact Section */}
-            <section className="container py-20 md:py-24">
-                 <div className="px-4 md:px-6">
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="flex flex-col space-y-8">
                             <div>

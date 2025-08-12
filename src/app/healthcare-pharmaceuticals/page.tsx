@@ -135,38 +135,40 @@ export default function HealthcarePage() {
         <div className="bg-background text-foreground">
             {/* Hero Section */}
             <section className="relative py-20 md:py-32 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-primary">Healthcare & Pharmaceuticals</h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">Providing specialized IT solutions for the healthcare and pharmaceutical industries, ensuring compliance, security, and innovation.</p>
                 </div>
             </section>
 
             {/* Intro Section */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Innovating for Better Health Outcomes</h2>
-                        <div className="flex items-center gap-4">
-                            <Image src="https://placehold.co/80x80.png" alt="Dr. Sarah Johnson" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot doctor" />
-                            <div>
-                                <p className="font-semibold">Dr. Sarah Johnson, Chief Innovation Officer, SulzaX Health</p>
-                                <p className="text-muted-foreground">"Technology has the power to transform healthcare."</p>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Innovating for Better Health Outcomes</h2>
+                            <div className="flex items-center gap-4">
+                                <Image src="https://placehold.co/80x80.png" alt="Dr. Sarah Johnson" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot doctor" />
+                                <div>
+                                    <p className="font-semibold">Dr. Sarah Johnson, Chief Innovation Officer, SulzaX Health</p>
+                                    <p className="text-muted-foreground">"Technology has the power to transform healthcare."</p>
+                                </div>
                             </div>
+                            <p className="text-muted-foreground">We are dedicated to developing cutting-edge IT solutions for the healthcare and pharmaceutical sectors. From telemedicine platforms to EMR systems, we build technology that improves lives.</p>
+                            <Button asChild>
+                                <Link href="/about">About Us</Link>
+                            </Button>
                         </div>
-                        <p className="text-muted-foreground">We are dedicated to developing cutting-edge IT solutions for the healthcare and pharmaceutical sectors. From telemedicine platforms to EMR systems, we build technology that improves lives.</p>
-                        <Button asChild>
-                            <Link href="/about">About Us</Link>
-                        </Button>
-                    </div>
-                    <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Doctor using a tablet" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="doctor tablet healthcare" />
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="Doctor using a tablet" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="doctor tablet healthcare" />
+                        </div>
                     </div>
                 </div>
             </section>
             
             {/* Services Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Healthcare & Pharma Services</h2>
                         <p className="mt-2 text-muted-foreground">Compliant and innovative solutions for the health sector.</p>
@@ -183,58 +185,62 @@ export default function HealthcarePage() {
             </section>
 
             {/* About Us Snippet */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                         <Image src="https://placehold.co/600x400.png" alt="Scientist in a lab" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="pharmaceutical lab scientist" />
-                    </div>
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in HealthTech</h2>
-                        <p className="text-muted-foreground">At SulzaX, we combine deep industry knowledge with technical expertise to deliver solutions that meet the unique challenges of the healthcare and pharmaceutical industries.</p>
-                        <div className="flex gap-8">
-                            <div>
-                                <p className="text-4xl font-bold text-accent">100%</p>
-                                <p className="text-muted-foreground">HIPAA Compliance</p>
-                            </div>
-                            <div>
-                                <p className="text-4xl font-bold text-accent">50+</p>
-                                <p className="text-muted-foreground">Health Systems Deployed</p>
-                            </div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="Scientist in a lab" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="pharmaceutical lab scientist" />
                         </div>
-                        <Button asChild variant="outline">
-                            <Link href="/team">Meet our team</Link>
-                        </Button>
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in HealthTech</h2>
+                            <p className="text-muted-foreground">At SulzaX, we combine deep industry knowledge with technical expertise to deliver solutions that meet the unique challenges of the healthcare and pharmaceutical industries.</p>
+                            <div className="flex gap-8">
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">100%</p>
+                                    <p className="text-muted-foreground">HIPAA Compliance</p>
+                                </div>
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">50+</p>
+                                    <p className="text-muted-foreground">Health Systems Deployed</p>
+                                </div>
+                            </div>
+                            <Button asChild variant="outline">
+                                <Link href="/team">Meet our team</Link>
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* Why Choose Us Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Why Choose SulzaX for HealthTech?</h2>
-                         <p className="text-muted-foreground">We provide secure, compliant, and innovative technology solutions tailored to the needs of the healthcare and pharmaceutical industries.</p>
-                        <div className="space-y-4">
-                            {whyChooseUsPoints.map(point => (
-                                <div key={point.title} className="flex items-start gap-4">
-                                    <CheckCircle className="w-6 h-6 text-accent mt-1" />
-                                    <div>
-                                        <h3 className="font-semibold text-lg">{point.title}</h3>
-                                        <p className="text-muted-foreground">{point.description}</p>
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Why Choose SulzaX for HealthTech?</h2>
+                            <p className="text-muted-foreground">We provide secure, compliant, and innovative technology solutions tailored to the needs of the healthcare and pharmaceutical industries.</p>
+                            <div className="space-y-4">
+                                {whyChooseUsPoints.map(point => (
+                                    <div key={point.title} className="flex items-start gap-4">
+                                        <CheckCircle className="w-6 h-6 text-accent mt-1" />
+                                        <div>
+                                            <h3 className="font-semibold text-lg">{point.title}</h3>
+                                            <p className="text-muted-foreground">{point.description}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Secure data server for healthcare" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="secure data healthcare" />
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="Secure data server for healthcare" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="secure data healthcare" />
+                        </div>
                     </div>
                 </div>
             </section>
 
              {/* Values Section */}
-            <section className="container py-20 md:py-24">
-                <div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Core Values</h2>
                         <p className="mt-2 text-muted-foreground">The principles that guide our work in the health sector.</p>
@@ -252,7 +258,7 @@ export default function HealthcarePage() {
 
              {/* Awards Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Recognized for HealthTech Innovation</h2>
                      <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(3)].map((_, i) => (
@@ -263,8 +269,8 @@ export default function HealthcarePage() {
             </section>
 
              {/* Testimonials Section */}
-            <section className="container py-20 md:py-24">
-                <div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
@@ -282,7 +288,7 @@ export default function HealthcarePage() {
 
             {/* Pricing Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-6">
                             <h2 className="text-4xl md:text-5xl font-bold text-black">HealthTech Solution Plans</h2>
@@ -338,8 +344,8 @@ export default function HealthcarePage() {
             </section>
 
             {/* Contact Section */}
-            <section className="container py-20 md:py-24">
-                 <div className="px-4 md:px-6">
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="flex flex-col space-y-8">
                             <div>

@@ -131,38 +131,40 @@ export default function ManufacturingPage() {
         <div className="bg-background text-foreground">
             {/* Hero Section */}
             <section className="relative py-20 md:py-32 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-primary">Manufacturing & Industry 4.0</h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">Bringing the digital revolution to the factory floor with smart manufacturing and Industry 4.0 solutions.</p>
                 </div>
             </section>
 
             {/* Intro Section */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Building the Factory of the Future</h2>
-                        <div className="flex items-center gap-4">
-                            <Image src="https://placehold.co/80x80.png" alt="Kevin Anderson" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
-                            <div>
-                                <p className="font-semibold">Kevin Anderson, Head of Industry 4.0, SulzaX</p>
-                                <p className="text-muted-foreground">"Automation and data are the keys to competitive manufacturing."</p>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Building the Factory of the Future</h2>
+                            <div className="flex items-center gap-4">
+                                <Image src="https://placehold.co/80x80.png" alt="Kevin Anderson" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                                <div>
+                                    <p className="font-semibold">Kevin Anderson, Head of Industry 4.0, SulzaX</p>
+                                    <p className="text-muted-foreground">"Automation and data are the keys to competitive manufacturing."</p>
+                                </div>
                             </div>
+                            <p className="text-muted-foreground">We provide advanced technology solutions for the manufacturing sector, including IoT, robotics, and AI, to help you build a smarter, more efficient, and more competitive operation.</p>
+                            <Button asChild>
+                                <Link href="/about">About Us</Link>
+                            </Button>
                         </div>
-                        <p className="text-muted-foreground">We provide advanced technology solutions for the manufacturing sector, including IoT, robotics, and AI, to help you build a smarter, more efficient, and more competitive operation.</p>
-                        <Button asChild>
-                            <Link href="/about">About Us</Link>
-                        </Button>
-                    </div>
-                    <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Automated factory with robots" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="smart factory robotics" />
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="Automated factory with robots" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="smart factory robotics" />
+                        </div>
                     </div>
                 </div>
             </section>
             
             {/* Services Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Manufacturing & Industry 4.0 Services</h2>
                         <p className="mt-2 text-muted-foreground">Solutions to digitize and optimize your manufacturing processes.</p>
@@ -179,58 +181,62 @@ export default function ManufacturingPage() {
             </section>
 
             {/* About Us Snippet */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                         <Image src="https://placehold.co/600x400.png" alt="Engineer working with a robotic arm" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="engineer robotic arm" />
-                    </div>
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Smart Manufacturing</h2>
-                        <p className="text-muted-foreground">At SulzaX, we are passionate about helping manufacturers embrace the future. We combine our technical expertise with a deep understanding of the industry to deliver solutions that drive real results.</p>
-                        <div className="flex gap-8">
-                            <div>
-                                <p className="text-4xl font-bold text-accent">25%</p>
-                                <p className="text-muted-foreground">Average Increase in OEE</p>
-                            </div>
-                            <div>
-                                <p className="text-4xl font-bold text-accent">50+</p>
-                                <p className="text-muted-foreground">Factories Modernized</p>
-                            </div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="Engineer working with a robotic arm" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="engineer robotic arm" />
                         </div>
-                        <Button asChild variant="outline">
-                            <Link href="/team">Meet our team</Link>
-                        </Button>
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Smart Manufacturing</h2>
+                            <p className="text-muted-foreground">At SulzaX, we are passionate about helping manufacturers embrace the future. We combine our technical expertise with a deep understanding of the industry to deliver solutions that drive real results.</p>
+                            <div className="flex gap-8">
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">25%</p>
+                                    <p className="text-muted-foreground">Average Increase in OEE</p>
+                                </div>
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">50+</p>
+                                    <p className="text-muted-foreground">Factories Modernized</p>
+                                </div>
+                            </div>
+                            <Button asChild variant="outline">
+                                <Link href="/team">Meet our team</Link>
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* Why Choose Us Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Why SulzaX for Smart Manufacturing?</h2>
-                         <p className="text-muted-foreground">We deliver ROI-focused solutions using cutting-edge technology and deep industry expertise.</p>
-                        <div className="space-y-4">
-                            {whyChooseUsPoints.map(point => (
-                                <div key={point.title} className="flex items-start gap-4">
-                                    <CheckCircle className="w-6 h-6 text-accent mt-1" />
-                                    <div>
-                                        <h3 className="font-semibold text-lg">{point.title}</h3>
-                                        <p className="text-muted-foreground">{point.description}</p>
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Why SulzaX for Smart Manufacturing?</h2>
+                            <p className="text-muted-foreground">We deliver ROI-focused solutions using cutting-edge technology and deep industry expertise.</p>
+                            <div className="space-y-4">
+                                {whyChooseUsPoints.map(point => (
+                                    <div key={point.title} className="flex items-start gap-4">
+                                        <CheckCircle className="w-6 h-6 text-accent mt-1" />
+                                        <div>
+                                            <h3 className="font-semibold text-lg">{point.title}</h3>
+                                            <p className="text-muted-foreground">{point.description}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Data visualization of factory output" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="factory data charts" />
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="Data visualization of factory output" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="factory data charts" />
+                        </div>
                     </div>
                 </div>
             </section>
 
              {/* Values Section */}
-            <section className="container py-20 md:py-24">
-                <div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Core Values</h2>
                         <p className="mt-2 text-muted-foreground">The principles that guide our approach to Industry 4.0.</p>
@@ -248,7 +254,7 @@ export default function ManufacturingPage() {
 
              {/* Awards Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Award-Winning Smart Factory Solutions</h2>
                      <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(3)].map((_, i) => (
@@ -259,8 +265,8 @@ export default function ManufacturingPage() {
             </section>
 
              {/* Testimonials Section */}
-            <section className="container py-20 md:py-24">
-                <div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
@@ -278,7 +284,7 @@ export default function ManufacturingPage() {
 
             {/* Pricing Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-6">
                             <h2 className="text-4xl md:text-5xl font-bold text-black">Industry 4.0 Solution Plans</h2>
@@ -334,8 +340,8 @@ export default function ManufacturingPage() {
             </section>
 
             {/* Contact Section */}
-            <section className="container py-20 md:py-24">
-                 <div className="px-4 md:px-6">
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="flex flex-col space-y-8">
                             <div>

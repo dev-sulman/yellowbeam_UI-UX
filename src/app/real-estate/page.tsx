@@ -135,38 +135,40 @@ export default function RealEstatePage() {
         <div className="bg-background text-foreground">
             {/* Hero Section */}
             <section className="relative py-20 md:py-32 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-primary">Real Estate</h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">Empowering real estate professionals with cutting-edge technology, from property management software to virtual tour solutions.</p>
                 </div>
             </section>
 
             {/* Intro Section */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">The Future of Real Estate is Digital</h2>
-                        <div className="flex items-center gap-4">
-                            <Image src="https://placehold.co/80x80.png" alt="Laura Garcia" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
-                            <div>
-                                <p className="font-semibold">Laura Garcia, Head of Real Estate Tech, SulzaX</p>
-                                <p className="text-muted-foreground">"Transforming properties into digital experiences."</p>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">The Future of Real Estate is Digital</h2>
+                            <div className="flex items-center gap-4">
+                                <Image src="https://placehold.co/80x80.png" alt="Laura Garcia" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                                <div>
+                                    <p className="font-semibold">Laura Garcia, Head of Real Estate Tech, SulzaX</p>
+                                    <p className="text-muted-foreground">"Transforming properties into digital experiences."</p>
+                                </div>
                             </div>
+                            <p className="text-muted-foreground">We provide innovative IT solutions for the real estate industry, helping agents, brokers, and property managers streamline their operations, engage clients, and close more deals.</p>
+                            <Button asChild>
+                                <Link href="/about">About Us</Link>
+                            </Button>
                         </div>
-                        <p className="text-muted-foreground">We provide innovative IT solutions for the real estate industry, helping agents, brokers, and property managers streamline their operations, engage clients, and close more deals.</p>
-                        <Button asChild>
-                            <Link href="/about">About Us</Link>
-                        </Button>
-                    </div>
-                    <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Modern house with a 'For Sale' sign" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="house for sale" />
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="Modern house with a 'For Sale' sign" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="house for sale" />
+                        </div>
                     </div>
                 </div>
             </section>
             
             {/* Services Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Real Estate Technology Services</h2>
                         <p className="mt-2 text-muted-foreground">Solutions to modernize your real estate business.</p>
@@ -183,58 +185,62 @@ export default function RealEstatePage() {
             </section>
 
             {/* About Us Snippet */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                         <Image src="https://placehold.co/600x400.png" alt="Real estate agent showing a house" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="real estate agent" />
-                    </div>
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in PropTech</h2>
-                        <p className="text-muted-foreground">At SulzaX, we are passionate about the intersection of real estate and technology. We build tools that make the process of buying, selling, and managing properties easier and more efficient for everyone.</p>
-                        <div className="flex gap-8">
-                            <div>
-                                <p className="text-4xl font-bold text-accent">1,000+</p>
-                                <p className="text-muted-foreground">Agents Empowered</p>
-                            </div>
-                            <div>
-                                <p className="text-4xl font-bold text-accent">$1B+</p>
-                                <p className="text-muted-foreground">In Transactions Supported</p>
-                            </div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="Real estate agent showing a house" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="real estate agent" />
                         </div>
-                        <Button asChild variant="outline">
-                            <Link href="/team">Meet our team</Link>
-                        </Button>
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in PropTech</h2>
+                            <p className="text-muted-foreground">At SulzaX, we are passionate about the intersection of real estate and technology. We build tools that make the process of buying, selling, and managing properties easier and more efficient for everyone.</p>
+                            <div className="flex gap-8">
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">1,000+</p>
+                                    <p className="text-muted-foreground">Agents Empowered</p>
+                                </div>
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">$1B+</p>
+                                    <p className="text-muted-foreground">In Transactions Supported</p>
+                                </div>
+                            </div>
+                            <Button asChild variant="outline">
+                                <Link href="/team">Meet our team</Link>
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* Why Choose Us Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Why SulzaX for Real Estate Tech?</h2>
-                         <p className="text-muted-foreground">We provide user-friendly, scalable solutions designed with a deep understanding of the real estate market.</p>
-                        <div className="space-y-4">
-                            {whyChooseUsPoints.map(point => (
-                                <div key={point.title} className="flex items-start gap-4">
-                                    <CheckCircle className="w-6 h-6 text-accent mt-1" />
-                                    <div>
-                                        <h3 className="font-semibold text-lg">{point.title}</h3>
-                                        <p className="text-muted-foreground">{point.description}</p>
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Why SulzaX for Real Estate Tech?</h2>
+                            <p className="text-muted-foreground">We provide user-friendly, scalable solutions designed with a deep understanding of the real estate market.</p>
+                            <div className="space-y-4">
+                                {whyChooseUsPoints.map(point => (
+                                    <div key={point.title} className="flex items-start gap-4">
+                                        <CheckCircle className="w-6 h-6 text-accent mt-1" />
+                                        <div>
+                                            <h3 className="font-semibold text-lg">{point.title}</h3>
+                                            <p className="text-muted-foreground">{point.description}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Virtual tour of a property on a tablet" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="virtual tour tablet" />
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="Virtual tour of a property on a tablet" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="virtual tour tablet" />
+                        </div>
                     </div>
                 </div>
             </section>
 
              {/* Values Section */}
-            <section className="container py-20 md:py-24">
-                <div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Core Values</h2>
                         <p className="mt-2 text-muted-foreground">The principles that guide our real estate technology solutions.</p>
@@ -252,7 +258,7 @@ export default function RealEstatePage() {
 
              {/* Awards Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Award-Winning PropTech Solutions</h2>
                      <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(4)].map((_, i) => (
@@ -263,8 +269,8 @@ export default function RealEstatePage() {
             </section>
 
              {/* Testimonials Section */}
-            <section className="container py-20 md:py-24">
-                <div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
@@ -282,7 +288,7 @@ export default function RealEstatePage() {
 
             {/* Pricing Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-6">
                             <h2 className="text-4xl md:text-5xl font-bold text-black">Real Estate Technology Plans</h2>
@@ -338,8 +344,8 @@ export default function RealEstatePage() {
             </section>
 
             {/* Contact Section */}
-            <section className="container py-20 md:py-24">
-                 <div className="px-4 md:px-6">
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="flex flex-col space-y-8">
                             <div>

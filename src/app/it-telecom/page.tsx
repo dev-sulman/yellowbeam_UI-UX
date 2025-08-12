@@ -135,38 +135,40 @@ export default function ItTelecomPage() {
         <div className="bg-background text-foreground">
             {/* Hero Section */}
             <section className="relative py-20 md:py-32 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-primary">Information Technology & Telecommunications</h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">Providing robust IT and telecommunications solutions to keep your business connected and secure.</p>
                 </div>
             </section>
 
             {/* Intro Section */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Connecting Your World, Securely</h2>
-                        <div className="flex items-center gap-4">
-                            <Image src="https://placehold.co/80x80.png" alt="Mike Ross" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
-                            <div>
-                                <p className="font-semibold">Mike Ross, Head of IT & Telecom, SulzaX</p>
-                                <p className="text-muted-foreground">"Building the infrastructure for tomorrow's innovations."</p>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Connecting Your World, Securely</h2>
+                            <div className="flex items-center gap-4">
+                                <Image src="https://placehold.co/80x80.png" alt="Mike Ross" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                                <div>
+                                    <p className="font-semibold">Mike Ross, Head of IT & Telecom, SulzaX</p>
+                                    <p className="text-muted-foreground">"Building the infrastructure for tomorrow's innovations."</p>
+                                </div>
                             </div>
+                            <p className="text-muted-foreground">We provide end-to-end IT and telecommunications services, from network infrastructure to cloud solutions and cybersecurity. Let us handle your technology so you can focus on your business.</p>
+                            <Button asChild>
+                                <Link href="/about">About Us</Link>
+                            </Button>
                         </div>
-                        <p className="text-muted-foreground">We provide end-to-end IT and telecommunications services, from network infrastructure to cloud solutions and cybersecurity. Let us handle your technology so you can focus on your business.</p>
-                        <Button asChild>
-                            <Link href="/about">About Us</Link>
-                        </Button>
-                    </div>
-                    <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Data center" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="data center server room" />
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="Data center" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="data center server room" />
+                        </div>
                     </div>
                 </div>
             </section>
             
             {/* Services Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our IT & Telecom Services</h2>
                         <p className="mt-2 text-muted-foreground">Comprehensive solutions to meet your technology needs.</p>
@@ -183,58 +185,62 @@ export default function ItTelecomPage() {
             </section>
 
             {/* About Us Snippet */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                         <Image src="https://placehold.co/600x400.png" alt="Team managing network" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="network management team" />
-                    </div>
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Technology</h2>
-                        <p className="text-muted-foreground">At SulzaX, we are committed to providing state-of-the-art IT and telecommunications solutions that drive business growth and efficiency. We are your trusted partner in the digital age.</p>
-                        <div className="flex gap-8">
-                            <div>
-                                <p className="text-4xl font-bold text-accent">99.9%</p>
-                                <p className="text-muted-foreground">Network Uptime</p>
-                            </div>
-                            <div>
-                                <p className="text-4xl font-bold text-accent">100+</p>
-                                <p className="text-muted-foreground">Businesses Served</p>
-                            </div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="Team managing network" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="network management team" />
                         </div>
-                        <Button asChild variant="outline">
-                            <Link href="/team">Meet our team</Link>
-                        </Button>
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Technology</h2>
+                            <p className="text-muted-foreground">At SulzaX, we are committed to providing state-of-the-art IT and telecommunications solutions that drive business growth and efficiency. We are your trusted partner in the digital age.</p>
+                            <div className="flex gap-8">
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">99.9%</p>
+                                    <p className="text-muted-foreground">Network Uptime</p>
+                                </div>
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">100+</p>
+                                    <p className="text-muted-foreground">Businesses Served</p>
+                                </div>
+                            </div>
+                            <Button asChild variant="outline">
+                                <Link href="/team">Meet our team</Link>
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* Why Choose Us Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Why Choose SulzaX?</h2>
-                         <p className="text-muted-foreground">We provide reliable, innovative, and secure technology solutions tailored to your business needs.</p>
-                        <div className="space-y-4">
-                            {whyChooseUsPoints.map(point => (
-                                <div key={point.title} className="flex items-start gap-4">
-                                    <CheckCircle className="w-6 h-6 text-accent mt-1" />
-                                    <div>
-                                        <h3 className="font-semibold text-lg">{point.title}</h3>
-                                        <p className="text-muted-foreground">{point.description}</p>
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Why Choose SulzaX?</h2>
+                            <p className="text-muted-foreground">We provide reliable, innovative, and secure technology solutions tailored to your business needs.</p>
+                            <div className="space-y-4">
+                                {whyChooseUsPoints.map(point => (
+                                    <div key={point.title} className="flex items-start gap-4">
+                                        <CheckCircle className="w-6 h-6 text-accent mt-1" />
+                                        <div>
+                                            <h3 className="font-semibold text-lg">{point.title}</h3>
+                                            <p className="text-muted-foreground">{point.description}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Cybersecurity shield" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="cybersecurity abstract" />
+                        <div>
+                            <Image src="https://placehold.co/600x400.png" alt="Cybersecurity shield" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="cybersecurity abstract" />
+                        </div>
                     </div>
                 </div>
             </section>
 
              {/* Values Section */}
-            <section className="container py-20 md:py-24">
-                <div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Core Values</h2>
                         <p className="mt-2 text-muted-foreground">The principles that guide our work and our commitment to you.</p>
@@ -252,7 +258,7 @@ export default function ItTelecomPage() {
 
              {/* Awards Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Recognized for Excellence</h2>
                      <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(4)].map((_, i) => (
@@ -263,8 +269,8 @@ export default function ItTelecomPage() {
             </section>
 
              {/* Testimonials Section */}
-            <section className="container py-20 md:py-24">
-                <div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
@@ -282,7 +288,7 @@ export default function ItTelecomPage() {
 
             {/* Pricing Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-6">
                             <h2 className="text-4xl md:text-5xl font-bold text-black">Flexible IT & Telecom Plans</h2>
@@ -338,8 +344,8 @@ export default function ItTelecomPage() {
             </section>
 
             {/* Contact Section */}
-            <section className="container py-20 md:py-24">
-                 <div className="px-4 md:px-6">
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="flex flex-col space-y-8">
                             <div>

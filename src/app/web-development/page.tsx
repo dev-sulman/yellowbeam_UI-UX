@@ -24,14 +24,14 @@ const teamMembers = [
     {
         name: 'Alexander Ball',
         role: 'CEO Digital Avitex',
-        avatar: 'https://images.unsplash.com/photo-1605379399642-870262d3d051?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHdlYiUyMGRldmVsb3BtZW50fGVufDB8fDB8fHww/100x100.png',
+        avatar: '/two.jpg/100x100.png',
         dataAiHint: 'professional headshot',
         testimonial: 'SulzaX exceeded our expectations with their web development solutions. Highly recommended!'
     },
     {
         name: 'Izabel Watt',
         role: 'UI UX Design TechX',
-        avatar: 'https://placehold.com/100x100.png',
+        avatar: 'four.jpg/100x100.png',
         dataAiHint: 'professional headshot',
         testimonial: 'The team at SulzaX is professional, responsive, and delivered a fantastic website for our company.'
     },
@@ -77,7 +77,7 @@ export default function WebDevelopmentPage() {
                     <div className="space-y-6">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">100 Years Of History Serving The Poconos Region</h2>
                         <div className="flex items-center gap-4">
-                            <Image src="https://placehold.co/80x80.png" alt="Tony Nguyen" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                            <Image src="four.jpg/80x80.png" alt="Tony Nguyen" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
                             <div>
                                 <p className="font-semibold">Tony Nguyen, CEO, SulzaX</p>
                                 <p className="text-muted-foreground">"Unlock your business potential today!"</p>

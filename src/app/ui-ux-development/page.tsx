@@ -23,14 +23,14 @@ const teamMembers = [
     {
         name: 'Sophia Alvarez',
         role: 'UX Lead at Innovate.io',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: '/one.jpg/100x100.png',
         dataAiHint: 'professional headshot',
         testimonial: 'SulzaX completely redesigned our app\'s user experience, and the results have been phenomenal. User engagement is up 50%!'
     },
     {
         name: 'James O\'Connor',
         role: 'Product Manager at TechFlow',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: 'two.jpg/100x100.png',
         dataAiHint: 'professional headshot',
         testimonial: 'The UI/UX team at SulzaX is incredibly talented. They delivered a beautiful and intuitive design that our users love.'
     },
@@ -152,7 +152,7 @@ export default function UiUxDevelopmentPage() {
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Designing Experiences Users Love</h2>
                             <div className="flex items-center gap-4">
-                                <Image src="https://placehold.co/80x80.png" alt="Alex Wright" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                                <Image src="/three.jpg/80x80.png" alt="Alex Wright" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
                                 <div>
                                     <p className="font-semibold">Alex Wright, Head of UX, SulzaX</p>
                                     <p className="text-muted-foreground">"Design is not just what it looks like; it's how it works."</p>
@@ -164,7 +164,7 @@ export default function UiUxDevelopmentPage() {
                             </Button>
                         </div>
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="UI/UX design workshop" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="design workshop" />
+                            <Image src="/blog13.jpeg/600x400.png" alt="UI/UX design workshop" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="design workshop" />
                         </div>
                     </div>
                 </div>
@@ -194,7 +194,7 @@ export default function UiUxDevelopmentPage() {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
-                             <Image src="https://placehold.co/600x400.png" alt="Designer sketching wireframes" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="designer sketching wireframe" />
+                             <Image src="/blog12.jpeg/600x400.png" alt="Designer sketching wireframes" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="designer sketching wireframe" />
                         </div>
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Product Design</h2>
@@ -237,7 +237,7 @@ export default function UiUxDevelopmentPage() {
                             </div>
                         </div>
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="A/B testing results on a screen" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="ab testing chart" />
+                            <Image src="/blog10.jpg/600x400.png" alt="A/B testing results on a screen" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="ab testing chart" />
                         </div>
                     </div>
                 </div>
@@ -267,7 +267,7 @@ export default function UiUxDevelopmentPage() {
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Recognized for UX Excellence</h2>
                      <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(3)].map((_, i) => (
-                             <Image key={i} src="https://placehold.co/120x120.png" alt="Award for UX design" width={120} height={120} data-ai-hint="design award trophy" />
+                             <Image key={i} src="/blog8.jpeg/120x120.png" alt="Award for UX design" width={120} height={120} data-ai-hint="design award trophy" />
                         ))}
                      </div>
                 </div>

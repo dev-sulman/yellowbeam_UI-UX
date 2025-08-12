@@ -1,21 +1,15 @@
 
 'use client';
 
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { Menu, Phone, ChevronDown, X, Code, Smartphone, PenSquare, Palette, AppWindow, Search, Megaphone, Target, MessageCircle } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import { useState, useEffect } from 'react';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 
 const SulzaXLogo = () => (
     <svg width="180" height="48" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg">
@@ -94,24 +88,11 @@ const navLinks = [
   { 
     label: 'About Us',
     href: '/about',
-    subLinks: [
-        { href: '/about', label: 'About SulzaX' },
-        { href: '/team', label: 'Our Team' },
-    ]
   },
   { href: '/portfolio', label: 'Project' },
   { 
     label: 'Clients',
     href: '#', 
-    subLinks: [
-        { href: '/finance-banking', label: 'Finance & Banking' },
-        { href: '/it-telecom', label: 'IT & Telecom' },
-        { href: '/healthcare-pharmaceuticals', label: 'Healthcare & Pharma' },
-        { href: '/transportation-logistics', label: 'Transportation & Logistics' },
-        { href: '/real-estate', label: 'Real Estate' },
-        { href: '/manufacturing-industry', label: 'Manufacturing & Industry 4.0' },
-        { href: '/education-training', label: 'Education & Training' },
-    ]
   },
   { href: '/blog', label: 'Blog' },
 ];
@@ -183,7 +164,7 @@ export default function Header() {
                         href={link.href || '#'}
                         className={cn(
                         'relative transition-colors text-sm font-medium text-primary-foreground group flex items-center gap-1',
-                        pathname.startsWith(link.href) && link.href !== '/' ? 'text-accent-foreground' : 'hover:text-primary-foreground/80'
+                        pathname.startsWith('/services') ? 'text-accent-foreground' : 'hover:text-primary-foreground/80'
                         )}
                     >
                         {link.label}
@@ -213,33 +194,7 @@ export default function Header() {
                   </div>
                 )
               }
-              if (link.subLinks) {
-                return (
-                    <DropdownMenu key={link.label}>
-                    <DropdownMenuTrigger asChild>
-                        <Link
-                            href={link.href || '#'}
-                            className={cn(
-                            'relative transition-colors text-sm font-medium text-primary-foreground group flex items-center gap-1',
-                            pathname.startsWith(link.href) && link.href !== '/' ? 'text-accent-foreground' : 'hover:text-primary-foreground/80'
-                            )}
-                        >
-                            {link.label}
-                            <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
-                        </Link>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent className="bg-primary border-gray-700 w-56">
-                        {link.subLinks.map(subLink => (
-                            <DropdownMenuItem key={subLink.href} asChild>
-                                <Link href={subLink.href} className="text-primary-foreground hover:bg-accent/20 focus:bg-accent/20">
-                                    {subLink.label}
-                                </Link>
-                            </DropdownMenuItem>
-                        ))}
-                    </DropdownMenuContent>
-                    </DropdownMenu>
-                )
-              }
+              
               return (
                  <Link
                     key={link.label}
@@ -301,25 +256,7 @@ export default function Header() {
                                     </Collapsible>
                                 )
                              }
-                            if (link.subLinks) {
-                                return (
-                                <Collapsible key={link.label}>
-                                    <CollapsibleTrigger className="flex w-full items-center justify-between gap-1 py-2 text-sm text-black group">
-                                        <span>{link.label}</span>
-                                        <ChevronDown className="h-4 w-4 transition-transform duration-300 group-data-[state=open]:rotate-180" />
-                                    </CollapsibleTrigger>
-                                    <CollapsibleContent>
-                                        <div className="grid gap-1 pl-4 pt-2">
-                                            {link.subLinks.map(subLink => (
-                                                <CollapsibleNavLink key={subLink.href} href={subLink.href}>
-                                                    {subLink.label}
-                                                </CollapsibleNavLink>
-                                            ))}
-                                        </div>
-                                    </CollapsibleContent>
-                                </Collapsible>
-                                )
-                            }
+                            
                             return (
                                 <NavLink key={link.href} href={link.href!} className="text-black">
                                     {link.label}

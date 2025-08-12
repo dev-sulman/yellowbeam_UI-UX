@@ -24,14 +24,14 @@ const teamMembers = [
     {
         name: 'Alexander Ball',
         role: 'CEO Digital Avitex',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: 'https://images.unsplash.com/photo-1605379399642-870262d3d051?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHdlYiUyMGRldmVsb3BtZW50fGVufDB8fDB8fHww/100x100.png',
         dataAiHint: 'professional headshot',
         testimonial: 'SulzaX exceeded our expectations with their web development solutions. Highly recommended!'
     },
     {
         name: 'Izabel Watt',
         role: 'UI UX Design TechX',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: 'https://placehold.com/100x100.png',
         dataAiHint: 'professional headshot',
         testimonial: 'The team at SulzaX is professional, responsive, and delivered a fantastic website for our company.'
     },
@@ -89,7 +89,7 @@ export default function WebDevelopmentPage() {
                         </Button>
                     </div>
                     <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Team discussing web design" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="web design meeting" />
+                        <Image src="https://images.unsplash.com/photo-1669023414180-4dcf35d943e1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fHdlYiUyMGRldmVsb3BtZW50fGVufDB8fDB8fHww/600x400.png" alt="Team discussing web design" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="web design meeting" />
                     </div>
                 </div>
             </section>
@@ -116,7 +116,7 @@ export default function WebDevelopmentPage() {
             <section className="container mx-auto px-4 md:px-6 py-20 md:py-24">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
-                         <Image src="https://placehold.co/600x400.png" alt="Team working on code" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team coding" />
+                         <Image src="https://images.unsplash.com/photo-1554902843-260acd0993f8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D/600x400.png" alt="Team working on code" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team coding" />
                     </div>
                     <div className="space-y-6">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Simplify Tech Challenges with Our Responsive Development Team</h2>
@@ -157,7 +157,7 @@ export default function WebDevelopmentPage() {
                         </div>
                     </div>
                     <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Website analytics" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="website analytics" />
+                        <Image src="https://images.unsplash.com/photo-1556565681-67b9cd907d20?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D/600x400.png" alt="Website analytics" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="website analytics" />
                     </div>
                 </div>
             </section>
@@ -186,7 +186,7 @@ export default function WebDevelopmentPage() {
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Outstanding Customer Service Recognition</h2>
                      <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(5)].map((_, i) => (
-                             <Image key={i} src="https://placehold.co/120x120.png" alt="Award" width={120} height={120} data-ai-hint="award trophy" />
+                             <Image key={i} src="https://images.unsplash.com/photo-1713947503588-8ff8196dc4a3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIxfHx8ZW58MHx8fHx8/120x120.png" alt="Award" width={120} height={120} data-ai-hint="award trophy" />
                         ))}
                      </div>
                 </div>

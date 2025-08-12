@@ -12,7 +12,7 @@ const blogPosts = [
     date: "October 26, 2023",
     author: "John Doe",
     excerpt: "Exploring the latest trends and technologies shaping the future of web development, from AI-powered tools to serverless architectures.",
-    image: "https://placehold.co/600x400.png",
+    image: "/blog1.jpeg",
     dataAiHint: "web development future",
     href: "#"
   },
@@ -22,7 +22,7 @@ const blogPosts = [
     date: "October 22, 2023",
     author: "Jane Smith",
     excerpt: "A deep dive into the benefits of having a dedicated mobile application for your business in today's mobile-first world.",
-    image: "https://placehold.co/600x400.png",
+    image: "/app.webp",
     dataAiHint: "mobile app business",
     href: "#"
   },
@@ -32,7 +32,7 @@ const blogPosts = [
     date: "October 18, 2023",
     author: "Michael Brown",
     excerpt: "An introductory guide to the principles of UI/UX design, with practical tips for creating user-friendly digital products.",
-    image: "https://placehold.co/600x400.png",
+    image: "/theapp.webp",
     dataAiHint: "ui ux design guide",
     href: "#"
   },
@@ -42,7 +42,7 @@ const blogPosts = [
     date: "October 15, 2023",
     author: "Emily White",
     excerpt: "A comprehensive guide to the latest SEO strategies and techniques to boost your website's ranking on Google.",
-    image: "https://placehold.co/600x400.png",
+    image: "/blog5.webp",
     dataAiHint: "seo guide 2024",
     href: "#"
   },

@@ -10,6 +10,12 @@ import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 const SulzaXLogo = () => (
     <svg width="180" height="48" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg">
@@ -162,6 +168,31 @@ export default function Header() {
         
         <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navLinks.map((link) => (
+              link.subLinks ? (
+                <DropdownMenu key={link.label}>
+                  <DropdownMenuTrigger asChild>
+                    <Link
+                        href={link.href || '#'}
+                        className={cn(
+                        'relative transition-colors text-sm font-medium text-primary-foreground group flex items-center gap-1',
+                        pathname.startsWith(link.href) && link.href !== '/' ? 'text-accent-foreground' : 'hover:text-primary-foreground/80'
+                        )}
+                    >
+                        {link.label}
+                        <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
+                    </Link>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="bg-primary border-gray-700 w-56">
+                    {link.subLinks.map(subLink => (
+                        <DropdownMenuItem key={subLink.href} asChild>
+                            <Link href={subLink.href} className="text-primary-foreground hover:bg-accent/20 focus:bg-accent/20">
+                                {subLink.label}
+                            </Link>
+                        </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
                  <Link
                     key={link.label}
                     href={link.href || '#'}
@@ -176,6 +207,7 @@ export default function Header() {
                         pathname === link.href ? 'w-full' : ''
                     )}></span>
                 </Link>
+              )
             ))}
         </nav>
         

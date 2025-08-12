@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from '@/components/ui/sheet';
-import { Menu, Phone, ChevronDown, X } from 'lucide-react';
+import { Menu, Phone, ChevronDown, X, Code, Smartphone, PenSquare, Palette, AppWindow, Search, Megaphone, Target, MessageCircle } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
@@ -68,23 +68,28 @@ const SulzaXLogo = () => (
     </svg>
 );
 
+const serviceLinks = {
+    "Development & Design": [
+      { href: '/web-development', label: 'Web Development', icon: <Code/> },
+      { href: '/mobile-development', label: 'Mobile Development', icon: <Smartphone/> },
+      { href: '/software-development', label: 'Software Development', icon: <PenSquare/> },
+      { href: '/graphic-design', label: 'Graphic Design', icon: <Palette/> },
+      { href: '/ui-ux-development', label: 'UI/UX Development', icon: <AppWindow/> },
+    ],
+    "Marketing & Strategy": [
+      { href: '/search-engine-optimization', label: 'SEO', icon: <Search/> },
+      { href: '/social-media-marketing', label: 'Social Media Marketing', icon: <Megaphone/> },
+      { href: '/pay-per-click-advertising', label: 'PPC Advertising', icon: <Target/> },
+      { href: '/content-marketing', label: 'Content Marketing', icon: <MessageCircle/> },
+    ]
+};
+
 
 const navLinks = [
   { href: '/', label: 'Home' },
   { 
     label: 'Services', 
     href: '/services',
-    subLinks: [
-      { href: '/web-development', label: 'Web Development' },
-      { href: '/mobile-development', label: 'Mobile Development' },
-      { href: '/software-development', label: 'Software Development' },
-      { href: '/graphic-design', label: 'Graphic Design' },
-      { href: '/ui-ux-development', label: 'UI/UX Development' },
-      { href: '/search-engine-optimization', label: 'SEO' },
-      { href: '/social-media-marketing', label: 'Social Media Marketing' },
-      { href: '/pay-per-click-advertising', label: 'PPC Advertising' },
-      { href: '/content-marketing', label: 'Content Marketing' },
-    ]
   },
   { 
     label: 'About Us',
@@ -170,11 +175,11 @@ export default function Header() {
         </Link>
         
         <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
-            {navLinks.map((link) => (
-              link.subLinks ? (
-                <DropdownMenu key={link.label}>
-                  <DropdownMenuTrigger asChild>
-                    <Link
+            {navLinks.map((link) => {
+              if (link.label === 'Services') {
+                return (
+                  <div key={link.label} className="group relative">
+                     <Link
                         href={link.href || '#'}
                         className={cn(
                         'relative transition-colors text-sm font-medium text-primary-foreground group flex items-center gap-1',
@@ -184,18 +189,58 @@ export default function Header() {
                         {link.label}
                         <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
                     </Link>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent className="bg-primary border-gray-700 w-56">
-                    {link.subLinks.map(subLink => (
-                        <DropdownMenuItem key={subLink.href} asChild>
-                            <Link href={subLink.href} className="text-primary-foreground hover:bg-accent/20 focus:bg-accent/20">
-                                {subLink.label}
-                            </Link>
-                        </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              ) : (
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-screen max-w-4xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                        <div className="bg-white rounded-lg shadow-xl p-8 grid grid-cols-2 gap-8">
+                           {Object.entries(serviceLinks).map(([category, links]) => (
+                                <div key={category}>
+                                    <h3 className="font-bold text-black mb-4">{category}</h3>
+                                    <ul className="space-y-3">
+                                        {links.map(subLink => (
+                                            <li key={subLink.href}>
+                                                <Link href={subLink.href} className="flex items-center gap-3 text-sm text-gray-600 hover:text-accent group/item">
+                                                   <div className="p-1 bg-secondary rounded-md group-hover/item:bg-accent/20 transition-colors">
+                                                     {React.cloneElement(subLink.icon, { className: 'w-4 h-4 text-accent group-hover/item:text-accent-foreground' })}
+                                                   </div>
+                                                   <span>{subLink.label}</span>
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                           ))}
+                        </div>
+                    </div>
+                  </div>
+                )
+              }
+              if (link.subLinks) {
+                return (
+                    <DropdownMenu key={link.label}>
+                    <DropdownMenuTrigger asChild>
+                        <Link
+                            href={link.href || '#'}
+                            className={cn(
+                            'relative transition-colors text-sm font-medium text-primary-foreground group flex items-center gap-1',
+                            pathname.startsWith(link.href) && link.href !== '/' ? 'text-accent-foreground' : 'hover:text-primary-foreground/80'
+                            )}
+                        >
+                            {link.label}
+                            <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
+                        </Link>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent className="bg-primary border-gray-700 w-56">
+                        {link.subLinks.map(subLink => (
+                            <DropdownMenuItem key={subLink.href} asChild>
+                                <Link href={subLink.href} className="text-primary-foreground hover:bg-accent/20 focus:bg-accent/20">
+                                    {subLink.label}
+                                </Link>
+                            </DropdownMenuItem>
+                        ))}
+                    </DropdownMenuContent>
+                    </DropdownMenu>
+                )
+              }
+              return (
                  <Link
                     key={link.label}
                     href={link.href || '#'}
@@ -211,7 +256,7 @@ export default function Header() {
                     )}></span>
                 </Link>
               )
-            ))}
+            })}
         </nav>
         
         <div className="flex items-center gap-4">
@@ -235,29 +280,52 @@ export default function Header() {
                 </SheetHeader>
                 <ScrollArea className="flex-grow px-6">
                     <div className="grid gap-2 py-6">
-                        {navLinks.map((link) => (
-                            link.subLinks ? (
-                            <Collapsible key={link.label}>
-                                <CollapsibleTrigger className="flex w-full items-center justify-between gap-1 py-2 text-sm text-black group">
-                                    <span>{link.label}</span>
-                                    <ChevronDown className="h-4 w-4 transition-transform duration-300 group-data-[state=open]:rotate-180" />
-                                </CollapsibleTrigger>
-                                <CollapsibleContent>
-                                    <div className="grid gap-1 pl-4 pt-2">
-                                        {link.subLinks.map(subLink => (
-                                            <CollapsibleNavLink key={subLink.href} href={subLink.href}>
-                                                {subLink.label}
-                                            </CollapsibleNavLink>
-                                        ))}
-                                    </div>
-                                </CollapsibleContent>
-                            </Collapsible>
-                            ) : (
-                            <NavLink key={link.href} href={link.href!} className="text-black">
-                                {link.label}
-                            </NavLink>
+                        {navLinks.map((link) => {
+                             if (link.label === 'Services') {
+                                const allServiceLinks = Object.values(serviceLinks).flat();
+                                return (
+                                    <Collapsible key={link.label}>
+                                        <CollapsibleTrigger className="flex w-full items-center justify-between gap-1 py-2 text-sm text-black group">
+                                            <span>{link.label}</span>
+                                            <ChevronDown className="h-4 w-4 transition-transform duration-300 group-data-[state=open]:rotate-180" />
+                                        </CollapsibleTrigger>
+                                        <CollapsibleContent>
+                                            <div className="grid gap-1 pl-4 pt-2">
+                                                {allServiceLinks.map(subLink => (
+                                                    <CollapsibleNavLink key={subLink.href} href={subLink.href}>
+                                                        {subLink.label}
+                                                    </CollapsibleNavLink>
+                                                ))}
+                                            </div>
+                                        </CollapsibleContent>
+                                    </Collapsible>
+                                )
+                             }
+                            if (link.subLinks) {
+                                return (
+                                <Collapsible key={link.label}>
+                                    <CollapsibleTrigger className="flex w-full items-center justify-between gap-1 py-2 text-sm text-black group">
+                                        <span>{link.label}</span>
+                                        <ChevronDown className="h-4 w-4 transition-transform duration-300 group-data-[state=open]:rotate-180" />
+                                    </CollapsibleTrigger>
+                                    <CollapsibleContent>
+                                        <div className="grid gap-1 pl-4 pt-2">
+                                            {link.subLinks.map(subLink => (
+                                                <CollapsibleNavLink key={subLink.href} href={subLink.href}>
+                                                    {subLink.label}
+                                                </CollapsibleNavLink>
+                                            ))}
+                                        </div>
+                                    </CollapsibleContent>
+                                </Collapsible>
+                                )
+                            }
+                            return (
+                                <NavLink key={link.href} href={link.href!} className="text-black">
+                                    {link.label}
+                                </NavLink>
                             )
-                        ))}
+                        })}
                     </div>
                 </ScrollArea>
                 <div className="p-6">

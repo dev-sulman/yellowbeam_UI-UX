@@ -23,14 +23,14 @@ const teamMembers = [
     {
         name: 'Samantha Ray',
         role: 'Lead Mobile Developer',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: 'one.jpg',
         dataAiHint: 'professional headshot',
         testimonial: 'SulzaX developed a world-class mobile app for our startup. Their expertise in mobile technology is unmatched.'
     },
     {
-        name: 'Mark Johnson',
+        name: 'leaa joe',
         role: 'Project Manager at Appify',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: '/three.jpg',
         dataAiHint: 'professional headshot',
         testimonial: 'The mobile development process was smooth and transparent. The team at SulzaX is a pleasure to work with.'
     },
@@ -152,9 +152,9 @@ export default function MobileDevelopmentPage() {
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Bringing Your Ideas to Life on Mobile</h2>
                             <div className="flex items-center gap-4">
-                                <Image src="https://placehold.co/80x80.png" alt="Jane Doe" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                                <Image src="/four.jpg" alt="Jane Doe" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
                                 <div>
-                                    <p className="font-semibold">Jane Doe, Head of Mobile, SulzaX</p>
+                                    <p className="font-semibold">Amna, Head of Mobile, SulzaX</p>
                                     <p className="text-muted-foreground">"Let's build the next big app together!"</p>
                                 </div>
                             </div>
@@ -164,7 +164,7 @@ export default function MobileDevelopmentPage() {
                             </Button>
                         </div>
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Mobile app development discussion" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="mobile app meeting" />
+                            <Image src="https://cdn.dribbble.com/userupload/43607251/file/still-7820cced9b273aef48e1a863d9198bba.png?format=webp&resize=400x300&vertical=center/600x400.png" alt="Mobile app development discussion" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="mobile app meeting" />
                         </div>
                     </div>
                 </div>
@@ -194,7 +194,7 @@ export default function MobileDevelopmentPage() {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
-                             <Image src="https://placehold.co/600x400.png" alt="Team working on mobile app" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team mobile app" />
+                             <Image src="https://cdn.dribbble.com/userupload/32675075/file/original-9cb113b6307cdbf5668caabe2b379dfc.png?format=webp&resize=400x300&vertical=center/600x400.png" alt="Team working on mobile app" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team mobile app" />
                         </div>
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Mobile Innovation</h2>
@@ -237,7 +237,7 @@ export default function MobileDevelopmentPage() {
                             </div>
                         </div>
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Mobile app UI design" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="mobile app design" />
+                            <Image src="https://cdn.dribbble.com/userupload/43687882/file/original-d8c5452dd57d254a1fae5bf3e82af3a2.png?format=webp&resize=400x300&vertical=center/600x400.png" alt="Mobile app UI design" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="mobile app design" />
                         </div>
                     </div>
                 </div>
@@ -261,17 +261,7 @@ export default function MobileDevelopmentPage() {
                 </div>
             </section>
 
-             {/* Awards Section */}
-            <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container mx-auto px-4 md:px-6 text-center">
-                     <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Awards for Mobile Excellence</h2>
-                     <div className="flex justify-center items-center flex-wrap gap-8">
-                        {[...Array(3)].map((_, i) => (
-                             <Image key={i} src="https://placehold.co/120x120.png" alt="Award for mobile app" width={120} height={120} data-ai-hint="award trophy" />
-                        ))}
-                     </div>
-                </div>
-            </section>
+        
 
              {/* Testimonials Section */}
             <section className="py-20 md:py-24">

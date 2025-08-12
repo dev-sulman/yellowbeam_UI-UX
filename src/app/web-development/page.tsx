@@ -24,14 +24,14 @@ const teamMembers = [
     {
         name: 'Alexander Ball',
         role: 'CEO Digital Avitex',
-        avatar: '/two.jpg/100x100.png',
+        avatar: '/two.jpg',
         dataAiHint: 'professional headshot',
         testimonial: 'SulzaX exceeded our expectations with their web development solutions. Highly recommended!'
     },
     {
         name: 'Izabel Watt',
         role: 'UI UX Design TechX',
-        avatar: 'four.jpg/100x100.png',
+        avatar: 'four.jpg',
         dataAiHint: 'professional headshot',
         testimonial: 'The team at SulzaX is professional, responsive, and delivered a fantastic website for our company.'
     },

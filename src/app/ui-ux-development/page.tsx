@@ -23,14 +23,14 @@ const teamMembers = [
     {
         name: 'Sophia Alvarez',
         role: 'UX Lead at Innovate.io',
-        avatar: '/one.jpg/100x100.png',
+        avatar: '/one.jpg',
         dataAiHint: 'professional headshot',
         testimonial: 'SulzaX completely redesigned our app\'s user experience, and the results have been phenomenal. User engagement is up 50%!'
     },
     {
         name: 'James O\'Connor',
         role: 'Product Manager at TechFlow',
-        avatar: 'two.jpg/100x100.png',
+        avatar: 'two.jpg',
         dataAiHint: 'professional headshot',
         testimonial: 'The UI/UX team at SulzaX is incredibly talented. They delivered a beautiful and intuitive design that our users love.'
     },
@@ -152,7 +152,7 @@ export default function UiUxDevelopmentPage() {
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Designing Experiences Users Love</h2>
                             <div className="flex items-center gap-4">
-                                <Image src="/three.jpg/80x80.png" alt="Alex Wright" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                                <Image src="/three.jpg" alt="Alex Wright" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
                                 <div>
                                     <p className="font-semibold">Alex Wright, Head of UX, SulzaX</p>
                                     <p className="text-muted-foreground">"Design is not just what it looks like; it's how it works."</p>
@@ -164,7 +164,7 @@ export default function UiUxDevelopmentPage() {
                             </Button>
                         </div>
                         <div>
-                            <Image src="/blog13.jpeg/600x400.png" alt="UI/UX design workshop" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="design workshop" />
+                            <Image src="https://plus.unsplash.com/premium_photo-1690303193725-e3a9c08cfca4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQzfHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D" alt="UI/UX design workshop" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="design workshop" />
                         </div>
                     </div>
                 </div>
@@ -194,7 +194,7 @@ export default function UiUxDevelopmentPage() {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
-                             <Image src="/blog12.jpeg/600x400.png" alt="Designer sketching wireframes" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="designer sketching wireframe" />
+                             <Image src="/blog12.jpeg" alt="Designer sketching wireframes" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="designer sketching wireframe" />
                         </div>
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Product Design</h2>
@@ -237,7 +237,7 @@ export default function UiUxDevelopmentPage() {
                             </div>
                         </div>
                         <div>
-                            <Image src="/blog10.jpg/600x400.png" alt="A/B testing results on a screen" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="ab testing chart" />
+                            <Image src="/mobile14.webp" alt="A/B testing results on a screen" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="ab testing chart" />
                         </div>
                     </div>
                 </div>

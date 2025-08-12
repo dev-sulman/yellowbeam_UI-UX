@@ -19,22 +19,7 @@ const services = [
     { title: 'System Integration', description: 'Seamlessly connect your disparate software systems.', icon: <Layers /> },
 ];
 
-const teamMembers = [
-    {
-        name: 'Chris Taylor',
-        role: 'Lead Software Architect',
-        avatar: 'https://placehold.co/100x100.png',
-        dataAiHint: 'professional headshot',
-        testimonial: 'SulzaX delivered a complex enterprise application on time and on budget. Their technical expertise is top-notch.'
-    },
-    {
-        name: 'Olivia Green',
-        role: 'CTO at InnovateCorp',
-        avatar: 'https://placehold.co/100x100.png',
-        dataAiHint: 'professional headshot',
-        testimonial: 'Working with SulzaX was a fantastic experience. They understood our requirements perfectly and built a high-quality product.'
-    },
-];
+
 
 const whyChooseUsPoints = [
     { title: 'Scalable Architecture', description: 'We design software that grows with your business.' },
@@ -139,38 +124,40 @@ export default function SoftwareDevelopmentPage() {
         <div className="bg-background text-foreground">
             {/* Hero Section */}
             <section className="relative py-20 md:py-32 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-primary">Software Development</h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">Custom software development and integration services to meet specific business needs.</p>
                 </div>
             </section>
 
             {/* Intro Section */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Building the Backbone of Your Business</h2>
-                        <div className="flex items-center gap-4">
-                            <Image src="https://placehold.co/80x80.png" alt="John Smith" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
-                            <div>
-                                <p className="font-semibold">John Smith, Head of Software, SulzaX</p>
-                                <p className="text-muted-foreground">"We build the reliable software that powers your success."</p>
+            <section className="py-20 md:py-24">
+                 <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Building the Backbone of Your Business</h2>
+                            <div className="flex items-center gap-4">
+                                <Image src="/one.jpg" alt="John Smith" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                                <div>
+                                    <p className="font-semibold">John Smith, Head of Software, SulzaX</p>
+                                    <p className="text-muted-foreground">"We build the reliable software that powers your success."</p>
+                                </div>
                             </div>
+                            <p className="text-muted-foreground">We design and develop custom software solutions that are scalable, secure, and tailored to the unique demands of your business. Let us build the tools you need to thrive.</p>
+                            <Button asChild>
+                                <Link href="/about">About Us</Link>
+                            </Button>
                         </div>
-                        <p className="text-muted-foreground">We design and develop custom software solutions that are scalable, secure, and tailored to the unique demands of your business. Let us build the tools you need to thrive.</p>
-                        <Button asChild>
-                            <Link href="/about">About Us</Link>
-                        </Button>
-                    </div>
-                    <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Software architecture diagram" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="software architecture diagram" />
+                        <div>
+                            <Image src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTgwfHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D/600x400.png" alt="Software architecture diagram" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="software architecture diagram" />
+                        </div>
                     </div>
                 </div>
             </section>
             
             {/* Services Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Software Services</h2>
                         <p className="mt-2 text-muted-foreground">From enterprise systems to custom applications.</p>
@@ -188,58 +175,62 @@ export default function SoftwareDevelopmentPage() {
             </section>
 
             {/* About Us Snippet */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                         <Image src="https://placehold.co/600x400.png" alt="Developers collaborating" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team developers meeting" />
-                    </div>
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Digital Transformation</h2>
-                        <p className="text-muted-foreground">At SulzaX, we are more than just coders. We are architects of digital solutions, dedicated to helping your business leverage technology for growth and efficiency.</p>
-                        <div className="flex gap-8">
-                            <div>
-                                <p className="text-4xl font-bold text-accent">1M+</p>
-                                <p className="text-muted-foreground">Lines of Code Written</p>
-                            </div>
-                            <div>
-                                <p className="text-4xl font-bold text-accent">500+</p>
-                                <p className="text-muted-foreground">Successful Deployments</p>
-                            </div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                             <Image src="https://cdn.dribbble.com/userupload/3072765/file/original-663c73b5a971cbb2a978fe10f03085d2.png?format=webp&resize=400x300&vertical=center/600x400.png" alt="Developers collaborating" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team developers meeting" />
                         </div>
-                        <Button asChild variant="outline">
-                            <Link href="/team">Meet our team</Link>
-                        </Button>
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Digital Transformation</h2>
+                            <p className="text-muted-foreground">At SulzaX, we are more than just coders. We are architects of digital solutions, dedicated to helping your business leverage technology for growth and efficiency.</p>
+                            <div className="flex gap-8">
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">1M+</p>
+                                    <p className="text-muted-foreground">Lines of Code Written</p>
+                                </div>
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">500+</p>
+                                    <p className="text-muted-foreground">Successful Deployments</p>
+                                </div>
+                            </div>
+                            <Button asChild variant="outline">
+                                <Link href="/team">Meet our team</Link>
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* Why Choose Us Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Why Trust SulzaX With Your Software?</h2>
-                         <p className="text-muted-foreground">We combine deep technical expertise with a commitment to understanding your business, ensuring we deliver software that truly works for you.</p>
-                        <div className="space-y-4">
-                            {whyChooseUsPoints.map(point => (
-                                <div key={point.title} className="flex items-start gap-4">
-                                    <CheckCircle className="w-6 h-6 text-accent mt-1" />
-                                    <div>
-                                        <h3 className="font-semibold text-lg">{point.title}</h3>
-                                        <p className="text-muted-foreground">{point.description}</p>
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Why Trust SulzaX With Your Software?</h2>
+                             <p className="text-muted-foreground">We combine deep technical expertise with a commitment to understanding your business, ensuring we deliver software that truly works for you.</p>
+                            <div className="space-y-4">
+                                {whyChooseUsPoints.map(point => (
+                                    <div key={point.title} className="flex items-start gap-4">
+                                        <CheckCircle className="w-6 h-6 text-accent mt-1" />
+                                        <div>
+                                            <h3 className="font-semibold text-lg">{point.title}</h3>
+                                            <p className="text-muted-foreground">{point.description}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Secure data center" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="data center security" />
+                        <div>
+                            <Image src="https://plus.unsplash.com/premium_photo-1683134150358-2cb9a4de1c57?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzI2fHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D/600x400.png" alt="Secure data center" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="data center security" />
+                        </div>
                     </div>
                 </div>
             </section>
 
              {/* Values Section */}
-            <section className="container py-20 md:py-24">
-                <div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Software Development Principles</h2>
                         <p className="mt-2 text-muted-foreground">The values that drive our engineering culture.</p>
@@ -255,39 +246,13 @@ export default function SoftwareDevelopmentPage() {
                 </div>
             </section>
 
-             {/* Awards Section */}
-            <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container text-center">
-                     <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Recognized for Software Innovation</h2>
-                     <div className="flex justify-center items-center flex-wrap gap-8">
-                        {[...Array(4)].map((_, i) => (
-                             <Image key={i} src="https://placehold.co/120x120.png" alt="Award for software" width={120} height={120} data-ai-hint="award trophy" />
-                        ))}
-                     </div>
-                </div>
-            </section>
+         
 
-             {/* Testimonials Section */}
-            <section className="container py-20 md:py-24">
-                <div>
-                    <div className="grid lg:grid-cols-2 gap-8">
-                        {teamMembers.map((member) => (
-                            <Card key={member.name} className="p-6 flex items-start gap-4">
-                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member.dataAiHint} />
-                                <div>
-                                    <p className="text-muted-foreground">"{member.testimonial}"</p>
-                                    <p className="font-bold mt-4">{member.name}</p>
-                                    <p className="text-sm text-muted-foreground">{member.role}</p>
-                                </div>
-                            </Card>
-                        ))}
-                    </div>
-                </div>
-            </section>
+  
 
             {/* Pricing Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="space-y-6">
                             <h2 className="text-4xl md:text-5xl font-bold text-black">Flexible Engagement Models</h2>
@@ -342,8 +307,8 @@ export default function SoftwareDevelopmentPage() {
             </section>
 
             {/* Contact Section */}
-            <section className="container py-20 md:py-24">
-                 <div className="px-4 md:px-6">
+            <section className="py-20 md:py-24">
+                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="flex flex-col space-y-8">
                             <div>

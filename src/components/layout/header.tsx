@@ -64,17 +64,17 @@ const SulzaXLogo = () => (
 
 const serviceLinks = {
     "Development & Design": [
-      { href: '/web-development', label: 'Web Development', icon: <Code/> },
-      { href: '/mobile-development', label: 'Mobile Development', icon: <Smartphone/> },
-      { href: '/software-development', label: 'Software Development', icon: <PenSquare/> },
-      { href: '/graphic-design', label: 'Graphic Design', icon: <Palette/> },
-      { href: '/ui-ux-development', label: 'UI/UX Development', icon: <AppWindow/> },
+      { href: '/web-development', label: 'Web Development', icon: <Code className="w-5 h-5"/> },
+      { href: '/mobile-development', label: 'Mobile Development', icon: <Smartphone className="w-5 h-5"/> },
+      { href: '/software-development', label: 'Software Development', icon: <PenSquare className="w-5 h-5"/> },
+      { href: '/graphic-design', label: 'Graphic Design', icon: <Palette className="w-5 h-5"/> },
+      { href: '/ui-ux-development', label: 'UI/UX Development', icon: <AppWindow className="w-5 h-5"/> },
     ],
     "Marketing & Strategy": [
-      { href: '/search-engine-optimization', label: 'SEO', icon: <Search/> },
-      { href: '/social-media-marketing', label: 'Social Media Marketing', icon: <Megaphone/> },
-      { href: '/pay-per-click-advertising', label: 'PPC Advertising', icon: <Target/> },
-      { href: '/content-marketing', label: 'Content Marketing', icon: <MessageCircle/> },
+      { href: '/search-engine-optimization', label: 'SEO', icon: <Search className="w-5 h-5"/> },
+      { href: '/social-media-marketing', label: 'Social Media Marketing', icon: <Megaphone className="w-5 h-5"/> },
+      { href: '/pay-per-click-advertising', label: 'PPC Advertising', icon: <Target className="w-5 h-5"/> },
+      { href: '/content-marketing', label: 'Content Marketing', icon: <MessageCircle className="w-5 h-5"/> },
     ]
 };
 
@@ -176,11 +176,11 @@ export default function Header() {
                                 <div key={category}>
                                     <h3 className="font-bold text-black mb-4">{category}</h3>
                                     <ul className="space-y-3">
-                                        {links.map(subLink => (
-                                            <li key={subLink.href}>
+                                        {links.map((subLink, index) => (
+                                            <li key={subLink.href} className="opacity-0 animate-fade-slide-up" style={{ animationDelay: `${index * 50}ms` }}>
                                                 <Link href={subLink.href} className="flex items-center gap-3 text-sm text-gray-600 hover:text-accent group/item">
-                                                   <div className="p-1 bg-secondary rounded-md group-hover/item:bg-accent/20 transition-colors">
-                                                     {React.cloneElement(subLink.icon, { className: 'w-4 h-4 text-accent group-hover/item:text-accent-foreground' })}
+                                                   <div className="p-2 bg-secondary rounded-full group-hover/item:bg-accent/20 transition-colors">
+                                                     {React.cloneElement(subLink.icon, { className: 'w-4 h-4 text-accent' })}
                                                    </div>
                                                    <span>{subLink.label}</span>
                                                 </Link>
@@ -224,8 +224,8 @@ export default function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="bg-white p-0 w-[80vw] sm:w-[350px]">
-                <SheetHeader className="flex flex-row items-center justify-end p-4">
-                  <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+                <SheetHeader className="flex flex-row items-center justify-between p-4">
+                   <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                     <SheetClose asChild>
                         <Button variant="ghost" size="icon" className="text-black hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0">
                             <X className="h-5 w-5" />

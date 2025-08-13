@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader } from '@/components/ui/sheet';
 import { Menu, Phone, ChevronDown, X, Code, Smartphone, PenSquare, Palette, AppWindow, Search, Megaphone, Target, MessageCircle, ArrowRight } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -241,7 +241,9 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="bg-white p-0 w-[80vw] sm:w-[350px]">
                 <SheetHeader className="flex flex-row items-center justify-between p-4 border-b">
-                   <SheetTitle className="text-lg font-semibold text-black">Menu</SheetTitle>
+                   <SheetClose asChild>
+                       <span className="text-lg font-semibold text-black">Menu</span>
+                   </SheetClose>
                     <SheetClose asChild>
                         <Button variant="ghost" size="icon" className="text-black hover:bg-secondary focus-visible:ring-0 focus-visible:ring-offset-0">
                             <X className="h-5 w-5" />
@@ -253,7 +255,6 @@ export default function Header() {
                     <div className="grid gap-2 py-6">
                         {navLinks.map((link) => {
                              if (link.label === 'Services') {
-                                const allServiceLinks = Object.values(serviceLinks).flat();
                                 return (
                                     <Collapsible key={link.label}>
                                         <CollapsibleTrigger className="flex w-full items-center justify-between gap-1 py-2 text-sm text-black group">
@@ -262,10 +263,15 @@ export default function Header() {
                                         </CollapsibleTrigger>
                                         <CollapsibleContent>
                                             <div className="grid gap-1 pl-4 pt-2">
-                                                {allServiceLinks.map(subLink => (
-                                                    <CollapsibleNavLink key={subLink.href} href={subLink.href}>
-                                                        {subLink.label}
-                                                    </CollapsibleNavLink>
+                                                {Object.entries(serviceLinks).map(([category, links]) => (
+                                                  <div key={category} className="mb-2">
+                                                    <h4 className="font-semibold text-sm text-muted-foreground mb-1">{category}</h4>
+                                                     {links.map(subLink => (
+                                                        <CollapsibleNavLink key={subLink.href} href={subLink.href}>
+                                                            {subLink.label}
+                                                        </CollapsibleNavLink>
+                                                     ))}
+                                                  </div>
                                                 ))}
                                             </div>
                                         </CollapsibleContent>

@@ -23,28 +23,28 @@ const teamMembers = [
     {
         name: 'Alexander Ball',
         role: 'CEO Digital Avitex',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: '/two.jpg',
         dataAiHint: 'professional headshot',
         testimonial: 'SulzaX exceeded our expectations with their cloud computing solutions. Highly recommended!'
     },
     {
         name: 'Izabel Watt',
         role: 'UI UX Design TechX',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: '/one.jpg',
         dataAiHint: 'professional headshot',
         testimonial: 'As our CTO, Sarah is the visionary leader responsible for shaping our technology strategy.'
     },
     {
         name: 'Tony Adams',
         role: 'Service Dev HiveLab',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: '/three.jpg',
         dataAiHint: 'professional headshot',
         testimonial: 'At the forefront of our software development projects is Michael. His coding prowess and problem-solving skills are unmatched.'
     },
      {
         name: 'Malika Kenny',
         role: 'UI Dev TechOne',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: '/one.jpg',
         dataAiHint: 'professional headshot',
         testimonial: 'David is the friendly face behind our exceptional customer service. With a warm and approachable demeanor, he ensures every client feels valued.'
     },
@@ -165,7 +165,7 @@ export default function FinanceBankingPage() {
                     <div className="space-y-6">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">100 Years Of History Serving The Poconos Region</h2>
                         <div className="flex items-center gap-4">
-                            <Image src="https://placehold.co/80x80.png" alt="Tony Nguyen" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                            <Image src="https://images.unsplash.com/photo-1612541122840-bf7071c968a2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjEwfHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D/80x80.png" alt="Tony Nguyen" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
                             <div>
                                 <p className="font-semibold">Tony Nguyen, CEO, SulzaX</p>
                                 <p className="text-muted-foreground">"Unlock your financial potential today!"</p>
@@ -177,7 +177,7 @@ export default function FinanceBankingPage() {
                         </Button>
                     </div>
                     <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Financial discussion" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="finance meeting" />
+                        <Image src="https://cdn.dribbble.com/userupload/43288375/file/original-f5611c1185ae3041558ffbd01d4d0810.jpg?format=webp&resize=400x300&vertical=center/600x400.png" alt="Financial discussion" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="finance meeting" />
                     </div>
                 </div>
             </section>
@@ -204,7 +204,7 @@ export default function FinanceBankingPage() {
             <section className="container py-20 md:py-24">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
-                         <Image src="https://placehold.co/600x400.png" alt="Team working" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team collaboration" />
+                         <Image src="https://cdn.dribbble.com/userupload/44428890/file/582b4d01d83634fc74512db26cf1f239.jpg?format=webp&resize=400x300&vertical=center/600x400.png" alt="Team working" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team collaboration" />
                     </div>
                     <div className="space-y-6">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Simplify Tech Challenges with Our Responsive Help Desk Team</h2>
@@ -245,7 +245,7 @@ export default function FinanceBankingPage() {
                         </div>
                     </div>
                     <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Productivity" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="office productivity" />
+                        <Image src="https://cdn.dribbble.com/userupload/36127960/file/original-76cf74c94f734a79dbd244fc78de7864.png?format=webp&resize=400x300&vertical=center/600x400.png" alt="Productivity" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="office productivity" />
                     </div>
                 </div>
             </section>
@@ -268,17 +268,7 @@ export default function FinanceBankingPage() {
                 </div>
             </section>
 
-             {/* Awards Section */}
-            <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container text-center">
-                     <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Outstanding Customer Service Recognition</h2>
-                     <div className="flex justify-center items-center flex-wrap gap-8">
-                        {[...Array(5)].map((_, i) => (
-                             <Image key={i} src="https://placehold.co/120x120.png" alt="Award" width={120} height={120} data-ai-hint="award trophy" />
-                        ))}
-                     </div>
-                </div>
-            </section>
+       
 
              {/* Testimonials Section */}
             <section className="container py-20 md:py-24">

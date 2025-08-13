@@ -30,7 +30,7 @@ const teamMembers = [
     {
         name: 'David Lee',
         role: 'Marketing Director at Visionary Inc.',
-        avatar: '/four.pjpg',
+        avatar: '/four.jpg',
         dataAiHint: 'professional headshot',
         testimonial: 'The marketing materials designed by SulzaX have significantly boosted our campaigns. Absolutely brilliant work.'
     },
@@ -163,7 +163,7 @@ export default function GraphicDesignPage() {
                         </Button>
                     </div>
                     <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Design team collaborating" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="design team meeting" />
+                        <Image src="https://plus.unsplash.com/premium_photo-1720032305135-a87c5e0888b6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQ3fHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D/600x400.png" alt="Design team collaborating" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="design team meeting" />
                     </div>
                 </div>
             </section>
@@ -191,7 +191,7 @@ export default function GraphicDesignPage() {
             <section className="container py-20 md:py-24">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
-                         <Image src="https://placehold.co/600x400.png" alt="Designer at work" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="designer working computer" />
+                         <Image src="https://plus.unsplash.com/premium_photo-1688704908992-7429b43db20d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTgzfHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D/600x400.png" alt="Designer at work" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="designer working computer" />
                     </div>
                     <div className="space-y-6">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Creative Partner</h2>
@@ -232,7 +232,7 @@ export default function GraphicDesignPage() {
                         </div>
                     </div>
                     <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Moodboard with design concepts" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="design moodboard concepts" />
+                        <Image src="https://plus.unsplash.com/premium_photo-1689700527718-257b67a4abd0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTk1fHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D/600x400.png" alt="Moodboard with design concepts" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="design moodboard concepts" />
                     </div>
                 </div>
             </section>
@@ -255,17 +255,7 @@ export default function GraphicDesignPage() {
                 </div>
             </section>
 
-             {/* Awards Section */}
-            <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container text-center">
-                     <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Award-Winning Design</h2>
-                     <div className="flex justify-center items-center flex-wrap gap-8">
-                        {[...Array(3)].map((_, i) => (
-                             <Image key={i} src="https://placehold.co/120x120.png" alt="Award for design" width={120} height={120} data-ai-hint="design award trophy" />
-                        ))}
-                     </div>
-                </div>
-            </section>
+          
 
              {/* Testimonials Section */}
             <section className="container py-20 md:py-24">

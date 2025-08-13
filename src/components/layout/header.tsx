@@ -5,11 +5,12 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from '@/components/ui/sheet';
-import { Menu, Phone, ChevronDown, X, Code, Smartphone, PenSquare, Palette, AppWindow, Search, Megaphone, Target, MessageCircle } from 'lucide-react';
+import { Menu, Phone, ChevronDown, X, Code, Smartphone, PenSquare, Palette, AppWindow, Search, Megaphone, Target, MessageCircle, ArrowRight } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import Image from 'next/image';
 
 const SulzaXLogo = () => (
     <svg width="180" height="48" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg">
@@ -64,17 +65,17 @@ const SulzaXLogo = () => (
 
 const serviceLinks = {
     "Development & Design": [
-      { href: '/web-development', label: 'Web Development', icon: <Code className="w-5 h-5"/> },
-      { href: '/mobile-development', label: 'Mobile Development', icon: <Smartphone className="w-5 h-5"/> },
-      { href: '/software-development', label: 'Software Development', icon: <PenSquare className="w-5 h-5"/> },
-      { href: '/graphic-design', label: 'Graphic Design', icon: <Palette className="w-5 h-5"/> },
-      { href: '/ui-ux-development', label: 'UI/UX Development', icon: <AppWindow className="w-5 h-5"/> },
+      { href: '/web-development', label: 'Web Development', description: 'Crafting responsive and robust websites.', icon: <Code className="w-5 h-5"/> },
+      { href: '/mobile-development', label: 'Mobile Development', description: 'Building intuitive apps for iOS and Android.', icon: <Smartphone className="w-5 h-5"/> },
+      { href: '/software-development', label: 'Software Development', description: 'Custom solutions for your business needs.', icon: <PenSquare className="w-5 h-5"/> },
+      { href: '/graphic-design', label: 'Graphic Design', description: 'Creating stunning visuals for your brand.', icon: <Palette className="w-5 h-5"/> },
+      { href: '/ui-ux-development', label: 'UI/UX Development', description: 'Designing user-centric digital experiences.', icon: <AppWindow className="w-5 h-5"/> },
     ],
     "Marketing & Strategy": [
-      { href: '/search-engine-optimization', label: 'SEO', icon: <Search className="w-5 h-5"/> },
-      { href: '/social-media-marketing', label: 'Social Media Marketing', icon: <Megaphone className="w-5 h-5"/> },
-      { href: '/pay-per-click-advertising', label: 'PPC Advertising', icon: <Target className="w-5 h-5"/> },
-      { href: '/content-marketing', label: 'Content Marketing', icon: <MessageCircle className="w-5 h-5"/> },
+      { href: '/search-engine-optimization', label: 'SEO', description: 'Boosting your visibility on search engines.', icon: <Search className="w-5 h-5"/> },
+      { href: '/social-media-marketing', label: 'Social Media Marketing', description: 'Engaging your audience on social platforms.', icon: <Megaphone className="w-5 h-5"/> },
+      { href: '/pay-per-click-advertising', label: 'PPC Advertising', description: 'Driving targeted traffic with paid ads.', icon: <Target className="w-5 h-5"/> },
+      { href: '/content-marketing', label: 'Content Marketing', description: 'Creating valuable content to attract users.', icon: <MessageCircle className="w-5 h-5"/> },
     ]
 };
 
@@ -170,25 +171,40 @@ export default function Header() {
                         {link.label}
                         <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
                     </Link>
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-screen max-w-4xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                        <div className="bg-white rounded-lg shadow-xl p-8 grid grid-cols-2 gap-8">
-                           {Object.entries(serviceLinks).map(([category, links]) => (
-                                <div key={category}>
-                                    <h3 className="font-bold text-black mb-4">{category}</h3>
-                                    <ul className="space-y-3">
-                                        {links.map((subLink, index) => (
-                                            <li key={subLink.href} className="opacity-0 animate-fade-slide-up" style={{ animationDelay: `${index * 50}ms` }}>
-                                                <Link href={subLink.href} className="flex items-center gap-3 text-sm text-gray-600 hover:text-accent group/item">
-                                                   <div className="p-2 bg-secondary rounded-full group-hover/item:bg-accent/20 transition-colors">
-                                                     {React.cloneElement(subLink.icon, { className: 'w-4 h-4 text-accent' })}
-                                                   </div>
-                                                   <span>{subLink.label}</span>
-                                                </Link>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                           ))}
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-screen max-w-5xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform-gpu group-hover:translate-y-0 translate-y-[-10px]">
+                        <div className="bg-white rounded-xl shadow-xl p-8 grid grid-cols-12 gap-8">
+                           <div className="col-span-8 grid grid-cols-2 gap-x-8 gap-y-4">
+                               {Object.entries(serviceLinks).map(([category, links], catIndex) => (
+                                    <div key={category}>
+                                        <h3 className="font-bold text-md text-black mb-4">{category}</h3>
+                                        <ul className="space-y-3">
+                                            {links.map((subLink, index) => (
+                                                <li key={subLink.href} className="opacity-0 animate-fade-slide-up" style={{ animationDelay: `${(catIndex * links.length + index) * 50}ms` }}>
+                                                    <Link href={subLink.href} className="flex items-start gap-4 text-sm text-gray-600 hover:text-accent group/item p-2 rounded-lg transition-colors hover:bg-secondary/50">
+                                                       <div className="p-2 bg-secondary rounded-lg group-hover/item:bg-accent/10 transition-colors">
+                                                         {React.cloneElement(subLink.icon, { className: 'w-5 h-5 text-accent' })}
+                                                       </div>
+                                                       <div>
+                                                           <p className="font-semibold text-black">{subLink.label}</p>
+                                                           <p className="text-xs text-muted-foreground">{subLink.description}</p>
+                                                       </div>
+                                                    </Link>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                               ))}
+                           </div>
+                           <div className="col-span-4 bg-secondary/70 rounded-lg p-6 flex flex-col justify-center items-center text-center">
+                               <Image src="/main.jpeg" alt="Web Development Spotlight" width={400} height={250} className="rounded-md mb-4" data-ai-hint="web development" />
+                               <h4 className="font-bold text-lg text-primary mb-2">Web Development Services</h4>
+                               <p className="text-sm text-muted-foreground mb-4">
+                                   Let us build a stunning, high-performance website that drives growth and engages your customers.
+                               </p>
+                               <Button asChild size="sm" className="font-semibold bg-accent hover:bg-accent/90 text-accent-foreground">
+                                   <Link href="/web-development">Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                               </Button>
+                           </div>
                         </div>
                     </div>
                   </div>
@@ -290,3 +306,5 @@ export default function Header() {
     </header>
   );
 }
+
+    

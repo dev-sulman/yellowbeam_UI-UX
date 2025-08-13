@@ -23,14 +23,14 @@ const teamMembers = [
     {
         name: 'Emily Carter',
         role: 'Lead Designer at CreativeWorks',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: '/one.jpg',
         dataAiHint: 'professional headshot',
         testimonial: 'SulzaX transformed our brand identity. Their design sense is impeccable and they are a joy to work with.'
     },
     {
         name: 'David Lee',
         role: 'Marketing Director at Visionary Inc.',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: '/four.pjpg',
         dataAiHint: 'professional headshot',
         testimonial: 'The marketing materials designed by SulzaX have significantly boosted our campaigns. Absolutely brilliant work.'
     },
@@ -151,7 +151,7 @@ export default function GraphicDesignPage() {
                     <div className="space-y-6">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Crafting Visual Stories That Connect</h2>
                         <div className="flex items-center gap-4">
-                            <Image src="https://placehold.co/80x80.png" alt="Laura Chen" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                            <Image src="/two.jpg" alt="Laura Chen" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
                             <div>
                                 <p className="font-semibold">Laura Chen, Head of Design, SulzaX</p>
                                 <p className="text-muted-foreground">"Good design is good business."</p>

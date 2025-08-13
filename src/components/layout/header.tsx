@@ -240,10 +240,10 @@ export default function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="bg-white p-0 w-[80vw] sm:w-[350px]">
-                <SheetHeader className="flex flex-row items-center justify-between p-4">
-                   <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+                <SheetHeader className="flex flex-row items-center justify-between p-4 border-b">
+                   <SheetTitle className="text-lg font-semibold text-black">Menu</SheetTitle>
                     <SheetClose asChild>
-                        <Button variant="ghost" size="icon" className="text-black hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0">
+                        <Button variant="ghost" size="icon" className="text-black hover:bg-secondary focus-visible:ring-0 focus-visible:ring-offset-0">
                             <X className="h-5 w-5" />
                             <span className="sr-only">Close</span>
                         </Button>
@@ -281,7 +281,7 @@ export default function Header() {
                         })}
                     </div>
                 </ScrollArea>
-                <div className="p-6">
+                <div className="p-6 border-t">
                     <SheetClose asChild>
                         <Button asChild className="w-full font-semibold bg-accent hover:bg-accent/90 text-accent-foreground">
                             <Link href="/contact">Contact</Link>
@@ -306,5 +306,3 @@ export default function Header() {
     </header>
   );
 }
-
-    

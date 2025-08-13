@@ -25,8 +25,8 @@ const SulzaXLogo = () => (
           <stop offset="1" stopColor="#A9B7CB"/>
         </linearGradient>
         <linearGradient id="gWord" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#FFFFFF"/>
-          <stop offset="1" stopColor="#CFE0FF"/>
+          <stop offset="0" stopColor="#000000"/>
+          <stop offset="1" stopColor="#000000"/>
         </linearGradient>
         <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
           <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
@@ -82,18 +82,18 @@ const serviceLinks = {
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { 
-    label: 'Services', 
+  {
+    label: 'Services',
     href: '/services',
   },
-  { 
+  {
     label: 'About Us',
     href: '/about',
   },
   { href: '/portfolio', label: 'Project' },
-  { 
+  {
     label: 'Clients',
-    href: '#', 
+    href: '#',
   },
   { href: '/blog', label: 'Blog' },
 ];
@@ -106,7 +106,7 @@ export default function Header() {
   useEffect(() => {
     setIsMounted(true);
   }, []);
-  
+
   if (!isMounted) {
     return null;
   }
@@ -129,7 +129,7 @@ export default function Header() {
         </SheetClose>
     );
   };
-  
+
   const CollapsibleNavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
     const isActive = pathname === href;
     return (
@@ -150,12 +150,12 @@ export default function Header() {
 
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-primary">
+    <header className="sticky top-0 z-50 w-full border-b bg-white">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-2">
           <SulzaXLogo />
         </Link>
-        
+
         <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navLinks.map((link) => {
               if (link.label === 'Services') {
@@ -164,8 +164,8 @@ export default function Header() {
                      <Link
                         href={link.href || '#'}
                         className={cn(
-                        'relative transition-colors text-sm font-medium text-primary-foreground group flex items-center gap-1',
-                        pathname.startsWith('/services') ? 'text-accent-foreground' : 'hover:text-primary-foreground/80'
+                        'relative transition-colors text-sm font-medium text-black group flex items-center gap-1',
+                        pathname.startsWith('/services') ? 'text-accent' : 'hover:text-black/80'
                         )}
                     >
                         {link.label}
@@ -210,14 +210,14 @@ export default function Header() {
                   </div>
                 )
               }
-              
+
               return (
                  <Link
                     key={link.label}
                     href={link.href || '#'}
                     className={cn(
-                    'relative transition-colors text-sm font-medium text-primary-foreground group',
-                    pathname === link.href ? 'text-accent-foreground' : 'hover:text-primary-foreground/80'
+                    'relative transition-colors text-sm font-medium text-black group',
+                    pathname === link.href ? 'text-accent' : 'hover:text-black/80'
                     )}
                 >
                     {link.label}
@@ -229,12 +229,12 @@ export default function Header() {
               )
             })}
         </nav>
-        
+
         <div className="flex items-center gap-4">
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0">
+                <Button variant="ghost" size="icon" className="text-black hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0">
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
@@ -278,7 +278,7 @@ export default function Header() {
                                     </Collapsible>
                                 )
                              }
-                            
+
                             return (
                                 <NavLink key={link.href} href={link.href!} className="text-black">
                                     {link.label}
@@ -297,9 +297,9 @@ export default function Header() {
               </SheetContent>
             </Sheet>
           </div>
-          
+
           <div className="hidden md:flex items-center space-x-4">
-            <a href="tel:+12013740018" className="flex items-center gap-2 text-sm font-medium text-primary-foreground hover:text-primary-foreground/80">
+            <a href="tel:+12013740018" className="flex items-center gap-2 text-sm font-medium text-black hover:text-black/80">
                 <Phone className="w-5 h-5 text-accent" />
                 <span>+1(201) 374-0018</span>
             </a>

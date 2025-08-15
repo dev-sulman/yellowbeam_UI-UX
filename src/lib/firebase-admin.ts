@@ -8,7 +8,12 @@ if (!admin.apps.length) {
   }
 
   try {
-    const serviceAccount = JSON.parse(serviceAccountKey);
+    // The key might be a stringified JSON or a direct JSON object depending on the environment.
+    // Parsing it ensures it's a valid object for the cert function.
+    const serviceAccount = typeof serviceAccountKey === 'string' 
+      ? JSON.parse(serviceAccountKey) 
+      : serviceAccountKey;
+
     admin.initializeApp({
       credential: admin.credential.cert(serviceAccount),
     });

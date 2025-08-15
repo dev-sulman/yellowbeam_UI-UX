@@ -1,28 +1,45 @@
 
 import * as admin from 'firebase-admin';
-import path from 'path';
-import fs from 'fs';
 
-if (!admin.apps.length) {
-  // Determine the correct path to the service account key file.
-  // The process.cwd() gives the root of the project directory.
-  const serviceAccountPath = path.join(process.cwd(), 'sulzx-38b13-firebase-adminsdk-fbsvc-2e8dcdbb67.json');
-
-  if (!fs.existsSync(serviceAccountPath)) {
-    throw new Error(`Service account key file not found at ${serviceAccountPath}. Please ensure the file exists.`);
+// This function ensures that the private_key in the service account JSON
+// is correctly formatted. Firebase credentials need the newline characters.
+function formatServiceAccount(): admin.ServiceAccount | undefined {
+  const serviceAccountKey = process.env.FIREBASE_SERVICE_ACCOUNT_KEY;
+  if (!serviceAccountKey) {
+    console.error('FIREBASE_SERVICE_ACCOUNT_KEY environment variable not set.');
+    return undefined;
   }
-  
-  const serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, 'utf8'));
 
   try {
-    admin.initializeApp({
-      credential: admin.credential.cert(serviceAccount),
-    });
-  } catch (error) {
-    console.error('Error initializing Firebase Admin SDK:', error);
-    throw new Error('Could not initialize Firebase Admin SDK. Please check the service account file.');
+    const parsedKey = JSON.parse(serviceAccountKey);
+    // The private key from an environment variable might have its newlines escaped.
+    // We need to replace '\\n' with '\n'.
+    parsedKey.private_key = parsedKey.private_key.replace(/\\n/g, '\n');
+    return parsedKey;
+  } catch (e) {
+    console.error('Failed to parse FIREBASE_SERVICE_ACCOUNT_KEY:', e);
+    return undefined;
   }
 }
 
-export const auth = admin.auth();
-export const db = admin.firestore();
+
+if (!admin.apps.length) {
+  const serviceAccount = formatServiceAccount();
+  if (serviceAccount) {
+    try {
+      admin.initializeApp({
+        credential: admin.credential.cert(serviceAccount),
+      });
+    } catch (error) {
+      console.error('Error initializing Firebase Admin SDK:', error);
+      throw new Error('Could not initialize Firebase Admin SDK. Please check your service account credentials.');
+    }
+  } else {
+     // This empty initialization will prevent crashes but auth/db will not work.
+     // It relies on the error logging above to inform the developer.
+     console.warn("Firebase Admin SDK not initialized due to missing or invalid credentials.");
+  }
+}
+
+export const auth = admin.apps.length ? admin.auth() : ({} as admin.auth.Auth);
+export const db = admin.apps.length ? admin.firestore() : ({} as admin.firestore.Firestore);

@@ -30,7 +30,7 @@ const teamMembers = [
     {
         name: 'David Chen',
         role: 'Director of Pharmacy, WellRx',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: 'https://images.unsplash.com/profile-1520262191045-ab3b9c257971?w=32&dpr=1&crop=faces&bg=%23fff&h=32&auto=format&fit=crop&q=60&ixlib=rb-4.0.3/100x100.png',
         dataAiHint: 'professional headshot',
         testimonial: 'Their custom software has streamlined our inventory management and improved our efficiency.'
     },
@@ -148,7 +148,7 @@ export default function HealthcarePage() {
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Innovating for Better Health Outcomes</h2>
                             <div className="flex items-center gap-4">
-                                <Image src="https://placehold.co/80x80.png" alt="Dr. Sarah Johnson" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot doctor" />
+                                <Image src="https://cdn.dribbble.com/users/2808548/avatars/small/a1f9508173de6f2eaa0fe427784a98ae.jpg?1571559169/80x80.png" alt="Dr. Sarah Johnson" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot doctor" />
                                 <div>
                                     <p className="font-semibold">Dr. Sarah Johnson, Chief Innovation Officer, SulzaX Health</p>
                                     <p className="text-muted-foreground">"Technology has the power to transform healthcare."</p>
@@ -160,7 +160,7 @@ export default function HealthcarePage() {
                             </Button>
                         </div>
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Doctor using a tablet" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="doctor tablet healthcare" />
+                            <Image src="https://cdn.dribbble.com/userupload/18403664/file/original-4a9be44a4d507faa2f18961974ebeafd.png?resize=1024x768&vertical=center/600x400.png" alt="Doctor using a tablet" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="doctor tablet healthcare" />
                         </div>
                     </div>
                 </div>
@@ -189,7 +189,7 @@ export default function HealthcarePage() {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Scientist in a lab" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="pharmaceutical lab scientist" />
+                            <Image src="https://cdn.dribbble.com/userupload/43326704/file/original-88944b21ab01ac8dbc601fe4571d2fc6.jpg?resize=1024x4391&vertical=center/600x400.png" alt="Scientist in a lab" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="pharmaceutical lab scientist" />
                         </div>
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in HealthTech</h2>
@@ -232,7 +232,7 @@ export default function HealthcarePage() {
                             </div>
                         </div>
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Secure data server for healthcare" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="secure data healthcare" />
+                            <Image src="https://images.unsplash.com/photo-1621857093087-7daa85ab14a6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d2ViJTIwZGV2ZWxvcGVyfGVufDB8fDB8fHww/600x400.png" alt="Secure data server for healthcare" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="secure data healthcare" />
                         </div>
                     </div>
                 </div>
@@ -256,17 +256,6 @@ export default function HealthcarePage() {
                 </div>
             </section>
 
-             {/* Awards Section */}
-            <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container mx-auto px-4 md:px-6 text-center">
-                     <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Recognized for HealthTech Innovation</h2>
-                     <div className="flex justify-center items-center flex-wrap gap-8">
-                        {[...Array(3)].map((_, i) => (
-                             <Image key={i} src="https://placehold.co/120x120.png" alt="Award for HealthTech" width={120} height={120} data-ai-hint="award trophy" />
-                        ))}
-                     </div>
-                </div>
-            </section>
 
              {/* Testimonials Section */}
             <section className="py-20 md:py-24">

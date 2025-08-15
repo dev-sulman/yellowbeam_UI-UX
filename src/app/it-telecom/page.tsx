@@ -23,14 +23,14 @@ const teamMembers = [
     {
         name: 'John Doe',
         role: 'CEO, Tech Innovators',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: 'https://cdn.dribbble.com/users/548346/avatars/small/7b8a65eab045803973443c5bdf60d41d.jpg?1742477133/100x100.png',
         dataAiHint: 'professional headshot',
         testimonial: 'SulzaX transformed our IT infrastructure, enabling us to scale our services seamlessly.'
     },
     {
         name: 'Jane Smith',
         role: 'Director of Operations, ConnectAll',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: 'https://cdn.dribbble.com/users/3010014/avatars/small/ee9bf3ee3447b4ad6fa8f5e4ea79ec27.jpg?1750833183/100x100.png',
         dataAiHint: 'professional headshot',
         testimonial: 'Their cybersecurity solutions have been instrumental in protecting our sensitive data.'
     },
@@ -148,7 +148,7 @@ export default function ItTelecomPage() {
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Connecting Your World, Securely</h2>
                             <div className="flex items-center gap-4">
-                                <Image src="https://placehold.co/80x80.png" alt="Mike Ross" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                                <Image src="https://cdn.dribbble.com/users/24315059/avatars/normal/d82993b8353d9961adb5c4ab048740d9.jpg?1753347901/80x80.png" alt="Mike Ross" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
                                 <div>
                                     <p className="font-semibold">Mike Ross, Head of IT & Telecom, SulzaX</p>
                                     <p className="text-muted-foreground">"Building the infrastructure for tomorrow's innovations."</p>
@@ -160,7 +160,7 @@ export default function ItTelecomPage() {
                             </Button>
                         </div>
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Data center" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="data center server room" />
+                            <Image src="https://cdn.dribbble.com/userupload/44222219/file/original-892ec14136b3033e2e2554a463499c51.png?resize=1024x790&vertical=center/600x400.png" alt="Data center" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="data center server room" />
                         </div>
                     </div>
                 </div>
@@ -189,7 +189,7 @@ export default function ItTelecomPage() {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Team managing network" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="network management team" />
+                            <Image src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDI5fHx8ZW58MHx8fHx8/600x400.png" alt="Team managing network" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="network management team" />
                         </div>
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Technology</h2>
@@ -232,7 +232,7 @@ export default function ItTelecomPage() {
                             </div>
                         </div>
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Cybersecurity shield" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="cybersecurity abstract" />
+                            <Image src="https://plus.unsplash.com/premium_photo-1678565879444-f87c8bd9f241?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHdlYiUyMGRldmVsb3BlcnxlbnwwfHwwfHx8MA%3D%3D/60&ixlib=rb-4./600x400.png" alt="Cybersecurity shield" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="cybersecurity abstract" />
                         </div>
                     </div>
                 </div>
@@ -256,17 +256,7 @@ export default function ItTelecomPage() {
                 </div>
             </section>
 
-             {/* Awards Section */}
-            <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container mx-auto px-4 md:px-6 text-center">
-                     <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Recognized for Excellence</h2>
-                     <div className="flex justify-center items-center flex-wrap gap-8">
-                        {[...Array(4)].map((_, i) => (
-                             <Image key={i} src="https://placehold.co/120x120.png" alt="Award for IT services" width={120} height={120} data-ai-hint="award trophy" />
-                        ))}
-                     </div>
-                </div>
-            </section>
+        
 
              {/* Testimonials Section */}
             <section className="py-20 md:py-24">

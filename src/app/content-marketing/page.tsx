@@ -21,16 +21,16 @@ const services = [
 
 const teamMembers = [
     {
-        name: 'Laura Evans',
+        name: 'Leaya Joe Dim',
         role: 'Content Director at StoryWeaver',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: 'https://cdn.dribbble.com/users/1060791/avatars/small/50def45ede08e05fdf8cd296cb8ca00f.jpg?1751645722/100x100.png',
         dataAiHint: 'professional headshot',
         testimonial: 'SulzaX helped us build a content engine that drives a significant portion of our inbound leads. Their strategic approach is fantastic.'
     },
     {
         name: 'Michael Rodriguez',
         role: 'Founder of GrowthHub',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: 'https://cdn.dribbble.com/users/1875202/avatars/small/3fa4f6ce6a13fae77537a58a92a5f471.jpg?1662610708/100x100.png',
         dataAiHint: 'professional headshot',
         testimonial: 'The content created by SulzaX is always top-notch. They are masters at storytelling and understand our audience perfectly.'
     },
@@ -152,7 +152,7 @@ export default function ContentMarketingPage() {
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Telling Stories That Build Your Brand</h2>
                             <div className="flex items-center gap-4">
-                                <Image src="https://placehold.co/80x80.png" alt="Anna Kim" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                                <Image src="https://cdn.dribbble.com/users/13403869/avatars/small/004611033d8fad528199766d6682c7ab.png?1738226292/80x80.png" alt="Anna Kim" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
                                 <div>
                                     <p className="font-semibold">Anna Kim, Head of Content, SulzaX</p>
                                     <p className="text-muted-foreground">"Great content is the best sales tool in the world."</p>
@@ -164,7 +164,7 @@ export default function ContentMarketingPage() {
                             </Button>
                         </div>
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Person writing in a notebook" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="writing content" />
+                            <Image src="https://cdn.dribbble.com/userupload/24264265/file/original-79947327f2a1120710d41a63aab8b016.jpg?resize=1024x768&vertical=center/600x400.png" alt="Person writing in a notebook" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="writing content" />
                         </div>
                     </div>
                  </div>
@@ -194,7 +194,7 @@ export default function ContentMarketingPage() {
                  <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Team reviewing content on a screen" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team reviewing content" />
+                            <Image src="https://cdn.dribbble.com/userupload/24264266/file/original-63a57827f3004ed99d38944628b23c42.jpg?resize=1024x768&vertical=center/600x400.png" alt="Team reviewing content on a screen" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team reviewing content" />
                         </div>
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Brand Storytelling</h2>
@@ -237,7 +237,7 @@ export default function ContentMarketingPage() {
                             </div>
                         </div>
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Library of books" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="library books" />
+                            <Image src="https://cdn.dribbble.com/userupload/24264270/file/original-605ae9adeda8995c51ab0563d8097690.jpg?resize=1024x768&vertical=center/600x400.png" alt="Library of books" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="library books" />
                         </div>
                     </div>
                 </div>
@@ -261,17 +261,7 @@ export default function ContentMarketingPage() {
                 </div>
             </section>
 
-             {/* Awards Section */}
-            <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container mx-auto px-4 md:px-6 text-center">
-                     <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Award-Winning Content</h2>
-                     <div className="flex justify-center items-center flex-wrap gap-8">
-                        {[...Array(2)].map((_, i) => (
-                             <Image key={i} src="https://placehold.co/120x120.png" alt="Award for content marketing" width={120} height={120} data-ai-hint="content award trophy" />
-                        ))}
-                     </div>
-                </div>
-            </section>
+         
 
              {/* Testimonials Section */}
             <section className="py-20 md:py-24">
@@ -386,4 +376,4 @@ export default function ContentMarketingPage() {
         </div>
     )
 
-    
+}

@@ -77,7 +77,7 @@ export default function WebDevelopmentPage() {
                     <div className="space-y-6">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">100 Years Of History Serving The Poconos Region</h2>
                         <div className="flex items-center gap-4">
-                            <Image src="four.jpg/80x80.png" alt="Tony Nguyen" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                            <Image src="https://cdn.dribbble.com/users/3562273/avatars/small/0c694d76da8cc6696453f2c301fe51f3.jpg?1744785508/80x80.png" alt="Tony Nguyen" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
                             <div>
                                 <p className="font-semibold">Tony Nguyen, CEO, SulzaX</p>
                                 <p className="text-muted-foreground">"Unlock your business potential today!"</p>

@@ -23,7 +23,7 @@ const teamMembers = [
     {
         name: 'Dr. Emily Carter',
         role: 'Chief Medical Officer, HealthForward',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: 'https://images.unsplash.com/profile-1753579092976-a27783e34e90image?w=32&dpr=1&crop=faces&bg=%23fff&h=32&auto=format&fit=crop&q=60&ixlib=rb-4.1.0/100x100.png',
         dataAiHint: 'professional headshot',
         testimonial: 'SulzaX developed a telemedicine platform that has been a game-changer for our practice.'
     },

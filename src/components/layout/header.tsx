@@ -299,14 +299,13 @@ export default function Header() {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <a href="tel:+12013740018" className="flex items-center gap-2 text-sm font-medium text-black hover:text-black/80">
-                <Phone className="w-5 h-5 text-accent" />
-                <span>+1(201) 374-0018</span>
-            </a>
-            <Button asChild className="font-semibold bg-accent hover:bg-accent/90 text-accent-foreground rounded-md px-6">
-              <Link href="/contact">Contact</Link>
+            <Button asChild variant="ghost" size="sm">
+              <Link href="/login">Login</Link>
             </Button>
-            </div>
+            <Button asChild size="sm">
+              <Link href="/signup">Sign Up</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </header>

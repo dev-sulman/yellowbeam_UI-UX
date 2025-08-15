@@ -23,14 +23,14 @@ const teamMembers = [
     {
         name: 'Olivia Martinez',
         role: 'PPC Specialist at AdVantage',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: 'https://cdn.dribbble.com/users/67904/avatars/normal/8bfc719620ca441a8fdb8b09703d8d54.jpg?1580744539/100x100.png',
         dataAiHint: 'professional headshot',
         testimonial: 'SulzaX managed our PPC campaigns and delivered a 200% increase in conversions. Their expertise is unmatched.'
     },
     {
         name: 'Ben Carter',
         role: 'Marketing Director at MarketPro',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: 'https://cdn.dribbble.com/users/1838892/avatars/normal/912baaa701a230c1b31db1eb0dc1def8.png?1736360469/100x100.png',
         dataAiHint: 'professional headshot',
         testimonial: 'The team at SulzaX is incredibly data-driven and transparent. They have significantly improved our ad performance.'
     },
@@ -152,7 +152,7 @@ export default function PayPerClickPage() {
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Immediate Traffic, Measurable Results</h2>
                             <div className="flex items-center gap-4">
-                                <Image src="https://placehold.co/80x80.png" alt="Daniel Kim" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                                <Image src="https://cdn.dribbble.com/users/1838892/avatars/normal/912baaa701a230c1b31db1eb0dc1def8.png?1736360469/80x80.png" alt="Daniel Kim" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
                                 <div>
                                     <p className="font-semibold">Daniel Kim, Head of PPC, SulzaX</p>
                                     <p className="text-muted-foreground">"Why wait for customers to find you? Let's go find them."</p>
@@ -164,7 +164,7 @@ export default function PayPerClickPage() {
                             </Button>
                         </div>
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="PPC dashboard with graphs" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="ppc dashboard charts" />
+                            <Image src="/peerTopeer.jpg" alt="PPC dashboard with graphs" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="ppc dashboard charts" />
                         </div>
                     </div>
                 </div>
@@ -194,7 +194,7 @@ export default function PayPerClickPage() {
                  <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Team analyzing ad performance" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team analyzing charts" />
+                            <Image src="https://cdn.dribbble.com/userupload/41540515/file/original-f0be57d00ce9d717e29c3f30ccf2e9f3.png?resize=1024x768&vertical=center/600x400.png" alt="Team analyzing ad performance" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team analyzing charts" />
                         </div>
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Paid Advertising</h2>
@@ -237,7 +237,7 @@ export default function PayPerClickPage() {
                             </div>
                         </div>
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Conversion funnel diagram" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="conversion funnel" />
+                            <Image src="https://cdn.dribbble.com/userupload/41579529/file/original-28d4243a138f960e6f3b19ad36441763.png?resize=1024x768&vertical=center/600x400.png" alt="Conversion funnel diagram" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="conversion funnel" />
                         </div>
                     </div>
                 </div>
@@ -267,7 +267,7 @@ export default function PayPerClickPage() {
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Award-Winning PPC Management</h2>
                      <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(2)].map((_, i) => (
-                             <Image key={i} src="https://placehold.co/120x120.png" alt="Award for PPC" width={120} height={120} data-ai-hint="ppc award trophy" />
+                             <Image key={i} src="https://yt3.ggpht.com/S2aJEeWAA2lKELqq676C8KIFfYXi5ePh4zBaO_KAnBAm0fvwg-fg5dh5hhNeiZzJtueNx8iTDA=s48-c-k-c0x00ffffff-no-rj/120x120.png" alt="Award for PPC" width={120} height={120} data-ai-hint="ppc award trophy" />
                         ))}
                      </div>
                 </div>

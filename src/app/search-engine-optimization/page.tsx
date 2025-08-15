@@ -23,14 +23,14 @@ const teamMembers = [
     {
         name: 'Rachel Adams',
         role: 'SEO Strategist at RankPro',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: 'https://cdn.dribbble.com/users/124059/avatars/small/d3ea2de59812eb0062ed2258fccd71d6.jpg?1501076695/100x100.png',
         dataAiHint: 'professional headshot',
         testimonial: 'SulzaX boosted our organic traffic by 150% in just six months. Their SEO expertise is second to none.'
     },
     {
         name: 'Tom Harris',
         role: 'Marketing Manager at E-Com Giant',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: 'https://cdn.dribbble.com/users/8427991/avatars/normal/2d630ea0fd16c841881d23386c4fa850.jpg?1625395574/100x100.png',
         dataAiHint: 'professional headshot',
         testimonial: 'The team at SulzaX is data-driven and transparent. We always know how our campaigns are performing.'
     },
@@ -152,7 +152,7 @@ export default function SeoPage() {
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Climb the Ranks, Drive Results</h2>
                             <div className="flex items-center gap-4">
-                                <Image src="https://placehold.co/80x80.png" alt="Kevin Miller" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                                <Image src="/one.jpg" alt="Kevin Miller" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
                                 <div>
                                     <p className="font-semibold">Kevin Miller, Head of SEO, SulzaX</p>
                                     <p className="text-muted-foreground">"The best place to hide a dead body is page 2 of Google."</p>
@@ -164,7 +164,7 @@ export default function SeoPage() {
                             </Button>
                         </div>
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="SEO strategy session" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="seo strategy meeting" />
+                            <Image src="https://cdn.dribbble.com/userupload/20273635/file/still-caf209c1fdf122cf3591e4cbb9dab159.gif?format=webp&resize=400x300&vertical=center/600x400.png" alt="SEO strategy session" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="seo strategy meeting" />
                         </div>
                     </div>
                 </div>
@@ -194,7 +194,7 @@ export default function SeoPage() {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
-                             <Image src="https://placehold.co/600x400.png" alt="Analyst reviewing SEO data" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="seo data analysis" />
+                             <Image src="https://cdn.dribbble.com/userupload/11499931/file/original-34de557127600deac97fdb3a8cfd3c43.png?format=webp&resize=400x300&vertical=center/600x400.png" alt="Analyst reviewing SEO data" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="seo data analysis" />
                         </div>
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Organic Growth</h2>
@@ -237,7 +237,7 @@ export default function SeoPage() {
                             </div>
                         </div>
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Graph showing upward trend" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="growth chart" />
+                            <Image src="https://cdn.dribbble.com/userupload/17348003/file/original-c13f570ca5a2631dcdaab42cfc7c887b.png?format=webp&resize=400x300&vertical=center/600x400.png" alt="Graph showing upward trend" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="growth chart" />
                         </div>
                     </div>
                 </div>
@@ -261,17 +261,7 @@ export default function SeoPage() {
                 </div>
             </section>
 
-             {/* Awards Section */}
-            <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container mx-auto px-4 md:px-6 text-center">
-                     <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Award-Winning SEO Campaigns</h2>
-                     <div className="flex justify-center items-center flex-wrap gap-8">
-                        {[...Array(2)].map((_, i) => (
-                             <Image key={i} src="https://placehold.co/120x120.png" alt="Award for SEO" width={120} height={120} data-ai-hint="seo award trophy" />
-                        ))}
-                     </div>
-                </div>
-            </section>
+      
 
              {/* Testimonials Section */}
             <section className="py-20 md:py-24">

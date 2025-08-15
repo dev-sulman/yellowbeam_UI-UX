@@ -23,14 +23,14 @@ const teamMembers = [
     {
         name: 'Megan Harris',
         role: 'Social Media Manager at ConnectSphere',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: 'https://cdn.dribbble.com/users/124059/avatars/small/d3ea2de59812eb0062ed2258fccd71d6.jpg?1501076695/100x100.png',
         dataAiHint: 'professional headshot',
         testimonial: 'SulzaX took our social media presence to the next level. Our engagement and follower growth have been incredible.'
     },
     {
         name: 'Jason Chen',
         role: 'Founder of StyleSavvy',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: 'https://cdn.dribbble.com/users/8427991/avatars/normal/2d630ea0fd16c841881d23386c4fa850.jpg?1625395574/100x100.png',
         dataAiHint: 'professional headshot',
         testimonial: 'The team at SulzaX is creative, strategic, and always on top of the latest trends. They are a true partner in our success.'
     },
@@ -152,7 +152,7 @@ export default function SocialMediaMarketingPage() {
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Connect, Engage, and Grow Your Brand</h2>
                             <div className="flex items-center gap-4">
-                                <Image src="https://placehold.co/80x80.png" alt="Chloe Davis" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                                <Image src="https://cdn.dribbble.com/users/9363631/avatars/small/c940b3ba1e185d64e4690b5415515ba3.jpg?1695677464/80x80.png" alt="Chloe Davis" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
                                 <div>
                                     <p className="font-semibold">Chloe Davis, Head of Social Media, SulzaX</p>
                                     <p className="text-muted-foreground">"Let's build a community, not just a following."</p>
@@ -164,7 +164,7 @@ export default function SocialMediaMarketingPage() {
                             </Button>
                         </div>
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Social media feed on a phone" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="social media phone" />
+                            <Image src="https://cdn.dribbble.com/userupload/37283453/file/original-fd9d40ce79f69d8c0dd78b8646c6ae7c.png?resize=752x564&vertical=center/600x400.png" alt="Social media feed on a phone" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="social media phone" />
                         </div>
                     </div>
                 </div>
@@ -194,7 +194,7 @@ export default function SocialMediaMarketingPage() {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
-                             <Image src="https://placehold.co/600x400.png" alt="Team brainstorming social media ideas" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team brainstorming social media" />
+                             <Image src="https://cdn.dribbble.com/userupload/38842902/file/original-bf68481518bbd4556fb979d067675088.webp?resize=1024x768&vertical=center/600x400.png" alt="Team brainstorming social media ideas" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team brainstorming social media" />
                         </div>
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Social Growth</h2>
@@ -237,7 +237,7 @@ export default function SocialMediaMarketingPage() {
                             </div>
                         </div>
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Social media analytics dashboard" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="social media dashboard" />
+                            <Image src="https://cdn.dribbble.com/userupload/12384583/file/original-58fa038b8818ce4ef26f726687691a15.jpg?resize=1024x768&vertical=center/600x400.png" alt="Social media analytics dashboard" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="social media dashboard" />
                         </div>
                     </div>
                 </div>
@@ -261,17 +261,7 @@ export default function SocialMediaMarketingPage() {
                 </div>
             </section>
 
-             {/* Awards Section */}
-            <section className="w-full py-20 md:py-24 bg-secondary/30">
-                <div className="container mx-auto px-4 md:px-6 text-center">
-                     <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Award-Winning Social Campaigns</h2>
-                     <div className="flex justify-center items-center flex-wrap gap-8">
-                        {[...Array(3)].map((_, i) => (
-                             <Image key={i} src="https://placehold.co/120x120.png" alt="Award for social media" width={120} height={120} data-ai-hint="social media award" />
-                        ))}
-                     </div>
-                </div>
-            </section>
+       
 
              {/* Testimonials Section */}
             <section className="w-full py-20 md:py-24">

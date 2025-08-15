@@ -6,7 +6,8 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { useRouter } from 'next/navigation';
-import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { auth } from '@/lib/firebase';
 import { createSessionCookie } from '@/app/actions/auth';
 
 import { Button } from '@/components/ui/button';
@@ -37,7 +38,6 @@ export default function LoginPage() {
   const onSubmit = async (data: UserFormValue) => {
     setLoading(true);
     try {
-      const auth = getAuth();
       const userCredential = await signInWithEmailAndPassword(auth, data.email, data.password);
       const idToken = await userCredential.user.getIdToken();
       
@@ -62,7 +62,6 @@ export default function LoginPage() {
   const handleGoogleSignIn = async () => {
     setGoogleLoading(true);
     try {
-      const auth = getAuth();
       const provider = new GoogleAuthProvider();
       const userCredential = await signInWithPopup(auth, provider);
       const idToken = await userCredential.user.getIdToken();

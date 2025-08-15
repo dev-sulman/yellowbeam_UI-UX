@@ -74,13 +74,13 @@ const projects = [
 ];
 
 const industries = [
-  { name: "Finance & Banking", icon: <Landmark className="w-5 h-5" />, href: "/finance-banking" },
-  { name: "Information Technology & Telecommunications", icon: <Rocket className="w-5 h-5" />, href: "/it-telecom" },
-  { name: "Healthcare & Pharmaceuticals", icon: <BriefcaseMedical className="w-5 h-5" />, href: "/healthcare-pharmaceuticals" },
-  { name: "Transportation & Logistics", icon: <Plane className="w-5 h-5" />, href: "/transportation-logistics" },
-  { name: "Real Estate", icon: <Building2 className="w-5 h-5" />, href: "/real-estate" },
-  { name: "Manufacturing & Industry 4.0", icon: <Wrench className="w-5 h-5" />, href: "/manufacturing-industry" },
-  { name: "Education & Training", icon: <School className="w-5 h-5" />, href: "/education-training" },
+  { name: "Finance & Banking", icon: <Landmark className="w-8 h-8 text-accent" />, href: "/finance-banking" },
+  { name: "Information Technology & Telecommunications", icon: <Rocket className="w-8 h-8 text-accent" />, href: "/it-telecom" },
+  { name: "Healthcare & Pharmaceuticals", icon: <BriefcaseMedical className="w-8 h-8 text-accent" />, href: "/healthcare-pharmaceuticals" },
+  { name: "Transportation & Logistics", icon: <Plane className="w-8 h-8 text-accent" />, href: "/transportation-logistics" },
+  { name: "Real Estate", icon: <Building2 className="w-8 h-8 text-accent" />, href: "/real-estate" },
+  { name: "Manufacturing & Industry 4.0", icon: <Wrench className="w-8 h-8 text-accent" />, href: "/manufacturing-industry" },
+  { name: "Education & Training", icon: <School className="w-8 h-8 text-accent" />, href: "/education-training" },
 ];
 
 const services = [
@@ -362,31 +362,37 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="industries" className="w-full pt-16 md:pt-24 pb-16 md:pb-24 lg:pb-32">
+      <section id="industries" className="w-full pt-16 md:pt-24 pb-16 md:pb-24 lg:pb-32 bg-secondary/30">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
-            <div className="space-y-4">
-              <Badge variant="outline" className="bg-secondary text-accent font-semibold border-accent/20">INDUSTRIES</Badge>
-              <h2 className="text-3xl font-normal tracking-tighter sm:text-4xl text-black">
-                We Help Power Industries Of All Kinds To <br /> Boost ROI And Find New Clients
+          <div className="text-center mb-12">
+              <Badge variant="outline" className="bg-accent/10 text-accent font-semibold border-accent/20 mb-4">INDUSTRIES</Badge>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-primary">
+                We Help Power Industries Of All Kinds
               </h2>
-            </div>
-            <Link href="/services" className="text-sm font-semibold text-black hover:underline mt-4 md:mt-0">
-              View All Industries <ArrowRight className="inline-block ml-1 h-4 w-4" />
-            </Link>
+              <p className="max-w-2xl mx-auto mt-4 text-muted-foreground">
+                Our expertise spans across multiple sectors, delivering tailored IT solutions that drive growth, efficiency, and innovation.
+              </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {industries.map((industry, index) => (
               <Link href={industry.href} key={index} className="group">
-                <Card className="bg-secondary/30 hover:bg-[#2D4FE1] text-black hover:text-white transition-all duration-300 shadow-sm hover:shadow-md border-0">
-                  <CardContent className="p-4 flex items-center gap-4">
-                    {industry.icon}
-                    <h3 className="text-lg font-normal text-black group-hover:text-white transition-transform duration-300 group-hover:translate-x-1">{industry.name}</h3>
+                <Card className="bg-background/50 hover:bg-white text-foreground transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-2 border-border/50">
+                  <CardContent className="p-6 flex flex-col items-center text-center">
+                    <div className="p-4 bg-accent/10 rounded-full mb-4 group-hover:bg-accent transition-colors duration-300">
+                        {industry.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-primary mb-2">{industry.name}</h3>
+                    <p className="text-sm text-muted-foreground">Learn more <ArrowRight className="inline-block ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" /></p>
                   </CardContent>
                 </Card>
               </Link>
             ))}
           </div>
+           <div className="text-center mt-12">
+                <Button asChild variant="outline">
+                    <Link href="/services">View All Services</Link>
+                </Button>
+            </div>
         </div>
       </section>
 
@@ -494,3 +500,4 @@ export default function Home() {
     </div>
   );
 }
+

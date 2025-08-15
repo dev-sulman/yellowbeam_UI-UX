@@ -74,13 +74,13 @@ const projects = [
 ];
 
 const industries = [
-  { name: "Finance & Banking", icon: <Landmark className="w-8 h-8 text-accent" />, href: "/finance-banking" },
-  { name: "Information Technology & Telecommunications", icon: <Rocket className="w-8 h-8 text-accent" />, href: "/it-telecom" },
-  { name: "Healthcare & Pharmaceuticals", icon: <BriefcaseMedical className="w-8 h-8 text-accent" />, href: "/healthcare-pharmaceuticals" },
-  { name: "Transportation & Logistics", icon: <Plane className="w-8 h-8 text-accent" />, href: "/transportation-logistics" },
-  { name: "Real Estate", icon: <Building2 className="w-8 h-8 text-accent" />, href: "/real-estate" },
-  { name: "Manufacturing & Industry 4.0", icon: <Wrench className="w-8 h-8 text-accent" />, href: "/manufacturing-industry" },
-  { name: "Education & Training", icon: <School className="w-8 h-8 text-accent" />, href: "/education-training" },
+  { name: "Finance & Banking", icon: <Landmark className="w-8 h-8 text-accent group-hover:text-white transition-colors" />, href: "/finance-banking" },
+  { name: "Information Technology & Telecommunications", icon: <Rocket className="w-8 h-8 text-accent group-hover:text-white transition-colors" />, href: "/it-telecom" },
+  { name: "Healthcare & Pharmaceuticals", icon: <BriefcaseMedical className="w-8 h-8 text-accent group-hover:text-white transition-colors" />, href: "/healthcare-pharmaceuticals" },
+  { name: "Transportation & Logistics", icon: <Plane className="w-8 h-8 text-accent group-hover:text-white transition-colors" />, href: "/transportation-logistics" },
+  { name: "Real Estate", icon: <Building2 className="w-8 h-8 text-accent group-hover:text-white transition-colors" />, href: "/real-estate" },
+  { name: "Manufacturing & Industry 4.0", icon: <Wrench className="w-8 h-8 text-accent group-hover:text-white transition-colors" />, href: "/manufacturing-industry" },
+  { name: "Education & Training", icon: <School className="w-8 h-8 text-accent group-hover:text-white transition-colors" />, href: "/education-training" },
 ];
 
 const services = [
@@ -379,9 +379,9 @@ export default function Home() {
             {industries.slice(0, 6).map((industry, index) => (
               <Link href={industry.href} key={index} className="group">
                 <Card className="bg-secondary/30 hover:bg-[#2D4FE1] text-black hover:text-white transition-all duration-300 shadow-sm hover:shadow-md border-0">
-                  <CardContent className="p-4 flex items-center gap-4">
+                  <CardContent className="p-4 flex items-center gap-4 transition-transform duration-300 group-hover:translate-x-1">
                     {industry.icon}
-                    <h3 className="text-lg font-normal text-black group-hover:text-white transition-transform duration-300 group-hover:translate-x-1">{industry.name}</h3>
+                    <h3 className="text-lg font-normal text-black group-hover:text-white">{industry.name}</h3>
                   </CardContent>
                 </Card>
               </Link>

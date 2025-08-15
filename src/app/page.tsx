@@ -362,37 +362,31 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="industries" className="w-full pt-16 md:pt-24 pb-16 md:pb-24 lg:pb-32 bg-secondary/30">
+      <section id="industries" className="w-full pt-16 md:pt-24 pb-16 md:pb-24 lg:pb-32">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-12">
-              <Badge variant="outline" className="bg-accent/10 text-accent font-semibold border-accent/20 mb-4">INDUSTRIES</Badge>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-primary">
-                We Help Power Industries Of All Kinds
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
+            <div className="space-y-4">
+              <Badge variant="outline" className="bg-secondary text-accent font-semibold border-accent/20">INDUSTRIES</Badge>
+              <h2 className="text-3xl font-normal tracking-tighter sm:text-4xl text-black">
+                We Help Power Industries Of All Kinds To <br /> Boost ROI And Find New Clients
               </h2>
-              <p className="max-w-2xl mx-auto mt-4 text-muted-foreground">
-                Our expertise spans across multiple sectors, delivering tailored IT solutions that drive growth, efficiency, and innovation.
-              </p>
+            </div>
+            <Link href="/services" className="text-sm font-semibold text-black hover:underline mt-4 md:mt-0">
+              View All Industries <ArrowRight className="inline-block ml-1 h-4 w-4" />
+            </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {industries.map((industry, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {industries.slice(0, 6).map((industry, index) => (
               <Link href={industry.href} key={index} className="group">
-                <Card className="bg-background/50 hover:bg-white text-foreground transition-all duration-300 shadow-sm hover:shadow-lg hover:-translate-y-2 border-border/50">
-                  <CardContent className="p-6 flex flex-col items-center text-center">
-                    <div className="p-4 bg-accent/10 rounded-full mb-4 group-hover:bg-accent transition-colors duration-300">
-                        {industry.icon}
-                    </div>
-                    <h3 className="text-xl font-bold text-primary mb-2">{industry.name}</h3>
-                    <p className="text-sm text-muted-foreground">Learn more <ArrowRight className="inline-block ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" /></p>
+                <Card className="bg-secondary/30 hover:bg-[#2D4FE1] text-black hover:text-white transition-all duration-300 shadow-sm hover:shadow-md border-0">
+                  <CardContent className="p-4 flex items-center gap-4">
+                    {industry.icon}
+                    <h3 className="text-lg font-normal text-black group-hover:text-white transition-transform duration-300 group-hover:translate-x-1">{industry.name}</h3>
                   </CardContent>
                 </Card>
               </Link>
             ))}
           </div>
-           <div className="text-center mt-12">
-                <Button asChild variant="outline">
-                    <Link href="/services">View All Services</Link>
-                </Button>
-            </div>
         </div>
       </section>
 
@@ -500,4 +494,3 @@ export default function Home() {
     </div>
   );
 }
-

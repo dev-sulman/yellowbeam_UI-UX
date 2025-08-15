@@ -474,7 +474,7 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-4">
                   <Phone className="w-6 h-6 text-white" />
-                  <a href="tel:+12013740018" className="text-lg text-gray-300 hover:text-white transition-colors">+1 (201) 374-0018</a>
+                  <a href="tel:+12013740018" className="text-lg text-gray-300 hover:text-white transition-colors">+92 165 535 971</a>
                 </div>
                 <div className="flex items-center gap-4">
                   <MapPin className="w-6 h-6 text-white" />

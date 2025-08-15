@@ -54,11 +54,19 @@ export default function SignupPage() {
       });
       router.push('/');
     } catch (error: any) {
-      toast({
-        variant: 'destructive',
-        title: 'Uh oh! Something went wrong.',
-        description: error.message,
-      });
+      if (error.code === 'auth/email-already-in-use') {
+        toast({
+          variant: 'destructive',
+          title: 'Email already registered',
+          description: 'This email is already in use. Please try logging in.',
+        });
+      } else {
+        toast({
+          variant: 'destructive',
+          title: 'Uh oh! Something went wrong.',
+          description: error.message,
+        });
+      }
     } finally {
       setLoading(false);
     }
@@ -79,11 +87,19 @@ export default function SignupPage() {
       });
       router.push('/');
     } catch (error: any) {
-      toast({
-        variant: 'destructive',
-        title: 'Google Sign-Up Failed',
-        description: error.message,
-      });
+      if (error.code === 'auth/email-already-in-use') {
+        toast({
+          variant: 'destructive',
+          title: 'Email already registered',
+          description: 'This email is already linked to an account. Please log in with Google.',
+        });
+      } else {
+        toast({
+          variant: 'destructive',
+          title: 'Google Sign-Up Failed',
+          description: error.message,
+        });
+      }
     } finally {
       setGoogleLoading(false);
     }

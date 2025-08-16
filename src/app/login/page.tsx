@@ -90,6 +90,9 @@ export default function LoginPage() {
   const handleGoogleSignIn = async () => {
     setGoogleLoading(true);
     const provider = new GoogleAuthProvider();
+    provider.setCustomParameters({
+      'auth_domain': auth.config.authDomain
+    });
     await signInWithRedirect(auth, provider);
   };
 

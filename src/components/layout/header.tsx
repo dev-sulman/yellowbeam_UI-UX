@@ -246,8 +246,7 @@ export default function Header({ user }: HeaderProps) {
               </SheetTrigger>
               <SheetContent side="right" className="bg-white p-0 w-[80vw] sm:w-[350px]">
                 <SheetHeader className="flex flex-row items-center justify-between p-4 border-b">
-                   <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
-                   <span className="text-lg font-semibold text-black">Menu</span>
+                   <SheetTitle>Menu</SheetTitle>
                     <SheetClose asChild>
                         <Button variant="ghost" size="icon" className="text-black hover:bg-secondary focus-visible:ring-0 focus-visible:ring-offset-0">
                             <X className="h-5 w-5" />
@@ -292,11 +291,41 @@ export default function Header({ user }: HeaderProps) {
                     </div>
                 </ScrollArea>
                 <div className="p-6 border-t">
-                    <SheetClose asChild>
-                        <Button asChild className="w-full font-semibold bg-accent hover:bg-accent/90 text-accent-foreground">
-                            <Link href="/contact">Contact</Link>
-                        </Button>
-                    </SheetClose>
+                  {user ? (
+                      <div className="flex flex-col gap-4">
+                        <div className="flex items-center gap-3">
+                           <Avatar>
+                              <AvatarImage src={user.picture ?? ''} alt={user.name ?? 'User'} />
+                              <AvatarFallback>{user.name?.charAt(0) ?? 'U'}</AvatarFallback>
+                           </Avatar>
+                           <div>
+                              <p className="text-sm font-medium">{user.name}</p>
+                              <p className="text-xs text-muted-foreground">{user.email}</p>
+                           </div>
+                        </div>
+                         <SheetClose asChild>
+                            <Button asChild className="w-full font-semibold bg-destructive hover:bg-destructive/90 text-destructive-foreground">
+                                <Link href="#" onClick={async () => {
+                                  await fetch('/api/logout', { method: 'POST' });
+                                  window.location.href = '/';
+                                }}>Logout</Link>
+                            </Button>
+                         </SheetClose>
+                      </div>
+                  ) : (
+                    <>
+                      <SheetClose asChild>
+                          <Button asChild className="w-full font-semibold bg-accent hover:bg-accent/90 text-accent-foreground mb-2">
+                              <Link href="/login">Login</Link>
+                          </Button>
+                      </SheetClose>
+                      <SheetClose asChild>
+                           <Button asChild variant="outline" className="w-full">
+                              <Link href="/signup">Sign Up</Link>
+                          </Button>
+                      </SheetClose>
+                    </>
+                  )}
                 </div>
               </SheetContent>
             </Sheet>

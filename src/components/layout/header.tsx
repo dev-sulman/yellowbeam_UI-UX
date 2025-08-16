@@ -11,6 +11,7 @@ import { cn } from '@/lib/utils';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import Image from 'next/image';
+import { UserNav } from '@/components/user-nav';
 
 const SulzaXLogo = () => (
     <svg width="180" height="48" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg">
@@ -98,7 +99,11 @@ const navLinks = [
   { href: '/blog', label: 'Blog' },
 ];
 
-export default function Header() {
+interface HeaderProps {
+    user: { name?: string | null, email?: string | null, picture?: string | null } | null
+}
+
+export default function Header({ user }: HeaderProps) {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
@@ -297,15 +302,18 @@ export default function Header() {
               </SheetContent>
             </Sheet>
           </div>
-
-          <div className="hidden md:flex items-center space-x-4">
-            <Button asChild variant="ghost" size="sm">
-              <Link href="/login">Login</Link>
-            </Button>
-            <Button asChild size="sm">
-              <Link href="/signup">Sign Up</Link>
-            </Button>
-          </div>
+            {user ? (
+                <UserNav user={user} />
+            ) : (
+                <div className="hidden md:flex items-center space-x-4">
+                    <Button asChild variant="ghost" size="sm">
+                        <Link href="/login">Login</Link>
+                    </Button>
+                    <Button asChild size="sm">
+                        <Link href="/signup">Sign Up</Link>
+                    </Button>
+                </div>
+            )}
         </div>
       </div>
     </header>

@@ -12,6 +12,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/component
 import { ScrollArea } from '@/components/ui/scroll-area';
 import Image from 'next/image';
 import { UserNav } from '@/components/user-nav';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const SulzaXLogo = () => (
     <svg width="180" height="48" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg">
@@ -115,6 +116,15 @@ export default function Header({ user }: HeaderProps) {
   if (!isMounted) {
     return null;
   }
+
+  const getInitials = (name?: string | null) => {
+    if (!name) return 'U';
+    const names = name.split(' ');
+    if (names.length > 1) {
+      return `${names[0][0]}${names[names.length - 1][0]}`.toUpperCase();
+    }
+    return name.substring(0, 2).toUpperCase();
+  };
 
   const NavLink = ({ href, children, className }: { href: string; children: React.ReactNode, className?: string }) => {
     const isActive = pathname === href;
@@ -296,7 +306,7 @@ export default function Header({ user }: HeaderProps) {
                         <div className="flex items-center gap-3">
                            <Avatar>
                               <AvatarImage src={user.picture ?? ''} alt={user.name ?? 'User'} />
-                              <AvatarFallback>{user.name?.charAt(0) ?? 'U'}</AvatarFallback>
+                              <AvatarFallback>{getInitials(user.name)}</AvatarFallback>
                            </Avatar>
                            <div>
                               <p className="text-sm font-medium">{user.name}</p>
@@ -347,3 +357,4 @@ export default function Header({ user }: HeaderProps) {
     </header>
   );
 }
+

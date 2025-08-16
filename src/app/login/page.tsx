@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -11,6 +10,7 @@ import { auth } from '@/lib/firebase';
 import { createSessionCookie } from '@/app/actions/auth';
 
 import { Button } from '@/components/ui/button';
+
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -33,8 +33,8 @@ export default function LoginPage() {
 
   useEffect(() => {
     const handleRedirectResult = async () => {
-      setLoading(true);
       try {
+        setGoogleLoading(true);
         const result = await getRedirectResult(auth);
         if (result) {
           const idToken = await result.user.getIdToken();
@@ -52,15 +52,18 @@ export default function LoginPage() {
           description: error.message,
         });
       } finally {
-        setLoading(false);
+        setGoogleLoading(false);
       }
     };
     handleRedirectResult();
   }, [router, toast]);
 
-
   const form = useForm<UserFormValue>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      email: '',
+      password: '',
+    },
   });
 
   const onSubmit = async (data: UserFormValue) => {
@@ -89,11 +92,17 @@ export default function LoginPage() {
 
   const handleGoogleSignIn = async () => {
     setGoogleLoading(true);
-    const provider = new GoogleAuthProvider();
-    provider.setCustomParameters({
-      'auth_domain': auth.config.authDomain
-    });
-    await signInWithRedirect(auth, provider);
+    try {
+      const provider = new GoogleAuthProvider();
+      await signInWithRedirect(auth, provider);
+    } catch (error: any) {
+      setGoogleLoading(false);
+      toast({
+        variant: 'destructive',
+        title: 'Google Sign-In Failed',
+        description: error.message,
+      });
+    }
   };
 
   return (

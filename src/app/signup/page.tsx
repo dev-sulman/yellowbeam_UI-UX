@@ -38,7 +38,7 @@ export default function SignupPage() {
 
   useEffect(() => {
     const handleRedirectResult = async () => {
-      setLoading(true);
+      setGoogleLoading(true);
       try {
         const result = await getRedirectResult(auth);
         if (result) {
@@ -65,7 +65,7 @@ export default function SignupPage() {
           });
         }
       } finally {
-        setLoading(false);
+        setGoogleLoading(false);
       }
     };
     handleRedirectResult();
@@ -73,6 +73,11 @@ export default function SignupPage() {
 
   const form = useForm<UserFormValue>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      email: '',
+      password: '',
+      confirmPassword: ''
+    }
   });
 
   const onSubmit = async (data: UserFormValue) => {
@@ -109,11 +114,17 @@ export default function SignupPage() {
 
   const handleGoogleSignUp = async () => {
     setGoogleLoading(true);
-    const provider = new GoogleAuthProvider();
-    provider.setCustomParameters({
-      'auth_domain': auth.config.authDomain
-    });
-    await signInWithRedirect(auth, provider);
+    try {
+      const provider = new GoogleAuthProvider();
+      await signInWithRedirect(auth, provider);
+    } catch (error: any) {
+       setGoogleLoading(false);
+       toast({
+        variant: 'destructive',
+        title: 'Google Sign-Up Failed',
+        description: error.message,
+      });
+    }
   };
 
   return (

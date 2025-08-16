@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -45,11 +44,19 @@ export default function LoginPage() {
           router.push('/');
         }
       } catch (error: any) {
-        toast({
-          variant: 'destructive',
-          title: 'Google Sign-In Failed',
-          description: error.message,
-        });
+        if (error.code === 'auth/unauthorized-domain') {
+          toast({
+            variant: 'destructive',
+            title: 'Domain Not Authorized',
+            description: `Domain ${window.location.hostname} is not authorized. Please contact support.`,
+          });
+        } else {
+          toast({
+            variant: 'destructive',
+            title: 'Google Sign-In Failed',
+            description: error.message,
+          });
+        }
       } finally {
         setGoogleLoading(false);
       }
@@ -96,11 +103,19 @@ export default function LoginPage() {
       await signInWithRedirect(auth, provider);
     } catch (error: any) {
       setGoogleLoading(false);
-      toast({
-        variant: 'destructive',
-        title: 'Google Sign-In Failed',
-        description: error.message,
-      });
+      if (error.code === 'auth/unauthorized-domain') {
+        toast({
+          variant: 'destructive',
+          title: 'Domain Not Authorized',
+          description: `Domain ${window.location.hostname} is not authorized. Please contact support.`,
+        });
+      } else {
+        toast({
+          variant: 'destructive',
+          title: 'Google Sign-In Failed',
+          description: error.message,
+        });
+      }
     }
   };
 

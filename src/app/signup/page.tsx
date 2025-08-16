@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -46,7 +45,7 @@ export default function SignupPage() {
           await createSessionCookie(idToken);
           toast({
             title: 'Success!',
-            description: 'You have been logged in successfully with Google.',
+            description: 'You have been signed up successfully with Google.',
           });
           router.push('/');
         }
@@ -56,6 +55,12 @@ export default function SignupPage() {
             variant: 'destructive',
             title: 'Email already registered',
             description: 'This email is already linked to an account. Please log in with Google.',
+          });
+        } else if (error.code === 'auth/unauthorized-domain') {
+          toast({
+            variant: 'destructive',
+            title: 'Domain Not Authorized',
+            description: `Domain ${window.location.hostname} is not authorized. Please contact support.`,
           });
         } else {
           toast({
@@ -118,12 +123,20 @@ export default function SignupPage() {
       const provider = new GoogleAuthProvider();
       await signInWithRedirect(auth, provider);
     } catch (error: any) {
-       setGoogleLoading(false);
-       toast({
-        variant: 'destructive',
-        title: 'Google Sign-Up Failed',
-        description: error.message,
-      });
+      setGoogleLoading(false);
+      if (error.code === 'auth/unauthorized-domain') {
+        toast({
+          variant: 'destructive',
+          title: 'Domain Not Authorized',
+          description: `Domain ${window.location.hostname} is not authorized. Please contact support.`,
+        });
+      } else {
+        toast({
+          variant: 'destructive',
+          title: 'Google Sign-Up Failed',
+          description: error.message,
+        });
+      }
     }
   };
 

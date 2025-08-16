@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { Menu, Phone, ChevronDown, X, Code, Smartphone, PenSquare, Palette, AppWindow, Search, Megaphone, Target, MessageCircle, ArrowRight } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -246,9 +246,8 @@ export default function Header({ user }: HeaderProps) {
               </SheetTrigger>
               <SheetContent side="right" className="bg-white p-0 w-[80vw] sm:w-[350px]">
                 <SheetHeader className="flex flex-row items-center justify-between p-4 border-b">
-                   <SheetClose asChild>
-                       <span className="text-lg font-semibold text-black">Menu</span>
-                   </SheetClose>
+                   <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+                   <span className="text-lg font-semibold text-black">Menu</span>
                     <SheetClose asChild>
                         <Button variant="ghost" size="icon" className="text-black hover:bg-secondary focus-visible:ring-0 focus-visible:ring-offset-0">
                             <X className="h-5 w-5" />

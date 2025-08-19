@@ -346,37 +346,35 @@ export default function FinanceBankingPage() {
             </section>
 
             {/* Contact Section */}
-            <section className="container py-20 md:py-24">
-                 <div className="px-4 md:px-6">
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
-                        <div className="flex flex-col space-y-8">
-                            <div>
-                                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Free Consultation - Discover IT Solutions</h2>
-                                <p className="mt-4 max-w-2xl text-muted-foreground">
-                                    Unlock the full potential of your business with our free consultation. Our expert team will assess your IT needs, recommend tailored solutions, and chart a path to success.
-                                </p>
+            <section className="container mx-auto px-4 md:px-6 py-20 md:py-24">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    <div className="flex flex-col space-y-8">
+                        <div>
+                            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Free Consultation - Discover IT Solutions</h2>
+                            <p className="mt-4 max-w-2xl text-muted-foreground">
+                                Unlock the full potential of your business with our free consultation. Our expert team will assess your IT needs, recommend tailored solutions, and chart a path to success.
+                            </p>
+                        </div>
+                        <div className="space-y-6">
+                            <div className="flex items-center gap-4">
+                                <Mail className="w-6 h-6 text-accent" />
+                                <a href="mailto:contact@sulzax.com" className="text-lg hover:text-accent transition-colors">contact@sulzax.com</a>
                             </div>
-                            <div className="space-y-6">
-                                <div className="flex items-center gap-4">
-                                    <Mail className="w-6 h-6 text-accent" />
-                                    <a href="mailto:contact@sulzax.com" className="text-lg hover:text-accent transition-colors">contact@sulzax.com</a>
-                                </div>
-                                <div className="flex items-center gap-4">
-                                    <Phone className="w-6 h-6 text-accent" />
-                                    <a href="tel:+12013740018" className="text-lg hover:text-accent transition-colors">+1 (201) 374-0018</a>
-                                </div>
-                                <div className="flex items-center gap-4">
-                                    <MapPin className="w-6 h-6 text-accent" />
-                                    <div>
-                                        <p className="text-lg">5 South Forge Lane Cherry Hill, NJ 08002</p>
-                                        <a href="#" className="text-sm text-accent hover:underline">Open map</a>
-                                    </div>
+                            <div className="flex items-center gap-4">
+                                <Phone className="w-6 h-6 text-accent" />
+                                <a href="tel:+12013740018" className="text-lg hover:text-accent transition-colors">+1 (201) 374-0018</a>
+                            </div>
+                            <div className="flex items-center gap-4">
+                                <MapPin className="w-6 h-6 text-accent" />
+                                <div>
+                                    <p className="text-lg">5 South Forge Lane Cherry Hill, NJ 08002</p>
+                                    <a href="#" className="text-sm text-accent hover:underline">Open map</a>
                                 </div>
                             </div>
                         </div>
-                        <div className="w-full max-w-md mx-auto">
-                        <ContactForm cardTitle="Schedule A Free Consultation" cardDescription="" />
-                        </div>
+                    </div>
+                    <div className="w-full max-w-md mx-auto">
+                    <ContactForm cardTitle="Schedule A Free Consultation" cardDescription="" />
                     </div>
                 </div>
             </section>

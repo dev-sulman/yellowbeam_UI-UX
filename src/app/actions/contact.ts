@@ -1,6 +1,7 @@
 'use server';
 
 import { z } from 'zod';
+import { adminDb } from '@/lib/firebase-admin';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters.'),
@@ -16,18 +17,25 @@ export async function handleContactForm(data: unknown) {
   const parsed = formSchema.safeParse(data);
 
   if (!parsed.success) {
-    return { success: false, error: 'Invalid data provided.' };
+    const errorMessages = parsed.error.errors.map(e => e.message).join(', ');
+    return { success: false, error: `Invalid data: ${errorMessages}` };
   }
 
   const formData = parsed.data;
 
-  // Here you would typically save the data to a database like Firebase Firestore,
-  // and send notifications (e.g., via email or to Slack).
-  console.log('New contact form submission:', formData);
+  try {
+    const submissionRef = adminDb.collection('contactSubmissions').doc();
+    await submissionRef.set({
+      ...formData,
+      submittedAt: new Date(),
+    });
 
-  // Simulate a delay
-  await new Promise(resolve => setTimeout(resolve, 1000));
-  
-  // For now, we just log it and return success.
-  return { success: true };
+    console.log('New contact form submission saved to Firestore:', submissionRef.id);
+    
+    return { success: true };
+
+  } catch (error) {
+    console.error('Error saving to Firestore:', error);
+    return { success: false, error: 'Could not save your message. Please try again later.' };
+  }
 }

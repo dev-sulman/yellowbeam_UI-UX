@@ -1,11 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { useRouter } from 'next/navigation';
-import { signInWithEmailAndPassword, signInWithRedirect, GoogleAuthProvider, getRedirectResult } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
 import { createSessionCookie } from '@/app/actions/auth';
 
@@ -27,42 +27,6 @@ export default function LoginPage() {
   const router = useRouter();
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
-  const [googleLoading, setGoogleLoading] = useState(false);
-
-  useEffect(() => {
-    const handleRedirectResult = async () => {
-      try {
-        setGoogleLoading(true);
-        const result = await getRedirectResult(auth);
-        if (result) {
-          const idToken = await result.user.getIdToken();
-          await createSessionCookie(idToken);
-          toast({
-            title: 'Success!',
-            description: 'You have been logged in successfully with Google.',
-          });
-          router.push('/');
-        }
-      } catch (error: any) {
-        if (error.code === 'auth/unauthorized-domain') {
-          toast({
-            variant: 'destructive',
-            title: 'Domain Not Authorized',
-            description: `Domain ${window.location.hostname} is not authorized. Please contact support.`,
-          });
-        } else {
-          toast({
-            variant: 'destructive',
-            title: 'Google Sign-In Failed',
-            description: error.message,
-          });
-        }
-      } finally {
-        setGoogleLoading(false);
-      }
-    };
-    handleRedirectResult();
-  }, [router, toast]);
 
   const form = useForm<UserFormValue>({
     resolver: zodResolver(formSchema),
@@ -93,29 +57,6 @@ export default function LoginPage() {
       });
     } finally {
       setLoading(false);
-    }
-  };
-
-  const handleGoogleSignIn = async () => {
-    setGoogleLoading(true);
-    try {
-      const provider = new GoogleAuthProvider();
-      await signInWithRedirect(auth, provider);
-    } catch (error: any) {
-      setGoogleLoading(false);
-      if (error.code === 'auth/unauthorized-domain') {
-        toast({
-          variant: 'destructive',
-          title: 'Domain Not Authorized',
-          description: `Domain ${window.location.hostname} is not authorized. Please contact support.`,
-        });
-      } else {
-        toast({
-          variant: 'destructive',
-          title: 'Google Sign-In Failed',
-          description: error.message,
-        });
-      }
     }
   };
 
@@ -153,7 +94,7 @@ export default function LoginPage() {
                 <p className="text-sm text-red-500">{form.formState.errors.password.message}</p>
               )}
             </div>
-            <Button type="submit" className="w-full" disabled={loading || googleLoading}>
+            <Button type="submit" className="w-full" disabled={loading}>
               {loading ? 'Logging in...' : 'Login'}
             </Button>
           </form>
@@ -169,9 +110,8 @@ export default function LoginPage() {
             </div>
           </div>
           
-          <Button variant="outline" className="w-full" onClick={handleGoogleSignIn} disabled={loading || googleLoading}>
-            {googleLoading ? 'Redirecting...' : (
-              <>
+          <Button asChild variant="outline" className="w-full">
+            <Link href="/api/auth/google">
                 <svg className="mr-2 h-4 w-4" viewBox="0 0 48 48">
                   <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path>
                   <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path>
@@ -179,8 +119,7 @@ export default function LoginPage() {
                   <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.574l6.19,5.238C39.99,34.556,44,29.865,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
                 </svg>
                 Google
-              </>
-            )}
+            </Link>
           </Button>
 
           <div className="mt-4 text-center text-sm">

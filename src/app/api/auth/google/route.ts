@@ -12,21 +12,14 @@ export async function GET(req: NextRequest) {
     // In a real application, you might generate a state parameter for CSRF protection
     const state = Math.random().toString(36).substring(2);
     cookies().set('oauth_state', state, { httpOnly: true, maxAge: 60 * 10, path: '/' });
-
-    const authUrl = await adminAuth.createCustomToken("some_user_id_for_redirect")
-        .then(() => {
-            const authProvider = new GoogleAuthProvider();
-            // In a real app, you would use a more robust state management
-            // For now, redirecting is handled on the client
-            return `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=${process.env.GOOGLE_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/callback&scope=openid%20profile%20email&state=${state}`;
-        })
-        .catch(error => {
-            console.error("Error creating custom token:", error);
-            return "/login?error=true";
-        });
         
-    const googleClientId = "425569249415-p5f1d4vs3j51eovngkh5qrj22frgrs59.apps.googleusercontent.com";
+    const googleClientId = process.env.GOOGLE_CLIENT_ID;
     const redirectUri = `${process.env.NEXT_PUBLIC_BASE_URL || 'https://' + req.headers.get('host')}/api/auth/callback`;
+
+    if (!googleClientId) {
+      console.error("GOOGLE_CLIENT_ID is not set in environment variables");
+      return NextResponse.redirect(new URL('/login?error=configuration_error', req.url));
+    }
 
     const url = new URL('https://accounts.google.com/o/oauth2/v2/auth');
     url.searchParams.set('response_type', 'code');

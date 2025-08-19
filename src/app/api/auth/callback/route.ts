@@ -11,7 +11,7 @@ export async function GET(req: NextRequest) {
     const storedState = cookies().get('oauth_state')?.value;
     
     const url = new URL(req.url)
-    const redirectUri = `${url.protocol}//${url.host}/api/auth/callback`;
+    const redirectUri = `${process.env.NEXT_PUBLIC_BASE_URL || 'https://' + url.host}/api/auth/callback`;
 
     if (!code || !state || state !== storedState) {
         return NextResponse.redirect(new URL('/login?error=state_mismatch', req.url));
@@ -28,8 +28,8 @@ export async function GET(req: NextRequest) {
             },
             body: JSON.stringify({
                 code,
-                client_id: "425569249415-p5f1d4vs3j51eovngkh5qrj22frgrs59.apps.googleusercontent.com",
-                client_secret: process.env.GOOGLE_CLIENT_SECRET, // You need to set this in your environment variables
+                client_id: process.env.GOOGLE_CLIENT_ID, 
+                client_secret: process.env.GOOGLE_CLIENT_SECRET,
                 redirect_uri: redirectUri,
                 grant_type: 'authorization_code',
             }),
@@ -52,4 +52,3 @@ export async function GET(req: NextRequest) {
         return NextResponse.redirect(new URL('/login?error=authentication_failed', req.url));
     }
 }
-

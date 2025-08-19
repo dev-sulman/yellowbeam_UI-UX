@@ -1,17 +1,9 @@
-
-
-'use client';
-
-import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
 import { CheckCircle, Award, Star, Phone, Mail, MapPin, Check } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { ContactForm } from '@/components/contact-form';
-import { Switch } from '@/components/ui/switch';
-import { Badge } from '@/components/ui/badge';
-import { cn } from '@/lib/utils';
 
 const services = [
     { title: 'Custom Web Design', description: 'Unique designs that capture your brand identity.' },
@@ -51,16 +43,6 @@ const values = [
 ];
 
 export default function WebDevelopmentPage() {
-    const [hasMounted, setHasMounted] = useState(false);
-
-    useEffect(() => {
-        setHasMounted(true);
-    }, []);
-
-    if (!hasMounted) {
-        return null;
-    }
-
     return (
         <div className="bg-background text-foreground font-body text-base">
             {/* Hero Section */}

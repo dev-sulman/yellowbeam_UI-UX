@@ -1,7 +1,4 @@
 
-'use client';
-
-import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -11,6 +8,7 @@ import { ContactForm } from '@/components/contact-form';
 import { Switch } from '@/components/ui/switch';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
+import PricingToggle from '@/components/pricing-toggle';
 
 const services = [
     { title: 'Content Creation', description: 'Creating engaging and shareable content tailored to each social media platform.', icon: <FileSignature /> },
@@ -117,65 +115,53 @@ const pricingTiers = {
 };
 
 const supportFeatures = [
-    "Dedicated Social Media Manager",
-    "Monthly Content Calendar",
-    "Real-time Performance Dashboard"
+    "Dedicated Account Manager",
+    "Monthly Strategy Calls",
+    "Custom Performance Dashboard"
 ];
 
-export default function SocialMediaMarketingPage() {
-    const [isYearly, setIsYearly] = useState(false);
-    const plans = isYearly ? pricingTiers.yearly : pricingTiers.monthly;
-    const [hasMounted, setHasMounted] = useState(false);
-
-    useEffect(() => {
-        setHasMounted(true);
-    }, []);
-
-    if (!hasMounted) {
-        return null;
-    }
-
+export default function SocialMediaPage() {
     return (
         <div className="bg-background text-foreground">
             {/* Hero Section */}
-            <section className="relative w-full py-20 md:py-32 bg-secondary/30">
+            <section className="relative py-20 md:py-32 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-primary">Social Media Marketing</h1>
-                    <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">Creating and managing engaging social media campaigns to connect with your audience and increase brand awareness.</p>
+                    <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">Building brand awareness, driving engagement, and generating leads through strategic social media campaigns.</p>
                 </div>
             </section>
 
             {/* Intro Section */}
-            <section className="w-full py-20 md:py-24">
+            <section className="py-20 md:py-24">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
-                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Connect, Engage, and Grow Your Brand</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Connecting Brands with Audiences</h2>
                             <div className="flex items-center gap-4">
-                                <Image src="https://cdn.dribbble.com/users/9363631/avatars/small/c940b3ba1e185d64e4690b5415515ba3.jpg?1695677464/80x80.png" alt="Chloe Davis" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                                <Image src="/three.jpg" alt="Sarah Johnson" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
                                 <div>
-                                    <p className="font-semibold">Chloe Davis, Head of Social Media, SulzaX</p>
-                                    <p className="text-muted-foreground">"Let's build a community, not just a following."</p>
+                                    <p className="font-semibold">Sarah Johnson, Head of Social, SulzaX</p>
+                                    <p className="text-muted-foreground">"Let's make your brand the talk of the town."</p>
                                 </div>
                             </div>
-                            <p className="text-muted-foreground">We craft compelling social media strategies that foster community, drive engagement, and build brand loyalty. From content creation to campaign management, we're your partner in social success.</p>
+                            <p className="text-muted-foreground">We help businesses build and manage a strong social media presence. From content creation to community engagement, we've got you covered.</p>
                             <Button asChild>
                                 <Link href="/about">About Us</Link>
                             </Button>
                         </div>
                         <div>
-                            <Image src="https://cdn.dribbble.com/userupload/37283453/file/original-fd9d40ce79f69d8c0dd78b8646c6ae7c.png?resize=752x564&vertical=center/600x400.png" alt="Social media feed on a phone" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="social media phone" />
+                            <Image src="https://cdn.dribbble.com/userupload/2946837/file/original-d39c0712a8614605c89c54529a2859ee.png?format=webp&resize=400x300&vertical=center/600x400.png" alt="Social media campaign concept" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="social media ideas" />
                         </div>
                     </div>
                 </div>
             </section>
             
             {/* Services Section */}
-            <section className="w-full py-20 md:py-24 bg-secondary/30">
+            <section className="py-20 md:py-24 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Social Media Services</h2>
-                        <p className="mt-2 text-muted-foreground">A comprehensive approach to building your brand on social media.</p>
+                        <p className="mt-2 text-muted-foreground">A holistic approach to social media management.</p>
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {services.map(service => (
@@ -190,23 +176,23 @@ export default function SocialMediaMarketingPage() {
             </section>
 
             {/* About Us Snippet */}
-            <section className="w-full py-20 md:py-24">
+            <section className="py-20 md:py-24">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
-                             <Image src="https://cdn.dribbble.com/userupload/38842902/file/original-bf68481518bbd4556fb979d067675088.webp?resize=1024x768&vertical=center/600x400.png" alt="Team brainstorming social media ideas" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team brainstorming social media" />
+                            <Image src="https://cdn.dribbble.com/userupload/2946839/file/original-f361d35f4a9a17a0b370dd6e3150f342.png?format=webp&resize=400x300&vertical=center/600x400.png" alt="Social media marketing team" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="social media marketing team" />
                         </div>
                         <div className="space-y-6">
-                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Social Growth</h2>
-                            <p className="text-muted-foreground">At SulzaX, we are passionate about the power of social media to connect people and build brands. We combine creative storytelling with data-driven strategy to help you achieve your goals.</p>
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Social Media</h2>
+                            <p className="text-muted-foreground">At SulzaX, we are passionate about the power of social media. We combine strategic thinking with creative flair to create campaigns that engage audiences and drive results.</p>
                             <div className="flex gap-8">
                                 <div>
-                                    <p className="text-4xl font-bold text-accent">10M+</p>
-                                    <p className="text-muted-foreground">Impressions Generated</p>
+                                    <p className="text-4xl font-bold text-accent">1M+</p>
+                                    <p className="text-muted-foreground">Followers Reached</p>
                                 </div>
                                 <div>
-                                    <p className="text-4xl font-bold text-accent">500K+</p>
-                                    <p className="text-muted-foreground">Engaged Followers</p>
+                                    <p className="text-4xl font-bold text-accent">500+</p>
+                                    <p className="text-muted-foreground">Campaigns Launched</p>
                                 </div>
                             </div>
                             <Button asChild variant="outline">
@@ -218,12 +204,12 @@ export default function SocialMediaMarketingPage() {
             </section>
 
             {/* Why Choose Us Section */}
-            <section className="w-full py-20 md:py-24 bg-secondary/30">
+            <section className="py-20 md:py-24 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Why Choose SulzaX for Social Media?</h2>
-                             <p className="text-muted-foreground">We are more than just a marketing agency; we are your strategic partner in building a strong, authentic brand presence online.</p>
+                            <p className="text-muted-foreground">We deliver measurable results through strategic social media campaigns tailored to your business goals.</p>
                             <div className="space-y-4">
                                 {whyChooseUsPoints.map(point => (
                                     <div key={point.title} className="flex items-start gap-4">
@@ -237,18 +223,18 @@ export default function SocialMediaMarketingPage() {
                             </div>
                         </div>
                         <div>
-                            <Image src="https://cdn.dribbble.com/userupload/12384583/file/original-58fa038b8818ce4ef26f726687691a15.jpg?resize=1024x768&vertical=center/600x400.png" alt="Social media analytics dashboard" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="social media dashboard" />
+                            <Image src="https://cdn.dribbble.com/userupload/3491080/file/original-a14e5336b810c4370db4f42a30e5ae3c.png?format=webp&resize=400x300&vertical=center/600x400.png" alt="Social media analytics dashboard" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="social media data chart" />
                         </div>
                     </div>
                 </div>
             </section>
 
              {/* Values Section */}
-            <section className="w-full py-20 md:py-24">
+            <section className="py-20 md:py-24">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Social Media Principles</h2>
-                        <p className="mt-2 text-muted-foreground">The core beliefs that guide our social media strategies.</p>
+                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Social Media Values</h2>
+                        <p className="mt-2 text-muted-foreground">The principles that guide our social media strategies.</p>
                     </div>
                     <div className="grid md:grid-cols-2 gap-8">
                         {values.map(value => (
@@ -261,10 +247,10 @@ export default function SocialMediaMarketingPage() {
                 </div>
             </section>
 
-       
+         
 
              {/* Testimonials Section */}
-            <section className="w-full py-20 md:py-24">
+            <section className="py-20 md:py-24">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
@@ -282,71 +268,24 @@ export default function SocialMediaMarketingPage() {
             </section>
 
             {/* Pricing Section */}
-            <section className="w-full py-20 md:py-24 bg-secondary/30">
+            <section className="py-20 md:py-24 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6">
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
-                        <div className="space-y-6">
-                            <h2 className="text-4xl md:text-5xl font-bold text-black">Ready to Grow Your Social Presence?</h2>
-                            <p className="text-black">Choose a social media package that fits your goals. We offer flexible options for businesses of all sizes.</p>
-                            <div className="flex items-center gap-4">
-                                <span className={cn('font-medium', !isYearly ? 'text-[#2D4FE1]' : 'text-black')}>Pay Monthly</span>
-                                <Switch checked={isYearly} onCheckedChange={setIsYearly} aria-label="billing cycle toggle" />
-                                <span className={cn('font-medium', isYearly ? 'text-[#2D4FE1]' : 'text-black')}>Pay Yearly (Save 10%)</span>
-                            </div>
-                            <ul className="space-y-3 pt-4">
-                                {supportFeatures.map(feature => (
-                                    <li key={feature} className="flex items-center gap-3">
-                                        <Check className="w-5 h-5 text-[#2D4FE1]" />
-                                        <span className="text-black">{feature}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div className="flex flex-col md:flex-row gap-8">
-                             {plans.map(tier => (
-                                <Card key={tier.name} className={`w-full flex flex-col relative shadow-none border-0 ${tier.popular ? 'bg-card' : 'bg-transparent'}`}>
-                                    {tier.popular && <Badge className="absolute -top-3 right-4 bg-accent text-accent-foreground">POPULAR</Badge>}
-                                    <CardHeader className="text-center">
-                                        <CardTitle className="text-2xl text-black">{tier.name}</CardTitle>
-                                    </CardHeader>
-                                    <CardContent className="flex-grow space-y-6">
-                                        <div className="text-center">
-                                            <span className={cn('text-5xl font-bold', tier.popular ? 'text-black' : 'text-[#2D4FE1]')}>{tier.price.split('.')[0]}.</span>
-                                            <span className={cn('text-3xl font-bold', tier.popular ? 'text-black' : 'text-[#2D4FE1]')}>{tier.price.split('.')[1]}</span>
-                                            <span className="text-black">{tier.period}</span>
-                                        </div>
-                                        <ul className="space-y-3">
-                                            {tier.features.map(feature => (
-                                                <li key={feature} className="flex items-center gap-3">
-                                                    <Check className="w-5 h-5 text-[#2D4FE1]" />
-                                                    <span className="text-black">{feature}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </CardContent>
-                                    <div className="p-6">
-                                      {tier.popular ? (
-                                         <Button className="w-full bg-transparent border border-black text-black hover:bg-[#2D4FE1] hover:text-white hover:border-transparent">{tier.buttonText}</Button>
-                                      ) : (
-                                          <Button className="w-full bg-[#2D4FE1] hover:bg-[#2139a6] text-white">{tier.buttonText}</Button>
-                                      )}
-                                    </div>
-                                </Card>
-                            ))}
-                        </div>
-                    </div>
+                    <PricingToggle tiers={pricingTiers} supportFeatures={supportFeatures}>
+                        <h2 className="text-4xl md:text-5xl font-bold text-black">Ignite Your Social Media Presence</h2>
+                        <p className="text-black">Choose a social media package that fits your needs. We offer transparent pricing for businesses of all sizes.</p>
+                    </PricingToggle>
                 </div>
             </section>
 
             {/* Contact Section */}
-            <section className="w-full py-20 md:py-24">
-                <div className="container mx-auto px-4 md:px-6">
+            <section className="py-20 md:py-24">
+                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="flex flex-col space-y-8">
                             <div>
-                                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Free Consultation - Boost Your Social Strategy</h2>
+                                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Free Consultation - Discover Your Social Strategy</h2>
                                 <p className="mt-4 max-w-2xl text-muted-foreground">
-                                    Let's chat about your social media goals. Our experts will provide a free analysis and a clear strategy to help you succeed online.
+                                    Let's discuss your social media goals and develop a tailored strategy to connect with your audience.
                                 </p>
                             </div>
                             <div className="space-y-6">
@@ -371,8 +310,10 @@ export default function SocialMediaMarketingPage() {
                         <ContactForm cardTitle="Schedule A Free Consultation" cardDescription="" />
                         </div>
                     </div>
-                </div>
+                 </div>
             </section>
         </div>
     )
 }
+
+    

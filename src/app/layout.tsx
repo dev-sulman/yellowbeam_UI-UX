@@ -7,11 +7,27 @@ import { Toaster } from '@/components/ui/toaster';
 import { cookies } from 'next/headers';
 import { adminAuth } from '@/lib/firebase-admin';
 import type { User } from 'firebase-admin/auth';
+import { Poppins, Open_Sans } from 'next/font/google';
+import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'SulzaX Digital Hub',
   description: 'Transform Your Business with Custom IT Solutions',
 };
+
+const fontHeadline = Poppins({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-headline',
+  weight: ['400', '500', '600', '700'],
+});
+
+const fontBody = Open_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-body',
+  weight: ['300', '400', '600'],
+});
 
 async function getUser(): Promise<User | null> {
   try {
@@ -34,13 +50,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
-      </head>
-      <body className="font-body bg-background text-foreground antialiased flex flex-col min-h-screen" suppressHydrationWarning>
+      <body className={cn("font-body bg-background text-foreground antialiased flex flex-col min-h-screen", fontHeadline.variable, fontBody.variable)} suppressHydrationWarning>
         <div className="flex-grow w-full">
           <Header user={user ? { name: user.name, email: user.email, picture: user.picture } : null} />
           <main>{children}</main>

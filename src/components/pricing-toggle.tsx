@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Switch } from '@/components/ui/switch';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { Check } from 'lucide-react';
@@ -49,16 +48,30 @@ export default function PricingToggle({ tiers, supportFeatures, children }: Pric
         <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-6">
                 {children}
-                <div className="flex items-center gap-4">
-                    <span className={cn('font-medium', !isYearly ? 'text-[#2D4FE1]' : 'text-black')}>Pay Monthly</span>
-                    <Switch checked={isYearly} onCheckedChange={setIsYearly} aria-label="billing cycle toggle" />
-                    <span className={cn('font-medium', isYearly ? 'text-[#2D4FE1]' : 'text-black')}>Pay Yearly (Save 10%)</span>
+                <div className="radio-pricing-toggle">
+                    <input 
+                        type="radio" 
+                        id="monthly" 
+                        name="pricing-cycle" 
+                        checked={!isYearly} 
+                        onChange={() => setIsYearly(false)}
+                    />
+                    <label htmlFor="monthly">Pay Monthly</label>
+                    
+                    <input 
+                        type="radio" 
+                        id="yearly" 
+                        name="pricing-cycle" 
+                        checked={isYearly} 
+                        onChange={() => setIsYearly(true)}
+                    />
+                    <label htmlFor="yearly">Pay Yearly (Save 10%)</label>
                 </div>
                 <ul className="space-y-3 pt-4">
                     {supportFeatures.map(feature => (
                         <li key={feature} className="flex items-center gap-3">
-                            <Check className="w-5 h-5 text-[#2D4FE1]" />
-                            <span className="text-black">{feature}</span>
+                            <Check className="w-5 h-5 text-accent" />
+                            <span className="text-black dark:text-white">{feature}</span>
                         </li>
                     ))}
                 </ul>
@@ -68,27 +81,35 @@ export default function PricingToggle({ tiers, supportFeatures, children }: Pric
                     <Card key={tier.name} className={`w-full flex flex-col relative shadow-none border-0 ${tier.popular ? 'bg-card' : 'bg-transparent'}`}>
                         {tier.popular && <Badge className="absolute -top-3 right-4 bg-accent text-accent-foreground">POPULAR</Badge>}
                         <CardHeader className="text-center">
-                            <CardTitle className="text-2xl text-black">{tier.name}</CardTitle>
+                            <CardTitle className="text-2xl text-black dark:text-white">{tier.name}</CardTitle>
                         </CardHeader>
                         <CardContent className="flex-grow space-y-6">
-                            <div className={cn('text-center', tier.popular ? 'text-black' : 'text-[#2D4FE1]')}>
+                            <div className={cn('text-center', tier.popular ? 'text-black dark:text-white' : 'text-accent')}>
                                 {renderPrice(tier.price)}
-                                <span className="text-black">{tier.period}</span>
+                                <span className="text-black dark:text-white">{tier.period}</span>
                             </div>
                             <ul className="space-y-3">
                                 {tier.features.map(feature => (
                                     <li key={feature} className="flex items-center gap-3">
-                                        <Check className="w-5 h-5 text-[#2D4FE1]" />
-                                        <span className="text-black">{feature}</span>
+                                        <Check className="w-5 h-5 text-accent" />
+                                        <span className="text-black dark:text-white">{feature}</span>
                                     </li>
                                 ))}
                             </ul>
                         </CardContent>
                         <div className="p-6">
                           {tier.popular ? (
-                             <Button className="w-full bg-transparent border border-black text-black hover:bg-[#2D4FE1] hover:text-white hover:border-transparent">{tier.buttonText}</Button>
+                             <Button asChild className="w-full">
+                                <a href="#" className="shine-button">
+                                    {tier.buttonText}
+                                </a>
+                             </Button>
                           ) : (
-                              <Button className="w-full bg-[#2D4FE1] hover:bg-[#2139a6] text-white">{tier.buttonText}</Button>
+                              <Button asChild className="w-full">
+                                <a href="#" className="shine-button">
+                                    {tier.buttonText}
+                                </a>
+                              </Button>
                           )}
                         </div>
                     </Card>

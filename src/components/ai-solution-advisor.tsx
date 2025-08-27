@@ -42,26 +42,21 @@ function SolutionCard({ solution }: { solution: SolutionRecommendation }) {
   );
 }
 
-function LoadingSkeleton() {
-  return (
-    <div className="grid md:grid-cols-2 gap-6">
-      {[...Array(2)].map((_, i) => (
-        <Card key={i} className="bg-secondary/50">
-          <CardHeader>
-            <Skeleton className="h-6 w-3/4 bg-muted" />
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <Skeleton className="h-4 w-full bg-muted" />
-            <Skeleton className="h-4 w-full bg-muted" />
-            <Skeleton className="h-4 w-5/6 bg-muted" />
-          </CardContent>
-          <CardFooter>
-            <Skeleton className="h-8 w-1/2 bg-muted" />
-          </CardFooter>
-        </Card>
-      ))}
-    </div>
-  );
+function LoadingSpinner() {
+    return (
+        <div className="flex justify-center w-full">
+            <div className="dot-spinner">
+                <div className="dot-spinner__dot"></div>
+                <div className="dot-spinner__dot"></div>
+                <div className="dot-spinner__dot"></div>
+                <div className="dot-spinner__dot"></div>
+                <div className="dot-spinner__dot"></div>
+                <div className="dot-spinner__dot"></div>
+                <div className="dot-spinner__dot"></div>
+                <div className="dot-spinner__dot"></div>
+            </div>
+        </div>
+    );
 }
 
 export default function AiSolutionAdvisor() {
@@ -125,8 +120,10 @@ export default function AiSolutionAdvisor() {
                 </FormItem>
               )}
             />
-            <Button type="submit" disabled={isLoading} size="lg" className="w-full font-semibold bg-accent hover:bg-accent/90 text-accent-foreground">
-              {isLoading ? 'Analyzing...' : 'Get Recommendations'}
+             <Button asChild type="submit" disabled={isLoading} size="lg" className="w-full font-semibold">
+               <button className="shine-button">
+                 {isLoading ? 'Analyzing...' : 'Get Recommendations'}
+               </button>
             </Button>
           </form>
         </Form>
@@ -134,7 +131,7 @@ export default function AiSolutionAdvisor() {
 
       {(isLoading || error || recommendations.length > 0) && (
         <CardFooter className="flex-col items-start gap-4 pt-6 border-t">
-          {isLoading && <LoadingSkeleton />}
+          {isLoading && <LoadingSpinner />}
           {error && (
             <Alert variant="destructive">
               <AlertCircle className="h-4 w-4" />

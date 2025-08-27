@@ -74,13 +74,12 @@ const projects = [
 ];
 
 const industries = [
-  { name: "Finance & Banking", icon: <Landmark className="w-8 h-8 text-accent group-hover:text-white transition-colors" />, href: "/finance-banking" },
-  { name: "Information Technology & Telecommunications", icon: <Rocket className="w-8 h-8 text-accent group-hover:text-white transition-colors" />, href: "/it-telecom" },
-  { name: "Healthcare & Pharmaceuticals", icon: <BriefcaseMedical className="w-8 h-8 text-accent group-hover:text-white transition-colors" />, href: "/healthcare-pharmaceuticals" },
-  { name: "Transportation & Logistics", icon: <Plane className="w-8 h-8 text-accent group-hover:text-white transition-colors" />, href: "/transportation-logistics" },
-  { name: "Real Estate", icon: <Building2 className="w-8 h-8 text-accent group-hover:text-white transition-colors" />, href: "/real-estate" },
-  { name: "Manufacturing & Industry 4.0", icon: <Wrench className="w-8 h-8 text-accent group-hover:text-white transition-colors" />, href: "/manufacturing-industry" },
-  { name: "Education & Training", icon: <School className="w-8 h-8 text-accent group-hover:text-white transition-colors" />, href: "/education-training" },
+  { name: "Finance & Banking", icon: <Landmark />, href: "/finance-banking" },
+  { name: "Information Technology & Telecommunications", icon: <Rocket />, href: "/it-telecom" },
+  { name: "Healthcare & Pharmaceuticals", icon: <BriefcaseMedical />, href: "/healthcare-pharmaceuticals" },
+  { name: "Transportation & Logistics", icon: <Plane />, href: "/transportation-logistics" },
+  { name: "Real Estate", icon: <Building2 />, href: "/real-estate" },
+  { name: "Manufacturing & Industry 4.0", icon: <Wrench />, href: "/manufacturing-industry" },
 ];
 
 const services = [
@@ -250,8 +249,10 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex flex-col gap-4 min-[400px]:flex-row">
-                <Button asChild size="lg" className="font-semibold bg-accent hover:bg-accent/90 text-accent-foreground rounded-md px-8">
-                  <Link href="/contact">Get A Free Assessment</Link>
+                 <Button asChild size="lg" className="font-semibold">
+                  <a href="/contact" className="shine-button">
+                    Get A Free Assessment
+                  </a>
                 </Button>
               </div>
             </div>
@@ -325,7 +326,7 @@ export default function Home() {
                 <div className="flex justify-center items-center mb-4">
                   {point.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-black mb-2">{point.title}</h3>
+                <h3 className="text-xl font-semibold text-black dark:text-white mb-2">{point.title}</h3>
                 <p className="text-muted-foreground">{point.description}</p>
               </Card>
             ))}
@@ -333,26 +334,26 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services-grid" className="w-full py-16 md:py-24 lg:py-32 bg-white">
+      <section id="services-grid" className="w-full py-16 md:py-24 lg:py-32 bg-white dark:bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
             <Badge variant="outline" className="border-accent/20 text-accent font-semibold mb-4">We are a team of humans</Badge>
-            <h2 className="text-3xl font-normal tracking-tighter sm:text-4xl text-black">
+            <h2 className="text-3xl font-normal tracking-tighter sm:text-4xl text-black dark:text-white">
               Our Services for Growing Your Business
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Link key={index} href={service.href || '#'} className="group">
-                <Card className="bg-white shadow-lg rounded-lg p-8 text-center hover:shadow-xl transition-shadow duration-300 h-full">
+                <Card className="bg-white dark:bg-card shadow-lg rounded-lg p-8 text-center hover:shadow-xl transition-shadow duration-300 h-full">
                   <div className="flex justify-center items-center mb-4">
                     <div className="p-3 bg-secondary/50 rounded-full">
                       {service.icon}
                     </div>
                   </div>
-                  <h3 className="text-xl font-normal text-black mb-2 relative inline-block">
+                  <h3 className="text-xl font-normal text-black dark:text-white mb-2 relative inline-block">
                     {service.title}
-                    <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                    <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></span>
                   </h3>
                   <p className="text-muted-foreground">{service.description}</p>
                 </Card>
@@ -367,26 +368,23 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
             <div className="space-y-4">
               <Badge variant="outline" className="bg-secondary text-accent font-semibold border-accent/20">INDUSTRIES</Badge>
-              <h2 className="text-3xl font-normal tracking-tighter sm:text-4xl text-black">
+              <h2 className="text-3xl font-normal tracking-tighter sm:text-4xl text-black dark:text-white">
                 We Help Power Industries Of All Kinds To <br /> Boost ROI And Find New Clients
               </h2>
             </div>
-            <Link href="/services" className="text-sm font-semibold text-black hover:underline mt-4 md:mt-0">
+            <Link href="/services" className="text-sm font-semibold text-black dark:text-white hover:underline mt-4 md:mt-0">
               View All Industries <ArrowRight className="inline-block ml-1 h-4 w-4" />
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {industries.slice(0, 6).map((industry, index) => (
-              <Link href={industry.href} key={index} className="group">
-                <Card className="bg-secondary/30 hover:bg-[#2D4FE1] text-black hover:text-white transition-all duration-300 shadow-sm hover:shadow-md border-0">
-                  <CardContent className="p-4 flex items-center gap-4 transition-transform duration-300 group-hover:translate-x-1">
-                    {industry.icon}
-                    <h3 className="text-lg font-normal text-black group-hover:text-white">{industry.name}</h3>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
-          </div>
+            <div className="glass-container">
+                 {industries.map((industry, index) => (
+                    <Link href={industry.href} key={index} className="group">
+                        <div data-text={industry.name} style={{ '--r': (index - Math.floor(industries.length / 2)) * 10 } as React.CSSProperties} className="glass">
+                            {industry.icon}
+                        </div>
+                    </Link>
+                 ))}
+            </div>
         </div>
       </section>
 

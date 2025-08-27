@@ -18,8 +18,8 @@ const SulzaXLogo = () => (
           <stop offset="1" stopColor="#A9B7CB"/>
         </linearGradient>
         <linearGradient id="gWordFooter" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="hsl(var(--foreground))"/>
-          <stop offset="1" stopColor="hsl(var(--foreground))"/>
+          <stop offset="0" stopColor="black"/>
+          <stop offset="1" stopColor="black"/>
         </linearGradient>
         <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
           <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
@@ -66,7 +66,7 @@ const AnimatedLink = ({ href, children }: { href: string; children: React.ReactN
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-background text-foreground border-t">
+    <footer className="w-full bg-background text-foreground border-t animate-fade-in-up">
       <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8 text-xs flex flex-col justify-center">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center items-center">
           

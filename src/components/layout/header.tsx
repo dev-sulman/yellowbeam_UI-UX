@@ -105,6 +105,15 @@ interface HeaderProps {
     user: { name?: string | null, email?: string | null, picture?: string | null } | null
 }
 
+const BurgerMenu = ({ checked, onChange }: { checked: boolean, onChange: (e: React.ChangeEvent<HTMLInputElement>) => void }) => (
+    <label className="burger" htmlFor="burger-toggle">
+        <input type="checkbox" id="burger-toggle" checked={checked} onChange={onChange} />
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+);
+
 export default function Header({ user }: HeaderProps) {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -166,7 +175,7 @@ export default function Header({ user }: HeaderProps) {
 
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md animate-fade-in-down">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-2">
           <SulzaXLogo />
@@ -252,7 +261,7 @@ export default function Header({ user }: HeaderProps) {
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="text-foreground hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0">
-                  <Menu className="h-6 w-6" />
+                    <BurgerMenu checked={isMobileMenuOpen} onChange={(e) => setIsMobileMenuOpen(e.target.checked)} />
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
               </SheetTrigger>

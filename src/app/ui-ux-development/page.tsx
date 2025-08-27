@@ -253,7 +253,7 @@ export default function UiUxDevelopmentPage() {
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Recognized for UX Excellence</h2>
                      <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(3)].map((_, i) => (
-                             <Image key={i} src="/blog8.jpeg/120x120.png" alt="Award for UX design" width={120} height={120} data-ai-hint="design award trophy" />
+                             <Image key={i} src="/blog8.jpeg" alt="Award for UX design" width={120} height={120} data-ai-hint="design award trophy" />
                         ))}
                      </div>
                 </div>
@@ -321,3 +321,7 @@ export default function UiUxDevelopmentPage() {
                         </div>
                     </div>
                 </div>
+            </section>
+        </div>
+    );
+}

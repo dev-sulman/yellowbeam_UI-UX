@@ -13,6 +13,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import Image from 'next/image';
 import { UserNav } from '@/components/user-nav';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { ModeToggle } from '@/components/mode-toggle';
 
 const SulzaXLogo = () => (
     <svg width="180" height="48" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg">
@@ -27,8 +28,8 @@ const SulzaXLogo = () => (
           <stop offset="1" stopColor="#A9B7CB"/>
         </linearGradient>
         <linearGradient id="gWord" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#000000"/>
-          <stop offset="1" stopColor="#000000"/>
+          <stop offset="0" stopColor="hsl(var(--foreground))"/>
+          <stop offset="1" stopColor="hsl(var(--foreground))"/>
         </linearGradient>
         <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
           <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
@@ -133,9 +134,9 @@ export default function Header({ user }: HeaderProps) {
             <Link
                 href={href}
                 className={cn(
-                    'block py-2 text-sm font-normal relative bg-clip-text text-transparent bg-gradient-to-r from-black to-black',
-                    'hover:from-accent hover:to-primary-foreground hover:bg-clip-text hover:animate-shimmer hover:bg-[length:200%_100%]',
-                    isActive ? 'text-accent' : 'text-black',
+                    'block py-2 text-sm font-normal relative text-foreground',
+                    'hover:text-accent',
+                    isActive ? 'text-accent' : '',
                     className
                 )}
             >
@@ -152,9 +153,9 @@ export default function Header({ user }: HeaderProps) {
             <Link
                 href={href}
                 className={cn(
-                    'block py-2 text-sm font-normal relative bg-clip-text text-transparent bg-gradient-to-r from-black to-black',
-                    'hover:from-accent hover:to-primary-foreground hover:bg-clip-text hover:animate-shimmer hover:bg-[length:200%_100%]',
-                    isActive ? 'text-accent' : 'text-black'
+                    'block py-2 text-sm font-normal relative text-foreground',
+                    'hover:text-accent',
+                    isActive ? 'text-accent' : ''
                 )}
             >
                 {children}
@@ -165,7 +166,7 @@ export default function Header({ user }: HeaderProps) {
 
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white">
+    <header className="sticky top-0 z-50 w-full border-b bg-background">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-2">
           <SulzaXLogo />
@@ -179,19 +180,19 @@ export default function Header({ user }: HeaderProps) {
                      <Link
                         href={link.href || '#'}
                         className={cn(
-                        'relative transition-colors text-sm font-medium text-black group flex items-center gap-1',
-                        pathname.startsWith('/services') ? 'text-accent' : 'hover:text-black/80'
+                        'relative transition-colors text-sm font-medium text-foreground group flex items-center gap-1',
+                        pathname.startsWith('/services') ? 'text-accent' : 'hover:text-foreground/80'
                         )}
                     >
                         {link.label}
                         <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
                     </Link>
                     <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-screen max-w-5xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform-gpu group-hover:translate-y-0 translate-y-[-10px]">
-                        <div className="bg-white rounded-xl shadow-xl p-8 grid grid-cols-12 gap-8">
+                        <div className="bg-background rounded-xl shadow-xl p-8 grid grid-cols-12 gap-8 border">
                            <div className="col-span-8 grid grid-cols-2 gap-x-8 gap-y-4">
                                {Object.entries(serviceLinks).map(([category, links], catIndex) => (
                                     <div key={category}>
-                                        <h3 className="font-bold text-md text-black mb-4">{category}</h3>
+                                        <h3 className="font-bold text-md text-foreground mb-4">{category}</h3>
                                         <ul className="space-y-3">
                                             {links.map((subLink, index) => (
                                                 <li key={subLink.href} className="opacity-0 animate-fade-slide-up" style={{ animationDelay: `${(catIndex * links.length + index) * 50}ms` }}>
@@ -200,7 +201,7 @@ export default function Header({ user }: HeaderProps) {
                                                          {React.cloneElement(subLink.icon, { className: 'w-5 h-5 text-accent' })}
                                                        </div>
                                                        <div>
-                                                           <p className="font-semibold text-black">{subLink.label}</p>
+                                                           <p className="font-semibold text-foreground">{subLink.label}</p>
                                                            <p className="text-xs text-muted-foreground">{subLink.description}</p>
                                                        </div>
                                                     </Link>
@@ -231,8 +232,8 @@ export default function Header({ user }: HeaderProps) {
                     key={link.label}
                     href={link.href || '#'}
                     className={cn(
-                    'relative transition-colors text-sm font-medium text-black group',
-                    pathname === link.href ? 'text-accent' : 'hover:text-black/80'
+                    'relative transition-colors text-sm font-medium text-foreground group',
+                    pathname === link.href ? 'text-accent' : 'hover:text-foreground/80'
                     )}
                 >
                     {link.label}
@@ -245,20 +246,21 @@ export default function Header({ user }: HeaderProps) {
             })}
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
+          <ModeToggle />
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-black hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0">
+                <Button variant="ghost" size="icon" className="text-foreground hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0">
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="bg-white p-0 w-[80vw] sm:w-[350px]">
+              <SheetContent side="right" className="bg-background p-0 w-[80vw] sm:w-[350px]">
                 <SheetHeader className="flex flex-row items-center justify-between p-4 border-b">
                    <SheetTitle>Menu</SheetTitle>
                     <SheetClose asChild>
-                        <Button variant="ghost" size="icon" className="text-black hover:bg-secondary focus-visible:ring-0 focus-visible:ring-offset-0">
+                        <Button variant="ghost" size="icon" className="text-foreground hover:bg-secondary focus-visible:ring-0 focus-visible:ring-offset-0">
                             <X className="h-5 w-5" />
                             <span className="sr-only">Close</span>
                         </Button>
@@ -270,7 +272,7 @@ export default function Header({ user }: HeaderProps) {
                              if (link.label === 'Services') {
                                 return (
                                     <Collapsible key={link.label}>
-                                        <CollapsibleTrigger className="flex w-full items-center justify-between gap-1 py-2 text-sm text-black group">
+                                        <CollapsibleTrigger className="flex w-full items-center justify-between gap-1 py-2 text-sm text-foreground group">
                                             <span>{link.label}</span>
                                             <ChevronDown className="h-4 w-4 transition-transform duration-300 group-data-[state=open]:rotate-180" />
                                         </CollapsibleTrigger>
@@ -293,7 +295,7 @@ export default function Header({ user }: HeaderProps) {
                              }
 
                             return (
-                                <NavLink key={link.href} href={link.href!} className="text-black">
+                                <NavLink key={link.href} href={link.href!} className="text-foreground">
                                     {link.label}
                                 </NavLink>
                             )
@@ -357,4 +359,3 @@ export default function Header({ user }: HeaderProps) {
     </header>
   );
 }
-

@@ -18,8 +18,8 @@ const SulzaXLogo = () => (
           <stop offset="1" stopColor="#A9B7CB"/>
         </linearGradient>
         <linearGradient id="gWordFooter" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#000000"/>
-          <stop offset="1" stopColor="#000000"/>
+          <stop offset="0" stopColor="hsl(var(--foreground))"/>
+          <stop offset="1" stopColor="hsl(var(--foreground))"/>
         </linearGradient>
         <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
           <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
@@ -59,14 +59,14 @@ const SulzaXLogo = () => (
 );
 
 const AnimatedLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <Link href={href} className="relative text-black after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">
+  <Link href={href} className="relative text-foreground after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all after:duration-300 hover:after:w-full">
     {children}
   </Link>
 );
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-white text-black border-t border-gray-200">
+    <footer className="w-full bg-background text-foreground border-t">
       <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8 text-xs flex flex-col justify-center">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center items-center">
           
@@ -76,13 +76,13 @@ export default function Footer() {
                   <SulzaXLogo />
                 </div>
               </Link>
-            <p className="text-black max-w-sm mx-auto">
+            <p className="text-foreground max-w-sm mx-auto">
                 Welcome to SulzaX! We provide diverse IT solutions with a team of experts.
             </p>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-3 text-sm text-black">Company</h4>
+            <h4 className="font-semibold mb-3 text-sm text-foreground">Company</h4>
             <ul className="space-y-2">
               <li><AnimatedLink href="/about">About Us</AnimatedLink></li>
               <li><AnimatedLink href="/team">Our Team</AnimatedLink></li>
@@ -93,10 +93,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-3 text-sm text-black">Solutions</h4>
+            <h4 className="font-semibold mb-3 text-sm text-foreground">Solutions</h4>
              <ul className="space-y-2">
-                <li><Link href="/web-development" className="relative text-black after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Web Development</Link></li>
-                <li><Link href="/mobile-development" className="relative text-black after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Mobile Development</Link></li>
+                <li><Link href="/web-development" className="relative text-foreground after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all after:duration-300 hover:after:w-full">Web Development</Link></li>
+                <li><Link href="/mobile-development" className="relative text-foreground after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all after:duration-300 hover:after:w-full">Mobile Development</Link></li>
                 <li><AnimatedLink href="/services#software-development">Software Development</AnimatedLink></li>
                 <li><AnimatedLink href="/services#ui-ux">UI/UX Development</AnimatedLink></li>
                 <li><AnimatedLink href="/services#seo">Search Engine Optimization</AnimatedLink></li>
@@ -104,31 +104,31 @@ export default function Footer() {
           </div>
           
           <div className="space-y-4">
-             <h4 className="font-semibold text-sm text-black mb-3">Newsletter</h4>
+             <h4 className="font-semibold text-sm text-foreground mb-3">Newsletter</h4>
                 <div className="relative w-full max-w-sm items-center mx-auto group">
-                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                     <Input 
                         type="email" 
                         placeholder="Your email address" 
-                        className="bg-transparent border-0 border-b-2 border-gray-300 rounded-none text-black placeholder:text-gray-500 focus:ring-0 focus:border-black focus-visible:ring-0 focus-visible:ring-offset-0 pl-10 pr-10 h-9 text-xs transition-all duration-300" 
+                        className="bg-transparent border-0 border-b-2 border-border rounded-none text-foreground placeholder:text-muted-foreground focus:ring-0 focus:border-foreground focus-visible:ring-0 focus-visible:ring-offset-0 pl-10 pr-10 h-9 text-xs transition-all duration-300" 
                     />
-                     <span className="absolute bottom-0 left-0 h-0.5 bg-black w-0 group-focus-within:w-full transition-all duration-300"></span>
-                    <Button type="submit" size="icon" className="absolute right-1 top-1/2 -translate-y-1/2 bg-transparent hover:bg-transparent text-black h-7 w-7">
+                     <span className="absolute bottom-0 left-0 h-0.5 bg-foreground w-0 group-focus-within:w-full transition-all duration-300"></span>
+                    <Button type="submit" size="icon" className="absolute right-1 top-1/2 -translate-y-1/2 bg-transparent hover:bg-transparent text-foreground h-7 w-7">
                         <Send className="h-4 w-4" />
                     </Button>
                 </div>
              <div className="flex space-x-3 justify-center">
-                <Link href="https://www.facebook.com/profile.php?id=100089670823732" aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-gray-300 hover:bg-black hover:border-black hover:text-white transition-colors"><Facebook className="h-5 w-5" /></Link>
-                <Link href="https://www.linkedin.com/in/sulman-bashir-313a45332" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-gray-300 hover:bg-black hover:border-black hover:text-white transition-colors"><Linkedin className="h-5 w-5" /></Link>
-                <Link href="https://x.com/sulmanmehar007" aria-label="Twitter" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-gray-300 hover:bg-black hover:border-black hover:text-white transition-colors"><Twitter className="h-5 w-5" /></Link>
-                <Link href="https://www.instagram.com/sulmanbashirgujrat777?utm_source=qr" aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-gray-300 hover:bg-black hover:border-black hover:text-white transition-colors"><Instagram className="h-5 w-5" /></Link>
-                <Link href="#" aria-label="YouTube" className="p-2 rounded-full border border-gray-300 hover:bg-black hover:border-black hover:text-white transition-colors"><Youtube className="h-5 w-5" /></Link>
+                <Link href="https://www.facebook.com/profile.php?id=100089670823732" aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-border hover:bg-foreground hover:border-foreground hover:text-background transition-colors"><Facebook className="h-5 w-5" /></Link>
+                <Link href="https://www.linkedin.com/in/sulman-bashir-313a45332" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-border hover:bg-foreground hover:border-foreground hover:text-background transition-colors"><Linkedin className="h-5 w-5" /></Link>
+                <Link href="https://x.com/sulmanmehar007" aria-label="Twitter" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-border hover:bg-foreground hover:border-foreground hover:text-background transition-colors"><Twitter className="h-5 w-5" /></Link>
+                <Link href="https://www.instagram.com/sulmanbashirgujrat777?utm_source=qr" aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-border hover:bg-foreground hover:border-foreground hover:text-background transition-colors"><Instagram className="h-5 w-5" /></Link>
+                <Link href="#" aria-label="YouTube" className="p-2 rounded-full border border-border hover:bg-foreground hover:border-foreground hover:text-background transition-colors"><Youtube className="h-5 w-5" /></Link>
             </div>
           </div>
 
         </div>
 
-        <div className="mt-8 pt-4 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between text-[11px] text-muted-foreground">
+        <div className="mt-8 pt-4 border-t border-border flex flex-col sm:flex-row items-center justify-between text-[11px] text-muted-foreground">
             <p>© {new Date().getFullYear()} SulzaX Digital Hub. All Rights Reserved.</p>
             <div className="flex gap-4 mt-4 sm:mt-0">
                 <AnimatedLink href="#">Privacy Policy</AnimatedLink>

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Briefcase, Users, BarChart2, CheckCircle, ArrowRight, Mail, Phone, MapPin, Landmark, Rocket, BriefcaseMedical, Plane, Building2, Wrench, School, Code, Smartphone, Database, PenTool, TrendingUp, Search, MessageCircle, Megaphone, Pointer, Globe, Palette, Target, BarChart3, Bot, ShoppingCart, CircleDollarSign, Tv, LayoutTemplate, PenSquare, AppWindow, BrainCircuit, ShieldCheck, GaugeCircle } from 'lucide-react';
 import { ContactForm } from '@/components/contact-form';
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
@@ -376,15 +376,22 @@ export default function Home() {
               View All Industries <ArrowRight className="inline-block ml-1 h-4 w-4" />
             </Link>
           </div>
-            <div className="glass-container">
-                 {industries.map((industry, index) => (
-                    <Link href={industry.href} key={index} className="group">
-                        <div data-text={industry.name} style={{ '--r': (index - Math.floor(industries.length / 2)) * 10 } as React.CSSProperties} className="glass">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+            {industries.map((industry) => (
+              <Link href={industry.href} key={industry.name} className="group">
+                <Card className="text-center p-6 hover:bg-accent/5 transition-colors">
+                    <CardHeader className="p-0 flex justify-center items-center mb-4">
+                        <div className="p-4 rounded-full bg-accent/10 text-accent group-hover:scale-110 transition-transform">
                             {industry.icon}
                         </div>
-                    </Link>
-                 ))}
-            </div>
+                    </CardHeader>
+                    <CardContent className="p-0">
+                        <CardTitle className="text-base font-semibold">{industry.name}</CardTitle>
+                    </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

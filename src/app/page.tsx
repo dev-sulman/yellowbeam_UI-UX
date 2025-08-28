@@ -1,5 +1,5 @@
 
-
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -8,6 +8,7 @@ import { ContactForm } from '@/components/contact-form';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { cn } from '@/lib/utils';
 
 const features = [
   {
@@ -80,6 +81,7 @@ const industries = [
   { name: "Transportation & Logistics", icon: <Plane />, href: "/transportation-logistics" },
   { name: "Real Estate", icon: <Building2 />, href: "/real-estate" },
   { name: "Manufacturing & Industry 4.0", icon: <Wrench />, href: "/manufacturing-industry" },
+  { name: "Education & Training", icon: <School />, href: "/education-training" },
 ];
 
 const services = [
@@ -376,20 +378,18 @@ export default function Home() {
               View All Industries <ArrowRight className="inline-block ml-1 h-4 w-4" />
             </Link>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {industries.map((industry) => (
-              <Link href={industry.href} key={industry.name} className="group">
-                <Card className="text-center p-6 hover:bg-accent/5 transition-colors">
-                    <CardHeader className="p-0 flex justify-center items-center mb-4">
-                        <div className="p-4 rounded-full bg-accent/10 text-accent group-hover:scale-110 transition-transform">
-                            {industry.icon}
-                        </div>
-                    </CardHeader>
-                    <CardContent className="p-0">
-                        <CardTitle className="text-base font-semibold">{industry.name}</CardTitle>
-                    </CardContent>
-                </Card>
-              </Link>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+             {industries.map((industry) => (
+                <Link 
+                    href={industry.href} 
+                    key={industry.name} 
+                    className="group flex items-center gap-4 p-4 rounded-lg bg-secondary/50 hover:bg-primary text-primary hover:text-primary-foreground transition-colors duration-300"
+                >
+                    <div className="text-accent group-hover:text-primary-foreground transition-colors duration-300">
+                        {React.cloneElement(industry.icon, { className: 'w-6 h-6' })}
+                    </div>
+                    <span className="font-semibold text-base">{industry.name}</span>
+                </Link>
             ))}
           </div>
         </div>

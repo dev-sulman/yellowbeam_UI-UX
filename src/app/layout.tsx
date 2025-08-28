@@ -32,7 +32,8 @@ const fontBody = Open_Sans({
 
 async function getUser(): Promise<User | null> {
   try {
-    const session = cookies().get('session')?.value || '';
+    const cookieStore = cookies();
+    const session = cookieStore.get('session')?.value || '';
     if (!session) return null;
     const decodedClaims = await adminAuth.verifySessionCookie(session, true);
     return decodedClaims;

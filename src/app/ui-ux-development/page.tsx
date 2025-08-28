@@ -1,11 +1,9 @@
-
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
 import { CheckCircle, Phone, Mail, MapPin, Check, Layers, PencilRuler, Search, Users } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { ContactForm } from '@/components/contact-form';
-import { Switch } from '@/components/ui/switch';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import PricingToggle from '@/components/pricing-toggle';
@@ -28,7 +26,7 @@ const teamMembers = [
     {
         name: 'James O\'Connor',
         role: 'Product Manager at TechFlow',
-        avatar: 'two.jpg',
+        avatar: '/two.jpg',
         dataAiHint: 'professional headshot',
         testimonial: 'The UI/UX team at SulzaX is incredibly talented. They delivered a beautiful and intuitive design that our users love.'
     },
@@ -124,10 +122,15 @@ export default function UiUxDevelopmentPage() {
     return (
         <div className="bg-background text-foreground">
             {/* Hero Section */}
-            <section className="relative py-20 md:py-32 bg-secondary/30">
+            <section className="relative py-20 md:py-32 bg-gradient-to-r from-blue-50 to-purple-50">
                 <div className="container mx-auto px-4 md:px-6 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-primary">UI/UX Development</h1>
-                    <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">Enhancing your website's visibility on search engines to attract organic traffic and improve search rankings.</p>
+                    <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+                        Creating intuitive, beautiful digital experiences that users love and that drive business results.
+                    </p>
+                    <Button asChild className="mt-8">
+                        <Link href="#contact">Start Your Project</Link>
+                    </Button>
                 </div>
             </section>
 
@@ -149,8 +152,16 @@ export default function UiUxDevelopmentPage() {
                                 <Link href="/about">About Us</Link>
                             </Button>
                         </div>
-                        <div>
-                            <Image src="https://plus.unsplash.com/premium_photo-1690303193725-e3a9c08cfca4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQzfHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D" alt="UI/UX design workshop" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="design workshop" />
+                        <div className="relative">
+                            <div className="absolute -inset-4 bg-gradient-to-r from-blue-100 to-purple-100 rounded-lg transform rotate-2"></div>
+                            <Image 
+                                src="https://plus.unsplash.com/premium_photo-1690303193725-e3a9c08cfca4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQzfHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D" 
+                                alt="UI/UX design workshop" 
+                                width={600} 
+                                height={400} 
+                                className="rounded-lg shadow-lg relative z-10" 
+                                data-ai-hint="design workshop" 
+                            />
                         </div>
                     </div>
                 </div>
@@ -165,7 +176,7 @@ export default function UiUxDevelopmentPage() {
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {services.map(service => (
-                            <Card key={service.title} className="text-center p-6">
+                            <Card key={service.title} className="text-center p-6 hover:shadow-lg transition-all duration-300">
                                 <div className="flex justify-center mb-4 text-accent">{service.icon}</div>
                                 <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
                                 <CardDescription>{service.description}</CardDescription>
@@ -179,8 +190,9 @@ export default function UiUxDevelopmentPage() {
             <section className="w-full py-20 md:py-24">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
-                        <div>
-                             <Image src="/blog12.jpeg" alt="Designer sketching wireframes" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="designer sketching wireframe" />
+                        <div className="relative">
+                            <div className="absolute -inset-4 bg-gradient-to-r from-blue-100 to-purple-100 rounded-lg transform -rotate-2"></div>
+                            <Image src="/blog12.jpeg" alt="Designer sketching wireframes" width={600} height={400} className="rounded-lg shadow-lg relative z-10" data-ai-hint="designer sketching wireframe" />
                         </div>
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Product Design</h2>
@@ -222,8 +234,9 @@ export default function UiUxDevelopmentPage() {
                                 ))}
                             </div>
                         </div>
-                        <div>
-                            <Image src="/mobile14.webp" alt="A/B testing results on a screen" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="ab testing chart" />
+                        <div className="relative">
+                            <div className="absolute -inset-4 bg-gradient-to-r from-blue-100 to-purple-100 rounded-lg transform rotate-2"></div>
+                            <Image src="/mobile14.webp" alt="A/B testing results on a screen" width={600} height={400} className="rounded-lg shadow-lg relative z-10" data-ai-hint="ab testing chart" />
                         </div>
                     </div>
                 </div>
@@ -238,7 +251,7 @@ export default function UiUxDevelopmentPage() {
                     </div>
                     <div className="grid md:grid-cols-2 gap-8">
                         {values.map(value => (
-                            <Card key={value.title} className="p-6">
+                            <Card key={value.title} className="p-6 hover:shadow-lg transition-all duration-300">
                                 <CardTitle className="text-xl mb-2">{value.title}</CardTitle>
                                 <CardDescription>{value.description}</CardDescription>
                             </Card>
@@ -253,7 +266,9 @@ export default function UiUxDevelopmentPage() {
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Recognized for UX Excellence</h2>
                      <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(3)].map((_, i) => (
-                             <Image key={i} src="/blog8.jpeg" alt="Award for UX design" width={120} height={120} data-ai-hint="design award trophy" />
+                             <div key={i} className="bg-white p-6 rounded-lg shadow-md w-40 h-40 flex items-center justify-center">
+                                <span className="text-2xl font-bold text-accent">Award {i+1}</span>
+                             </div>
                         ))}
                      </div>
                 </div>
@@ -264,7 +279,7 @@ export default function UiUxDevelopmentPage() {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
-                            <Card key={member.name} className="p-6 flex items-start gap-4">
+                            <Card key={member.name} className="p-6 flex items-start gap-4 hover:shadow-lg transition-all duration-300">
                                 <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member.dataAiHint} />
                                 <div>
                                     <p className="text-muted-foreground">"{member.testimonial}"</p>
@@ -280,15 +295,16 @@ export default function UiUxDevelopmentPage() {
             {/* Pricing Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6">
-                    <PricingToggle tiers={pricingTiers} supportFeatures={supportFeatures}>
-                         <h2 className="text-4xl md:text-5xl font-bold text-black">Ready to Build a Better Product?</h2>
-                         <p className="text-black">Choose a design package that suits your needs. We provide flexible options for businesses at any stage.</p>
-                    </PricingToggle>
+                    <div className="text-center mb-12">
+                        <h2 className="text-4xl md:text-5xl font-bold text-primary">Ready to Build a Better Product?</h2>
+                        <p className="text-muted-foreground mt-2">Choose a design package that suits your needs. We provide flexible options for businesses at any stage.</p>
+                    </div>
+                    <PricingToggle tiers={pricingTiers} supportFeatures={supportFeatures} />
                 </div>
             </section>
 
             {/* Contact Section */}
-            <section className="w-full py-20 md:py-24">
+            <section id="contact" className="w-full py-20 md:py-24">
                  <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="flex flex-col space-y-8">

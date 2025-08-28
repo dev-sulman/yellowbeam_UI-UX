@@ -379,13 +379,13 @@ export default function Home() {
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-             {industries.map((industry) => (
+            {industries.map((industry) => (
                 <Link 
                     href={industry.href} 
                     key={industry.name} 
-                    className="group flex items-center gap-4 p-4 rounded-lg bg-secondary/50 hover:bg-primary text-primary hover:text-primary-foreground transition-colors duration-300"
+                    className="group flex items-center gap-4 p-4 rounded-lg bg-secondary/50 text-foreground hover:bg-[#2D4FE1] hover:text-white transition-colors duration-300"
                 >
-                    <div className="text-accent group-hover:text-primary-foreground transition-colors duration-300">
+                    <div className="text-accent group-hover:text-white transition-colors duration-300">
                         {React.cloneElement(industry.icon, { className: 'w-6 h-6' })}
                     </div>
                     <span className="font-semibold text-base">{industry.name}</span>

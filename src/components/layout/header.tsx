@@ -13,7 +13,6 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import Image from 'next/image';
 import { UserNav } from '@/components/user-nav';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { ModeToggle } from '@/components/mode-toggle';
 
 const SulzaXLogo = () => (
     <svg width="180" height="48" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg">
@@ -256,7 +255,6 @@ export default function Header({ user }: HeaderProps) {
         </nav>
 
         <div className="flex items-center gap-2">
-          <ModeToggle />
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>

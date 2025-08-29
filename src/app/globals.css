@@ -38,40 +38,6 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-  .dark {
-    --background: 217 22% 10%; /* Darker version of #434F62 */
-    --foreground: 225 33% 80%; /* #CBD3F8 */
-    --card: 217 22% 15%;
-    --card-foreground: 225 33% 80%;
-    --popover: 217 22% 10%;
-    --popover-foreground: 225 33% 80%;
-    --primary: 225 33% 90%; /* #E1E5F8 */
-    --primary-foreground: 217 22% 15%;
-    --secondary: 217 22% 20%;
-    --secondary-foreground: 225 33% 90%;
-    --muted: 217 22% 20%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 231 84% 63%; /* #5168F0 */
-    --accent-foreground: 0 0% 100%;
-    --destructive: 6 78% 57%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 217 22% 20%;
-    --input: 217 22% 20%;
-    --ring: 231 84% 63%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
 }
 
 @layer base {
@@ -264,68 +230,6 @@
   }
 }
 
-/* No. 4: .toggle-switch */
-.toggle-switch {
-  position: relative;
-  width: 70px;
-  height: 35px;
-}
-
-.toggle-switch .switch-label {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: hsl(var(--primary));
-  border-radius: 25px;
-  cursor: pointer;
-  border: 2px solid hsl(var(--primary));
-}
-
-.toggle-switch .checkbox {
-  position: absolute;
-  display: none;
-}
-
-.toggle-switch .slider {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 25px;
-  transition: 0.3s;
-}
-
-.dark .toggle-switch .checkbox:checked ~ .slider {
-  background-color: hsl(var(--primary-foreground));
-}
-.light .toggle-switch .checkbox:checked ~ .slider {
-   background-color: hsl(var(--background));
-}
-
-
-.toggle-switch .slider::before {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: 6px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  box-shadow: inset 8px -3px 0px 0px hsl(var(--primary-foreground));
-  background-color: hsl(var(--primary));
-  transition: 0.3s;
-}
-
-.dark .toggle-switch .checkbox:checked ~ .slider::before {
-  transform: translateX(35px);
-  background-color: hsl(var(--primary));
-  box-shadow: none;
-}
-.light .toggle-switch .checkbox:checked ~ .slider::before {
-   transform: translateX(35px);
-  background-color: hsl(var(--primary));
-  box-shadow: none;
-}
-
 /* No. 5: .burger */
 .burger {
   position: relative;
@@ -419,7 +323,7 @@
   color: hsl(var(--foreground));
 }
 
-.glass-container:hover .glass {
+.container:hover .glass {
   transform: rotate(0deg);
   margin: 0 10px;
 }
@@ -440,19 +344,6 @@
   font-size: 2.5em;
   fill: hsl(var(--foreground));
 }
-
-.dark .glass-container .glass {
-    color: hsl(var(--foreground));
-    background: linear-gradient(hsl(var(--card) / 0.1), transparent);
-}
-.dark .glass-container .glass::before {
-    color: hsl(var(--foreground));
-    background: hsl(var(--card) / 0.1);
-}
-.dark .glass-container .glass svg {
-    fill: hsl(var(--foreground));
-}
-
 
 .radio-pricing-toggle {
     display: flex;

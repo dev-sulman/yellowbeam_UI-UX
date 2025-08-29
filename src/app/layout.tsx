@@ -9,7 +9,6 @@ import { adminAuth } from '@/lib/firebase-admin';
 import type { User } from 'firebase-admin/auth';
 import { Poppins, Open_Sans } from 'next/font/google';
 import { cn } from '@/lib/utils';
-import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
   title: 'SulzaX Digital Hub',
@@ -51,21 +50,14 @@ export default async function RootLayout({
   const user = await getUser();
 
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={cn("font-body bg-background text-foreground antialiased flex flex-col min-h-screen", fontHeadline.variable, fontBody.variable)} suppressHydrationWarning>
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-        >
-            <div className="flex-grow w-full">
-            <Header user={user ? { name: user.name, email: user.email, picture: user.picture } : null} />
-            <main>{children}</main>
-            </div>
-            <Footer />
-            <Toaster />
-        </ThemeProvider>
+    <html lang="en">
+      <body className={cn("font-body bg-background text-foreground antialiased flex flex-col min-h-screen", fontHeadline.variable, fontBody.variable)}>
+        <div className="flex-grow w-full">
+        <Header user={user ? { name: user.name, email: user.email, picture: user.picture } : null} />
+        <main>{children}</main>
+        </div>
+        <Footer />
+        <Toaster />
       </body>
     </html>
   );

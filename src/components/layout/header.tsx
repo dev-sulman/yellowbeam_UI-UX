@@ -310,7 +310,7 @@ export default function Header({ user }: HeaderProps) {
                     </div>
                 </ScrollArea>
                 <div className="p-6 border-t">
-                  {user ? (
+                  {user && (
                       <div className="flex flex-col gap-4">
                         <div className="flex items-center gap-3">
                            <Avatar>
@@ -331,35 +331,13 @@ export default function Header({ user }: HeaderProps) {
                             </Button>
                          </SheetClose>
                       </div>
-                  ) : (
-                    <>
-                      <SheetClose asChild>
-                          <Button asChild className="w-full font-semibold bg-accent hover:bg-accent/90 text-accent-foreground mb-2">
-                              <Link href="/login">Login</Link>
-                          </Button>
-                      </SheetClose>
-                      <SheetClose asChild>
-                           <Button asChild variant="outline" className="w-full">
-                              <Link href="/signup">Sign Up</Link>
-                          </Button>
-                      </SheetClose>
-                    </>
                   )}
                 </div>
               </SheetContent>
             </Sheet>
           </div>
-            {user ? (
+            {user && (
                 <UserNav user={user} />
-            ) : (
-                <div className="hidden md:flex items-center space-x-4">
-                    <Button asChild variant="ghost" size="sm">
-                        <Link href="/login">Login</Link>
-                    </Button>
-                    <Button asChild size="sm">
-                        <Link href="/signup">Sign Up</Link>
-                    </Button>
-                </div>
             )}
         </div>
       </div>

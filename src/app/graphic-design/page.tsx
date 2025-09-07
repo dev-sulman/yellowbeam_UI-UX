@@ -308,7 +308,5 @@ export default function GraphicDesignPage() {
                 </div>
             </section>
         </div>
-    )
+    );
 }
-
-    

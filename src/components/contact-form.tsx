@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useForm } from 'react-hook-form';
@@ -57,21 +58,14 @@ export function ContactForm({ cardTitle = "Send us a Message", cardDescription =
   const selectedService = form.watch('service');
 
   async function onSubmit(data: FormValues) {
-    const result = await handleContactForm(data);
-
-    if (result.success) {
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for contacting us. We'll be in touch shortly.",
-      });
-      form.reset();
-    } else {
-      toast({
-        variant: 'destructive',
-        title: 'Uh oh! Something went wrong.',
-        description: result.error || 'There was a problem with your request.',
-      });
-    }
+    // This is a placeholder for form submission.
+    // In a real application, you would handle the form submission here.
+    console.log(data);
+    toast({
+      title: "Message Sent! (Simulation)",
+      description: "This is a demo. In a real app, your message would be sent.",
+    });
+    form.reset();
   }
 
   return (

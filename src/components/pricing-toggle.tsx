@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -71,7 +72,7 @@ export default function PricingToggle({ tiers, supportFeatures, children }: Pric
                     {supportFeatures.map(feature => (
                         <li key={feature} className="flex items-center gap-3">
                             <Check className="w-5 h-5 text-accent" />
-                            <span className="text-black dark:text-white">{feature}</span>
+                            <span className="text-black">{feature}</span>
                         </li>
                     ))}
                 </ul>
@@ -81,18 +82,18 @@ export default function PricingToggle({ tiers, supportFeatures, children }: Pric
                     <Card key={tier.name} className={`w-full flex flex-col relative shadow-none border-0 ${tier.popular ? 'bg-card' : 'bg-transparent'}`}>
                         {tier.popular && <Badge className="absolute -top-3 right-4 bg-accent text-accent-foreground">POPULAR</Badge>}
                         <CardHeader className="text-center">
-                            <CardTitle className="text-2xl text-black dark:text-white">{tier.name}</CardTitle>
+                            <CardTitle className="text-2xl text-black">{tier.name}</CardTitle>
                         </CardHeader>
                         <CardContent className="flex-grow space-y-6">
-                            <div className={cn('text-center', tier.popular ? 'text-black dark:text-white' : 'text-accent')}>
+                            <div className={cn('text-center', tier.popular ? 'text-black' : 'text-accent')}>
                                 {renderPrice(tier.price)}
-                                <span className="text-black dark:text-white">{tier.period}</span>
+                                <span className="text-black">{tier.period}</span>
                             </div>
                             <ul className="space-y-3">
                                 {tier.features.map(feature => (
                                     <li key={feature} className="flex items-center gap-3">
                                         <Check className="w-5 h-5 text-accent" />
-                                        <span className="text-black dark:text-white">{feature}</span>
+                                        <span className="text-black">{feature}</span>
                                     </li>
                                 ))}
                             </ul>

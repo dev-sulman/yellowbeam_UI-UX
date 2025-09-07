@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardTitle, CardDescription } from "@/components/ui/card";
-import { CheckCircle, Users, Briefcase, BarChart2 } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
 const teamMembers = [
   {

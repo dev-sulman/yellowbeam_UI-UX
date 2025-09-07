@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -122,7 +123,7 @@ export default function UiUxDevelopmentPage() {
     return (
         <div className="bg-background text-foreground">
             {/* Hero Section */}
-            <section className="relative py-20 md:py-32 bg-gradient-to-r from-blue-50 to-purple-50">
+            <section className="relative py-20 md:py-32 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-primary">UI/UX Development</h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -299,7 +300,10 @@ export default function UiUxDevelopmentPage() {
                         <h2 className="text-4xl md:text-5xl font-bold text-primary">Ready to Build a Better Product?</h2>
                         <p className="text-muted-foreground mt-2">Choose a design package that suits your needs. We provide flexible options for businesses at any stage.</p>
                     </div>
-                    <PricingToggle tiers={pricingTiers} supportFeatures={supportFeatures} />
+                    <PricingToggle tiers={pricingTiers} supportFeatures={supportFeatures}>
+                         <h2 className="text-4xl md:text-5xl font-bold text-black">Ready to Build a Better Product?</h2>
+                         <p className="text-muted-foreground">Choose a design package that suits your needs. We provide flexible options for businesses at any stage.</p>
+                    </PricingToggle>
                 </div>
             </section>
 

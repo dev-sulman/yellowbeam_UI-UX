@@ -2,12 +2,9 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
-import { CheckCircle, Award, Star, Phone, Mail, MapPin, Check } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { CheckCircle, Phone, Mail, MapPin } from 'lucide-react';
+import { Card, CardTitle, CardDescription } from "@/components/ui/card";
 import { ContactForm } from '@/components/contact-form';
-import { Switch } from '@/components/ui/switch';
-import { Badge } from '@/components/ui/badge';
-import { cn } from '@/lib/utils';
 import PricingToggle from '@/components/pricing-toggle';
 
 const services = [

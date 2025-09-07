@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -137,7 +136,7 @@ export default function GraphicDesignPage() {
                     <div className="space-y-6">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Crafting Visual Stories That Connect</h2>
                         <div className="flex items-center gap-4">
-                            <Image src="/two.jpg" alt="Laura Chen" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                            <Image src="/two.jpg" alt="Laura Chen" width={80} height={80} className="rounded-full" dataAiHint="professional headshot" />
                             <div>
                                 <p className="font-semibold">Laura Chen, Head of Design, SulzaX</p>
                                 <p className="text-muted-foreground">"Good design is good business."</p>
@@ -149,7 +148,14 @@ export default function GraphicDesignPage() {
                         </Button>
                     </div>
                     <div>
-                        <Image src="https://plus.unsplash.com/premium_photo-1720032305135-a87c5e0888b6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQ3fHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D/600x400.png" alt="Design team collaborating" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="design team meeting" />
+                        <Image 
+                            src="https://plus.unsplash.com/premium_photo-1720032305135-a87c5e0888b6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQ3fHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D" 
+                            alt="Design team collaborating" 
+                            width={600} 
+                            height={400} 
+                            className="rounded-lg shadow-lg" 
+                            dataAiHint="design team meeting" 
+                        />
                     </div>
                 </div>
             </section>
@@ -177,7 +183,14 @@ export default function GraphicDesignPage() {
             <section className="container py-20 md:py-24">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
-                         <Image src="https://plus.unsplash.com/premium_photo-1688704908992-7429b43db20d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTgzfHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D/600x400.png" alt="Designer at work" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="designer working computer" />
+                         <Image 
+                            src="https://plus.unsplash.com/premium_photo-1688704908992-7429b43db20d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTgzfHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D" 
+                            alt="Designer at work" 
+                            width={600} 
+                            height={400} 
+                            className="rounded-lg shadow-lg" 
+                            dataAiHint="designer working computer" 
+                         />
                     </div>
                     <div className="space-y-6">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Creative Partner</h2>
@@ -199,7 +212,7 @@ export default function GraphicDesignPage() {
                 </div>
             </section>
 
-            {/* Why Choose Us Section */}
+            {/* Why Choose Us Section - ERROR FIXED HERE */}
             <section className="py-20 md:py-24 bg-secondary/30">
                 <div className="container grid lg:grid-cols-2 gap-12 items-center">
                     <div className="space-y-6">
@@ -218,8 +231,14 @@ export default function GraphicDesignPage() {
                         </div>
                     </div>
                     <div>
-                        <Image src="https://plus.unsplash.com/premium_photo-1689700527718-257b67a4abd0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTk1fHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D/600x400.png" alt="Moodboard with design concepts" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="design moodboard concepts" />
-                        </div>
+                        <Image 
+                            src="https://plus.unsplash.com/premium_photo-1689700527718-257b67a4abd0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTk1fHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D" 
+                            alt="Moodboard with design concepts" 
+                            width={600} 
+                            height={400} 
+                            className="rounded-lg shadow-lg" 
+                            dataAiHint="design moodboard concepts" 
+                        />
                     </div>
                 </div>
             </section>
@@ -242,15 +261,13 @@ export default function GraphicDesignPage() {
                 </div>
             </section>
 
-          
-
              {/* Testimonials Section */}
             <section className="container py-20 md:py-24">
                 <div>
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
-                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member.dataAiHint} />
+                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" dataAiHint={member.dataAiHint} />
                                 <div>
                                     <p className="text-muted-foreground">"{member.testimonial}"</p>
                                     <p className="font-bold mt-4">{member.name}</p>

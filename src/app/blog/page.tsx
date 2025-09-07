@@ -13,7 +13,7 @@ const blogPosts = [
     author: "John Doe",
     excerpt: "Exploring the latest trends and technologies shaping the future of web development, from AI-powered tools to serverless architectures.",
     image: "/blog1.jpeg",
-    dataAiHint: "web development future",
+    'data-ai-hint': "web development future",
     href: "#"
   },
   {
@@ -23,7 +23,7 @@ const blogPosts = [
     author: "Jane Smith",
     excerpt: "A deep dive into the benefits of having a dedicated mobile application for your business in today's mobile-first world.",
     image: "/app.webp",
-    dataAiHint: "mobile app business",
+    'data-ai-hint': "mobile app business",
     href: "#"
   },
    {
@@ -33,7 +33,7 @@ const blogPosts = [
     author: "Michael Brown",
     excerpt: "An introductory guide to the principles of UI/UX design, with practical tips for creating user-friendly digital products.",
     image: "/theapp.webp",
-    dataAiHint: "ui ux design guide",
+    'data-ai-hint': "ui ux design guide",
     href: "#"
   },
   {
@@ -43,7 +43,7 @@ const blogPosts = [
     author: "Emily White",
     excerpt: "A comprehensive guide to the latest SEO strategies and techniques to boost your website's ranking on Google.",
     image: "/blog5.webp",
-    dataAiHint: "seo guide 2024",
+    'data-ai-hint': "seo guide 2024",
     href: "#"
   },
 ];
@@ -67,7 +67,7 @@ export default function BlogPage() {
                         alt={post.title}
                         width={600}
                         height={400}
-                        data-ai-hint={post.dataAiHint}
+                        data-ai-hint={post['data-ai-hint']}
                         className="group-hover:scale-105 transition-transform duration-500 object-cover"
                     />
                 </div>

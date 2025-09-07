@@ -22,14 +22,14 @@ const teamMembers = [
         name: 'Megan Harris',
         role: 'Social Media Manager at ConnectSphere',
         avatar: 'https://cdn.dribbble.com/users/124059/avatars/small/d3ea2de59812eb0062ed2258fccd71d6.jpg?1501076695/100x100.png',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'SulzaX took our social media presence to the next level. Our engagement and follower growth have been incredible.'
     },
     {
         name: 'Jason Chen',
         role: 'Founder of StyleSavvy',
         avatar: 'https://cdn.dribbble.com/users/8427991/avatars/normal/2d630ea0fd16c841881d23386c4fa850.jpg?1625395574/100x100.png',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'The team at SulzaX is creative, strategic, and always on top of the latest trends. They are a true partner in our success.'
     },
 ];
@@ -255,7 +255,7 @@ export default function SocialMediaPage() {
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
-                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member.dataAiHint} />
+                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member['data-ai-hint']} />
                                 <div>
                                     <p className="text-muted-foreground">"{member.testimonial}"</p>
                                     <p className="font-bold mt-4">{member.name}</p>

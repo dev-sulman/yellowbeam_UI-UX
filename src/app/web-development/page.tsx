@@ -17,14 +17,14 @@ const teamMembers = [
         name: 'Alexander Ball',
         role: 'CEO Digital Avitex',
         avatar: '/two.jpg',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'SulzaX exceeded our expectations with their web development solutions. Highly recommended!'
     },
     {
         name: 'Izabel Watt',
         role: 'UI UX Design TechX',
         avatar: 'four.jpg',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'The team at SulzaX is professional, responsive, and delivered a fantastic website for our company.'
     },
 ];
@@ -180,7 +180,7 @@ export default function WebDevelopmentPage() {
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
-                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member.dataAiHint} />
+                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member['data-ai-hint']} />
                                 <div>
                                     <p className="text-muted-foreground">"{member.testimonial}"</p>
                                     <p className="font-bold mt-4">{member.name}</p>

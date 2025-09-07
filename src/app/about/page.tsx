@@ -10,19 +10,19 @@ const teamMembers = [
     name: 'Sulman',
     role: 'CEO & Founder',
     image: '/sulmansmallimage.jpeg',
-    dataAiHint: 'professional headshot',
+    'data-ai-hint': 'professional headshot',
   },
   {
     name: 'Sehar',
     role: 'Chief Technology Officer',
     image: '/seharsmallimage.jpg',
-    dataAiHint: 'professional headshot',
+    'data-ai-hint': 'professional headshot',
   },
   {
     name: 'Leeia',
     role: 'Lead Developer',
     image: '/three.jpg',
-    dataAiHint: 'professional headshot',
+    'data-ai-hint': 'professional headshot',
   },
 ];
 
@@ -101,7 +101,7 @@ export default function AboutUsPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {teamMembers.map(member => (
                             <Card key={member.name} className="text-center p-6 border-0 shadow-none">
-                                <Image src={member.image} alt={member.name} width={150} height={150} data-ai-hint={member.dataAiHint} className="rounded-full mx-auto mb-4" />
+                                <Image src={member.image} alt={member.name} width={150} height={150} data-ai-hint={member['data-ai-hint']} className="rounded-full mx-auto mb-4" />
                                 <h3 className="font-bold text-lg">{member.name}</h3>
                                 <p className="text-accent">{member.role}</p>
                             </Card>

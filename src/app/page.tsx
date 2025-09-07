@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -49,28 +48,28 @@ const projects = [
     category: 'Website',
     featuredImage: '/usabestcarshipping.jpg',
     description: 'A dedicated website for auto transport services in the USA, offering professional vehicle shipping...',
-    dataAiHint: 'logistics website'
+    'data-ai-hint': 'logistics website'
   },
   {
     title: 'Reilu Kuljetus Customer App',
     category: 'Mobile Application',
     featuredImage: '/noor.png',
     description: 'A mobile application for food delivery services in Finland, allowing users to browse menus, place...',
-    dataAiHint: 'mobile app logistics'
+    'data-ai-hint': 'mobile app logistics'
   },
   {
     title: 'Reilu-Kuljetus',
     category: 'Website',
     featuredImage: '/reilu.jpg',
     description: 'A food delivery website in Finland, providing an easy-to-use platform for customers to order...',
-    dataAiHint: 'food delivery website'
+    'data-ai-hint': 'food delivery website'
   },
   {
     title: 'Noor Care NGO Platform',
     category: 'Web Development',
     featuredImage: '/original-189293cabe56b4411fde1a306b8b9d9b.webp',
     description: 'Secure donation processing system to help the NGO increase online contributions.',
-    dataAiHint: 'charity website'
+    'data-ai-hint': 'charity website'
   },
 ];
 
@@ -419,7 +418,7 @@ export default function Home() {
                         alt={project.title}
                         width={600}
                         height={400}
-                        data-ai-hint={project.dataAiHint}
+                        data-ai-hint={project['data-ai-hint']}
                         className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <CardContent className="p-6">

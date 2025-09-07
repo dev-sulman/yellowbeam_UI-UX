@@ -22,14 +22,14 @@ const teamMembers = [
         name: 'Maria Garcia',
         role: 'Principal, Oakwood Academy',
         avatar: 'https://placehold.co/100x100.png',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'SulzaX developed an LMS that has transformed how we deliver our curriculum. It\'s intuitive for both teachers and students.'
     },
     {
         name: 'Dr. David Lee',
         role: 'Dean of Online Learning, City University',
         avatar: 'https://placehold.co/100x100.png',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'Their virtual classroom solution has been essential for our distance learning programs. The quality and reliability are excellent.'
     },
 ];
@@ -250,7 +250,7 @@ export default function EducationPage() {
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
-                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member.dataAiHint} />
+                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member['data-ai-hint']} />
                                 <div>
                                     <p className="text-muted-foreground">"{member.testimonial}"</p>
                                     <p className="font-bold mt-4">{member.name}</p>

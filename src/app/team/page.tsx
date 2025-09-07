@@ -7,7 +7,7 @@ const teamMembers = [
     name: 'John Doe',
     role: 'CEO & Founder',
     image: 'https://placehold.co/400x400.png',
-    dataAiHint: 'professional headshot',
+    'data-ai-hint': 'professional headshot',
     social: {
       linkedin: '#',
       twitter: '#',
@@ -18,7 +18,7 @@ const teamMembers = [
     name: 'Jane Smith',
     role: 'Chief Technology Officer',
     image: 'https://placehold.co/400x400.png',
-    dataAiHint: 'professional headshot',
+    'data-ai-hint': 'professional headshot',
     social: {
       linkedin: '#',
       twitter: '#',
@@ -29,7 +29,7 @@ const teamMembers = [
     name: 'Peter Jones',
     role: 'Lead Developer',
     image: 'https://placehold.co/400x400.png',
-    dataAiHint: 'professional headshot',
+    'data-ai-hint': 'professional headshot',
     social: {
       linkedin: '#',
       twitter: '#',
@@ -40,7 +40,7 @@ const teamMembers = [
     name: 'Emily White',
     role: 'Project Manager',
     image: 'https://placehold.co/400x400.png',
-    dataAiHint: 'professional headshot',
+    'data-ai-hint': 'professional headshot',
     social: {
       linkedin: '#',
       twitter: '#',
@@ -51,7 +51,7 @@ const teamMembers = [
     name: 'Michael Brown',
     role: 'UI/UX Design Lead',
     image: 'https://placehold.co/400x400.png',
-    dataAiHint: 'professional headshot',
+    'data-ai-hint': 'professional headshot',
     social: {
       linkedin: '#',
       twitter: '#',
@@ -62,7 +62,7 @@ const teamMembers = [
     name: 'Sarah Green',
     role: 'Marketing Director',
     image: 'https://placehold.co/400x400.png',
-    dataAiHint: 'professional headshot',
+    'data-ai-hint': 'professional headshot',
     social: {
       linkedin: '#',
       twitter: '#',
@@ -90,7 +90,7 @@ export default function TeamPage() {
                 alt={member.name}
                 width={400}
                 height={400}
-                data-ai-hint={member.dataAiHint}
+                data-ai-hint={member['data-ai-hint']}
                 className="mx-auto"
               />
             </div>

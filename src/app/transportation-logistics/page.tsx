@@ -22,14 +22,14 @@ const teamMembers = [
         name: 'Michael Johnson',
         role: 'Logistics Director, ShipFast',
         avatar: 'https://placehold.co/100x100.png',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'SulzaX developed a fleet management system that has revolutionized our operations.'
     },
     {
         name: 'Sarah Lee',
         role: 'Supply Chain Manager, Global Goods',
         avatar: 'https://placehold.co/100x100.png',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'Their supply chain software has given us unprecedented visibility and control.'
     },
 ];
@@ -256,7 +256,7 @@ export default function LogisticsPage() {
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
-                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member.dataAiHint} />
+                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member['data-ai-hint']} />
                                 <div>
                                     <p className="text-muted-foreground">"{member.testimonial}"</p>
                                     <p className="font-bold mt-4">{member.name}</p>

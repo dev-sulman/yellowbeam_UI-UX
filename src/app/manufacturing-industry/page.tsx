@@ -22,14 +22,14 @@ const teamMembers = [
         name: 'David Rodriguez',
         role: 'Plant Manager, Precision Parts Inc.',
         avatar: 'https://placehold.co/100x100.png',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'SulzaX\'s smart factory solutions have increased our production efficiency by 40%.'
     },
     {
         name: 'Jessica Chen',
         role: 'Operations Director, BuildRight',
         avatar: 'https://placehold.co/100x100.png',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'Their predictive maintenance system has saved us from costly downtime and repairs.'
     },
 ];
@@ -256,7 +256,7 @@ export default function ManufacturingPage() {
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
-                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member.dataAiHint} />
+                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member['data-ai-hint']} />
                                 <div>
                                     <p className="text-muted-foreground">"{member.testimonial}"</p>
                                     <p className="font-bold mt-4">{member.name}</p>

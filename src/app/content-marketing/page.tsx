@@ -22,14 +22,14 @@ const teamMembers = [
         name: 'Leaya Joe Dim',
         role: 'Content Director at StoryWeaver',
         avatar: 'https://cdn.dribbble.com/users/1060791/avatars/small/50def45ede08e05fdf8cd296cb8ca00f.jpg?1751645722/100x100.png',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'SulzaX helped us build a content engine that drives a significant portion of our inbound leads. Their strategic approach is fantastic.'
     },
     {
         name: 'Michael Rodriguez',
         role: 'Founder of GrowthHub',
         avatar: 'https://cdn.dribbble.com/users/1875202/avatars/small/3fa4f6ce6a13fae77537a58a92a5f471.jpg?1662610708/100x100.png',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'The content created by SulzaX is always top-notch. They are masters at storytelling and understand our audience perfectly.'
     },
 ];
@@ -255,7 +255,7 @@ export default function ContentMarketingPage() {
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
-                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member.dataAiHint} />
+                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member['data-ai-hint']} />
                                 <div>
                                     <p className="text-muted-foreground">"{member.testimonial}"</p>
                                     <p className="font-bold mt-4">{member.name}</p>

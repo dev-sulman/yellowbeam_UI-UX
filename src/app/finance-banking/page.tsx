@@ -19,28 +19,28 @@ const teamMembers = [
         name: 'Alexander Ball',
         role: 'CEO Digital Avitex',
         avatar: '/two.jpg',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'SulzaX exceeded our expectations with their cloud computing solutions. Highly recommended!'
     },
     {
         name: 'Izabel Watt',
         role: 'UI UX Design TechX',
         avatar: '/one.jpg',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'As our CTO, Sarah is the visionary leader responsible for shaping our technology strategy.'
     },
     {
         name: 'Tony Adams',
         role: 'Service Dev HiveLab',
         avatar: '/three.jpg',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'At the forefront of our software development projects is Michael. His coding prowess and problem-solving skills are unmatched.'
     },
      {
         name: 'Malika Kenny',
         role: 'UI Dev TechOne',
         avatar: '/one.jpg',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'David is the friendly face behind our exceptional customer service. With a warm and approachable demeanor, he ensures every client feels valued.'
     },
 ];
@@ -265,7 +265,7 @@ export default function FinanceBankingPage() {
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
-                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member.dataAiHint} />
+                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member['data-ai-hint']} />
                                 <div>
                                     <p className="text-muted-foreground">"{member.testimonial}"</p>
                                     <p className="font-bold mt-4">{member.name}</p>

@@ -22,14 +22,14 @@ const teamMembers = [
         name: 'John Doe',
         role: 'CEO, Tech Innovators',
         avatar: 'https://cdn.dribbble.com/users/548346/avatars/small/7b8a65eab045803973443c5bdf60d41d.jpg?1742477133/100x100.png',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'SulzaX transformed our IT infrastructure, enabling us to scale our services seamlessly.'
     },
     {
         name: 'Jane Smith',
         role: 'Director of Operations, ConnectAll',
         avatar: 'https://cdn.dribbble.com/users/3010014/avatars/small/ee9bf3ee3447b4ad6fa8f5e4ea79ec27.jpg?1750833183/100x100.png',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'Their cybersecurity solutions have been instrumental in protecting our sensitive data.'
     },
 ];
@@ -250,7 +250,7 @@ export default function ItTelecomPage() {
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
-                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member.dataAiHint} />
+                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member['data-ai-hint']} />
                                 <div>
                                     <p className="text-muted-foreground">"{member.testimonial}"</p>
                                     <p className="font-bold mt-4">{member.name}</p>

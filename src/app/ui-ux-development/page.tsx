@@ -21,14 +21,14 @@ const teamMembers = [
         name: 'Sophia Alvarez',
         role: 'UX Lead at Innovate.io',
         avatar: '/one.jpg',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'SulzaX completely redesigned our app\'s user experience, and the results have been phenomenal. User engagement is up 50%!'
     },
     {
         name: 'James O\'Connor',
         role: 'Product Manager at TechFlow',
         avatar: '/two.jpg',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'The UI/UX team at SulzaX is incredibly talented. They delivered a beautiful and intuitive design that our users love.'
     },
 ];
@@ -281,7 +281,7 @@ export default function UiUxDevelopmentPage() {
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4 hover:shadow-lg transition-all duration-300">
-                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member.dataAiHint} />
+                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member['data-ai-hint']} />
                                 <div>
                                     <p className="text-muted-foreground">"{member.testimonial}"</p>
                                     <p className="font-bold mt-4">{member.name}</p>

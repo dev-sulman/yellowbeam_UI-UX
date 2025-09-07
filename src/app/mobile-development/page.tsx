@@ -22,14 +22,14 @@ const teamMembers = [
         name: 'Samantha Ray',
         role: 'Lead Mobile Developer',
         avatar: 'one.jpg',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'SulzaX developed a world-class mobile app for our startup. Their expertise in mobile technology is unmatched.'
     },
     {
         name: 'leaa joe',
         role: 'Project Manager at Appify',
         avatar: '/three.jpg',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'The mobile development process was smooth and transparent. The team at SulzaX is a pleasure to work with.'
     },
 ];
@@ -255,7 +255,7 @@ export default function MobileDevelopmentPage() {
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
-                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member.dataAiHint} />
+                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member['data-ai-hint']} />
                                 <div>
                                     <p className="text-muted-foreground">"{member.testimonial}"</p>
                                     <p className="font-bold mt-4">{member.name}</p>

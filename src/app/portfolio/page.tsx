@@ -18,7 +18,7 @@ const projects = [
     featuredImage: '/aim.png',
     description: 'Modern website to handle 500+ daily quote requests with a custom quote calculator.',
     results: '240% increase in lead conversion.',
-    dataAiHint: 'logistics website'
+    'data-ai-hint': 'logistics website'
   },
   {
     title: 'Mobile Development Project',
@@ -30,7 +30,7 @@ const projects = [
     featuredImage: '/noor.png',
     description: 'Cross-platform mobile application development.',
     results: '65% faster performance than native apps',
-    dataAiHint: 'mobile app'
+    'data-ai-hint': 'mobile app'
   },
   {
     title: 'Custom Application',
@@ -42,7 +42,7 @@ const projects = [
     featuredImage: '/noor.png',
     description: 'Custom business application with advanced features.',
     results: '300% workflow improvement',
-    dataAiHint: 'business app'
+    'data-ai-hint': 'business app'
   },
   {
     title: 'Education Platform',
@@ -54,7 +54,7 @@ const projects = [
     featuredImage: '/noor.png',
     description: 'Online learning platform for university students.',
     results: '150% increase in student engagement',
-    dataAiHint: 'education platform'
+    'data-ai-hint': 'education platform'
   },
   {
     title: 'Healthcare Solution',
@@ -66,7 +66,7 @@ const projects = [
     featuredImage: '/noor.png',
     description: 'HIPAA-compliant healthcare management system.',
     results: '10,000+ patient records managed',
-    dataAiHint: 'healthcare system'
+    'data-ai-hint': 'healthcare system'
   },
 ];
 

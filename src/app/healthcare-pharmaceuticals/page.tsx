@@ -22,14 +22,14 @@ const teamMembers = [
         name: 'Dr. Emily Carter',
         role: 'Chief Medical Officer, HealthForward',
         avatar: 'https://images.unsplash.com/profile-1753579092976-a27783e34e90image?w=32&dpr=1&crop=faces&bg=%23fff&h=32&auto=format&fit=crop&q=60&ixlib=rb-4.1.0/100x100.png',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'SulzaX developed a telemedicine platform that has been a game-changer for our practice.'
     },
     {
         name: 'David Chen',
         role: 'Director of Pharmacy, WellRx',
         avatar: 'https://images.unsplash.com/profile-1520262191045-ab3b9c257971?w=32&dpr=1&crop=faces&bg=%23fff&h=32&auto=format&fit=crop&q=60&ixlib=rb-4.0.3/100x100.png',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'Their custom software has streamlined our inventory management and improved our efficiency.'
     },
 ];
@@ -249,7 +249,7 @@ export default function HealthcarePage() {
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
-                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member.dataAiHint} />
+                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member['data-ai-hint']} />
                                 <div>
                                     <p className="text-muted-foreground">"{member.testimonial}"</p>
                                     <p className="font-bold mt-4">{member.name}</p>

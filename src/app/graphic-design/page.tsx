@@ -21,14 +21,14 @@ const teamMembers = [
         name: 'Emily Carter',
         role: 'Lead Designer at CreativeWorks',
         avatar: '/one.jpg',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'SulzaX transformed our brand identity. Their design sense is impeccable and they are a joy to work with.'
     },
     {
         name: 'David Lee',
         role: 'Marketing Director at Visionary Inc.',
         avatar: '/four.jpg',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'The marketing materials designed by SulzaX have significantly boosted our campaigns. Absolutely brilliant work.'
     },
 ];
@@ -136,7 +136,7 @@ export default function GraphicDesignPage() {
                     <div className="space-y-6">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Crafting Visual Stories That Connect</h2>
                         <div className="flex items-center gap-4">
-                            <Image src="/two.jpg" alt="Laura Chen" width={80} height={80} className="rounded-full" dataAiHint="professional headshot" />
+                            <Image src="/two.jpg" alt="Laura Chen" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
                             <div>
                                 <p className="font-semibold">Laura Chen, Head of Design, SulzaX</p>
                                 <p className="text-muted-foreground">"Good design is good business."</p>
@@ -154,7 +154,7 @@ export default function GraphicDesignPage() {
                             width={600} 
                             height={400} 
                             className="rounded-lg shadow-lg" 
-                            dataAiHint="design team meeting" 
+                            data-ai-hint="design team meeting" 
                         />
                     </div>
                 </div>
@@ -189,7 +189,7 @@ export default function GraphicDesignPage() {
                             width={600} 
                             height={400} 
                             className="rounded-lg shadow-lg" 
-                            dataAiHint="designer working computer" 
+                            data-ai-hint="designer working computer" 
                          />
                     </div>
                     <div className="space-y-6">
@@ -237,7 +237,7 @@ export default function GraphicDesignPage() {
                             width={600} 
                             height={400} 
                             className="rounded-lg shadow-lg" 
-                            dataAiHint="design moodboard concepts" 
+                            data-ai-hint="design moodboard concepts" 
                         />
                     </div>
                 </div>
@@ -267,7 +267,7 @@ export default function GraphicDesignPage() {
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
-                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" dataAiHint={member.dataAiHint} />
+                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member['data-ai-hint']} />
                                 <div>
                                     <p className="text-muted-foreground">"{member.testimonial}"</p>
                                     <p className="font-bold mt-4">{member.name}</p>

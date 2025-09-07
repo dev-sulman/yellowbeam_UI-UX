@@ -11,8 +11,6 @@ import { cn } from '@/lib/utils';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import Image from 'next/image';
-import { UserNav } from '@/components/user-nav';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const SulzaXLogo = () => (
     <svg width="180" height="48" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg">
@@ -100,20 +98,7 @@ const navLinks = [
   { href: '/blog', label: 'Blog' },
 ];
 
-interface HeaderProps {
-    user: { name?: string | null, email?: string | null, picture?: string | null } | null
-}
-
-const BurgerMenu = ({ checked, onChange }: { checked: boolean, onChange: (e: React.ChangeEvent<HTMLInputElement>) => void }) => (
-    <label className="burger" htmlFor="burger-toggle">
-        <input type="checkbox" id="burger-toggle" checked={checked} onChange={onChange} />
-        <span></span>
-        <span></span>
-        <span></span>
-    </label>
-);
-
-export default function Header({ user }: HeaderProps) {
+export default function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
@@ -125,15 +110,6 @@ export default function Header({ user }: HeaderProps) {
   if (!isMounted) {
     return null;
   }
-
-  const getInitials = (name?: string | null) => {
-    if (!name) return 'U';
-    const names = name.split(' ');
-    if (names.length > 1) {
-      return `${names[0][0]}${names[names.length - 1][0]}`.toUpperCase();
-    }
-    return name.substring(0, 2).toUpperCase();
-  };
 
   const NavLink = ({ href, children, className }: { href: string; children: React.ReactNode, className?: string }) => {
     const isActive = pathname === href;
@@ -258,8 +234,8 @@ export default function Header({ user }: HeaderProps) {
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-foreground hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0">
-                    <BurgerMenu checked={isMobileMenuOpen} onChange={(e) => setIsMobileMenuOpen(e.target.checked)} />
+                <Button variant="ghost" size="icon" className="text-foreground hover:bg-secondary">
+                  <Menu className="h-6 w-6" />
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
               </SheetTrigger>
@@ -309,36 +285,9 @@ export default function Header({ user }: HeaderProps) {
                         })}
                     </div>
                 </ScrollArea>
-                <div className="p-6 border-t">
-                  {user && (
-                      <div className="flex flex-col gap-4">
-                        <div className="flex items-center gap-3">
-                           <Avatar>
-                              <AvatarImage src={user.picture ?? ''} alt={user.name ?? 'User'} />
-                              <AvatarFallback>{getInitials(user.name)}</AvatarFallback>
-                           </Avatar>
-                           <div>
-                              <p className="text-sm font-medium">{user.name}</p>
-                              <p className="text-xs text-muted-foreground">{user.email}</p>
-                           </div>
-                        </div>
-                         <SheetClose asChild>
-                            <Button asChild className="w-full font-semibold bg-destructive hover:bg-destructive/90 text-destructive-foreground">
-                                <Link href="#" onClick={async () => {
-                                  await fetch('/api/logout', { method: 'POST' });
-                                  window.location.href = '/';
-                                }}>Logout</Link>
-                            </Button>
-                         </SheetClose>
-                      </div>
-                  )}
-                </div>
               </SheetContent>
             </Sheet>
           </div>
-            {user && (
-                <UserNav user={user} />
-            )}
         </div>
       </div>
     </header>

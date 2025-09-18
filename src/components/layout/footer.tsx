@@ -67,13 +67,6 @@ const AnimatedLink = ({ href, children }: { href: string; children: React.ReactN
 );
 
 export default function Footer() {
-  const [currentYear, setCurrentYear] = useState<number | null>(null);
-
-  useEffect(() => {
-    setCurrentYear(new Date().getFullYear());
-  }, []);
-
-
   return (
     <footer className="w-full bg-background text-foreground border-t animate-fade-in-up">
       <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8 text-xs flex flex-col justify-center">
@@ -138,7 +131,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 pt-4 border-t border-border flex flex-col sm:flex-row items-center justify-between text-[11px] text-muted-foreground">
-            <p>© {currentYear || '2024'} SulzaX Digital Hub. All Rights Reserved.</p>
+            <p>© 2024 SulzaX Digital Hub. All Rights Reserved.</p>
             <div className="flex gap-4 mt-4 sm:mt-0">
                 <AnimatedLink href="#">Privacy Policy</AnimatedLink>
                 <AnimatedLink href="#">Terms of Service</AnimatedLink>

@@ -53,7 +53,7 @@ const SulzaXLogo = () => (
       </g>
        <text x="300" y="175"
             fontFamily="Outfit, Poppins, Montserrat, Segoe UI, Arial, sans-serif"
-            fontSize="120" fontWeight="800"
+            fontSize="140" fontWeight="800"
             fill="url(#gWordFooter)" letterSpacing="-1">
         Sulza<tspan fill="url(#gBlue)">X</tspan>
       </text>

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { CheckCircle, Phone, Mail, MapPin, Check, Search, FileText, Link2, Cog } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ContactForm } from '@/app/actions/contact';
+import { ContactForm } from '@/components/contact-form';
 import { Switch } from '@/components/ui/switch';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
@@ -315,5 +315,3 @@ export default function SeoPage() {
         </div>
     )
 }
-
-    

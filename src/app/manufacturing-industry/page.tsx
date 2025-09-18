@@ -292,11 +292,11 @@ export default function ManufacturingPage() {
                             <div className="space-y-6">
                                 <div className="flex items-center gap-4">
                                     <Mail className="w-6 h-6 text-accent" />
-                                    <a href="mailto:contact@sulzax.com" className="text-lg hover:text-accent transition-colors">contact@sulzax.com</a>
+                                    <a href="mailto:sulzax0@gmail.com" className="text-lg hover:text-accent transition-colors">sulzax0@gmail.com</a>
                                 </div>
                                 <div className="flex items-center gap-4">
                                     <Phone className="w-6 h-6 text-accent" />
-                                    <a href="tel:+12013740018" className="text-lg hover:text-accent transition-colors">+1 (201) 374-0018</a>
+                                    <a href="tel:03045865181" className="text-lg hover:text-accent transition-colors">03045865181</a>
                                 </div>
                                 <div className="flex items-center gap-4">
                                     <MapPin className="w-6 h-6 text-accent" />

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { CheckCircle, Award, Star, Phone, Mail, MapPin, Check } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ContactForm } from '@/app/actions/contact';
+import { ContactForm } from '@/components/contact-form';
 
 const services = [
     { title: 'Custom Web Design', description: 'Unique designs that capture your brand identity.' },

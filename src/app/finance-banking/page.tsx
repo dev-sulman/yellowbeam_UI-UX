@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { CheckCircle, Phone, Mail, MapPin } from 'lucide-react';
 import { Card, CardTitle, CardDescription } from "@/components/ui/card";
-import { ContactForm } from '@/app/actions/contact';
+import { ContactForm } from '@/components/contact-form';
 import PricingToggle from '@/components/pricing-toggle';
 
 const services = [

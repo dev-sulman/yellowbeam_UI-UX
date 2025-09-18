@@ -117,38 +117,40 @@ export default function EducationPage() {
         <div className="bg-background text-foreground">
             {/* Hero Section */}
             <section className="relative py-20 md:py-32 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-primary">Education & Training</h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">Transforming learning experiences with innovative technology solutions for educational institutions and corporate training.</p>
                 </div>
             </section>
 
             {/* Intro Section */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">The Future of Learning is Here</h2>
-                        <div className="flex items-center gap-4">
-                            <Image src="https://picsum.photos/seed/edu3/80/80" alt="Dr. Evelyn Reed" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot professor" />
-                            <div>
-                                <p className="font-semibold">Dr. Evelyn Reed, Head of EdTech, SulzaX</p>
-                                <p className="text-muted-foreground">"Empowering educators and inspiring learners through technology."</p>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">The Future of Learning is Here</h2>
+                            <div className="flex items-center gap-4">
+                                <Image src="https://picsum.photos/seed/edu3/80/80" alt="Dr. Evelyn Reed" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot professor" />
+                                <div>
+                                    <p className="font-semibold">Dr. Evelyn Reed, Head of EdTech, SulzaX</p>
+                                    <p className="text-muted-foreground">"Empowering educators and inspiring learners through technology."</p>
+                                </div>
                             </div>
+                            <p className="text-muted-foreground">We specialize in developing cutting-edge educational technology, from learning management systems to interactive e-learning content. Let us help you create the learning environment of the future.</p>
+                            <Button asChild>
+                                <Link href="/about">About Us</Link>
+                            </Button>
                         </div>
-                        <p className="text-muted-foreground">We specialize in developing cutting-edge educational technology, from learning management systems to interactive e-learning content. Let us help you create the learning environment of the future.</p>
-                        <Button asChild>
-                            <Link href="/about">About Us</Link>
-                        </Button>
-                    </div>
-                    <div>
-                        <Image src="https://picsum.photos/seed/edu4/600/400" alt="Student using a laptop for e-learning" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="elearning student laptop" />
+                        <div>
+                            <Image src="https://picsum.photos/seed/edu4/600/400" alt="Student using a laptop for e-learning" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="elearning student laptop" />
+                        </div>
                     </div>
                 </div>
             </section>
             
             {/* Services Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Education & Training Services</h2>
                         <p className="mt-2 text-muted-foreground">Comprehensive solutions for modern learning environments.</p>
@@ -165,58 +167,62 @@ export default function EducationPage() {
             </section>
 
             {/* About Us Snippet */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                         <Image src="https://picsum.photos/seed/edu5/600/400" alt="Virtual classroom session" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="virtual classroom" />
-                    </div>
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Educational Technology</h2>
-                        <p className="text-muted-foreground">At SulzaX, we are passionate about the power of technology to enhance education. We work with schools, universities, and corporations to build learning solutions that are engaging, effective, and accessible.</p>
-                        <div className="flex gap-8">
-                            <div>
-                                <p className="text-4xl font-bold text-accent">1M+</p>
-                                <p className="text-muted-foreground">Learners Reached</p>
-                            </div>
-                            <div>
-                                <p className="text-4xl font-bold text-accent">200+</p>
-                                <p className="text-muted-foreground">Educational Institutions Served</p>
-                            </div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                             <Image src="https://picsum.photos/seed/edu5/600/400" alt="Virtual classroom session" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="virtual classroom" />
                         </div>
-                        <Button asChild variant="outline">
-                            <Link href="/team">Meet our team</Link>
-                        </Button>
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Educational Technology</h2>
+                            <p className="text-muted-foreground">At SulzaX, we are passionate about the power of technology to enhance education. We work with schools, universities, and corporations to build learning solutions that are engaging, effective, and accessible.</p>
+                            <div className="flex gap-8">
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">1M+</p>
+                                    <p className="text-muted-foreground">Learners Reached</p>
+                                </div>
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">200+</p>
+                                    <p className="text-muted-foreground">Educational Institutions Served</p>
+                                </div>
+                            </div>
+                            <Button asChild variant="outline">
+                                <Link href="/team">Meet our team</Link>
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* Why Choose Us Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Why SulzaX for EdTech?</h2>
-                         <p className="text-muted-foreground">We provide secure, scalable, and engaging solutions with a deep understanding of the educational landscape.</p>
-                        <div className="space-y-4">
-                            {whyChooseUsPoints.map(point => (
-                                <div key={point.title} className="flex items-start gap-4">
-                                    <CheckCircle className="w-6 h-6 text-accent mt-1" />
-                                    <div>
-                                        <h3 className="font-semibold text-lg">{point.title}</h3>
-                                        <p className="text-muted-foreground">{point.description}</p>
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Why SulzaX for EdTech?</h2>
+                             <p className="text-muted-foreground">We provide secure, scalable, and engaging solutions with a deep understanding of the educational landscape.</p>
+                            <div className="space-y-4">
+                                {whyChooseUsPoints.map(point => (
+                                    <div key={point.title} className="flex items-start gap-4">
+                                        <CheckCircle className="w-6 h-6 text-accent mt-1" />
+                                        <div>
+                                            <h3 className="font-semibold text-lg">{point.title}</h3>
+                                            <p className="text-muted-foreground">{point.description}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <Image src="https://picsum.photos/seed/edu6/600/400" alt="Student engagement analytics" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="education analytics dashboard" />
+                        <div>
+                            <Image src="https://picsum.photos/seed/edu6/600/400" alt="Student engagement analytics" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="education analytics dashboard" />
+                        </div>
                     </div>
                 </div>
             </section>
 
              {/* Values Section */}
-            <section className="container py-20 md:py-24">
-                <div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Core Values</h2>
                         <p className="mt-2 text-muted-foreground">The principles that guide our work in educational technology.</p>
@@ -234,7 +240,7 @@ export default function EducationPage() {
 
              {/* Awards Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Award-Winning EdTech Solutions</h2>
                      <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(4)].map((_, i) => (
@@ -245,8 +251,8 @@ export default function EducationPage() {
             </section>
 
              {/* Testimonials Section */}
-            <section className="container py-20 md:py-24">
-                <div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
@@ -264,7 +270,7 @@ export default function EducationPage() {
 
             {/* Pricing Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <PricingToggle tiers={pricingTiers} supportFeatures={supportFeatures}>
                         <h2 className="text-4xl md:text-5xl font-bold text-black">EdTech Solution Plans</h2>
                         <p className="text-black">Choose a plan that fits your institution's needs. We offer scalable solutions for schools, universities, and corporate training.</p>
@@ -273,8 +279,8 @@ export default function EducationPage() {
             </section>
 
             {/* Contact Section */}
-            <section className="container py-20 md:py-24">
-                 <div className="px-4 md:px-6">
+            <section className="py-20 md:py-24">
+                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="flex flex-col space-y-8">
                             <div>

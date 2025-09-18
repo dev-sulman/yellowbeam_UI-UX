@@ -199,12 +199,12 @@ const SulzaXLogo = () => (
             <line x1="170" y1="100" x2="220" y2="84"/>
             <circle cx="220" cy="84" r="7"/>
             </g>
-            <text x="120" y="148"
+            <text x="120" y="151"
             textAnchor="middle"
             fontFamily="Outfit, Poppins, Montserrat, Segoe UI, Arial, sans-serif"
             fontSize="132"
             fontWeight="900"
-            fill="url(#gSilver)"
+            fill="black"
             letterSpacing="0.5">S</text>
         </g>
       </g>

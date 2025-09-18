@@ -14,8 +14,6 @@ const services = [
     { title: 'System Integration', description: 'Seamlessly connect your disparate software systems.', icon: <Layers /> },
 ];
 
-
-
 const whyChooseUsPoints = [
     { title: 'Scalable Architecture', description: 'We design software that grows with your business.' },
     { title: 'Rigorous Testing', description: 'Our comprehensive QA process ensures a bug-free, reliable product.' },
@@ -228,10 +226,6 @@ export default function SoftwareDevelopmentPage() {
                     </div>
                 </div>
             </section>
-
-         
-
-  
 
             {/* Pricing Section */}
             <section className="py-20 md:py-24 bg-secondary/30">

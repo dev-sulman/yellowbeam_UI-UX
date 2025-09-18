@@ -21,14 +21,14 @@ const teamMembers = [
     {
         name: 'Susan Williams',
         role: 'Broker/Owner, Prestige Properties',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: 'https://picsum.photos/seed/re1/100/100',
         'data-ai-hint': 'professional headshot',
         testimonial: 'SulzaX built a property management system that has saved us countless hours and improved our tenant satisfaction.'
     },
     {
         name: 'Tom Wilson',
         role: 'Lead Agent, The Realty Group',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: 'https://picsum.photos/seed/re2/100/100',
         'data-ai-hint': 'professional headshot',
         testimonial: 'Their real estate CRM is a must-have for any serious agent. It has transformed the way I manage my business.'
     },
@@ -134,7 +134,7 @@ export default function RealEstatePage() {
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">The Future of Real Estate is Digital</h2>
                             <div className="flex items-center gap-4">
-                                <Image src="https://placehold.co/80x80.png" alt="Laura Garcia" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                                <Image src="https://picsum.photos/seed/re3/80/80" alt="Laura Garcia" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
                                 <div>
                                     <p className="font-semibold">Laura Garcia, Head of Real Estate Tech, SulzaX</p>
                                     <p className="text-muted-foreground">"Transforming properties into digital experiences."</p>
@@ -146,7 +146,7 @@ export default function RealEstatePage() {
                             </Button>
                         </div>
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Modern house with a 'For Sale' sign" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="house for sale" />
+                            <Image src="https://picsum.photos/seed/re4/600/400" alt="Modern house with a 'For Sale' sign" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="house for sale" />
                         </div>
                     </div>
                 </div>
@@ -175,7 +175,7 @@ export default function RealEstatePage() {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Real estate agent showing a house" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="real estate agent" />
+                            <Image src="https://picsum.photos/seed/re5/600/400" alt="Real estate agent showing a house" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="real estate agent" />
                         </div>
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in PropTech</h2>
@@ -218,7 +218,7 @@ export default function RealEstatePage() {
                             </div>
                         </div>
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Virtual tour of a property on a tablet" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="virtual tour tablet" />
+                            <Image src="https://picsum.photos/seed/re6/600/400" alt="Virtual tour of a property on a tablet" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="virtual tour tablet" />
                         </div>
                     </div>
                 </div>
@@ -248,7 +248,7 @@ export default function RealEstatePage() {
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Award-Winning PropTech Solutions</h2>
                      <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(4)].map((_, i) => (
-                             <Image key={i} src="https://placehold.co/120x120.png" alt="Award for real estate tech" width={120} height={120} data-ai-hint="award trophy" />
+                             <Image key={i} src={`https://picsum.photos/seed/award-re${i}/120/120`} alt="Award for real estate tech" width={120} height={120} data-ai-hint="award trophy" />
                         ))}
                      </div>
                 </div>
@@ -320,5 +320,3 @@ export default function RealEstatePage() {
         </div>
     )
 }
-
-    

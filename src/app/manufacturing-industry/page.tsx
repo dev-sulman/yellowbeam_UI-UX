@@ -21,14 +21,14 @@ const teamMembers = [
     {
         name: 'David Rodriguez',
         role: 'Plant Manager, Precision Parts Inc.',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: 'https://picsum.photos/seed/mfg1/100/100',
         'data-ai-hint': 'professional headshot',
         testimonial: 'SulzaX\'s smart factory solutions have increased our production efficiency by 40%.'
     },
     {
         name: 'Jessica Chen',
         role: 'Operations Director, BuildRight',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: 'https://picsum.photos/seed/mfg2/100/100',
         'data-ai-hint': 'professional headshot',
         testimonial: 'Their predictive maintenance system has saved us from costly downtime and repairs.'
     },
@@ -130,7 +130,7 @@ export default function ManufacturingPage() {
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Building the Factory of the Future</h2>
                             <div className="flex items-center gap-4">
-                                <Image src="https://placehold.co/80x80.png" alt="Kevin Anderson" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                                <Image src="https://picsum.photos/seed/mfg3/80/80" alt="Kevin Anderson" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
                                 <div>
                                     <p className="font-semibold">Kevin Anderson, Head of Industry 4.0, SulzaX</p>
                                     <p className="text-muted-foreground">"Automation and data are the keys to competitive manufacturing."</p>
@@ -142,7 +142,7 @@ export default function ManufacturingPage() {
                             </Button>
                         </div>
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Automated factory with robots" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="smart factory robotics" />
+                            <Image src="https://picsum.photos/seed/mfg4/600/400" alt="Automated factory with robots" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="smart factory robotics" />
                         </div>
                     </div>
                 </div>
@@ -171,7 +171,7 @@ export default function ManufacturingPage() {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Engineer working with a robotic arm" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="engineer robotic arm" />
+                            <Image src="https://picsum.photos/seed/mfg5/600/400" alt="Engineer working with a robotic arm" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="engineer robotic arm" />
                         </div>
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Smart Manufacturing</h2>
@@ -214,7 +214,7 @@ export default function ManufacturingPage() {
                             </div>
                         </div>
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Data visualization of factory output" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="factory data charts" />
+                            <Image src="https://picsum.photos/seed/mfg6/600/400" alt="Data visualization of factory output" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="factory data charts" />
                         </div>
                     </div>
                 </div>
@@ -244,7 +244,7 @@ export default function ManufacturingPage() {
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Award-Winning Smart Factory Solutions</h2>
                      <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(3)].map((_, i) => (
-                             <Image key={i} src="https://placehold.co/120x120.png" alt="Award for manufacturing tech" width={120} height={120} data-ai-hint="award trophy" />
+                             <Image key={i} src={`https://picsum.photos/seed/award-mfg${i}/120/120`} alt="Award for manufacturing tech" width={120} height={120} data-ai-hint="award trophy" />
                         ))}
                      </div>
                 </div>
@@ -316,5 +316,3 @@ export default function ManufacturingPage() {
         </div>
     )
 }
-
-    

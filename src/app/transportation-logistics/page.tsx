@@ -21,14 +21,14 @@ const teamMembers = [
     {
         name: 'Michael Johnson',
         role: 'Logistics Director, ShipFast',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: 'https://picsum.photos/seed/log1/100/100',
         'data-ai-hint': 'professional headshot',
         testimonial: 'SulzaX developed a fleet management system that has revolutionized our operations.'
     },
     {
         name: 'Sarah Lee',
         role: 'Supply Chain Manager, Global Goods',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: 'https://picsum.photos/seed/log2/100/100',
         'data-ai-hint': 'professional headshot',
         testimonial: 'Their supply chain software has given us unprecedented visibility and control.'
     },
@@ -130,7 +130,7 @@ export default function LogisticsPage() {
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Optimizing Your Supply Chain</h2>
                             <div className="flex items-center gap-4">
-                                <Image src="https://placehold.co/80x80.png" alt="Robert Brown" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                                <Image src="https://picsum.photos/seed/log3/80/80" alt="Robert Brown" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
                                 <div>
                                     <p className="font-semibold">Robert Brown, Head of Logistics Tech, SulzaX</p>
                                     <p className="text-muted-foreground">"Delivering the future of logistics, today."</p>
@@ -142,7 +142,7 @@ export default function LogisticsPage() {
                             </Button>
                         </div>
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Cargo ship and trucks" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="logistics transport" />
+                            <Image src="https://picsum.photos/seed/log4/600/400" alt="Cargo ship and trucks" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="logistics transport" />
                         </div>
                     </div>
                 </div>
@@ -171,7 +171,7 @@ export default function LogisticsPage() {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Warehouse with workers" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="warehouse logistics" />
+                            <Image src="https://picsum.photos/seed/log5/600/400" alt="Warehouse with workers" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="warehouse logistics" />
                         </div>
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Logistics Innovation</h2>
@@ -214,7 +214,7 @@ export default function LogisticsPage() {
                             </div>
                         </div>
                         <div>
-                            <Image src="https://placehold.co/600x400.png" alt="Analytics dashboard for logistics" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="logistics dashboard" />
+                            <Image src="https://picsum.photos/seed/log6/600/400" alt="Analytics dashboard for logistics" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="logistics dashboard" />
                         </div>
                     </div>
                 </div>
@@ -244,7 +244,7 @@ export default function LogisticsPage() {
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Award-Winning Logistics Solutions</h2>
                      <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(3)].map((_, i) => (
-                             <Image key={i} src="https://placehold.co/120x120.png" alt="Award for logistics" width={120} height={120} data-ai-hint="award trophy" />
+                             <Image key={i} src={`https://picsum.photos/seed/award-log${i}/120/120`} alt="Award for logistics" width={120} height={120} data-ai-hint="award trophy" />
                         ))}
                      </div>
                 </div>
@@ -309,3 +309,10 @@ export default function LogisticsPage() {
                         </div>
                         <div className="w-full max-w-md mx-auto">
                         <ContactForm cardTitle="Schedule A Free Consultation" cardDescription="" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    )
+}

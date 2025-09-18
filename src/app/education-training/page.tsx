@@ -21,14 +21,14 @@ const teamMembers = [
     {
         name: 'Maria Garcia',
         role: 'Principal, Oakwood Academy',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: 'https://picsum.photos/seed/edu1/100/100',
         'data-ai-hint': 'professional headshot',
         testimonial: 'SulzaX developed an LMS that has transformed how we deliver our curriculum. It\'s intuitive for both teachers and students.'
     },
     {
         name: 'Dr. David Lee',
         role: 'Dean of Online Learning, City University',
-        avatar: 'https://placehold.co/100x100.png',
+        avatar: 'https://picsum.photos/seed/edu2/100/100',
         'data-ai-hint': 'professional headshot',
         testimonial: 'Their virtual classroom solution has been essential for our distance learning programs. The quality and reliability are excellent.'
     },
@@ -129,7 +129,7 @@ export default function EducationPage() {
                     <div className="space-y-6">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">The Future of Learning is Here</h2>
                         <div className="flex items-center gap-4">
-                            <Image src="https://placehold.co/80x80.png" alt="Dr. Evelyn Reed" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot professor" />
+                            <Image src="https://picsum.photos/seed/edu3/80/80" alt="Dr. Evelyn Reed" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot professor" />
                             <div>
                                 <p className="font-semibold">Dr. Evelyn Reed, Head of EdTech, SulzaX</p>
                                 <p className="text-muted-foreground">"Empowering educators and inspiring learners through technology."</p>
@@ -141,7 +141,7 @@ export default function EducationPage() {
                         </Button>
                     </div>
                     <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Student using a laptop for e-learning" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="elearning student laptop" />
+                        <Image src="https://picsum.photos/seed/edu4/600/400" alt="Student using a laptop for e-learning" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="elearning student laptop" />
                     </div>
                 </div>
             </section>
@@ -168,7 +168,7 @@ export default function EducationPage() {
             <section className="container py-20 md:py-24">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
-                         <Image src="https://placehold.co/600x400.png" alt="Virtual classroom session" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="virtual classroom" />
+                         <Image src="https://picsum.photos/seed/edu5/600/400" alt="Virtual classroom session" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="virtual classroom" />
                     </div>
                     <div className="space-y-6">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Educational Technology</h2>
@@ -209,7 +209,7 @@ export default function EducationPage() {
                         </div>
                     </div>
                     <div>
-                        <Image src="https://placehold.co/600x400.png" alt="Student engagement analytics" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="education analytics dashboard" />
+                        <Image src="https://picsum.photos/seed/edu6/600/400" alt="Student engagement analytics" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="education analytics dashboard" />
                     </div>
                 </div>
             </section>
@@ -238,7 +238,7 @@ export default function EducationPage() {
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Award-Winning EdTech Solutions</h2>
                      <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(4)].map((_, i) => (
-                             <Image key={i} src="https://placehold.co/120x120.png" alt="Award for EdTech" width={120} height={120} data-ai-hint="award trophy" />
+                             <Image key={i} src={`https://picsum.photos/seed/award${i}/120/120`} alt="Award for EdTech" width={120} height={120} data-ai-hint="award trophy" />
                         ))}
                      </div>
                 </div>
@@ -310,5 +310,3 @@ export default function EducationPage() {
         </div>
     )
 }
-
-    

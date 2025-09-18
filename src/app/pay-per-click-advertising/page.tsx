@@ -22,14 +22,14 @@ const teamMembers = [
         name: 'Olivia Martinez',
         role: 'PPC Specialist at AdVantage',
         avatar: 'https://cdn.dribbble.com/users/67904/avatars/normal/8bfc719620ca441a8fdb8b09703d8d54.jpg?1580744539/100x100.png',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'SulzaX managed our PPC campaigns and delivered a 200% increase in conversions. Their expertise is unmatched.'
     },
     {
         name: 'Ben Carter',
         role: 'Marketing Director at MarketPro',
         avatar: 'https://cdn.dribbble.com/users/1838892/avatars/normal/912baaa701a230c1b31db1eb0dc1def8.png?1736360469/100x100.png',
-        dataAiHint: 'professional headshot',
+        'data-ai-hint': 'professional headshot',
         testimonial: 'The team at SulzaX is incredibly data-driven and transparent. They have significantly improved our ad performance.'
     },
 ];
@@ -265,7 +265,7 @@ export default function PayPerClickPage() {
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
-                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member.dataAiHint} />
+                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member['data-ai-hint']} />
                                 <div>
                                     <p className="text-muted-foreground">"{member.testimonial}"</p>
                                     <p className="font-bold mt-4">{member.name}</p>
@@ -325,5 +325,3 @@ export default function PayPerClickPage() {
         </div>
     )
 }
-
-    

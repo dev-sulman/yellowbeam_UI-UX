@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useForm } from 'react-hook-form';
@@ -10,7 +9,6 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { useToast } from '@/hooks/use-toast';
 
 const services = [
     "Financial Planning",
@@ -41,7 +39,6 @@ interface ContactFormProps {
 }
 
 export function ContactForm({ cardTitle = "Send us a Message", cardDescription = "We are here to help and answer any question you might have."}: ContactFormProps) {
-  const { toast } = useToast();
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -60,10 +57,7 @@ export function ContactForm({ cardTitle = "Send us a Message", cardDescription =
     // This is a placeholder for form submission.
     // In a real application, you would handle the form submission here.
     console.log(data);
-    toast({
-      title: "Message Sent! (Simulation)",
-      description: "This is a demo. In a real app, your message would be sent.",
-    });
+    alert("Message Sent! (Simulation)");
     form.reset();
   }
 

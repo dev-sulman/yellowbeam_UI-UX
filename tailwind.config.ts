@@ -1,4 +1,3 @@
-
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -91,7 +90,7 @@ export default {
         },
         marquee: {
           '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(-100%)' },
         },
         shimmer: {
           '0%': { backgroundPosition: '-200% center' },
@@ -125,7 +124,7 @@ export default {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'marquee': 'marquee 20s linear infinite',
+        'marquee': 'marquee 40s linear infinite',
         'shimmer': 'shimmer 1.5s linear infinite',
         'fade-slide-up': 'fade-slide-up 0.3s ease-out forwards',
         'fade-in-down': 'fade-in-down 0.5s ease-out forwards',

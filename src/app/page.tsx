@@ -227,6 +227,11 @@ const MarqueeItem = ({ text }: { text: string }) => (
 
 
 export default function Home() {
+  const marqueeContent = [
+    { text: "EXPERIENCE SEAMLESS IT SOLUTIONS" },
+    { text: "REQUEST IT CONSULTATION" }
+  ];
+
   return (
     <div className="font-body text-base">
       <section className="w-full pt-16 md:pt-24">
@@ -441,15 +446,9 @@ export default function Home() {
       </section>
 
       <div className="bg-primary text-white h-[80px] flex items-center overflow-hidden">
-        <div className="animate-marquee whitespace-nowrap flex space-x-8">
-          <MarqueeItem text="EXPERIENCE SEAMLESS IT SOLUTIONS" />
-          <MarqueeItem text="REQUEST IT CONSULTATION" />
-          <MarqueeItem text="EXPERIENCE SEAMLESS IT SOLUTIONS" />
-          <MarqueeItem text="REQUEST IT CONSULTATION" />
-          <MarqueeItem text="EXPERIENCE SEAMLESS IT SOLUTIONS" />
-          <MarqueeItem text="REQUEST IT CONSULTATION" />
-          <MarqueeItem text="EXPERIENCE SEAMLESS IT SOLUTIONS" />
-          <MarqueeItem text="REQUEST IT CONSULTATION" />
+        <div className="flex animate-marquee whitespace-nowrap space-x-8">
+            {marqueeContent.map((item, index) => <MarqueeItem key={index} text={item.text} />)}
+            {marqueeContent.map((item, index) => <MarqueeItem key={`dup-${index}`} text={item.text} />)}
         </div>
       </div>
       <section id="consultation" className="w-full py-16 md:py-24 lg:py-32" style={{ background: 'linear-gradient(to right, #464F62, #7F5D5D)' }}>

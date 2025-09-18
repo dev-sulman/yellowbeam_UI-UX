@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { ContactForm } from '@/components/contact-form';
+import { ContactForm } from '@/app/actions/contact';
 
 export default function ContactPage() {
   return (
@@ -28,7 +28,7 @@ export default function ContactPage() {
                           </div>
                           <div>
                               <h3 className="font-semibold">Email</h3>
-                              <a href="mailto:contact@sulzax.com" className="text-lg text-muted-foreground hover:text-accent transition-colors">contact@sulzax.com</a>
+                              <a href="mailto:sulzax0@gmail.com" className="text-lg text-muted-foreground hover:text-accent transition-colors">sulzax0@gmail.com</a>
                           </div>
                       </div>
                       <div className="flex items-center gap-4">
@@ -37,7 +37,7 @@ export default function ContactPage() {
                           </div>
                           <div>
                               <h3 className="font-semibold">Phone</h3>
-                              <a href="tel:+1234567890" className="text-lg text-muted-foreground hover:text-accent transition-colors">+1 (201) 374-0018</a>
+                              <a href="tel:03045865181" className="text-lg text-muted-foreground hover:text-accent transition-colors">03045865181</a>
                           </div>
                       </div>
                       <div className="flex items-center gap-4">

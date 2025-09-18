@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { CheckCircle, Award, Star, Phone, Mail, MapPin, Check } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ContactForm } from '@/components/contact-form';
+import { ContactForm } from '@/app/actions/contact';
 import { Switch } from '@/components/ui/switch';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
@@ -116,7 +116,7 @@ export default function EducationPage() {
     return (
         <div className="bg-background text-foreground">
             {/* Hero Section */}
-            <section className="relative py-20 md:py-32 bg-secondary/30">
+            <section className="relative w-full py-20 md:py-32 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-primary">Education & Training</h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">Transforming learning experiences with innovative technology solutions for educational institutions and corporate training.</p>
@@ -124,7 +124,7 @@ export default function EducationPage() {
             </section>
 
             {/* Intro Section */}
-            <section className="py-20 md:py-24">
+            <section className="w-full py-20 md:py-24">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
@@ -149,7 +149,7 @@ export default function EducationPage() {
             </section>
             
             {/* Services Section */}
-            <section className="py-20 md:py-24 bg-secondary/30">
+            <section className="w-full py-20 md:py-24 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Education & Training Services</h2>
@@ -167,7 +167,7 @@ export default function EducationPage() {
             </section>
 
             {/* About Us Snippet */}
-            <section className="py-20 md:py-24">
+            <section className="w-full py-20 md:py-24">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
@@ -195,7 +195,7 @@ export default function EducationPage() {
             </section>
 
             {/* Why Choose Us Section */}
-            <section className="py-20 md:py-24 bg-secondary/30">
+            <section className="w-full py-20 md:py-24 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
@@ -221,7 +221,7 @@ export default function EducationPage() {
             </section>
 
              {/* Values Section */}
-            <section className="py-20 md:py-24">
+            <section className="w-full py-20 md:py-24">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Core Values</h2>
@@ -239,7 +239,7 @@ export default function EducationPage() {
             </section>
 
              {/* Awards Section */}
-            <section className="py-20 md:py-24 bg-secondary/30">
+            <section className="w-full py-20 md:py-24 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6 text-center">
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Award-Winning EdTech Solutions</h2>
                      <div className="flex justify-center items-center flex-wrap gap-8">
@@ -251,7 +251,7 @@ export default function EducationPage() {
             </section>
 
              {/* Testimonials Section */}
-            <section className="py-20 md:py-24">
+            <section className="w-full py-20 md:py-24">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
@@ -269,7 +269,7 @@ export default function EducationPage() {
             </section>
 
             {/* Pricing Section */}
-            <section className="py-20 md:py-24 bg-secondary/30">
+            <section className="w-full py-20 md:py-24 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6">
                     <PricingToggle tiers={pricingTiers} supportFeatures={supportFeatures}>
                         <h2 className="text-4xl md:text-5xl font-bold text-black">EdTech Solution Plans</h2>
@@ -279,7 +279,7 @@ export default function EducationPage() {
             </section>
 
             {/* Contact Section */}
-            <section className="py-20 md:py-24">
+            <section className="w-full py-20 md:py-24">
                  <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="flex flex-col space-y-8">
@@ -292,11 +292,11 @@ export default function EducationPage() {
                             <div className="space-y-6">
                                 <div className="flex items-center gap-4">
                                     <Mail className="w-6 h-6 text-accent" />
-                                    <a href="mailto:contact@sulzax.com" className="text-lg hover:text-accent transition-colors">contact@sulzax.com</a>
+                                    <a href="mailto:sulzax0@gmail.com" className="text-lg hover:text-accent transition-colors">sulzax0@gmail.com</a>
                                 </div>
                                 <div className="flex items-center gap-4">
                                     <Phone className="w-6 h-6 text-accent" />
-                                    <a href="tel:+12013740018" className="text-lg hover:text-accent transition-colors">+1 (201) 374-0018</a>
+                                    <a href="tel:03045865181" className="text-lg hover:text-accent transition-colors">03045865181</a>
                                 </div>
                                 <div className="flex items-center gap-4">
                                     <MapPin className="w-6 h-6 text-accent" />

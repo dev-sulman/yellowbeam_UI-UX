@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Briefcase, Users, BarChart2, CheckCircle, ArrowRight, Mail, Phone, MapPin, Landmark, Rocket, BriefcaseMedical, Plane, Building2, Wrench, School, Code, Smartphone, Database, PenTool, TrendingUp, Search, MessageCircle, Megaphone, Pointer, Globe, Palette, Target, BarChart3, Bot, ShoppingCart, CircleDollarSign, Tv, LayoutTemplate, PenSquare, AppWindow, BrainCircuit, ShieldCheck, GaugeCircle } from 'lucide-react';
-import { ContactForm } from '@/components/contact-form';
+import { ContactForm } from '@/app/actions/contact';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -227,10 +227,10 @@ const MarqueeItem = ({ text }: { text: string }) => (
 
 
 export default function Home() {
-  const marqueeContent = [
+  const marqueeContent = Array(2).fill([
     { text: "EXPERIENCE SEAMLESS IT SOLUTIONS" },
     { text: "REQUEST IT CONSULTATION" }
-  ];
+  ]).flat();
 
   return (
     <div className="font-body text-base">
@@ -448,7 +448,6 @@ export default function Home() {
       <div className="bg-primary text-white h-[80px] flex items-center overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap space-x-8">
             {marqueeContent.map((item, index) => <MarqueeItem key={index} text={item.text} />)}
-            {marqueeContent.map((item, index) => <MarqueeItem key={`dup-${index}`} text={item.text} />)}
         </div>
       </div>
       <section id="consultation" className="w-full py-16 md:py-24 lg:py-32" style={{ background: 'linear-gradient(to right, #464F62, #7F5D5D)' }}>
@@ -473,11 +472,11 @@ export default function Home() {
               <div className="border-t border-gray-500 pt-8 space-y-6">
                 <div className="flex items-center gap-4">
                   <Mail className="w-6 h-6 text-white" />
-                  <a href="mailto:contact@sulzax.com" className="text-lg text-gray-300 hover:text-white transition-colors">contact@sulzax.com</a>
+                  <a href="mailto:sulzax0@gmail.com" className="text-lg text-gray-300 hover:text-white transition-colors">sulzax0@gmail.com</a>
                 </div>
                 <div className="flex items-center gap-4">
                   <Phone className="w-6 h-6 text-white" />
-                  <a href="tel:+12013740018" className="text-lg text-gray-300 hover:text-white transition-colors">+92 165 535 971</a>
+                  <a href="tel:03045865181" className="text-lg text-gray-300 hover:text-white transition-colors">03045865181</a>
                 </div>
                 <div className="flex items-center gap-4">
                   <MapPin className="w-6 h-6 text-white" />

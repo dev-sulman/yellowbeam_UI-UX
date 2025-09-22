@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -88,7 +87,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full bg-white text-foreground border-t animate-fade-in-up relative">
-      <div className="container mx-auto py-12 px-5">
+      <div className="container mx-auto py-12 px-5" suppressHydrationWarning>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
           <div className="space-y-4">
@@ -104,28 +103,30 @@ export default function Footer() {
             </div>
           </div>
           
-          <div>
-            <h4 className="font-semibold mb-4 text-md text-foreground">Company</h4>
-            <ul className="space-y-3 text-sm">
-              <li><AnimatedLink href="/about">About Us</AnimatedLink></li>
-              <li><AnimatedLink href="/team">Our Team</AnimatedLink></li>
-              <li><AnimatedLink href="/services">Services</AnimatedLink></li>
-              <li><AnimatedLink href="/portfolio">Case Studies</AnimatedLink></li>
-               <li><AnimatedLink href="/blog">Blog</AnimatedLink></li>
-              <li><AnimatedLink href="/contact">Contact</AnimatedLink></li>
-            </ul>
-          </div>
+          <div className="md:flex md:justify-around col-span-1 lg:col-span-2">
+            <div className='mb-8 md:mb-0'>
+                <h4 className="font-semibold mb-4 text-md text-foreground">Company</h4>
+                <ul className="space-y-3 text-sm">
+                  <li><AnimatedLink href="/about">About Us</AnimatedLink></li>
+                  <li><AnimatedLink href="/team">Our Team</AnimatedLink></li>
+                  <li><AnimatedLink href="/services">Services</AnimatedLink></li>
+                  <li><AnimatedLink href="/portfolio">Case Studies</AnimatedLink></li>
+                   <li><AnimatedLink href="/blog">Blog</AnimatedLink></li>
+                  <li><AnimatedLink href="/contact">Contact</AnimatedLink></li>
+                </ul>
+            </div>
 
-          <div>
-            <h4 className="font-semibold mb-4 text-md text-foreground">Solutions</h4>
-             <ul className="space-y-3 text-sm">
-                <li><AnimatedLink href="/web-development">Web Development</AnimatedLink></li>
-                <li><AnimatedLink href="/mobile-development">Mobile Development</AnimatedLink></li>
-                <li><AnimatedLink href="/software-development">Software Development</AnimatedLink></li>
-                <li><AnimatedLink href="/graphic-design">Graphic Design</AnimatedLink></li>
-                <li><AnimatedLink href="/ui-ux-development">UI/UX Development</AnimatedLink></li>
-                <li><AnimatedLink href="/search-engine-optimization">Search Engine Optimization</AnimatedLink></li>
-            </ul>
+            <div>
+                <h4 className="font-semibold mb-4 text-md text-foreground">Solutions</h4>
+                 <ul className="space-y-3 text-sm">
+                    <li><AnimatedLink href="/web-development">Web Development</AnimatedLink></li>
+                    <li><AnimatedLink href="/mobile-development">Mobile Development</AnimatedLink></li>
+                    <li><AnimatedLink href="/software-development">Software Development</AnimatedLink></li>
+                    <li><AnimatedLink href="/graphic-design">Graphic Design</AnimatedLink></li>
+                    <li><AnimatedLink href="/ui-ux-development">UI/UX Development</AnimatedLink></li>
+                    <li><AnimatedLink href="/search-engine-optimization">Search Engine Optimization</AnimatedLink></li>
+                </ul>
+            </div>
           </div>
           
           <div className="space-y-4">
@@ -153,8 +154,8 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between text-sm text-muted-foreground">
-            <p>© 2024 SulzaX Digital Hub. All Rights Reserved.</p>
-            <div className="flex gap-6 mt-4 sm:mt-0">
+            <p className="mb-4 sm:mb-0">© 2024 SulzaX Digital Hub. All Rights Reserved.</p>
+            <div className="flex gap-6">
                 <AnimatedLink href="#">Terms Of Services</AnimatedLink>
                 <AnimatedLink href="#">Privacy Policy</AnimatedLink>
                 <AnimatedLink href="#">Cookie Policy</AnimatedLink>

@@ -5,12 +5,13 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from '@/components/ui/sheet';
-import { Menu, ChevronDown, X, Code, Smartphone, PenSquare, Palette, AppWindow, Search, Megaphone, Target, MessageCircle, ArrowRight } from 'lucide-react';
+import { Menu, ChevronDown, X, Code, Smartphone, PenSquare, Palette, AppWindow, Search, Megaphone, Target, MessageCircle, ArrowRight, User } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import Image from 'next/image';
+import { Input } from '@/components/ui/input';
 
 const SulzaXLogo = () => (
     <svg width="180" height="48" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg">
@@ -79,7 +80,6 @@ const serviceLinks = {
     ]
 };
 
-
 const navLinks = [
   { href: '/', label: 'Home' },
   {
@@ -98,9 +98,23 @@ const navLinks = [
   { href: '/blog', label: 'Blog' },
 ];
 
+const mobileNavLinks = {
+    "Home": [{ href: '/', label: 'Homepage' }],
+    "Services": serviceLinks["Development & Design"].concat(serviceLinks["Marketing & Strategy"]),
+    "About Us": [
+        { href: '/about', label: 'Our Story' },
+        { href: '/team', label: 'Meet the Team' },
+    ],
+    "Project": [{ href: '/portfolio', label: 'View Our Work' }],
+    "Clients": [{ href: '/#testimonials', label: 'Testimonials' }],
+    "Blog": [{ href: '/blog', label: 'Latest Articles' }],
+};
+
+
 export default function Header() {
   const pathname = usePathname();
   const [isMounted, setIsMounted] = useState(false);
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
@@ -110,36 +124,13 @@ export default function Header() {
     return null;
   }
 
-  const NavLink = ({ href, children, className }: { href: string; children: React.ReactNode, className?: string }) => {
-    const isActive = pathname === href;
-    return (
-        <SheetClose asChild>
-            <Link
-                href={href}
-                className={cn(
-                    'block py-2 text-sm font-normal relative text-foreground',
-                    'hover:text-accent',
-                    isActive ? 'text-accent' : '',
-                    className
-                )}
-            >
-                {children}
-            </Link>
-        </SheetClose>
-    );
-  };
-
   const CollapsibleNavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
-    const isActive = pathname === href;
     return (
         <SheetClose asChild>
             <Link
                 href={href}
-                className={cn(
-                    'block py-2 text-sm font-normal relative text-foreground',
-                    'hover:text-accent',
-                    isActive ? 'text-accent' : ''
-                )}
+                className="block py-2 text-sm font-normal text-muted-foreground hover:text-accent"
+                onClick={() => setIsSheetOpen(false)}
             >
                 {children}
             </Link>
@@ -231,14 +222,14 @@ export default function Header() {
 
         <div className="flex items-center gap-2">
           <div className="md:hidden">
-            <Sheet>
+            <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="text-foreground hover:bg-secondary">
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="bg-background p-0 w-[80vw] sm:w-[350px]">
+              <SheetContent side="right" className="bg-background p-0 w-[85vw] sm:w-[400px] flex flex-col">
                 <SheetHeader className="flex flex-row items-center justify-between p-4 border-b">
                    <SheetTitle>Menu</SheetTitle>
                     <SheetClose asChild>
@@ -248,42 +239,40 @@ export default function Header() {
                         </Button>
                     </SheetClose>
                 </SheetHeader>
-                <ScrollArea className="flex-grow px-6">
-                    <div className="grid gap-2 py-6">
-                        {navLinks.map((link) => {
-                             if (link.label === 'Services') {
-                                return (
-                                    <Collapsible key={link.label}>
-                                        <CollapsibleTrigger className="flex w-full items-center justify-between gap-1 py-2 text-sm text-foreground group">
-                                            <span>{link.label}</span>
-                                            <ChevronDown className="h-4 w-4 transition-transform duration-300 group-data-[state=open]:rotate-180" />
-                                        </CollapsibleTrigger>
-                                        <CollapsibleContent>
-                                            <div className="grid gap-1 pl-4 pt-2">
-                                                {Object.entries(serviceLinks).map(([category, links]) => (
-                                                  <div key={category} className="mb-2">
-                                                    <h4 className="font-semibold text-sm text-muted-foreground mb-1">{category}</h4>
-                                                     {links.map(subLink => (
-                                                        <CollapsibleNavLink key={subLink.href} href={subLink.href}>
-                                                            {subLink.label}
-                                                        </CollapsibleNavLink>
-                                                     ))}
-                                                  </div>
-                                                ))}
-                                            </div>
-                                        </CollapsibleContent>
-                                    </Collapsible>
-                                )
-                             }
-
-                            return (
-                                <NavLink key={link.href} href={link.href!} className="text-foreground">
-                                    {link.label}
-                                </NavLink>
-                            )
-                        })}
+                <div className="p-4">
+                    <div className="relative">
+                        <Input placeholder="What are you looking for?" className="pl-10"/>
+                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                    </div>
+                </div>
+                <ScrollArea className="flex-grow px-4">
+                    <div className="grid gap-2 py-2">
+                        {Object.entries(mobileNavLinks).map(([label, links]) => (
+                             <Collapsible key={label}>
+                                <CollapsibleTrigger className="flex w-full items-center justify-between py-3 text-md font-semibold text-foreground group">
+                                    <span>{label}</span>
+                                    <ChevronDown className="h-5 w-5 transition-transform duration-300 group-data-[state=open]:rotate-180" />
+                                </CollapsibleTrigger>
+                                <CollapsibleContent>
+                                    <div className="grid gap-1 pl-4 py-2 border-l ml-2">
+                                        {links.map(subLink => (
+                                            <CollapsibleNavLink key={subLink.href} href={subLink.href}>
+                                                {subLink.label}
+                                            </CollapsibleNavLink>
+                                        ))}
+                                    </div>
+                                </CollapsibleContent>
+                            </Collapsible>
+                        ))}
                     </div>
                 </ScrollArea>
+                <div className="p-4 border-t mt-auto">
+                    <SheetClose asChild>
+                       <Link href="/login" className="flex items-center justify-center w-full py-3 text-md font-semibold text-foreground hover:bg-secondary rounded-lg transition-colors">
+                           Login/Register
+                       </Link>
+                    </SheetClose>
+                </div>
               </SheetContent>
             </Sheet>
           </div>

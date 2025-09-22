@@ -52,7 +52,7 @@ const pricingTiers = {
         {
             name: 'Blog Starter',
             price: '$799.00',
-            period: '/ per month',
+            period: '/month',
             features: [
                 '4 Blog Posts (up to 1,500 words)',
                 'Topic Ideation & Keyword Research',
@@ -67,7 +67,7 @@ const pricingTiers = {
         {
             name: 'Content Engine',
             price: '$2199.00',
-            period: '/ per month',
+            period: '/month',
             features: [
                 '8 Content Pieces (Blogs, Articles)',
                 'Full Content Strategy',
@@ -84,7 +84,7 @@ const pricingTiers = {
         {
             name: 'Blog Starter',
             price: '$8629.20',
-            period: '/ per year',
+            period: '/year',
             features: [
                 '4 Blog Posts (up to 1,500 words)',
                 'Topic Ideation & Keyword Research',
@@ -99,7 +99,7 @@ const pricingTiers = {
         {
             name: 'Content Engine',
             price: '$23749.20',
-            period: '/ per year',
+            period: '/year',
             features: [
                 '8 Content Pieces (Blogs, Articles)',
                 'Full Content Strategy',
@@ -271,8 +271,8 @@ export default function ContentMarketingPage() {
             <section className="py-20 md:py-24 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6">
                     <PricingToggle tiers={pricingTiers} supportFeatures={supportFeatures}>
-                        <h2 className="text-4xl md:text-5xl font-bold text-black">Ready to Build Your Audience?</h2>
-                        <p className="text-black">Choose a content marketing package that fits your goals. We offer flexible options for businesses of all sizes.</p>
+                        <h2 className="text-4xl md:text-5xl font-bold text-primary">Ready to Build Your Audience?</h2>
+                        <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">Choose a content marketing package that fits your goals. We offer flexible options for businesses of all sizes.</p>
                     </PricingToggle>
                 </div>
             </section>

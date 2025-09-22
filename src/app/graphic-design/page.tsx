@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -51,7 +52,7 @@ const pricingTiers = {
         {
             name: 'Essential',
             price: '$799.00',
-            period: '/ per month',
+            period: '/month',
             features: [
                 'Logo Design',
                 'Business Card Design',
@@ -66,7 +67,7 @@ const pricingTiers = {
         {
             name: 'Pro',
             price: '$1999.00',
-            period: '/ per month',
+            period: '/month',
             features: [
                 'Full Brand Identity',
                 'Marketing Materials',
@@ -83,7 +84,7 @@ const pricingTiers = {
         {
             name: 'Essential',
             price: '$8629.20',
-            period: '/ per year',
+            period: '/year',
             features: [
                 'Logo Design',
                 'Business Card Design',
@@ -98,7 +99,7 @@ const pricingTiers = {
         {
             name: 'Pro',
             price: '$21589.20',
-            period: '/ per year',
+            period: '/year',
             features: [
                 'Full Brand Identity',
                 'Marketing Materials',
@@ -263,19 +264,17 @@ export default function GraphicDesignPage() {
 
              {/* Testimonials Section */}
             <section className="container py-20 md:py-24">
-                <div>
-                    <div className="grid lg:grid-cols-2 gap-8">
-                        {teamMembers.map((member) => (
-                            <Card key={member.name} className="p-6 flex items-start gap-4">
-                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member['data-ai-hint']} />
-                                <div>
-                                    <p className="text-muted-foreground">"{member.testimonial}"</p>
-                                    <p className="font-bold mt-4">{member.name}</p>
-                                    <p className="text-sm text-muted-foreground">{member.role}</p>
-                                </div>
-                            </Card>
-                        ))}
-                    </div>
+                <div className="grid lg:grid-cols-2 gap-8">
+                    {teamMembers.map((member) => (
+                        <Card key={member.name} className="p-6 flex items-start gap-4">
+                            <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member['data-ai-hint']} />
+                            <div>
+                                <p className="text-muted-foreground">"{member.testimonial}"</p>
+                                <p className="font-bold mt-4">{member.name}</p>
+                                <p className="text-sm text-muted-foreground">{member.role}</p>
+                            </div>
+                        </Card>
+                    ))}
                 </div>
             </section>
 
@@ -283,8 +282,8 @@ export default function GraphicDesignPage() {
             <section className="py-20 md:py-24 bg-secondary/30">
                 <div className="container">
                     <PricingToggle tiers={pricingTiers} supportFeatures={supportFeatures}>
-                         <h2 className="text-4xl md:text-5xl font-bold text-black">Ready to Elevate Your Brand?</h2>
-                         <p className="text-black">Choose a design package that fits your needs. We offer flexible pricing for businesses of all sizes.</p>
+                         <h2 className="text-4xl md:text-5xl font-bold text-primary">Ready to Elevate Your Brand?</h2>
+                         <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">Choose a design package that fits your needs. We offer flexible pricing for businesses of all sizes.</p>
                     </PricingToggle>
                 </div>
             </section>

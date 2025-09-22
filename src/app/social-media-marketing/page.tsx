@@ -52,7 +52,7 @@ const pricingTiers = {
         {
             name: 'Growth',
             price: '$899.00',
-            period: '/ per month',
+            period: '/month',
             features: [
                 '2 Social Platforms',
                 '12 Posts per Month',
@@ -67,7 +67,7 @@ const pricingTiers = {
         {
             name: 'Scale',
             price: '$1999.00',
-            period: '/ per month',
+            period: '/month',
             features: [
                 '4 Social Platforms',
                 '20 Posts per Month',
@@ -84,7 +84,7 @@ const pricingTiers = {
         {
             name: 'Growth',
             price: '$9709.20',
-            period: '/ per year',
+            period: '/year',
             features: [
                 '2 Social Platforms',
                 '12 Posts per Month',
@@ -99,7 +99,7 @@ const pricingTiers = {
         {
             name: 'Scale',
             price: '$21589.20',
-            period: '/ per year',
+            period: '/year',
             features: [
                 '4 Social Platforms',
                 '20 Posts per Month',
@@ -271,8 +271,8 @@ export default function SocialMediaPage() {
             <section className="py-20 md:py-24 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6">
                     <PricingToggle tiers={pricingTiers} supportFeatures={supportFeatures}>
-                        <h2 className="text-4xl md:text-5xl font-bold text-black">Ignite Your Social Media Presence</h2>
-                        <p className="text-black">Choose a social media package that fits your needs. We offer transparent pricing for businesses of all sizes.</p>
+                        <h2 className="text-4xl md:text-5xl font-bold text-primary">Ignite Your Social Media Presence</h2>
+                        <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">Choose a social media package that fits your needs. We offer transparent pricing for businesses of all sizes.</p>
                     </PricingToggle>
                 </div>
             </section>

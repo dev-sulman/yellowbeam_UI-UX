@@ -63,7 +63,7 @@ const pricingTiers = {
         {
             name: 'Gold',
             price: '$149.00',
-            period: '/ per month',
+            period: '/month',
             features: [
                 '60 keywords',
                 '6,000 monthly website visitors',
@@ -78,7 +78,7 @@ const pricingTiers = {
         {
             name: 'Platinum',
             price: '$379.00',
-            period: '/ per month',
+            period: '/month',
             features: [
                 '150 keywords',
                 '20,000 monthly website visitors',
@@ -95,7 +95,7 @@ const pricingTiers = {
         {
             name: 'Gold',
             price: '$1609.20',
-            period: '/ per year',
+            period: '/year',
             features: [
                 '60 keywords',
                 '6,000 monthly website visitors',
@@ -110,7 +110,7 @@ const pricingTiers = {
         {
             name: 'Platinum',
             price: '$4093.20',
-            period: '/ per year',
+            period: '/year',
             features: [
                 '150 keywords',
                 '20,000 monthly website visitors',
@@ -281,8 +281,8 @@ export default function FinanceBankingPage() {
             <section className="py-20 md:py-24 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6">
                     <PricingToggle tiers={pricingTiers} supportFeatures={supportFeatures}>
-                        <h2 className="text-4xl md:text-5xl font-bold text-black">Reach Out For Support!</h2>
-                        <p className="text-black">A comprehensive solution for your technical support needs. With this package, you'll experience dedicated assistance from our professional technical experts.</p>
+                        <h2 className="text-4xl md:text-5xl font-bold text-primary">Reach Out For Support!</h2>
+                        <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">A comprehensive solution for your technical support needs. With this package, you'll experience dedicated assistance from our professional technical experts.</p>
                     </PricingToggle>
                 </div>
             </section>

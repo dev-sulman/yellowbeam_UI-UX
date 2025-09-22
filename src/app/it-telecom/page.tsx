@@ -52,7 +52,7 @@ const pricingTiers = {
         {
             name: 'Essential IT',
             price: '$249.00',
-            period: '/ per month',
+            period: '/month',
             features: [
                 'Managed Network Services',
                 'Basic Cybersecurity Suite',
@@ -66,7 +66,7 @@ const pricingTiers = {
         {
             name: 'Advanced IT',
             price: '$599.00',
-            period: '/ per month',
+            period: '/month',
             features: [
                 'Advanced Network Management',
                 'Comprehensive Cybersecurity',
@@ -82,7 +82,7 @@ const pricingTiers = {
         {
             name: 'Essential IT',
             price: '$2689.20',
-            period: '/ per year',
+            period: '/year',
             features: [
                 'Managed Network Services',
                 'Basic Cybersecurity Suite',
@@ -96,7 +96,7 @@ const pricingTiers = {
         {
             name: 'Advanced IT',
             price: '$6469.20',
-            period: '/ per year',
+            period: '/year',
             features: [
                 'Advanced Network Management',
                 'Comprehensive Cybersecurity',
@@ -266,8 +266,8 @@ export default function ItTelecomPage() {
             <section className="py-20 md:py-24 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6">
                     <PricingToggle tiers={pricingTiers} supportFeatures={supportFeatures}>
-                        <h2 className="text-4xl md:text-5xl font-bold text-black">Flexible IT & Telecom Plans</h2>
-                        <p className="text-black">Choose a plan that fits your business needs. We offer scalable solutions for businesses of all sizes.</p>
+                        <h2 className="text-4xl md:text-5xl font-bold text-primary">Flexible IT & Telecom Plans</h2>
+                        <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">Choose a plan that fits your business needs. We offer scalable solutions for businesses of all sizes.</p>
                     </PricingToggle>
                 </div>
             </section>

@@ -52,7 +52,7 @@ const pricingTiers = {
         {
             name: 'Local SEO',
             price: '$699.00',
-            period: '/ per month',
+            period: '/month',
             features: [
                 'Google My Business Optimization',
                 'Local Keyword Targeting',
@@ -67,7 +67,7 @@ const pricingTiers = {
         {
             name: 'National SEO',
             price: '$1799.00',
-            period: '/ per month',
+            period: '/month',
             features: [
                 'Comprehensive Keyword Research',
                 'Content Strategy',
@@ -84,7 +84,7 @@ const pricingTiers = {
         {
             name: 'Local SEO',
             price: '$7549.20',
-            period: '/ per year',
+            period: '/year',
             features: [
                 'Google My Business Optimization',
                 'Local Keyword Targeting',
@@ -99,7 +99,7 @@ const pricingTiers = {
         {
             name: 'National SEO',
             price: '$19429.20',
-            period: '/ per year',
+            period: '/year',
             features: [
                 'Comprehensive Keyword Research',
                 'Content Strategy',
@@ -271,8 +271,8 @@ export default function SeoPage() {
             <section className="py-20 md:py-24 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6">
                     <PricingToggle tiers={pricingTiers} supportFeatures={supportFeatures}>
-                         <h2 className="text-4xl md:text-5xl font-bold text-black">Ready to Dominate the SERPs?</h2>
-                         <p className="text-black">Choose an SEO package that aligns with your business goals. We have options for businesses of all sizes.</p>
+                         <h2 className="text-4xl md:text-5xl font-bold text-primary">Ready to Dominate the SERPs?</h2>
+                         <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">Choose an SEO package that aligns with your business goals. We have options for businesses of all sizes.</p>
                     </PricingToggle>
                 </div>
             </section>

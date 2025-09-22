@@ -52,7 +52,7 @@ const pricingTiers = {
         {
             name: 'Basic',
             price: '$599.00',
-            period: '/ per month',
+            period: '/month',
             features: [
                 'Up to $2,500 Ad Spend',
                 '1 Platform (Google or Meta)',
@@ -67,7 +67,7 @@ const pricingTiers = {
         {
             name: 'Pro',
             price: '$1499.00',
-            period: '/ per month',
+            period: '/month',
             features: [
                 'Up to $10,000 Ad Spend',
                 '2 Platforms (Google & Meta)',
@@ -84,7 +84,7 @@ const pricingTiers = {
         {
             name: 'Basic',
             price: '$6469.20',
-            period: '/ per year',
+            period: '/year',
             features: [
                 'Up to $2,500 Ad Spend',
                 '1 Platform (Google or Meta)',
@@ -99,7 +99,7 @@ const pricingTiers = {
         {
             name: 'Pro',
             price: '$16189.20',
-            period: '/ per year',
+            period: '/year',
             features: [
                 'Up to $10,000 Ad Spend',
                 '2 Platforms (Google & Meta)',
@@ -253,7 +253,7 @@ export default function PayPerClickPage() {
                      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Award-Winning PPC Management</h2>
                      <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(2)].map((_, i) => (
-                             <Image key={i} src="https://yt3.ggpht.com/S2aJEeWAA2lKELqq676C8KIFfYXi5ePh4zBaO_KAnBAm0fvwg-fg5dh5hhNeiZzJtueNx8iTDA=s48-c-k-c0x00ffffff-no-rj/120x120.png" alt="Award for PPC" width={120} height={120} data-ai-hint="ppc award trophy" />
+                             <Image key={i} src="https://yt3.ggpht.com/S2aJEeWAA2lKELqq676C8KIFfYXi5ePh4zBaO_KAnBAm0fvwg-fg5dh5hhNeiZzJtueNx8iTDA=s48-c-k-c0x00ffffff-no-rj/120x120.png" alt="Award for PPC" width={120} height={120} data-ai-hint="ppc award" />
                         ))}
                      </div>
                 </div>
@@ -281,8 +281,8 @@ export default function PayPerClickPage() {
             <section className="py-20 md:py-24 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6">
                     <PricingToggle tiers={pricingTiers} supportFeatures={supportFeatures}>
-                        <h2 className="text-4xl md:text-5xl font-bold text-black">Ready to Drive Growth?</h2>
-                        <p className="text-black">Choose a PPC management package that fits your budget and goals. We offer transparent pricing for businesses of all sizes.</p>
+                        <h2 className="text-4xl md:text-5xl font-bold text-primary">Ready to Drive Growth?</h2>
+                        <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">Choose a PPC management package that fits your budget and goals. We offer transparent pricing for businesses of all sizes.</p>
                     </PricingToggle>
                 </div>
             </section>

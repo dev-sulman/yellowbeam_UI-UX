@@ -47,7 +47,7 @@ const pricingTiers = {
         {
             name: 'Dedicated Team',
             price: 'Contact Us',
-            period: '/ month',
+            period: '/month',
             features: [
                 'Flexible Scope',
                 'Full-time Developers',
@@ -79,7 +79,7 @@ const pricingTiers = {
         {
             name: 'Dedicated Team',
             price: 'Contact Us',
-            period: '/ year (discounted)',
+            period: '/year (discounted)',
             features: [
                 'Flexible Scope',
                 'Full-time Developers',
@@ -231,8 +231,8 @@ export default function SoftwareDevelopmentPage() {
             <section className="py-20 md:py-24 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6">
                     <PricingToggle tiers={pricingTiers} supportFeatures={supportFeatures}>
-                         <h2 className="text-4xl md:text-5xl font-bold text-black">Flexible Engagement Models</h2>
-                         <p className="text-black">We offer flexible engagement models to suit your project needs, from fixed-scope projects to dedicated development teams.</p>
+                         <h2 className="text-4xl md:text-5xl font-bold text-primary">Flexible Engagement Models</h2>
+                         <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">We offer flexible engagement models to suit your project needs, from fixed-scope projects to dedicated development teams.</p>
                     </PricingToggle>
                 </div>
             </section>

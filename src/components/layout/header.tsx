@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from '@/components/ui/sheet';
-import { Menu, ChevronDown, X, Code, Smartphone, PenSquare, Palette, AppWindow, Search, Megaphone, Target, MessageCircle, ArrowRight, User } from 'lucide-react';
+import { Menu, ChevronDown, X, Code, Smartphone, PenSquare, Palette, AppWindow, Search, Megaphone, Target, MessageCircle, ArrowRight, User, Briefcase, Users, Cloud, Shield, BarChart, Lightbulb, ClipboardList, GitBranch, MessageSquare, UserCheck, Phone, Mail, Facebook, Linkedin, Twitter, Youtube, Instagram } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
@@ -65,18 +65,21 @@ const SulzaXLogo = () => (
 );
 
 const serviceLinks = {
-    "Development & Design": [
-      { href: '/web-development', label: 'Web Development', description: 'Crafting responsive and robust websites.', icon: <Code className="w-5 h-5"/> },
-      { href: '/mobile-development', label: 'Mobile Development', description: 'Building intuitive apps for iOS and Android.', icon: <Smartphone className="w-5 h-5"/> },
-      { href: '/software-development', label: 'Software Development', description: 'Custom solutions for your business needs.', icon: <PenSquare className="w-5 h-5"/> },
-      { href: '/graphic-design', label: 'Graphic Design', description: 'Creating stunning visuals for your brand.', icon: <Palette className="w-5 h-5"/> },
-      { href: '/ui-ux-development', label: 'UI/UX Development', description: 'Designing user-centric digital experiences.', icon: <AppWindow className="w-5 h-5"/> },
+    "IT Services": [
+      { href: '/it-telecom', label: 'Managed IT Services', icon: <Briefcase /> },
+      { href: '/it-telecom', label: 'IT Consulting', icon: <Users /> },
+      { href: '/it-telecom', label: 'Cloud Computing', icon: <Cloud /> },
+      { href: '/it-telecom', label: 'Cybersecurity Solutions', icon: <Shield /> },
+      { href: '/it-telecom', label: 'Data Analytics', icon: <BarChart /> },
+      { href: '/software-development', label: 'Software Development', icon: <Code /> },
     ],
-    "Marketing & Strategy": [
-      { href: '/search-engine-optimization', label: 'SEO', description: 'Boosting your visibility on search engines.', icon: <Search className="w-5 h-5"/> },
-      { href: '/social-media-marketing', label: 'Social Media Marketing', description: 'Engaging your audience on social platforms.', icon: <Megaphone className="w-5 h-5"/> },
-      { href: '/pay-per-click-advertising', label: 'PPC Advertising', description: 'Driving targeted traffic with paid ads.', icon: <Target className="w-5 h-5"/> },
-      { href: '/content-marketing', label: 'Content Marketing', description: 'Creating valuable content to attract users.', icon: <MessageCircle className="w-5 h-5"/> },
+    "Digital Agency": [
+      { href: '/web-development', label: 'Business Strategy Analysis', icon: <Lightbulb /> },
+      { href: '/mobile-development', label: 'Project Management', icon: <ClipboardList /> },
+      { href: '/software-development', label: 'Operational Optimization', icon: <GitBranch /> },
+      { href: '/graphic-design', label: 'Digital Consulting', icon: <MessageSquare /> },
+      { href: '/ui-ux-development', label: 'Marketing Strategy', icon: <Target /> },
+      { href: '/search-engine-optimization', label: 'Leadership Development', icon: <UserCheck /> },
     ]
 };
 
@@ -100,7 +103,7 @@ const navLinks = [
 
 const mobileNavLinks = {
     "Home": [{ href: '/', label: 'Homepage' }],
-    "Services": serviceLinks["Development & Design"].concat(serviceLinks["Marketing & Strategy"]),
+    "Services": serviceLinks["IT Services"].concat(serviceLinks["Digital Agency"]),
     "About Us": [
         { href: '/about', label: 'Our Story' },
         { href: '/team', label: 'Meet the Team' },
@@ -163,21 +166,18 @@ export default function Header() {
                     </Link>
                     <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-screen max-w-5xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform-gpu group-hover:translate-y-0 translate-y-[-10px]">
                         <div className="bg-background rounded-xl shadow-xl p-8 grid grid-cols-12 gap-8 border">
-                           <div className="col-span-8 grid grid-cols-2 gap-x-8 gap-y-4">
-                               {Object.entries(serviceLinks).map(([category, links], catIndex) => (
+                           <div className="col-span-8 grid grid-cols-1 gap-y-6">
+                               {Object.entries(serviceLinks).map(([category, links]) => (
                                     <div key={category}>
                                         <h3 className="font-bold text-md text-foreground mb-4">{category}</h3>
-                                        <ul className="space-y-3">
-                                            {links.map((subLink, index) => (
-                                                <li key={subLink.href} className="opacity-0 animate-fade-slide-up" style={{ animationDelay: `${(catIndex * links.length + index) * 50}ms` }}>
-                                                    <Link href={subLink.href} className="flex items-start gap-4 text-sm text-gray-600 hover:text-accent group/item p-2 rounded-lg transition-colors hover:bg-secondary/50">
-                                                       <div className="p-2 bg-secondary rounded-lg group-hover/item:bg-accent/10 transition-colors">
-                                                         {React.cloneElement(subLink.icon, { className: 'w-5 h-5 text-accent' })}
+                                        <ul className="grid grid-cols-3 gap-x-8 gap-y-4">
+                                            {links.map((subLink) => (
+                                                <li key={subLink.href + subLink.label}>
+                                                    <Link href={subLink.href} className="flex items-center gap-3 text-sm text-gray-600 hover:text-accent group/item p-2 rounded-lg transition-colors hover:bg-secondary/50">
+                                                       <div className="text-accent">
+                                                         {React.cloneElement(subLink.icon, { className: 'w-5 h-5' })}
                                                        </div>
-                                                       <div>
-                                                           <p className="font-semibold text-foreground">{subLink.label}</p>
-                                                           <p className="text-xs text-muted-foreground">{subLink.description}</p>
-                                                       </div>
+                                                       <p className="font-semibold text-foreground">{subLink.label}</p>
                                                     </Link>
                                                 </li>
                                             ))}
@@ -185,15 +185,33 @@ export default function Header() {
                                     </div>
                                ))}
                            </div>
-                           <div className="col-span-4 bg-secondary/70 rounded-lg p-6 flex flex-col justify-center items-center text-center">
-                               <Image src="/main.jpeg" alt="Web Development Spotlight" width={400} height={250} className="rounded-md mb-4" data-ai-hint="web development" />
-                               <h4 className="font-bold text-lg text-primary mb-2">Web Development Services</h4>
-                               <p className="text-sm text-muted-foreground mb-4">
-                                   Let us build a stunning, high-performance website that drives growth and engages your customers.
-                               </p>
-                               <Button asChild size="sm" className="font-semibold bg-accent hover:bg-accent/90 text-accent-foreground">
-                                   <Link href="/web-development">Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                               </Button>
+                           <div className="col-span-4 bg-secondary/70 rounded-lg p-6 flex flex-col justify-between">
+                                <div className='text-center'>
+                                   <h4 className="font-bold text-lg text-primary mb-2">Explore All Services</h4>
+                                   <p className="text-sm text-muted-foreground mb-4">
+                                       Unlocking the Full Spectrum of IT Solutions and Business Consulting for your needs.
+                                   </p>
+                                   <Button asChild size="sm" className="font-semibold bg-accent hover:bg-accent/90 text-accent-foreground w-full">
+                                       <Link href="/services">Explore Now</Link>
+                                   </Button>
+                                </div>
+                                <div className="border-t pt-4 mt-4 space-y-3 text-sm">
+                                    <Link href="mailto:sulzax0@gmail.com" className="flex items-center gap-3 hover:text-accent">
+                                        <Mail className="w-4 h-4" />
+                                        <span>sulzax0@gmail.com</span>
+                                    </Link>
+                                    <Link href="tel:03045865181" className="flex items-center gap-3 hover:text-accent">
+                                        <Phone className="w-4 h-4" />
+                                        <span>03045865181</span>
+                                    </Link>
+                                    <div className="flex space-x-2 pt-2 justify-center">
+                                        <Link href="https://www.facebook.com/profile.php?id=100089670823732" aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-background/50 hover:bg-accent hover:text-white transition-colors"><Facebook className="h-4 w-4" /></Link>
+                                        <Link href="https://www.linkedin.com/in/sulman-bashir-313a45332" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-background/50 hover:bg-accent hover:text-white transition-colors"><Linkedin className="h-4 w-4" /></Link>
+                                        <Link href="https://x.com/sulmanmehar007" aria-label="Twitter" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-background/50 hover:bg-accent hover:text-white transition-colors"><Twitter className="h-4 w-4" /></Link>
+                                        <Link href="#" aria-label="YouTube" className="p-2 rounded-full bg-background/50 hover:bg-accent hover:text-white transition-colors"><Youtube className="h-4 w-4" /></Link>
+                                        <Link href="https://www.instagram.com/sulmanbashirgujrat777?utm_source=qr" aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-background/50 hover:bg-accent hover:text-white transition-colors"><Instagram className="h-4 w-4" /></Link>
+                                    </div>
+                                </div>
                            </div>
                         </div>
                     </div>
@@ -221,6 +239,9 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <Button asChild>
+            <Link href="/contact">Contact</Link>
+          </Button>
           <div className="md:hidden">
             <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
               <SheetTrigger asChild>
@@ -256,7 +277,7 @@ export default function Header() {
                                 <CollapsibleContent>
                                     <div className="grid gap-1 pl-4 py-2 border-l ml-2">
                                         {links.map(subLink => (
-                                            <CollapsibleNavLink key={subLink.href} href={subLink.href}>
+                                            <CollapsibleNavLink key={subLink.href + subLink.label} href={subLink.href}>
                                                 {subLink.label}
                                             </CollapsibleNavLink>
                                         ))}

@@ -88,7 +88,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full bg-white text-foreground border-t animate-fade-in-up relative">
-      <div className="container mx-auto py-12 px-[15px]">
+      <div className="container mx-auto py-12 px-5">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
           <div className="space-y-4">

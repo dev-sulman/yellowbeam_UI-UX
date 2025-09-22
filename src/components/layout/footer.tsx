@@ -3,25 +3,20 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Twitter, Linkedin, Facebook, Send, Mail, Youtube, Instagram } from 'lucide-react';
+import { Twitter, Linkedin, Facebook, Send, Mail, Youtube, Instagram, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
 const SulzaXLogo = () => (
-    <svg width="240" height="64" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg">
+    <svg width="180" height="48" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="gBlue" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stopColor="#05D1FF"/>
           <stop offset="1" stopColor="#0B52FF"/>
         </linearGradient>
-        <linearGradient id="gSilver" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#FFFFFF"/>
-          <stop offset="0.45" stopColor="#E9F0FA"/>
-          <stop offset="1" stopColor="#A9B7CB"/>
-        </linearGradient>
         <linearGradient id="gWordFooter" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="black"/>
-          <stop offset="1" stopColor="black"/>
+          <stop offset="0" stopColor="hsl(var(--foreground))"/>
+          <stop offset="1" stopColor="hsl(var(--foreground))"/>
         </linearGradient>
         <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
           <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
@@ -67,77 +62,115 @@ const AnimatedLink = ({ href, children }: { href: string; children: React.ReactN
 );
 
 export default function Footer() {
+    const [isVisible, setIsVisible] = useState(false);
+
+    const toggleVisibility = () => {
+        if (window.pageYOffset > 300) {
+            setIsVisible(true);
+        } else {
+            setIsVisible(false);
+        }
+    };
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', toggleVisibility);
+        return () => {
+            window.removeEventListener('scroll', toggleVisibility);
+        };
+    }, []);
+
   return (
-    <footer className="w-full bg-background text-foreground border-t animate-fade-in-up">
-      <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8 text-xs flex flex-col justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center items-center">
+    <footer className="w-full bg-white text-foreground border-t animate-fade-in-up relative">
+      <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
-          <div className="space-y-3">
-             <Link href="/" className="flex flex-col items-center space-y-2">
-                <div className="pl-16">
-                  <SulzaXLogo />
-                </div>
+          <div className="space-y-4">
+             <Link href="/" className="flex items-center space-y-2 mb-4">
+                <SulzaXLogo />
               </Link>
-            <p className="text-foreground max-w-sm mx-auto">
-                Welcome to SulzaX! We provide diverse IT solutions with a team of experts.
+            <p className="text-muted-foreground max-w-sm text-sm">
+                Welcome to SulzaX! We provide diverse IT solutions with a team of experts. From IT management to cloud solutions, we have you covered.
             </p>
+            <div className="text-sm text-muted-foreground">
+                <p>Mon - Fri: 9:00 - 19:00</p>
+                <p>Closed on Weekends</p>
+            </div>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-3 text-sm text-foreground">Company</h4>
-            <ul className="space-y-2">
+            <h4 className="font-semibold mb-4 text-md text-foreground">Company</h4>
+            <ul className="space-y-3 text-sm">
               <li><AnimatedLink href="/about">About Us</AnimatedLink></li>
               <li><AnimatedLink href="/team">Our Team</AnimatedLink></li>
               <li><AnimatedLink href="/services">Services</AnimatedLink></li>
               <li><AnimatedLink href="/portfolio">Case Studies</AnimatedLink></li>
+               <li><AnimatedLink href="/blog">Blog</AnimatedLink></li>
               <li><AnimatedLink href="/contact">Contact</AnimatedLink></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-3 text-sm text-foreground">Solutions</h4>
-             <ul className="space-y-2">
-                <li><Link href="/web-development" className="relative text-foreground after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all after:duration-300 hover:after:w-full">Web Development</Link></li>
-                <li><Link href="/mobile-development" className="relative text-foreground after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-foreground after:transition-all after:duration-300 hover:after:w-full">Mobile Development</Link></li>
-                <li><AnimatedLink href="/services#software-development">Software Development</AnimatedLink></li>
-                <li><AnimatedLink href="/services#ui-ux">UI/UX Development</AnimatedLink></li>
-                <li><AnimatedLink href="/services#seo">Search Engine Optimization</AnimatedLink></li>
+            <h4 className="font-semibold mb-4 text-md text-foreground">Solutions</h4>
+             <ul className="space-y-3 text-sm">
+                <li><AnimatedLink href="/web-development">Web Development</AnimatedLink></li>
+                <li><AnimatedLink href="/mobile-development">Mobile Development</AnimatedLink></li>
+                <li><AnimatedLink href="/software-development">Software Development</AnimatedLink></li>
+                <li><AnimatedLink href="/graphic-design">Graphic Design</AnimatedLink></li>
+                <li><AnimatedLink href="/ui-ux-development">UI/UX Development</AnimatedLink></li>
+                <li><AnimatedLink href="/search-engine-optimization">Search Engine Optimization</AnimatedLink></li>
             </ul>
           </div>
           
           <div className="space-y-4">
-             <h4 className="font-semibold text-sm text-foreground mb-3">Newsletter</h4>
-                <div className="relative w-full max-w-sm items-center mx-auto group">
-                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+             <h4 className="font-semibold text-md text-foreground mb-4">Newsletter</h4>
+                <div className="relative w-full max-w-sm items-center group">
+                    <Mail className="absolute left-0 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                     <Input 
                         type="email" 
                         placeholder="Your email address" 
-                        className="bg-transparent border-0 border-b-2 border-border rounded-none text-foreground placeholder:text-muted-foreground focus:ring-0 focus:border-foreground focus-visible:ring-0 focus-visible:ring-offset-0 pl-10 pr-10 h-9 text-xs transition-all duration-300" 
+                        className="bg-transparent border-0 border-b border-border rounded-none text-foreground placeholder:text-muted-foreground focus:ring-0 focus:border-foreground focus-visible:ring-0 focus-visible:ring-offset-0 pl-8 pr-10 h-10 text-sm" 
                     />
-                     <span className="absolute bottom-0 left-0 h-0.5 bg-foreground w-0 group-focus-within:w-full transition-all duration-300"></span>
-                    <Button type="submit" size="icon" className="absolute right-1 top-1/2 -translate-y-1/2 bg-transparent hover:bg-transparent text-foreground h-7 w-7">
-                        <Send className="h-4 w-4" />
+                    <Button type="submit" size="icon" className="absolute right-0 top-1/2 -translate-y-1/2 bg-transparent hover:bg-transparent text-muted-foreground hover:text-foreground h-8 w-8">
+                        <Send className="h-5 w-5" />
                     </Button>
                 </div>
-             <div className="flex space-x-3 justify-center">
-                <Link href="https://www.facebook.com/profile.php?id=100089670823732" aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-border hover:bg-foreground hover:border-foreground hover:text-background transition-colors"><Facebook className="h-5 w-5" /></Link>
-                <Link href="https://www.linkedin.com/in/sulman-bashir-313a45332" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-border hover:bg-foreground hover:border-foreground hover:text-background transition-colors"><Linkedin className="h-5 w-5" /></Link>
-                <Link href="https://x.com/sulmanmehar007" aria-label="Twitter" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-border hover:bg-foreground hover:border-foreground hover:text-background transition-colors"><Twitter className="h-5 w-5" /></Link>
-                <Link href="https://www.instagram.com/sulmanbashirgujrat777?utm_source=qr" aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-border hover:bg-foreground hover:border-foreground hover:text-background transition-colors"><Instagram className="h-5 w-5" /></Link>
-                <Link href="#" aria-label="YouTube" className="p-2 rounded-full border border-border hover:bg-foreground hover:border-foreground hover:text-background transition-colors"><Youtube className="h-5 w-5" /></Link>
+             <div className="flex space-x-2 pt-2">
+                <Link href="https://www.facebook.com/profile.php?id=100089670823732" aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-border text-muted-foreground hover:bg-foreground hover:border-foreground hover:text-white transition-colors"><Facebook className="h-5 w-5" /></Link>
+                <Link href="https://www.linkedin.com/in/sulman-bashir-313a45332" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-border text-muted-foreground hover:bg-foreground hover:border-foreground hover:text-white transition-colors"><Linkedin className="h-5 w-5" /></Link>
+                <Link href="https://x.com/sulmanmehar007" aria-label="Twitter" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-border text-muted-foreground hover:bg-foreground hover:border-foreground hover:text-white transition-colors"><Twitter className="h-5 w-5" /></Link>
+                <Link href="https://www.instagram.com/sulmanbashirgujrat777?utm_source=qr" aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full border border-border text-muted-foreground hover:bg-foreground hover:border-foreground hover:text-white transition-colors"><Instagram className="h-5 w-5" /></Link>
+                <Link href="#" aria-label="YouTube" className="p-2 rounded-full border border-border text-muted-foreground hover:bg-foreground hover:border-foreground hover:text-white transition-colors"><Youtube className="h-5 w-5" /></Link>
             </div>
           </div>
 
         </div>
 
-        <div className="mt-8 pt-4 border-t border-border flex flex-col sm:flex-row items-center justify-between text-[11px] text-muted-foreground">
+        <div className="mt-12 pt-8 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between text-sm text-muted-foreground">
             <p>© 2024 SulzaX Digital Hub. All Rights Reserved.</p>
-            <div className="flex gap-4 mt-4 sm:mt-0">
+            <div className="flex gap-6 mt-4 sm:mt-0">
+                <AnimatedLink href="#">Terms Of Services</AnimatedLink>
                 <AnimatedLink href="#">Privacy Policy</AnimatedLink>
-                <AnimatedLink href="#">Terms of Service</AnimatedLink>
+                <AnimatedLink href="#">Cookie Policy</AnimatedLink>
             </div>
         </div>
       </div>
+      {isVisible && (
+        <Button 
+            onClick={scrollToTop} 
+            className="fixed bottom-8 right-8 h-12 w-12 rounded-full bg-background/80 backdrop-blur-sm shadow-lg hover:bg-accent hover:text-accent-foreground border text-foreground"
+            variant="outline"
+            size="icon"
+        >
+            <ChevronUp className="h-6 w-6" />
+        </Button>
+      )}
     </footer>
   );
 }

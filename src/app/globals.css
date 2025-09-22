@@ -257,27 +257,8 @@
   }
 }
 
-.radio-pricing-toggle {
+.switch-pricing-toggle {
     display: flex;
-    gap: 1rem;
     align-items: center;
-}
-
-.radio-pricing-toggle input {
-    display: none;
-}
-
-.radio-pricing-toggle label {
-    padding: 0.5rem 1rem;
-    border-radius: 9999px;
-    border: 1px solid hsl(var(--border));
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    font-weight: 500;
-}
-
-.radio-pricing-toggle input:checked + label {
-    background-color: hsl(var(--accent));
-    color: hsl(var(--accent-foreground));
-    border-color: hsl(var(--accent));
+    gap: 0.5rem;
 }

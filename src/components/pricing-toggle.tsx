@@ -7,6 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { Check, ArrowRight } from 'lucide-react';
+import { Switch } from '@/components/ui/switch';
+import { Label } from '@/components/ui/label';
 
 interface PricingTier {
     name: string;
@@ -39,57 +41,56 @@ export default function PricingToggle({ tiers, supportFeatures, children }: Pric
         const parts = price.split('.');
         return (
             <>
-                <span className="text-5xl font-bold">{parts[0]}</span>
-                {parts[1] && <span className="text-2xl font-bold text-muted-foreground">.{parts[1]}</span>}
+                <span className="text-4xl font-bold">{parts[0]}</span>
+                {parts[1] && <span className="text-xl font-bold text-muted-foreground">.{parts[1]}</span>}
             </>
         );
     };
 
     return (
-        <div className="w-full">
-            <div className="text-center mb-12">
+        <div className="w-full grid lg:grid-cols-3 gap-12 items-start">
+            <div className="lg:col-span-1 space-y-6">
                  {children}
-                <div className="mt-6 flex justify-center">
-                    <div className="radio-pricing-toggle">
-                        <input 
-                            type="radio" 
-                            id="monthly" 
-                            name="pricing-cycle" 
-                            checked={!isYearly} 
-                            onChange={() => setIsYearly(false)}
-                        />
-                        <label htmlFor="monthly">Monthly</label>
-                        
-                        <input 
-                            type="radio" 
-                            id="yearly" 
-                            name="pricing-cycle" 
-                            checked={isYearly} 
-                            onChange={() => setIsYearly(true)}
-                        />
-                        <label htmlFor="yearly">Yearly (Save 10%)</label>
-                    </div>
+                 <div className="flex items-center space-x-2 switch-pricing-toggle">
+                    <Label htmlFor="pricing-toggle" className={cn(!isYearly ? 'text-primary' : 'text-muted-foreground')}>Pay Monthly</Label>
+                    <Switch
+                        id="pricing-toggle"
+                        checked={isYearly}
+                        onCheckedChange={setIsYearly}
+                        aria-label="Toggle between monthly and yearly pricing"
+                    />
+                    <Label htmlFor="pricing-toggle" className={cn(isYearly ? 'text-primary' : 'text-muted-foreground')}>
+                        Pay Yearly <span className="text-accent font-semibold">(Save 10%)</span>
+                    </Label>
                 </div>
+                 <ul className="space-y-3 pt-4 border-t">
+                    {supportFeatures.map(feature => (
+                        <li key={feature} className="flex items-center gap-3">
+                            <Check className="w-5 h-5 text-accent flex-shrink-0" />
+                            <span className="text-muted-foreground">{feature}</span>
+                        </li>
+                    ))}
+                </ul>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+            <div className="lg:col-span-2 grid md:grid-cols-2 gap-8 items-start">
                  {plans.map(tier => (
                     <Card key={tier.name} className={cn(
-                        "w-full flex flex-col shadow-lg rounded-xl",
-                        tier.popular ? "border-2 border-accent bg-accent/5" : "bg-card"
+                        "w-full flex flex-col rounded-xl border",
+                        tier.popular ? "border-accent/50" : "border-border"
                     )}>
-                        {tier.popular && 
-                            <Badge className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground border-accent px-4 py-1 text-sm">
-                                MOST POPULAR
-                            </Badge>
-                        }
-                        <CardHeader className="pt-10">
-                            <CardTitle className="text-2xl text-center font-bold text-primary">{tier.name}</CardTitle>
+                        <CardHeader className="relative">
+                            <CardTitle className="text-2xl font-bold text-primary">{tier.name}</CardTitle>
+                            {tier.popular && 
+                                <Badge className="absolute top-4 right-4 bg-accent text-accent-foreground border-accent px-3 py-1 text-xs">
+                                    SAVE 25%
+                                </Badge>
+                            }
                         </CardHeader>
                         <CardContent className="flex-grow flex flex-col justify-between">
                            <div>
-                                <div className="text-center mb-6">
-                                    <span className={cn(tier.popular ? 'text-primary' : 'text-primary')}>
+                                <div className="mb-6">
+                                    <span className="text-primary">
                                         {renderPrice(tier.price)}
                                     </span>
                                     <span className="text-muted-foreground">{tier.period}</span>
@@ -103,26 +104,17 @@ export default function PricingToggle({ tiers, supportFeatures, children }: Pric
                                     ))}
                                 </ul>
                            </div>
-                           <Button asChild size="lg" className={cn("w-full mt-auto font-semibold", tier.popular ? "bg-accent hover:bg-accent/90 text-accent-foreground" : "bg-primary hover:bg-primary/90 text-primary-foreground")}>
-                                <a href="/contact" className="shine-button-2">
+                           <Button asChild size="lg" className={cn(
+                               "w-full mt-auto font-semibold",
+                                tier.popular ? "bg-primary text-primary-foreground hover:bg-primary/90" : "bg-transparent text-primary border-2 border-primary hover:bg-primary/5"
+                                )}>
+                                <a href="/contact">
                                     {tier.buttonText}
-                                    <ArrowRight className="w-4 h-4 ml-2" />
                                 </a>
                            </Button>
                         </CardContent>
                     </Card>
                 ))}
-            </div>
-             <div className="mt-12">
-                <h3 className="text-center text-lg font-semibold mb-4">All Plans Include</h3>
-                 <ul className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-                    {supportFeatures.map(feature => (
-                        <li key={feature} className="flex items-center justify-center gap-2 p-3 bg-secondary/50 rounded-lg">
-                            <Check className="w-4 h-4 text-accent" />
-                            <span className="text-sm text-muted-foreground">{feature}</span>
-                        </li>
-                    ))}
-                </ul>
             </div>
         </div>
     )

@@ -62,7 +62,7 @@ const pricingTiers = {
     monthly: [
         {
             name: 'Gold',
-            price: '$149.00',
+            price: '$149',
             period: '/month',
             features: [
                 '60 keywords',
@@ -77,7 +77,7 @@ const pricingTiers = {
         },
         {
             name: 'Platinum',
-            price: '$379.00',
+            price: '$379',
             period: '/month',
             features: [
                 '150 keywords',
@@ -94,7 +94,7 @@ const pricingTiers = {
     yearly: [
         {
             name: 'Gold',
-            price: '$1609.20',
+            price: '$1609',
             period: '/year',
             features: [
                 '60 keywords',
@@ -109,7 +109,7 @@ const pricingTiers = {
         },
         {
             name: 'Platinum',
-            price: '$4093.20',
+            price: '$4093',
             period: '/year',
             features: [
                 '150 keywords',
@@ -281,8 +281,10 @@ export default function FinanceBankingPage() {
             <section className="py-20 md:py-24 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6">
                     <PricingToggle tiers={pricingTiers} supportFeatures={supportFeatures}>
-                        <h2 className="text-4xl md:text-5xl font-bold text-primary">Reach Out For Support!</h2>
-                        <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">A comprehensive solution for your technical support needs. With this package, you'll experience dedicated assistance from our professional technical experts.</p>
+                        <div>
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Reach Out For Support!</h2>
+                            <p className="text-muted-foreground mt-2 max-w-2xl">A comprehensive solution for your technical support needs. With this package, you'll experience dedicated assistance from our professional technical experts.</p>
+                        </div>
                     </PricingToggle>
                 </div>
             </section>

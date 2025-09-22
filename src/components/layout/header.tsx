@@ -165,7 +165,7 @@ export default function Header() {
                         <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
                     </Link>
                     <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-screen max-w-5xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform-gpu group-hover:translate-y-0 translate-y-[-10px]">
-                        <div className="bg-background rounded-xl shadow-xl p-8 grid grid-cols-12 gap-8 border">
+                        <div className="bg-white rounded-xl shadow-xl p-8 grid grid-cols-12 gap-8 border">
                            <div className="col-span-8 grid grid-cols-1 gap-y-6">
                                {Object.entries(serviceLinks).map(([category, links]) => (
                                     <div key={category}>

@@ -5,11 +5,12 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, ChevronDown } from 'lucide-react';
+import { Menu, ChevronDown, Phone, Briefcase, Code, Smartphone, Palette, AppWindow, Search, Megaphone, Target, MessageCircle } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { Badge } from '@/components/ui/badge';
 
 const SulzaXLogo = () => (
     <svg width="180" height="48" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg">
@@ -62,15 +63,84 @@ const SulzaXLogo = () => (
     </svg>
 );
 
+const serviceCategories = {
+    development: [
+        { href: '/web-development', label: 'Web Development', icon: <Code /> },
+        { href: '/mobile-development', label: 'Mobile Development', icon: <Smartphone /> },
+        { href: '/software-development', label: 'Software Development', icon: <Briefcase /> },
+    ],
+    design: [
+        { href: '/graphic-design', label: 'Graphic Design', icon: <Palette /> },
+        { href: '/ui-ux-development', label: 'UI/UX Development', icon: <AppWindow />, isNew: true },
+    ],
+    marketing: [
+        { href: '/search-engine-optimization', label: 'SEO', icon: <Search /> },
+        { href: '/social-media-marketing', label: 'Social Media Marketing', icon: <Megaphone /> },
+        { href: '/pay-per-click-advertising', label: 'PPC Advertising', icon: <Target /> },
+        { href: '/content-marketing', label: 'Content Marketing', icon: <MessageCircle /> },
+    ]
+}
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/services', label: 'Services' },
-  { href: '/portfolio', label: 'Portfolio' },
+  { href: '/services', label: 'Services', isMega: true },
   { href: '/about', label: 'About Us' },
+  { href: '/portfolio', label: 'Project' },
+  { href: '/contact', label: 'Clients' },
   { href: '/blog', label: 'Blog' },
-  { href: '/contact', label: 'Contact' },
 ];
+
+const ServiceMegaMenu = () => {
+    const pathname = usePathname();
+    return (
+        <div className="grid grid-cols-3 gap-6 p-6 w-full">
+            <div className="col-span-2 grid grid-cols-3 gap-6">
+                <div>
+                    <h4 className="font-semibold text-sm mb-3 text-muted-foreground px-2">Development</h4>
+                    <div className="flex flex-col gap-1">
+                        {serviceCategories.development.map(link => (
+                            <Link key={link.href} href={link.href} className="group/item flex items-center gap-3 p-2 rounded-md hover:bg-secondary/70 transition-colors">
+                                <div className="p-2 bg-secondary/70 rounded-md text-accent group-hover/item:bg-accent group-hover/item:text-white transition-colors">{React.cloneElement(link.icon, { className: 'w-5 h-5' })}</div>
+                                <span className="font-semibold text-foreground">{link.label}</span>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+                <div>
+                    <h4 className="font-semibold text-sm mb-3 text-muted-foreground px-2">Design</h4>
+                     <div className="flex flex-col gap-1">
+                        {serviceCategories.design.map(link => (
+                            <Link key={link.href} href={link.href} className="group/item flex items-center gap-3 p-2 rounded-md hover:bg-secondary/70 transition-colors">
+                                <div className="p-2 bg-secondary/70 rounded-md text-accent group-hover/item:bg-accent group-hover/item:text-white transition-colors">{React.cloneElement(link.icon, { className: 'w-5 h-5' })}</div>
+                                <span className="font-semibold text-foreground">{link.label}</span>
+                                {link.isNew && <Badge variant="secondary" className="text-xs">New</Badge>}
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+                <div>
+                    <h4 className="font-semibold text-sm mb-3 text-muted-foreground px-2">Marketing</h4>
+                    <div className="flex flex-col gap-1">
+                        {serviceCategories.marketing.map(link => (
+                            <Link key={link.href} href={link.href} className="group/item flex items-center gap-3 p-2 rounded-md hover:bg-secondary/70 transition-colors">
+                                <div className="p-2 bg-secondary/70 rounded-md text-accent group-hover/item:bg-accent group-hover/item:text-white transition-colors">{React.cloneElement(link.icon, { className: 'w-5 h-5' })}</div>
+                                <span className="font-semibold text-foreground">{link.label}</span>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </div>
+            <div className="bg-secondary/70 rounded-lg p-6 flex flex-col justify-center items-center text-center">
+                 <h4 className="font-bold text-lg text-primary mb-2">Need a Custom Solution?</h4>
+                 <p className="text-sm text-muted-foreground mb-4">Let's build something amazing together. Contact us for a free consultation.</p>
+                 <Button asChild>
+                    <Link href="/contact">Get a Quote</Link>
+                 </Button>
+            </div>
+        </div>
+    )
+};
+
 
 export default function Header() {
   const pathname = usePathname();
@@ -87,21 +157,84 @@ export default function Header() {
     };
   }, []);
 
-  const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-    <Link
-      href={href}
-      className={cn(
-        'relative transition-colors text-sm font-medium text-foreground group',
-        pathname === href ? 'text-accent' : 'hover:text-foreground/80'
-      )}
-    >
-      {children}
-      <span className={cn(
-        'absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full',
-        pathname === href ? 'w-full' : ''
-      )}></span>
-    </Link>
-  );
+  const NavLink = ({ href, children, isMega }: { href: string; children: React.ReactNode; isMega?: boolean }) => {
+    const isActive = pathname === href;
+    const linkClasses = cn(
+      'relative transition-colors text-sm font-medium text-foreground group flex items-center gap-1',
+      isActive ? 'text-accent' : 'hover:text-foreground/80'
+    );
+
+    if (isMega) {
+      return (
+        <div className="group/mega">
+            <span className={linkClasses}>
+              {children}
+              <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover/mega:rotate-180" />
+            </span>
+            <div className="absolute top-full left-0 right-0 bg-background border-t border-b shadow-lg opacity-0 pointer-events-none group-hover/mega:opacity-100 group-hover/mega:pointer-events-auto transition-opacity duration-300">
+                <div className="container mx-auto">
+                    <ServiceMegaMenu />
+                </div>
+            </div>
+        </div>
+      );
+    }
+    
+    return (
+      <Link href={href} className={linkClasses}>
+        {children}
+        <span className={cn(
+          'absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full',
+          isActive ? 'w-full' : ''
+        )}></span>
+      </Link>
+    );
+  };
+
+  const MobileNavLink = ({ href, label, children }: { href: string; label: string; children?: React.ReactNode }) => {
+    const isParentActive = pathname.startsWith(href);
+
+    if (children) {
+        return (
+            <Collapsible>
+                <CollapsibleTrigger className="flex justify-between items-center w-full px-2 py-2 text-lg font-semibold">
+                    {label}
+                    <ChevronDown className="w-5 h-5" />
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                    <div className="pl-6 flex flex-col gap-2 py-2">
+                        {children}
+                    </div>
+                </CollapsibleContent>
+            </Collapsible>
+        )
+    }
+
+    return (
+        <Link
+            href={href}
+            onClick={() => setIsSheetOpen(false)}
+            className={cn(
+                'block px-2 py-2 text-lg font-semibold',
+                pathname === href ? 'text-accent' : 'text-foreground'
+            )}
+        >
+            {label}
+        </Link>
+    );
+};
+
+const MobileServiceLinks = () => (
+    <>
+        <h4 className="font-bold text-muted-foreground text-base mb-2 mt-3">Development</h4>
+        {serviceCategories.development.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
+        <h4 className="font-bold text-muted-foreground text-base mb-2 mt-3">Design</h4>
+        {serviceCategories.design.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
+        <h4 className="font-bold text-muted-foreground text-base mb-2 mt-3">Marketing</h4>
+        {serviceCategories.marketing.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
+    </>
+);
+
 
   return (
     <header
@@ -110,46 +243,47 @@ export default function Header() {
         isScrolled ? 'shadow-md' : 'shadow-none'
       )}
     >
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-2">
           <SulzaXLogo />
         </Link>
 
-        <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
+        <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8 h-full">
           {navLinks.map((link) => (
-            <NavLink key={link.href} href={link.href}>
+            <NavLink key={link.href} href={link.href} isMega={link.isMega}>
               {link.label}
             </NavLink>
           ))}
         </nav>
 
         <div className="flex items-center gap-4">
-          <Button asChild>
-            <Link href="/login">Login</Link>
-          </Button>
-          <div className="md:hidden">
+            <div className="hidden md:flex items-center gap-3">
+                <div className="p-2.5 bg-secondary rounded-full text-primary">
+                    <Phone className="w-5 h-5"/>
+                </div>
+                <div>
+                    <p className="text-xs text-muted-foreground">Call us for a quote</p>
+                    <a href="tel:+12013740018" className="font-semibold text-sm hover:text-accent transition-colors">+1 (201) 374-0018</a>
+                </div>
+            </div>
+
+          <div className="lg:hidden">
             <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                <nav className="flex flex-col gap-4 mt-8">
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      onClick={() => setIsSheetOpen(false)}
-                      className={cn(
-                        'block px-2 py-1 text-lg',
-                        pathname === link.href ? 'text-accent' : 'text-foreground'
-                      )}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </nav>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px] p-0">
+                 <ScrollArea className="h-full">
+                    <nav className="flex flex-col gap-1 p-6">
+                        {navLinks.map((link) => (
+                             <MobileNavLink key={link.href} href={link.href} label={link.label}>
+                                {link.isMega ? <MobileServiceLinks /> : undefined}
+                             </MobileNavLink>
+                        ))}
+                    </nav>
+                 </ScrollArea>
               </SheetContent>
             </Sheet>
           </div>

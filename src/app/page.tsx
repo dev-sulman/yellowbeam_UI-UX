@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { cn } from '@/lib/utils';
+import AiSolutionAdvisor from '@/components/ai-solution-advisor';
 
 const features = [
   {
@@ -234,42 +235,31 @@ export default function Home() {
 
   return (
     <div className="font-body text-base">
-      <section className="w-full pt-16 md:pt-24">
+      <section className="w-full pt-16 md:pt-24 lg:pt-32">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-center">
-            <div className="flex flex-col justify-center space-y-6">
-              <div className="space-y-4">
-                <h1 className="text-4xl tracking-tighter text-primary sm:text-5xl xl:text-6xl/none font-bold">
-                  IT Services
-                  <br />
-                  For Small
-                  <br />
-                  To Mid-
-                  <br />
-                  Sized
-                  <br />
-                  Companies
+          <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+            <div className="flex flex-col justify-center space-y-4">
+              <div className="space-y-2">
+                <h1 className="text-3xl font-bold tracking-tighter text-primary sm:text-5xl xl:text-6xl/none">
+                  Transform Your Business with Custom IT Solutions
                 </h1>
-                <p className="max-w-[600px] text-muted-foreground md:text-lg">
+                <p className="max-w-[600px] text-muted-foreground md:text-xl">
                   At SulzaX, we create high-quality, custom websites that are both visually appealing and functional. We also integrate SEO to boost your site's visibility and help attract the right audience, driving business growth.
                 </p>
               </div>
-              <div className="flex flex-col gap-4 min-[400px]:flex-row">
-                 <Button asChild size="lg" className="font-semibold">
-                  <Link href="/contact">Get A Free Assessment</Link>
-                </Button>
-                <Button asChild size="lg" variant="secondary" className="font-semibold">
-                  <Link href="/contact">Contact</Link>
+              <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                 <Button asChild size="lg">
+                  <Link href="/contact">Free Assessment</Link>
                 </Button>
               </div>
             </div>
             <Image
               src="/main.jpeg"
-              width="800"
-              height="600"
+              width="550"
+              height="550"
               alt="Hero"
               data-ai-hint="team meeting office"
-              className="mx-auto overflow-hidden rounded-xl object-cover sm:w-full"
+              className="mx-auto aspect-square overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
             />
           </div>
         </div>
@@ -446,6 +436,36 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="ai-advisor" className="w-full py-16 md:py-24 lg:py-32">
+        <div className="container mx-auto px-4 md:px-6">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-6">
+                    <Badge variant="outline" className="bg-secondary text-accent font-semibold border-accent/20">AI-POWERED</Badge>
+                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Get Instant IT Solution Recommendations</h2>
+                    <p className="text-muted-foreground max-w-lg">
+                        Not sure where to start? Our AI-powered Solution Advisor can help. Describe your business needs, and our AI will provide tailored IT solution recommendations, complete with estimated budgets and benefits, based on our extensive project portfolio.
+                    </p>
+                    <ul className="space-y-3">
+                        <li className="flex items-center gap-3">
+                            <CheckCircle className="w-5 h-5 text-accent" />
+                            <span>Personalized recommendations</span>
+                        </li>
+                         <li className="flex items-center gap-3">
+                            <CheckCircle className="w-5 h-5 text-accent" />
+                            <span>Budget estimations</span>
+                        </li>
+                         <li className="flex items-center gap-3">
+                            <CheckCircle className="w-5 h-5 text-accent" />
+                            <span>Based on successful projects</span>
+                        </li>
+                    </ul>
+                </div>
+                <AiSolutionAdvisor />
+            </div>
+        </div>
+      </section>
+
+
       <div className="bg-primary text-white h-[80px] flex items-center overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap space-x-8">
             {marqueeContent.map((item, index) => <MarqueeItem key={index} text={item.text} />)}
@@ -489,7 +509,7 @@ export default function Home() {
               </div>
             </div>
             <div className="w-full max-w-md mx-auto">
-              <ContactForm cardTitle="Schedule A Free Consultation" cardDescription="" />
+              <ContactForm />
             </div>
           </div>
         </div>

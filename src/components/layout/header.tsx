@@ -5,13 +5,14 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetHeader, SheetTitle } from '@/components/ui/sheet';
-import { Menu, ChevronDown, X, Code, Smartphone, PenSquare, Palette, AppWindow, Search, Megaphone, Target, MessageCircle, ArrowRight, User, Briefcase, Users, Cloud, Shield, BarChart, Lightbulb, ClipboardList, GitBranch, MessageSquare, UserCheck, Phone, Mail, Facebook, Linkedin, Twitter, Youtube, Instagram } from 'lucide-react';
+import { Menu, ChevronDown, X, Code, Smartphone, PenSquare, Palette, AppWindow, Search, Megaphone, Target, MessageCircle, ArrowRight, User, Briefcase, Users, Cloud, Shield, BarChart, Lightbulb, ClipboardList, GitBranch, MessageSquare as MessageSquareIcon, UserCheck, Phone, Mail, Facebook, Linkedin, Twitter, Youtube, Instagram } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import Image from 'next/image';
 import { Input } from '@/components/ui/input';
+import { Badge } from '@/components/ui/badge';
 
 const SulzaXLogo = () => (
     <svg width="180" height="48" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg">
@@ -297,3 +298,5 @@ export default function Header() {
     </header>
   );
 }
+
+    

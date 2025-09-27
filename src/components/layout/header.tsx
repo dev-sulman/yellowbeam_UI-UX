@@ -64,54 +64,24 @@ const SulzaXLogo = () => (
     </svg>
 );
 
-const serviceLinks = {
-    "IT Services": [
-      { href: '/it-telecom', label: 'Managed IT Services', icon: <Briefcase /> },
-      { href: '/it-telecom', label: 'IT Consulting', icon: <Users /> },
-      { href: '/it-telecom', label: 'Cloud Computing', icon: <Cloud /> },
-      { href: '/it-telecom', label: 'Cybersecurity Solutions', icon: <Shield /> },
-      { href: '/it-telecom', label: 'Data Analytics', icon: <BarChart /> },
-      { href: '/software-development', label: 'Software Development', icon: <Code /> },
-    ],
-    "Digital Agency": [
-      { href: '/web-development', label: 'Business Strategy Analysis', icon: <Lightbulb /> },
-      { href: '/mobile-development', label: 'Project Management', icon: <ClipboardList /> },
-      { href: '/software-development', label: 'Operational Optimization', icon: <GitBranch /> },
-      { href: '/graphic-design', label: 'Digital Consulting', icon: <MessageSquare /> },
-      { href: '/ui-ux-development', label: 'Marketing Strategy', icon: <Target /> },
-      { href: '/search-engine-optimization', label: 'Leadership Development', icon: <UserCheck /> },
-    ]
-};
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  {
-    label: 'Services',
-    href: '/services',
-  },
-  {
-    label: 'About Us',
-    href: '/about',
-  },
+  { href: '/services', label: 'Services' },
+  { href: '/about', label: 'About Us' },
   { href: '/portfolio', label: 'Project' },
-  {
-    label: 'Clients',
-    href: '#',
-  },
+  { href: '#', label: 'Clients' },
   { href: '/blog', label: 'Blog' },
 ];
 
-const mobileNavLinks = {
-    "Home": [{ href: '/', label: 'Homepage' }],
-    "Services": serviceLinks["IT Services"].concat(serviceLinks["Digital Agency"]),
-    "About Us": [
-        { href: '/about', label: 'Our Story' },
-        { href: '/team', label: 'Meet the Team' },
-    ],
-    "Project": [{ href: '/portfolio', label: 'View Our Work' }],
-    "Clients": [{ href: '/#testimonials', label: 'Testimonials' }],
-    "Blog": [{ href: '/blog', label: 'Latest Articles' }],
-};
+const mobileNavLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/services', label: 'Services' },
+  { href: '/about', label: 'About Us' },
+  { href: '/portfolio', label: 'Project' },
+  { href: '#', label: 'Clients' },
+  { href: '/blog', label: 'Blog' },
+];
 
 
 export default function Header() {
@@ -150,76 +120,7 @@ export default function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
-            {navLinks.map((link) => {
-              if (link.label === 'Services') {
-                return (
-                  <div key={link.label} className="group relative">
-                     <Link
-                        href={link.href || '#'}
-                        className={cn(
-                        'relative transition-colors text-sm font-medium text-foreground group flex items-center gap-1',
-                        pathname.startsWith('/services') ? 'text-accent' : 'hover:text-foreground/80'
-                        )}
-                    >
-                        {link.label}
-                        <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
-                    </Link>
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-screen max-w-5xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform-gpu group-hover:translate-y-0 translate-y-[-10px]">
-                        <div className="bg-white rounded-xl shadow-xl p-8 grid grid-cols-12 gap-8 border">
-                           <div className="col-span-8 grid grid-cols-1 gap-y-6">
-                               {Object.entries(serviceLinks).map(([category, links]) => (
-                                    <div key={category}>
-                                        <h3 className="font-bold text-md text-foreground mb-4">{category}</h3>
-                                        <ul className="grid grid-cols-3 gap-x-8 gap-y-4">
-                                            {links.map((subLink) => (
-                                                <li key={subLink.href + subLink.label}>
-                                                    <Link href={subLink.href} className="flex items-center gap-3 text-sm text-gray-600 hover:text-accent group/item p-2 rounded-lg transition-colors hover:bg-secondary/50">
-                                                       <div className="text-accent">
-                                                         {React.cloneElement(subLink.icon, { className: 'w-5 h-5' })}
-                                                       </div>
-                                                       <p className="font-semibold text-foreground">{subLink.label}</p>
-                                                    </Link>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                               ))}
-                           </div>
-                           <div className="col-span-4 bg-secondary/70 rounded-lg p-6 flex flex-col justify-between">
-                                <div className='text-center'>
-                                   <h4 className="font-bold text-lg text-primary mb-2">Explore All Services</h4>
-                                   <p className="text-sm text-muted-foreground mb-4">
-                                       Unlocking the Full Spectrum of IT Solutions and Business Consulting for your needs.
-                                   </p>
-                                   <Button asChild size="sm" className="font-semibold bg-accent hover:bg-accent/90 text-accent-foreground w-full">
-                                       <Link href="/services">Explore Now</Link>
-                                   </Button>
-                                </div>
-                                <div className="border-t pt-4 mt-4 space-y-3 text-sm">
-                                    <Link href="mailto:sulzax0@gmail.com" className="flex items-center gap-3 hover:text-accent">
-                                        <Mail className="w-4 h-4" />
-                                        <span>sulzax0@gmail.com</span>
-                                    </Link>
-                                    <Link href="tel:03045865181" className="flex items-center gap-3 hover:text-accent">
-                                        <Phone className="w-4 h-4" />
-                                        <span>03045865181</span>
-                                    </Link>
-                                    <div className="flex space-x-2 pt-2 justify-center">
-                                        <Link href="https://www.facebook.com/profile.php?id=100089670823732" aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-background/50 hover:bg-accent hover:text-white transition-colors"><Facebook className="h-4 w-4" /></Link>
-                                        <Link href="https://www.linkedin.com/in/sulman-bashir-313a45332" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-background/50 hover:bg-accent hover:text-white transition-colors"><Linkedin className="h-4 w-4" /></Link>
-                                        <Link href="https://x.com/sulmanmehar007" aria-label="Twitter" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-background/50 hover:bg-accent hover:text-white transition-colors"><Twitter className="h-4 w-4" /></Link>
-                                        <Link href="#" aria-label="YouTube" className="p-2 rounded-full bg-background/50 hover:bg-accent hover:text-white transition-colors"><Youtube className="h-4 w-4" /></Link>
-                                        <Link href="https://www.instagram.com/sulmanbashirgujrat777?utm_source=qr" aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-background/50 hover:bg-accent hover:text-white transition-colors"><Instagram className="h-4 w-4" /></Link>
-                                    </div>
-                                </div>
-                           </div>
-                        </div>
-                    </div>
-                  </div>
-                )
-              }
-
-              return (
+            {navLinks.map((link) => (
                  <Link
                     key={link.label}
                     href={link.href || '#'}
@@ -235,10 +136,16 @@ export default function Header() {
                     )}></span>
                 </Link>
               )
-            })}
+            )}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
+           <a href="tel:+12013740018" className="hidden sm:flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent">
+                <div className="w-8 h-8 rounded-full bg-secondary/70 flex items-center justify-center">
+                  <Phone className="w-4 h-4 text-accent"/>
+                </div>
+                <span>+1 (201) 374-0018</span>
+           </a>
           <Button asChild>
             <Link href="/contact">Contact</Link>
           </Button>
@@ -260,30 +167,15 @@ export default function Header() {
                         </Button>
                     </SheetClose>
                 </SheetHeader>
-                <div className="p-4">
-                    <div className="relative">
-                        <Input placeholder="What are you looking for?" className="pl-10"/>
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                    </div>
-                </div>
+                
                 <ScrollArea className="flex-grow px-4">
                     <div className="grid gap-2 py-2">
-                        {Object.entries(mobileNavLinks).map(([label, links]) => (
-                             <Collapsible key={label}>
-                                <CollapsibleTrigger className="flex w-full items-center justify-between py-3 text-md font-semibold text-foreground group">
-                                    <span>{label}</span>
-                                    <ChevronDown className="h-5 w-5 transition-transform duration-300 group-data-[state=open]:rotate-180" />
-                                </CollapsibleTrigger>
-                                <CollapsibleContent>
-                                    <div className="grid gap-1 pl-4 py-2 border-l ml-2">
-                                        {links.map(subLink => (
-                                            <CollapsibleNavLink key={subLink.href + subLink.label} href={subLink.href}>
-                                                {subLink.label}
-                                            </CollapsibleNavLink>
-                                        ))}
-                                    </div>
-                                </CollapsibleContent>
-                            </Collapsible>
+                        {mobileNavLinks.map((link) => (
+                             <SheetClose asChild key={link.href}>
+                               <Link href={link.href} className="block py-3 text-md font-semibold text-foreground hover:text-accent hover:bg-secondary/50 rounded-md px-3">
+                                {link.label}
+                               </Link>
+                             </SheetClose>
                         ))}
                     </div>
                 </ScrollArea>

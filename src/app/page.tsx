@@ -239,7 +239,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="flex flex-col justify-center space-y-6">
               <div className="space-y-4">
-                <h1 className="text-4xl tracking-tighter text-primary sm:text-5xl xl:text-6xl/none font-normal">
+                <h1 className="text-4xl tracking-tighter text-primary sm:text-5xl xl:text-6xl/none font-bold">
                   IT Services
                   <br />
                   For Small
@@ -256,16 +256,17 @@ export default function Home() {
               </div>
               <div className="flex flex-col gap-4 min-[400px]:flex-row">
                  <Button asChild size="lg" className="font-semibold">
-                  <a href="/contact" className="shine-button">
-                    Get A Free Assessment
-                  </a>
+                  <Link href="/contact">Get A Free Assessment</Link>
+                </Button>
+                <Button asChild size="lg" variant="secondary" className="font-semibold">
+                  <Link href="/contact">Contact</Link>
                 </Button>
               </div>
             </div>
             <Image
               src="/main.jpeg"
-              width="600"
-              height="500"
+              width="800"
+              height="600"
               alt="Hero"
               data-ai-hint="team meeting office"
               className="mx-auto overflow-hidden rounded-xl object-cover sm:w-full"

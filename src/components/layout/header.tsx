@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
 import { Menu, ChevronDown, Phone, Briefcase, Code, Smartphone, Palette, AppWindow, Search, Megaphone, Target, MessageCircle } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -266,6 +266,10 @@ const MobileServiceLinks = () => (
                     <a href="tel:+12013740018" className="font-semibold text-sm hover:text-accent transition-colors">+1 (201) 374-0018</a>
                 </div>
             </div>
+            
+             <Button asChild>
+                <Link href="/contact" className='shine-button-2'>Contact</Link>
+            </Button>
 
           <div className="lg:hidden">
             <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
@@ -275,6 +279,7 @@ const MobileServiceLinks = () => (
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px] p-0">
+                <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                  <ScrollArea className="h-full">
                     <nav className="flex flex-col gap-1 p-6">
                         {navLinks.map((link) => (

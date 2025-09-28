@@ -268,46 +268,46 @@ export default function Home() {
 
       <section id="about-us" className="w-full py-16 md:py-24 mb-[5px] bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="rounded-xl p-8 md:p-12 bg-white border shadow-sm">
+          <div className="rounded-xl p-8 md:p-12 bg-gradient-to-r from-[#0f172a] to-[#334155] border shadow-sm">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="text-primary space-y-8">
+              <div className="space-y-8">
                 <Badge className="bg-accent text-accent-foreground">ABOUT US</Badge>
-                <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-primary">We Solve Technology Challenges.</h2>
+                <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-white">We Solve Technology Challenges.</h2>
               </div>
-              <div className="text-muted-foreground space-y-6">
-                <h3 className="text-xl font-semibold text-primary">Your IT Services Partner!</h3>
-                <p>We offer customized IT solutions, from managed services to cloud computing and cybersecurity. Empower your business with our expertise for growth and efficiency.</p>
-                <Link href="/contact" className="font-semibold text-primary hover:underline">Join us today!</Link>
+              <div className="space-y-6">
+                <h3 className="text-xl font-semibold text-white">Your IT Services Partner!</h3>
+                <p className='text-gray-300'>We offer customized IT solutions, from managed services to cloud computing and cybersecurity. Empower your business with our expertise for growth and efficiency.</p>
+                <Link href="/contact" className="font-semibold text-white hover:underline">Join us today!</Link>
               </div>
             </div>
-            <div className="border-t border-border mt-8 lg:mt-12 pt-8 pb-4">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-primary">
+            <div className="border-t border-gray-700 mt-8 lg:mt-12 pt-8 pb-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-white">
                 <div className="flex items-center gap-4">
-                  <div className="w-px h-12 bg-border"></div>
+                  <div className="w-px h-12 bg-gray-700"></div>
                   <div>
                     <p className="text-4xl font-bold">20</p>
-                    <p className="text-sm text-muted-foreground">Years experiences</p>
+                    <p className="text-sm text-gray-400">Years experiences</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-px h-12 bg-border"></div>
+                  <div className="w-px h-12 bg-gray-700"></div>
                   <div>
                     <p className="text-4xl font-bold">1.8k</p>
-                    <p className="text-sm text-muted-foreground">Happy customers</p>
+                    <p className="text-sm text-gray-400">Happy customers</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-px h-12 bg-border"></div>
+                  <div className="w-px h-12 bg-gray-700"></div>
                   <div>
                     <p className="text-4xl font-bold">460</p>
-                    <p className="text-sm text-muted-foreground">Project completed</p>
+                    <p className="text-sm text-gray-400">Project completed</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-px h-12 bg-border"></div>
+                  <div className="w-px h-12 bg-gray-700"></div>
                   <div>
                     <p className="text-4xl font-bold">15</p>
-                    <p className="text-sm text-muted-foreground">Awards achievement</p>
+                    <p className="text-sm text-gray-400">Awards achievement</p>
                   </div>
                 </div>
               </div>

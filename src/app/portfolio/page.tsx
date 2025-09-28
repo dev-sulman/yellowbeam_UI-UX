@@ -92,64 +92,72 @@ const PortfolioPage = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 md:px-6 py-12 md:py-24">
-      <div className="flex flex-col items-center text-center mb-12">
-        <h1 className="text-4xl font-bold tracking-tight font-headline sm:text-5xl md:text-6xl">Our Work</h1>
-        <p className="mt-4 max-w-2xl text-xl text-muted-foreground">
-          Explore our portfolio of successful projects across various industries and technologies.
-        </p>
-      </div>
+    <div className="bg-background text-foreground">
+      <section className="w-full py-20 md:py-24 bg-gradient-to-r from-[#0f172a] to-[#334155] text-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex flex-col items-center text-center">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">Our Work</h1>
+            <p className="mt-4 max-w-2xl text-xl text-gray-300">
+              Explore our portfolio of successful projects across various industries and technologies.
+            </p>
+          </div>
+        </div>
+      </section>
 
-      <Card className="p-6 mb-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
-            <h3 className="md:col-span-1 text-lg font-semibold">Filter Projects</h3>
-            <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <Select onValueChange={handleFilterChange('industry')} defaultValue="all">
-                    <SelectTrigger><SelectValue placeholder="Filter by industry" /></SelectTrigger>
-                    <SelectContent>
-                        <SelectItem value="all">All Industries</SelectItem>
-                        {allIndustries.map(industry => <SelectItem key={industry} value={industry}>{industry}</SelectItem>)}
-                    </SelectContent>
-                </Select>
-                <Select onValueChange={handleFilterChange('technology')} defaultValue="all">
-                    <SelectTrigger><SelectValue placeholder="Filter by technology" /></SelectTrigger>
-                    <SelectContent>
-                        <SelectItem value="all">All Technologies</SelectItem>
-                        {allTechnologies.map(tech => <SelectItem key={tech} value={tech}>{tech}</SelectItem>)}
-                    </SelectContent>
-                </Select>
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4 md:px-6">
+            <Card className="p-6 mb-12 bg-secondary/30">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+                    <h3 className="md:col-span-1 text-lg font-semibold">Filter Projects</h3>
+                    <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <Select onValueChange={handleFilterChange('industry')} defaultValue="all">
+                            <SelectTrigger><SelectValue placeholder="Filter by industry" /></SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value="all">All Industries</SelectItem>
+                                {allIndustries.map(industry => <SelectItem key={industry} value={industry}>{industry}</SelectItem>)}
+                            </SelectContent>
+                        </Select>
+                        <Select onValueChange={handleFilterChange('technology')} defaultValue="all">
+                            <SelectTrigger><SelectValue placeholder="Filter by technology" /></SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value="all">All Technologies</SelectItem>
+                                {allTechnologies.map(tech => <SelectItem key={tech} value={tech}>{tech}</SelectItem>)}
+                            </SelectContent>
+                        </Select>
+                    </div>
+                </div>
+            </Card>
+
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {filteredProjects.length > 0 ? filteredProjects.map((project) => (
+                <Card key={project.title} className="overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+                    <div className="overflow-hidden h-[250px] relative">
+                        <Image
+                            src={project.featuredImage}
+                            alt={project.title}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            quality={85}
+                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                    </div>
+                    <CardContent className="p-6">
+                    <h3 className="text-xl font-bold font-headline mb-2">{project.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-4">{project.description}</p>
+                    <div className="mb-4">
+                        <p className="font-semibold text-sm">Result: <span className="font-normal text-muted-foreground">{project.results}</span></p>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                        {project.technologies.map(tech => <Badge key={tech} variant="secondary">{tech}</Badge>)}
+                    </div>
+                    </CardContent>
+                </Card>
+                )) : (
+                    <p className="md:col-span-3 text-center text-muted-foreground">No projects match the selected filters.</p>
+                )}
             </div>
         </div>
-      </Card>
-
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {filteredProjects.length > 0 ? filteredProjects.map((project) => (
-          <Card key={project.title} className="overflow-hidden group hover:shadow-xl transition-shadow duration-300">
-            <div className="overflow-hidden h-[250px] relative">
-                <Image
-                    src={project.featuredImage}
-                    alt={project.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    quality={85}
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-            </div>
-            <CardContent className="p-6">
-              <h3 className="text-xl font-bold font-headline mb-2">{project.title}</h3>
-              <p className="text-sm text-muted-foreground mb-4">{project.description}</p>
-              <div className="mb-4">
-                <p className="font-semibold text-sm">Result: <span className="font-normal text-muted-foreground">{project.results}</span></p>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map(tech => <Badge key={tech} variant="secondary">{tech}</Badge>)}
-              </div>
-            </CardContent>
-          </Card>
-        )) : (
-            <p className="md:col-span-3 text-center text-muted-foreground">No projects match the selected filters.</p>
-        )}
-      </div>
+      </section>
     </div>
   );
 }

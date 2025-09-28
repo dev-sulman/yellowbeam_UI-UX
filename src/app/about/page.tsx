@@ -37,10 +37,10 @@ export default function AboutUsPage() {
     return (
         <div className="bg-background text-foreground">
             {/* Hero Section */}
-            <section className="relative w-full py-20 md:py-32 bg-secondary/30">
+            <section className="relative w-full py-20 md:py-32 bg-gradient-to-r from-[#0f172a] to-[#334155]">
                 <div className="container mx-auto px-4 md:px-6 text-center">
-                    <h1 className="text-4xl md:text-6xl font-bold text-primary">About SulzaX</h1>
-                    <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">We are a passionate team of innovators and problem-solvers dedicated to delivering top-tier IT solutions that empower businesses to thrive in the digital age.</p>
+                    <h1 className="text-4xl md:text-6xl font-bold text-white">About SulzaX</h1>
+                    <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">We are a passionate team of innovators and problem-solvers dedicated to delivering top-tier IT solutions that empower businesses to thrive in the digital age.</p>
                 </div>
             </section>
 
@@ -74,17 +74,17 @@ export default function AboutUsPage() {
             </section>
 
              {/* Values Section */}
-            <section className="w-full py-20 md:py-24 bg-secondary/30">
+            <section className="w-full py-20 md:py-24 bg-gradient-to-r from-slate-500 to-slate-400">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Core Values</h2>
-                        <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">The principles that guide our work, our relationships, and our commitment to excellence.</p>
+                        <h2 className="text-3xl md:text-4xl font-bold text-white">Our Core Values</h2>
+                        <p className="mt-2 text-slate-200 max-w-2xl mx-auto">The principles that guide our work, our relationships, and our commitment to excellence.</p>
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {values.map(value => (
-                            <Card key={value.title} className="p-6 text-center">
+                            <Card key={value.title} className="p-6 text-center bg-white/10 border-white/20 text-white">
                                 <CardTitle className="text-xl mb-2">{value.title}</CardTitle>
-                                <CardDescription>{value.description}</CardDescription>
+                                <CardDescription className="text-gray-300">{value.description}</CardDescription>
                             </Card>
                         ))}
                     </div>
@@ -116,10 +116,10 @@ export default function AboutUsPage() {
             </section>
 
              {/* CTA Section */}
-            <section className="w-full py-20 md:py-24 bg-secondary/30">
+            <section className="w-full py-20 md:py-24 bg-gradient-to-r from-[#d1d5db] via-[#6b7280] to-[#374151]">
                 <div className="container mx-auto px-4 md:px-6 text-center">
-                     <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Ready to Start Your Project?</h2>
-                     <p className="text-muted-foreground max-w-2xl mx-auto mb-8">Let's build something amazing together. Contact us today for a free consultation and let's discuss how we can help you achieve your business goals.</p>
+                     <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Ready to Start Your Project?</h2>
+                     <p className="text-gray-700 max-w-2xl mx-auto mb-8">Let's build something amazing together. Contact us today for a free consultation and let's discuss how we can help you achieve your business goals.</p>
                      <Button asChild size="lg">
                         <Link href="/contact">Get in Touch</Link>
                     </Button>

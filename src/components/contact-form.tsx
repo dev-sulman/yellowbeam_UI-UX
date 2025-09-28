@@ -41,7 +41,7 @@ export function ContactForm() {
   }
 
   return (
-    <Card className="shadow-xl border-border/20 bg-background/80 backdrop-blur-sm">
+    <Card className="shadow-xl border-border/20 bg-white">
       <CardContent className="p-8">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

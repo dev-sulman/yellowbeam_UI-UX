@@ -252,7 +252,7 @@ const MobileServiceLinks = () => (
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 w-full border-b bg-gradient-to-r from-[#0f172a] to-[#334155] border-transparent transition-all duration-300',
+        'sticky top-2 z-50 w-full border-b bg-gradient-to-r from-[#0f172a] to-[#334155] border-transparent transition-all duration-300 rounded-t-xl',
         isScrolled ? 'shadow-md' : 'shadow-none',
         isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
       )}

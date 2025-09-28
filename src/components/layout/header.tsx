@@ -145,16 +145,30 @@ export default function Header() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSheetOpen, setIsSheetOpen] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      const currentScrollY = window.scrollY;
+      setIsScrolled(currentScrollY > 10);
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 200) {
+        // Scrolling down
+        setIsHeaderVisible(false);
+      } else {
+        // Scrolling up
+        setIsHeaderVisible(true);
+      }
+      setLastScrollY(currentScrollY);
     };
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [lastScrollY]);
 
   const NavLink = ({ href, children, isMega }: { href: string; children: React.ReactNode; isMega?: boolean }) => {
     const isActive = pathname === href;
@@ -238,8 +252,9 @@ const MobileServiceLinks = () => (
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 w-full border-b bg-gradient-to-r from-[#0f172a] to-[#334155] border-transparent animate-fade-in-down transition-shadow',
-        isScrolled ? 'shadow-md' : 'shadow-none'
+        'sticky top-0 z-50 w-full border-b bg-gradient-to-r from-[#0f172a] to-[#334155] border-transparent transition-all duration-300',
+        isScrolled ? 'shadow-md' : 'shadow-none',
+        isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
       )}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -298,5 +313,3 @@ const MobileServiceLinks = () => (
     </header>
   );
 }
-
-    

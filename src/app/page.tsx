@@ -266,13 +266,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about-us" className="w-full py-16 md:py-24 mb-[5px]">
+      <section id="about-us" className="w-full py-16 md:py-24 mb-[5px] bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="rounded-xl p-8 md:p-12 bg-white border shadow-sm">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="text-primary space-y-8">
                 <Badge className="bg-accent text-accent-foreground">ABOUT US</Badge>
-                <h2 className="text-4xl lg:text-5xl font-bold tracking-tight">We Solve Technology Challenges.</h2>
+                <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-primary">We Solve Technology Challenges.</h2>
               </div>
               <div className="text-muted-foreground space-y-6">
                 <h3 className="text-xl font-semibold text-primary">Your IT Services Partner!</h3>
@@ -437,7 +437,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="ai-advisor" className="w-full py-16 md:py-24 lg:py-32">
+      <section id="ai-advisor" className="w-full py-16 md:py-24 lg:py-32 bg-white">
         <div className="container mx-auto px-4 md:px-6">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">

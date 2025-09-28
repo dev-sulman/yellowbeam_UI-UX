@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -48,7 +49,7 @@ const SulzaXLogo = () => (
        <text x="300" y="175"
             fontFamily="Outfit, Poppins, Montserrat, Segoe UI, Arial, sans-serif"
             fontSize="140" fontWeight="800"
-            fill="url(#gWordFooter)" letterSpacing="-1">
+            fill="black" letterSpacing="-1">
         Sulza<tspan fill="url(#gBlue)">X</tspan>
       </text>
     </svg>

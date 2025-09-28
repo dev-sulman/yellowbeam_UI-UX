@@ -57,7 +57,7 @@ const SulzaXLogo = () => (
       <text x="350" y="175"
             fontFamily="Outfit, Poppins, Montserrat, Segoe UI, Arial, sans-serif"
             fontSize="140" fontWeight="800"
-            fill="url(#gWord)" letterSpacing="-1">
+            fill="black" letterSpacing="-1">
         Sulza<tspan fill="url(#gBlue)">X</tspan>
       </text>
     </svg>
@@ -279,7 +279,9 @@ const MobileServiceLinks = () => (
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px] p-0">
-                <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+                <SheetClose asChild>
+                  <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+                </SheetClose>
                  <ScrollArea className="h-full">
                     <nav className="flex flex-col gap-1 p-6">
                         {navLinks.map((link) => (

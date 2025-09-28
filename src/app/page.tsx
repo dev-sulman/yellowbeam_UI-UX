@@ -1,5 +1,7 @@
 
-import React from 'react';
+'use client';
+
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -240,6 +242,12 @@ export default function Home() {
     { value: "460", label: "Project completed" },
     { value: "15", label: "Awards achievement" }
   ];
+
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   return (
     <div className="font-body text-base">
@@ -500,7 +508,7 @@ export default function Home() {
               </div>
             </div>
             <div className="w-full max-w-md mx-auto">
-              <ContactForm />
+              {isClient && <ContactForm />}
             </div>
           </div>
         </div>
@@ -508,9 +516,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-    
-
-    

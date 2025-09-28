@@ -11,29 +11,10 @@ import { cn } from '@/lib/utils';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
+import Image from 'next/image';
 
 const SulzaXLogo = () => (
-    <svg width="180" height="48" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
-        <style>
-            {`
-                .letter { fill: none; stroke: white; stroke-width: 2; }
-                .hex { fill: white; }
-            `}
-        </style>
-        <text x="20" y="100" fontFamily="Arial, sans-serif" fontSize="60" className="letter">SULZA</text>
-        <g transform="translate(250, 95)">
-            <defs>
-                <polygon id="hex" points="10,0 5,8.66 -5,8.66 -10,0 -5,-8.66 5,-8.66" />
-            </defs>
-            <use href="#hex" className="hex" x="0" y="0" />
-            <use href="#hex" className="hex" x="20" y="0" />
-            <use href="#hex" className="hex" x="-20" y="0" />
-            <use href="#hex" className="hex" x="10" y="17" />
-            <use href="#hex" className="hex" x="-10" y="17" />
-            <use href="#hex" className="hex" x="10" y="-17" />
-            <use href="#hex" className="hex" x="-10" y="-17" />
-        </g>
-    </svg>
+    <Image src="/Sulzax.svg" alt="SulzaX Logo" width={180} height={48} />
 );
 
 const serviceCategories = {

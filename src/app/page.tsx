@@ -168,32 +168,7 @@ const expertisePoints = [
 ];
 
 const SulzaXLogo = () => (
-    <svg width="180" height="48" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
-        <style>
-            {`
-                .letter-home { fill: none; stroke: black; stroke-width: 2; }
-                .hex-home { fill: black; }
-                
-                .dark .letter-home { stroke: white; }
-                .dark .hex-home { fill: white; }
-
-
-            `}
-        </style>
-        <text x="20" y="100" fontFamily="Arial, sans-serif" fontSize="60" className="letter-home">SULZA</text>
-        <g transform="translate(250, 95)">
-            <defs>
-                <polygon id="hex-home" points="10,0 5,8.66 -5,8.66 -10,0 -5,-8.66 5,-8.66" />
-            </defs>
-            <use href="#hex-home" className="hex-home" x="0" y="0" />
-            <use href="#hex-home" className="hex-home" x="20" y="0" />
-            <use href="#hex-home" className="hex-home" x="-20" y="0" />
-            <use href="#hex-home" className="hex-home" x="10" y="17" />
-            <use href="#hex-home" className="hex-home" x="-10" y="17" />
-            <use href="#hex-home" className="hex-home" x="10" y="-17" />
-            <use href="#hex-home" className="hex-home" x="-10" y="-17" />
-        </g>
-    </svg>
+    <Image src="/Sulzax.svg" alt="SulzaX Logo" width={180} height={48} />
 );
 
 

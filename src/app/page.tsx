@@ -213,7 +213,7 @@ const SulzaXLogo = () => (
        <text x="300" y="175"
             fontFamily="Outfit, Poppins, Montserrat, Segoe UI, Arial, sans-serif"
             fontSize="140" fontWeight="800"
-            fill="url(#gWordFooter)" letterSpacing="-1">
+            fill="black" letterSpacing="-1">
         Sulza<tspan fill="url(#gBlue)">X</tspan>
       </text>
     </svg>
@@ -361,7 +361,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="industries" className="w-full pt-16 md:pt-24 pb-16 md:pb-24 lg:pb-32">
+      <section id="industries" className="w-full pt-16 md:pt-24 pb-16 md:pb-24 lg:pb-32 bg-white dark:bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
             <div className="space-y-4">

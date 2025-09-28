@@ -12,6 +12,8 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/component
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
+import { Input } from '@/components/ui/input';
+
 
 const SulzaXLogo = () => (
     <Image src="/Sulzax.svg" alt="SulzaX Logo" width={180} height={48} />
@@ -165,7 +167,7 @@ export default function Header() {
     if (children) {
         return (
             <Collapsible>
-                <CollapsibleTrigger className="flex justify-between items-center w-full px-2 py-2 text-lg font-semibold text-white">
+                <CollapsibleTrigger className="flex justify-between items-center w-full px-2 py-2 text-lg font-semibold text-foreground">
                     {label}
                     <ChevronDown className="w-5 h-5" />
                 </CollapsibleTrigger>
@@ -184,7 +186,7 @@ export default function Header() {
             onClick={() => setIsSheetOpen(false)}
             className={cn(
                 'block px-2 py-2 text-lg font-semibold',
-                pathname === href ? 'text-accent' : 'text-white'
+                pathname === href ? 'text-accent' : 'text-foreground'
             )}
         >
             {label}
@@ -194,11 +196,11 @@ export default function Header() {
 
 const MobileServiceLinks = () => (
     <>
-        <h4 className="font-bold text-gray-400 text-base mb-2 mt-3">Development</h4>
+        <h4 className="font-bold text-muted-foreground text-base mb-2 mt-3">Development</h4>
         {serviceCategories.development.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
-        <h4 className="font-bold text-gray-400 text-base mb-2 mt-3">Design</h4>
+        <h4 className="font-bold text-muted-foreground text-base mb-2 mt-3">Design</h4>
         {serviceCategories.design.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
-        <h4 className="font-bold text-gray-400 text-base mb-2 mt-3">Marketing</h4>
+        <h4 className="font-bold text-muted-foreground text-base mb-2 mt-3">Marketing</h4>
         {serviceCategories.marketing.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
     </>
 );
@@ -247,16 +249,22 @@ const MobileServiceLinks = () => (
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px] p-0 bg-[rgb(30,41,59)] border-none">
+              <SheetContent side="right" className="w-[300px] sm:w-[400px] p-0 bg-background border-l">
                  <div className="h-full w-full">
                     <ScrollArea className="h-full">
-                        <nav className="flex flex-col gap-1 p-6">
-                            {navLinks.map((link) => (
-                                <MobileNavLink key={link.href} href={link.href} label={link.label}>
-                                    {link.isMega ? <MobileServiceLinks /> : undefined}
-                                </MobileNavLink>
-                            ))}
-                        </nav>
+                        <div className="p-6">
+                            <div className="relative mb-6">
+                                <Input placeholder="What are you looking for?" className="pr-10 h-11" />
+                                <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                            </div>
+                            <nav className="flex flex-col gap-1">
+                                {navLinks.map((link) => (
+                                    <MobileNavLink key={link.href} href={link.href} label={link.label}>
+                                        {link.isMega ? <MobileServiceLinks /> : undefined}
+                                    </MobileNavLink>
+                                ))}
+                            </nav>
+                        </div>
                     </ScrollArea>
                 </div>
               </SheetContent>
@@ -267,3 +275,4 @@ const MobileServiceLinks = () => (
     </header>
   );
 }
+

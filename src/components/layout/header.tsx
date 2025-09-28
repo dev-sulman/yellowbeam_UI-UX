@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
-import { Menu, ChevronDown, Phone, Briefcase, Code, Smartphone, Palette, AppWindow, Search, Megaphone, Target, MessageCircle } from 'lucide-react';
+import { Menu, ChevronDown, Phone, Briefcase, Code, Smartphone, Palette, AppWindow, Search, Megaphone, Target, MessageCircle, Mail, Youtube, Instagram, Twitter, Linkedin, Facebook, Settings, BarChart, Cloud, ShieldCheck, BrainCircuit, Bot, ShoppingCart, Users } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
@@ -20,6 +20,22 @@ const SulzaXLogo = () => (
 );
 
 const serviceCategories = {
+    itServices: [
+        { href: '/services', label: 'Managed IT Services', icon: <Settings /> },
+        { href: '/it-telecom', label: 'IT Consulting', icon: <Users /> },
+        { href: '/services', label: 'Cloud Computing', icon: <Cloud /> },
+        { href: '/services', label: 'Cybersecurity Solutions', icon: <ShieldCheck /> },
+        { href: '/services', label: 'Data Analytics', icon: <BarChart /> },
+        { href: '/software-development', label: 'Software Development', icon: <Code /> },
+    ],
+    digitalAgency: [
+        { href: '/services', label: 'Business Strategy Analysis', icon: <BrainCircuit /> },
+        { href: '/services', label: 'Project Management', icon: <Briefcase /> },
+        { href: '/services', label: 'Operational Optimization', icon: <Bot /> },
+        { href: '/services', label: 'Digital Consulting', icon: <AppWindow /> },
+        { href: '/social-media-marketing', label: 'Marketing Strategy', icon: <Megaphone /> },
+        { href: '/services', label: 'Leadership Development', icon: <Users /> },
+    ],
     development: [
         { href: '/web-development', label: 'Web Development', icon: <Code /> },
         { href: '/mobile-development', label: 'Mobile Development', icon: <Smartphone /> },
@@ -34,6 +50,7 @@ const serviceCategories = {
         { href: '/social-media-marketing', label: 'Social Media Marketing', icon: <Megaphone /> },
         { href: '/pay-per-click-advertising', label: 'PPC Advertising', icon: <Target /> },
         { href: '/content-marketing', label: 'Content Marketing', icon: <MessageCircle /> },
+        { href: '/ecommerce', label: 'E-commerce', icon: <ShoppingCart /> },
     ]
 }
 
@@ -47,51 +64,57 @@ const navLinks = [
 ];
 
 const ServiceMegaMenu = () => {
-    const pathname = usePathname();
     return (
         <div className="grid grid-cols-3 gap-6 p-6 w-full">
-            <div className="col-span-2 grid grid-cols-3 gap-6">
+            <div className="col-span-2 grid grid-cols-2 gap-x-6 gap-y-8">
                 <div>
-                    <h4 className="font-semibold text-sm mb-3 text-muted-foreground px-2">Development</h4>
-                    <div className="flex flex-col gap-1">
-                        {serviceCategories.development.map(link => (
+                    <h4 className="font-semibold text-lg mb-4 text-foreground px-2">IT Services</h4>
+                    <div className="grid grid-cols-2 gap-4">
+                        {serviceCategories.itServices.map(link => (
                             <Link key={link.href} href={link.href} className="group/item flex items-center gap-3 p-2 rounded-md hover:bg-secondary/70 transition-colors">
-                                <div className="p-2 bg-secondary/70 rounded-md text-accent group-hover/item:bg-accent group-hover/item:text-white transition-colors">{React.cloneElement(link.icon, { className: 'w-5 h-5' })}</div>
-                                <span className="font-semibold text-foreground">{link.label}</span>
+                                <div className="text-accent">{React.cloneElement(link.icon, { className: 'w-5 h-5' })}</div>
+                                <span className="font-medium text-sm text-foreground">{link.label}</span>
                             </Link>
                         ))}
                     </div>
                 </div>
-                <div>
-                    <h4 className="font-semibold text-sm mb-3 text-muted-foreground px-2">Design</h4>
-                     <div className="flex flex-col gap-1">
-                        {serviceCategories.design.map(link => (
+                <div className="col-start-1">
+                    <h4 className="font-semibold text-lg mb-4 text-foreground px-2">Digital Agency</h4>
+                     <div className="grid grid-cols-2 gap-4">
+                        {serviceCategories.digitalAgency.map(link => (
                             <Link key={link.href} href={link.href} className="group/item flex items-center gap-3 p-2 rounded-md hover:bg-secondary/70 transition-colors">
-                                <div className="p-2 bg-secondary/70 rounded-md text-accent group-hover/item:bg-accent group-hover/item:text-white transition-colors">{React.cloneElement(link.icon, { className: 'w-5 h-5' })}</div>
-                                <span className="font-semibold text-foreground">{link.label}</span>
-                                {link.isNew && <Badge variant="secondary" className="text-xs">New</Badge>}
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-                <div>
-                    <h4 className="font-semibold text-sm mb-3 text-muted-foreground px-2">Marketing</h4>
-                    <div className="flex flex-col gap-1">
-                        {serviceCategories.marketing.map(link => (
-                            <Link key={link.href} href={link.href} className="group/item flex items-center gap-3 p-2 rounded-md hover:bg-secondary/70 transition-colors">
-                                <div className="p-2 bg-secondary/70 rounded-md text-accent group-hover/item:bg-accent group-hover/item:text-white transition-colors">{React.cloneElement(link.icon, { className: 'w-5 h-5' })}</div>
-                                <span className="font-semibold text-foreground">{link.label}</span>
+                                <div className="text-accent">{React.cloneElement(link.icon, { className: 'w-5 h-5' })}</div>
+                                <span className="font-medium text-sm text-foreground">{link.label}</span>
                             </Link>
                         ))}
                     </div>
                 </div>
             </div>
-            <div className="bg-secondary/70 rounded-lg p-6 flex flex-col justify-center items-center text-center">
-                 <h4 className="font-bold text-lg text-primary mb-2">Need a Custom Solution?</h4>
-                 <p className="text-sm text-muted-foreground mb-4">Let's build something amazing together. Contact us for a free consultation.</p>
-                 <Button asChild>
-                    <Link href="/contact">Get a Quote</Link>
-                 </Button>
+            <div className="bg-secondary/30 rounded-lg p-6 flex flex-col justify-between">
+                <div>
+                     <h4 className="font-bold text-lg text-primary mb-2">Explore All Services</h4>
+                     <p className="text-sm text-muted-foreground mb-4">Unlocking the Full Spectrum of IT Solutions and Business Consulting for your needs</p>
+                     <Button asChild>
+                        <Link href="/services">Explore Now</Link>
+                     </Button>
+                </div>
+                 <div className="mt-6 pt-6 border-t">
+                    <a href="mailto:contact@zeofix.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-3">
+                        <Mail className="w-4 h-4"/>
+                        contact@zeofix.com
+                    </a>
+                     <a href="tel:+12013740018" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-4">
+                        <Phone className="w-4 h-4"/>
+                        +1 (201) 374-0018
+                    </a>
+                    <div className="flex space-x-2">
+                        <Link href="#" aria-label="Facebook" className="p-2 rounded-full bg-white text-muted-foreground hover:bg-accent/10 hover:text-accent transition-colors"><Facebook className="h-4 w-4" /></Link>
+                        <Link href="#" aria-label="LinkedIn" className="p-2 rounded-full bg-white text-muted-foreground hover:bg-accent/10 hover:text-accent transition-colors"><Linkedin className="h-4 w-4" /></Link>
+                        <Link href="#" aria-label="Twitter" className="p-2 rounded-full bg-white text-muted-foreground hover:bg-accent/10 hover:text-accent transition-colors"><Twitter className="h-4 w-4" /></Link>
+                        <Link href="#" aria-label="Instagram" className="p-2 rounded-full bg-white text-muted-foreground hover:bg-accent/10 hover:text-accent transition-colors"><Instagram className="h-4 w-4" /></Link>
+                        <Link href="#" aria-label="YouTube" className="p-2 rounded-full bg-white text-muted-foreground hover:bg-accent/10 hover:text-accent transition-colors"><Youtube className="h-4 w-4" /></Link>
+                    </div>
+                 </div>
             </div>
         </div>
     )
@@ -137,12 +160,12 @@ export default function Header() {
 
     if (isMega) {
       return (
-        <div className="group/mega">
+        <div className="group/mega h-full flex items-center">
             <span className={linkClasses}>
               {children}
               <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover/mega:rotate-180" />
             </span>
-            <div className="absolute top-full left-0 right-0 bg-background border-t border-b shadow-lg opacity-0 pointer-events-none group-hover/mega:opacity-100 group-hover/mega:pointer-events-auto transition-opacity duration-300">
+            <div className="absolute top-full left-0 right-0 bg-background border-t border-b shadow-lg opacity-0 pointer-events-none group-hover/mega:opacity-100 group-hover/mega:pointer-events-auto transition-opacity duration-300 transform-gpu translate-y-2 group-hover/mega:translate-y-0">
                 <div className="container mx-auto">
                     <ServiceMegaMenu />
                 </div>
@@ -152,10 +175,10 @@ export default function Header() {
     }
     
     return (
-      <Link href={href} className={linkClasses}>
+      <Link href={href} className={cn(linkClasses, "h-full flex items-center")}>
         {children}
         <span className={cn(
-          'absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full',
+          'absolute -bottom-px left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full',
           isActive ? 'w-full' : ''
         )}></span>
       </Link>
@@ -173,24 +196,22 @@ export default function Header() {
   );
   
   const MobileServiceLinks = () => {
-    const devLinks = serviceCategories.development.filter(l => l.label.toLowerCase().includes(searchTerm.toLowerCase()));
-    const designLinks = serviceCategories.design.filter(l => l.label.toLowerCase().includes(searchTerm.toLowerCase()));
-    const marketingLinks = serviceCategories.marketing.filter(l => l.label.toLowerCase().includes(searchTerm.toLowerCase()));
+    const itServiceLinks = serviceCategories.itServices.filter(l => l.label.toLowerCase().includes(searchTerm.toLowerCase()));
+    const agencyLinks = serviceCategories.digitalAgency.filter(l => l.label.toLowerCase().includes(searchTerm.toLowerCase()));
+    
+    const hasResults = itServiceLinks.length > 0 || agencyLinks.length > 0;
 
-    if (searchTerm && !devLinks.length && !designLinks.length && !marketingLinks.length) {
+    if (searchTerm && !hasResults) {
       return null;
     }
 
     return (
       <>
-        {devLinks.length > 0 && <h4 className="font-semibold text-muted-foreground text-sm mb-2 mt-3 px-2">Development</h4>}
-        {devLinks.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
+        {itServiceLinks.length > 0 && <h4 className="font-semibold text-muted-foreground text-sm mb-2 mt-3 px-2">IT Services</h4>}
+        {itServiceLinks.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
         
-        {designLinks.length > 0 && <h4 className="font-semibold text-muted-foreground text-sm mb-2 mt-3 px-2">Design</h4>}
-        {designLinks.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
-        
-        {marketingLinks.length > 0 && <h4 className="font-semibold text-muted-foreground text-sm mb-2 mt-3 px-2">Marketing</h4>}
-        {marketingLinks.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
+        {agencyLinks.length > 0 && <h4 className="font-semibold text-muted-foreground text-sm mb-2 mt-3 px-2">Digital Agency</h4>}
+        {agencyLinks.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
       </>
     )
   };

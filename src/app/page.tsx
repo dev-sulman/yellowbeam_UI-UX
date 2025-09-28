@@ -343,17 +343,48 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Link key={index} href={service.href || '#'} className="group">
-                <Card className="bg-white dark:bg-card shadow-lg rounded-lg p-8 text-center hover:shadow-xl transition-shadow duration-300 h-full">
+                <Card className={cn(
+                    "shadow-lg rounded-lg p-8 text-center hover:shadow-xl transition-shadow duration-300 h-full",
+                    service.title === 'Mobile Development'
+                      ? "bg-gradient-to-t from-[#0f172a] to-[#334155] text-white"
+                      : "bg-white dark:bg-card"
+                  )}>
                   <div className="flex justify-center items-center mb-4">
-                    <div className="p-3 bg-secondary/50 rounded-full">
-                      {service.icon}
+                    <div className={cn(
+                        "p-3 rounded-full",
+                        service.title === 'Mobile Development'
+                          ? "bg-white/10"
+                          : "bg-secondary/50"
+                      )}>
+                      {React.cloneElement(service.icon, {
+                        className: cn(
+                          "w-8 h-8",
+                          service.title === 'Mobile Development'
+                            ? "text-white"
+                            : "text-accent"
+                        ),
+                      })}
                     </div>
                   </div>
-                  <h3 className="text-xl font-normal text-black dark:text-white mb-2 relative inline-block">
+                  <h3 className={cn(
+                      "text-xl font-normal mb-2 relative inline-block",
+                      service.title === 'Mobile Development'
+                        ? "text-white"
+                        : "text-black dark:text-white"
+                    )}>
                     {service.title}
-                    <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></span>
+                    <span className={cn(
+                        "absolute bottom-0 left-0 w-0 h-[1px] transition-all duration-300 group-hover:w-full",
+                        service.title === 'Mobile Development'
+                          ? "bg-white"
+                          : "bg-black dark:bg-white"
+                      )}></span>
                   </h3>
-                  <p className="text-muted-foreground">{service.description}</p>
+                  <p className={cn(
+                      service.title === 'Mobile Development'
+                        ? "text-gray-300"
+                        : "text-muted-foreground"
+                    )}>{service.description}</p>
                 </Card>
               </Link>
             ))}

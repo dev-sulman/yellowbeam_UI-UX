@@ -61,41 +61,41 @@ export function ContactForm() {
   }
 
   return (
-    <Card className="shadow-xl border-border/20 bg-white w-full max-w-lg mx-auto">
+    <Card className="bg-transparent border-0 shadow-none w-full max-w-lg mx-auto">
         <CardHeader className="text-center">
-            <CardTitle className="text-2xl font-bold">Schedule A Free Consultation</CardTitle>
+            <CardTitle className="text-2xl font-bold text-white">Schedule A Free Consultation</CardTitle>
         </CardHeader>
       <CardContent className="p-6">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                 <FormField name="name" control={form.control} render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Name</FormLabel>
-                    <FormControl><Input placeholder="" {...field} className="bg-white border-gray-300 focus:ring-accent" /></FormControl>
+                    <FormLabel className="text-white">Name</FormLabel>
+                    <FormControl><Input placeholder="" {...field} className="bg-white/10 border-white/20 text-white placeholder:text-gray-300 focus:ring-accent" /></FormControl>
                     <FormMessage />
                   </FormItem>
                 )} />
 
                 <FormField name="phone" control={form.control} render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Phone</FormLabel>
-                    <FormControl><Input placeholder="" {...field} className="bg-white border-gray-300 focus:ring-accent" /></FormControl>
+                    <FormLabel className="text-white">Phone</FormLabel>
+                    <FormControl><Input placeholder="" {...field} className="bg-white/10 border-white/20 text-white placeholder:text-gray-300 focus:ring-accent" /></FormControl>
                     <FormMessage />
                   </FormItem>
                 )} />
 
                 <FormField name="companyEmail" control={form.control} render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Company Email</FormLabel>
-                    <FormControl><Input placeholder="" {...field} className="bg-white border-gray-300 focus:ring-accent"/></FormControl>
+                    <FormLabel className="text-white">Company Email</FormLabel>
+                    <FormControl><Input placeholder="" {...field} className="bg-white/10 border-white/20 text-white placeholder:text-gray-300 focus:ring-accent"/></FormControl>
                     <FormMessage />
                   </FormItem>
                 )} />
 
                 <FormField name="company" control={form.control} render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Company/Organization</FormLabel>
-                    <FormControl><Input placeholder="" {...field} className="bg-white border-gray-300 focus:ring-accent" /></FormControl>
+                    <FormLabel className="text-white">Company/Organization</FormLabel>
+                    <FormControl><Input placeholder="" {...field} className="bg-white/10 border-white/20 text-white placeholder:text-gray-300 focus:ring-accent" /></FormControl>
                     <FormMessage />
                   </FormItem>
                 )} />
@@ -105,10 +105,10 @@ export function ContactForm() {
               name="service"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>How can we help you?</FormLabel>
+                  <FormLabel className="text-white">How can we help you?</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
-                      <SelectTrigger className="bg-white border-gray-300">
+                      <SelectTrigger className="bg-white/10 border-white/20 text-white">
                         <SelectValue placeholder="Financial Planning" />
                       </SelectTrigger>
                     </FormControl>
@@ -125,8 +125,8 @@ export function ContactForm() {
 
             <FormField name="message" control={form.control} render={({ field }) => (
               <FormItem>
-                <FormLabel>Message</FormLabel>
-                <FormControl><Textarea placeholder="" className="min-h-[100px] bg-white border-gray-300 focus:ring-accent" {...field} /></FormControl>
+                <FormLabel className="text-white">Message</FormLabel>
+                <FormControl><Textarea placeholder="" className="min-h-[100px] bg-white/10 border-white/20 text-white placeholder:text-gray-300 focus:ring-accent" {...field} /></FormControl>
                 <FormMessage />
               </FormItem>
             )} />

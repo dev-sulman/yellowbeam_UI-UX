@@ -175,7 +175,7 @@ const SulzaXLogo = () => (
 const MarqueeItem = ({ text }: { text: string }) => (
     <div className="flex items-center space-x-4">
         <span className="text-xl font-semibold">{text}</span>
-        <Image src="/Sulzax.svg" alt="SulzaX Logo" width={180} height={48} className="brightness-0 invert shrink-0" />
+        <Image src="/Xlogo.svg" alt="SulzaX Logo" width={180} height={48} className="brightness-0 invert shrink-0" />
     </div>
 );
 

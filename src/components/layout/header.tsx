@@ -104,6 +104,7 @@ export default function Header() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -161,13 +162,44 @@ export default function Header() {
     );
   };
 
-  const MobileNavLink = ({ href, label, children }: { href: string; label: string; children?: React.ReactNode }) => {
-    const isParentActive = pathname.startsWith(href);
+  const allServiceLinks = Object.values(serviceCategories).flat();
 
+  const filteredNavLinks = navLinks.filter(link => 
+    link.label.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const filteredServiceLinks = allServiceLinks.filter(link => 
+    link.label.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  
+  const MobileServiceLinks = () => {
+    const devLinks = serviceCategories.development.filter(l => l.label.toLowerCase().includes(searchTerm.toLowerCase()));
+    const designLinks = serviceCategories.design.filter(l => l.label.toLowerCase().includes(searchTerm.toLowerCase()));
+    const marketingLinks = serviceCategories.marketing.filter(l => l.label.toLowerCase().includes(searchTerm.toLowerCase()));
+
+    if (searchTerm && !devLinks.length && !designLinks.length && !marketingLinks.length) {
+      return null;
+    }
+
+    return (
+      <>
+        {devLinks.length > 0 && <h4 className="font-semibold text-muted-foreground text-sm mb-2 mt-3 px-2">Development</h4>}
+        {devLinks.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
+        
+        {designLinks.length > 0 && <h4 className="font-semibold text-muted-foreground text-sm mb-2 mt-3 px-2">Design</h4>}
+        {designLinks.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
+        
+        {marketingLinks.length > 0 && <h4 className="font-semibold text-muted-foreground text-sm mb-2 mt-3 px-2">Marketing</h4>}
+        {marketingLinks.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
+      </>
+    )
+  };
+
+  const MobileNavLink = ({ href, label, children }: { href: string; label: string; children?: React.ReactNode }) => {
     if (children) {
         return (
             <Collapsible>
-                <CollapsibleTrigger className="flex justify-between items-center w-full px-2 py-2 text-base font-normal text-white">
+                <CollapsibleTrigger className="flex justify-between items-center w-full px-2 py-2 text-base font-normal text-black">
                     {label}
                     <ChevronDown className="w-5 h-5" />
                 </CollapsibleTrigger>
@@ -186,24 +218,13 @@ export default function Header() {
             onClick={() => setIsSheetOpen(false)}
             className={cn(
                 'block px-2 py-2 text-base font-normal',
-                pathname === href ? 'text-accent' : 'text-white'
+                pathname === href ? 'text-accent' : 'text-black'
             )}
         >
             {label}
         </Link>
     );
 };
-
-const MobileServiceLinks = () => (
-    <>
-        <h4 className="font-semibold text-muted-foreground text-sm mb-2 mt-3 px-2">Development</h4>
-        {serviceCategories.development.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
-        <h4 className="font-semibold text-muted-foreground text-sm mb-2 mt-3 px-2">Design</h4>
-        {serviceCategories.design.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
-        <h4 className="font-semibold text-muted-foreground text-sm mb-2 mt-3 px-2">Marketing</h4>
-        {serviceCategories.marketing.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
-    </>
-);
 
 
   return (
@@ -249,20 +270,26 @@ const MobileServiceLinks = () => (
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px] p-0 bg-[#1e293b] border-l-0" showCloseButton={false}>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px] p-0 bg-white border-l-0" showCloseButton={false}>
                  <div className="h-full w-full">
                     <ScrollArea className="h-full">
                         <div className="p-6">
                             <div className="relative mb-6">
-                                <Input placeholder="What are you looking for?" className="pr-10 h-11 bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400 focus:ring-accent" />
+                                <Input 
+                                    placeholder="What are you looking for?" 
+                                    className="pr-10 h-11 bg-slate-100 border-slate-200 text-black placeholder:text-slate-500 focus:ring-accent"
+                                    value={searchTerm}
+                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                />
                                 <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                             </div>
-                            <nav className="flex flex-col gap-1">
-                                {navLinks.map((link) => (
+                             <nav className="flex flex-col gap-1">
+                                {filteredNavLinks.map((link) => (
                                     <MobileNavLink key={link.href} href={link.href} label={link.label}>
                                         {link.isMega ? <MobileServiceLinks /> : undefined}
                                     </MobileNavLink>
                                 ))}
+                                {searchTerm && filteredNavLinks.length === 0 && <p className="p-2 text-muted-foreground">No results found.</p>}
                             </nav>
                         </div>
                     </ScrollArea>

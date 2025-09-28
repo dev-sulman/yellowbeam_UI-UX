@@ -328,7 +328,10 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Link key={index} href={service.href || '#'} className="group">
-                <Card className="shadow-lg rounded-lg p-6 md:p-8 text-center hover:shadow-xl transition-shadow duration-300 h-full bg-gradient-to-t from-[#0f172a] to-[#334155] text-white">
+                <Card className={cn(
+                    "shadow-lg rounded-lg p-6 md:p-8 text-center hover:shadow-xl transition-shadow duration-300 h-full",
+                    "bg-gradient-to-t from-[#0f172a] to-[#334155] text-white"
+                )}>
                   <div className="flex justify-center items-center mb-4">
                     <div className="p-3 rounded-full bg-white/10">
                       {React.cloneElement(service.icon, {
@@ -459,39 +462,39 @@ export default function Home() {
             {marqueeContent.map((item, index) => <MarqueeItem key={index} text={item.text} />)}
         </div>
       </div>
-      <section id="consultation" className="w-full py-16 md:py-24 lg:py-32" style={{ background: 'linear-gradient(to right, #464F62, #7F5D5D)' }}>
+      <section id="consultation" className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-r from-[#d1d5db] via-[#6b7280] to-[#374151]">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="flex flex-col text-white space-y-8">
               <div>
 
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">Free Consultation - Discover IT Solutions For Your Business</h2>
-                <p className="mt-4 max-w-2xl text-gray-300">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gray-800">Free Consultation - Discover IT Solutions For Your Business</h2>
+                <p className="mt-4 max-w-2xl text-gray-600">
                   Unlock the full potential of your business with our free consultation. Our expert team will assess your IT needs, recommend tailored solutions, and chart a path to success. Book your consultation now and take the first step towards empowering your business with cutting-edge technology.
                 </p>
               </div>
               <ul className="space-y-4">
                 {consultationPoints.map((point, index) => (
                   <li key={index} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-white" />
-                    <span className="text-gray-300">{point}</span>
+                    <CheckCircle className="w-5 h-5 text-gray-800" />
+                    <span className="text-gray-700">{point}</span>
                   </li>
                 ))}
               </ul>
               <div className="border-t border-gray-500 pt-8 space-y-6">
                 <div className="flex items-center gap-4">
-                  <Mail className="w-6 h-6 text-white" />
-                  <a href="mailto:sulzax0@gmail.com" className="text-lg text-gray-300 hover:text-white transition-colors">sulzax0@gmail.com</a>
+                  <Mail className="w-6 h-6 text-gray-800" />
+                  <a href="mailto:sulzax0@gmail.com" className="text-lg text-gray-700 hover:text-gray-800 transition-colors">sulzax0@gmail.com</a>
                 </div>
                 <div className="flex items-center gap-4">
-                  <Phone className="w-6 h-6 text-white" />
-                  <a href="tel:03045865181" className="text-lg text-gray-300 hover:text-white transition-colors">03045865181</a>
+                  <Phone className="w-6 h-6 text-gray-800" />
+                  <a href="tel:03045865181" className="text-lg text-gray-700 hover:text-gray-800 transition-colors">03045865181</a>
                 </div>
                 <div className="flex items-center gap-4">
-                  <MapPin className="w-6 h-6 text-white" />
+                  <MapPin className="w-6 h-6 text-gray-800" />
                   <div>
-                    <p className="text-lg text-gray-300">Sector 3 khairan Cantt</p>
-                    <a href="https://maps.app.goo.gl/tsc8z3Tdy2kMg4ve7"  target='_blank' className="text-sm text-white hover:underline">Open map</a>
+                    <p className="text-lg text-gray-700">Sector 3 khairan Cantt</p>
+                    <a href="https://maps.app.goo.gl/tsc8z3Tdy2kMg4ve7"  target='_blank' className="text-sm text-gray-800 hover:underline">Open map</a>
                   </div>
                 </div>
               </div>

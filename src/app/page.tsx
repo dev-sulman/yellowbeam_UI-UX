@@ -288,14 +288,11 @@ export default function Home() {
               </div>
             </div>
             <div className="border-t border-gray-700 mt-8 lg:mt-12 pt-8 pb-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 text-white">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-8 gap-x-4 text-white">
                 {aboutStats.map((stat, index) => (
-                  <div key={index} className="text-center md:text-left md:flex md:items-center md:gap-4">
-                    <div className="hidden md:block w-px h-12 bg-gray-700"></div>
-                    <div>
-                      <p className="text-4xl font-bold">{stat.value}</p>
-                      <p className="text-sm text-gray-400">{stat.label}</p>
-                    </div>
+                  <div key={index} className="text-center">
+                    <p className="text-4xl font-bold">{stat.value}</p>
+                    <p className="text-sm text-gray-400">{stat.label}</p>
                   </div>
                 ))}
               </div>

@@ -210,7 +210,7 @@ export default function Home() {
         />
         <div className="container mx-auto px-4 md:px-6 relative z-10 pt-8 md:pt-16 lg:pt-24 pb-8 md:pb-16 lg:pb-24">
           <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-            <div className="flex flex-col justify-center space-y-4">
+            <div className="flex flex-col justify-center space-y-4 lg:order-first">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter text-white sm:text-5xl xl:text-6xl/none">
                   Transform Your Business with Custom IT Solutions
@@ -231,7 +231,7 @@ export default function Home() {
               height="550"
               alt="Hero"
               data-ai-hint="team meeting office"
-              className="mx-auto aspect-square overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
+              className="mx-auto aspect-square overflow-hidden rounded-xl object-cover sm:w-full"
             />
           </div>
         </div>
@@ -496,6 +496,8 @@ export default function Home() {
 }
 
     
+    
+
     
 
     

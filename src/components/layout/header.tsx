@@ -106,10 +106,10 @@ const ServiceMegaMenu = () => {
                         +1 (201) 374-0018
                     </a>
                     <div className="flex space-x-2">
-                        <Link href="#" aria-label="Facebook" className="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"><Facebook className="h-4 w-4" /></Link>
-                        <Link href="#" aria-label="LinkedIn" className="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"><Linkedin className="h-4 w-4" /></Link>
-                        <Link href="#" aria-label="Twitter" className="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"><Twitter className="h-4 w-4" /></Link>
-                        <Link href="#" aria-label="Instagram" className="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"><Instagram className="h-4 w-4" /></Link>
+                        <Link href="https://www.facebook.com/profile.php?id=100089670823732" aria-label="Facebook" className="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"><Facebook className="h-4 w-4" /></Link>
+                        <Link href="https://www.linkedin.com/in/sulman-bashir-313a45332" aria-label="LinkedIn" className="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"><Linkedin className="h-4 w-4" /></Link>
+                        <Link href="https://x.com/sulmanmehar007" aria-label="Twitter" className="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"><Twitter className="h-4 w-4" /></Link>
+                        <Link href="https://www.instagram.com/sulmanbashirgujrat777?utm_source=qr" aria-label="Instagram" className="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"><Instagram className="h-4 w-4" /></Link>
                         <Link href="#" aria-label="YouTube" className="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"><Youtube className="h-4 w-4" /></Link>
                     </div>
                  </div>
@@ -152,14 +152,14 @@ export default function Header() {
   const NavLink = ({ href, children, isMega }: { href: string; children: React.ReactNode; isMega?: boolean }) => {
     const isActive = pathname === href;
     const linkClasses = cn(
-      'relative transition-colors text-sm font-medium text-white group flex items-center gap-1',
+      'transition-colors text-sm font-medium text-white group flex items-center gap-1',
       isActive ? 'text-accent' : 'hover:text-white/80'
     );
 
     if (isMega) {
       return (
         <div className="group/mega h-full flex items-center">
-            <span className={linkClasses}>
+            <span className={cn(linkClasses, 'relative')}>
               {children}
               <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover/mega:rotate-180" />
             </span>
@@ -183,10 +183,10 @@ export default function Header() {
     }
     
     return (
-      <Link href={href} className={cn(linkClasses, "h-full flex items-center")}>
+      <Link href={href} className={cn(linkClasses, "relative h-full flex items-center")}>
         {children}
         <span className={cn(
-          'absolute -bottom-px left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full',
+          'absolute bottom-5 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full',
           isActive ? 'w-full' : ''
         )}></span>
       </Link>
@@ -331,5 +331,3 @@ export default function Header() {
     </header>
   );
 }
-
-    

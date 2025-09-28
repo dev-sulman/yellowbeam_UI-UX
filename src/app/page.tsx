@@ -265,19 +265,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="expertise" className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-r from-slate-500 to-slate-400">
+      <section id="expertise" className="w-full py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {expertisePoints.map((point, index) => (
-              <Card key={index} className="bg-transparent shadow-none border-none text-center">
-                <div className="flex justify-center items-center mb-4">
-                  {point.icon}
+            <div className="bg-gradient-to-r from-slate-500 to-slate-400 rounded-xl p-8 md:p-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {expertisePoints.map((point, index) => (
+                    <Card key={index} className="bg-transparent shadow-none border-none text-center">
+                        <div className="flex justify-center items-center mb-4">
+                        {point.icon}
+                        </div>
+                        <h3 className="text-xl font-semibold text-white mb-2">{point.title}</h3>
+                        <p className="text-slate-200">{point.description}</p>
+                    </Card>
+                    ))}
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">{point.title}</h3>
-                <p className="text-slate-200">{point.description}</p>
-              </Card>
-            ))}
-          </div>
+            </div>
         </div>
       </section>
 
@@ -355,24 +357,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="latest-projects" className="w-full bg-black relative"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, rgba(75, 85, 99, 0.4) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(75, 85, 99, 0.4) 1px, transparent 1px)
-          `,
-          backgroundSize: "40px 40px",
-        }}
-      >
+      <section id="latest-projects" className="w-full bg-white relative">
         <div className="container mx-auto px-4 md:px-6 py-16 md:py-24 lg:py-32">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-start">
             <div className="space-y-4">
-              <div className="inline-block rounded-lg bg-accent/10 text-accent px-3 py-1 text-sm font-semibold">
+              <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm font-semibold">
                 EACH PROJECT IS A NEW CHALLENGE
               </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-white">Latest Projects</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-foreground">Latest Projects</h2>
             </div>
-            <p className="max-w-[600px] text-gray-300 md:text-xl/relaxed">
+            <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed">
               Case studies that showcase the agency's approach, process, and results for specific clients.
             </p>
           </div>
@@ -381,7 +375,7 @@ export default function Home() {
               <CarouselContent>
                 {projects.map((project, index) => (
                   <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                    <Card className="h-full overflow-hidden group bg-gray-900/50 border-gray-700">
+                    <Card className="h-full overflow-hidden group bg-card border-border">
                       <Image
                         src={project.featuredImage}
                         alt={project.title}
@@ -392,8 +386,8 @@ export default function Home() {
                       />
                       <CardContent className="p-6">
                         <Badge variant="secondary" className="mb-2">{project.category}</Badge>
-                        <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>
-                        <p className="text-gray-400 text-sm mb-4">{project.description}</p>
+                        <h3 className="text-xl font-bold mb-2 text-foreground">{project.title}</h3>
+                        <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
                         <Link href="/portfolio" className="text-sm font-semibold text-accent hover:underline">
                           Learn more <ArrowRight className="inline-block ml-1 h-4 w-4" />
                         </Link>

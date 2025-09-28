@@ -278,12 +278,12 @@ export default function FinanceBankingPage() {
             </section>
 
             {/* Pricing Section */}
-            <section className="py-20 md:py-24 bg-secondary/30">
+            <section className="py-20 md:py-24 bg-gradient-to-r from-[#0f172a] to-[#334155] text-white">
                 <div className="container mx-auto px-4 md:px-6">
                     <PricingToggle tiers={pricingTiers} supportFeatures={supportFeatures}>
                         <div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Reach Out For Support!</h2>
-                            <p className="text-muted-foreground mt-2 max-w-2xl">A comprehensive solution for your technical support needs. With this package, you'll experience dedicated assistance from our professional technical experts.</p>
+                            <h2 className="text-3xl md:text-4xl font-bold">Reach Out For Support!</h2>
+                            <p className="text-gray-300 mt-2 max-w-2xl">A comprehensive solution for your technical support needs. With this package, you'll experience dedicated assistance from our professional technical experts.</p>
                         </div>
                     </PricingToggle>
                 </div>
@@ -327,3 +327,5 @@ export default function FinanceBankingPage() {
         </div>
     )
 }
+
+    

@@ -265,11 +265,11 @@ export default function MobileDevelopmentPage() {
             </section>
 
             {/* Pricing Section */}
-            <section className="py-20 md:py-24 bg-secondary/30">
+            <section className="py-20 md:py-24 bg-gradient-to-r from-[#0f172a] to-[#334155] text-white">
                 <div className="container mx-auto px-4 md:px-6">
                     <PricingToggle tiers={pricingTiers} supportFeatures={supportFeatures}>
-                        <h2 className="text-4xl md:text-5xl font-bold text-primary">Ready to Build Your App?</h2>
-                        <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">Choose a plan that fits your mobile development needs. We offer flexible pricing for startups and enterprises.</p>
+                        <h2 className="text-4xl md:text-5xl font-bold">Ready to Build Your App?</h2>
+                        <p className="text-gray-300 mt-2 max-w-2xl mx-auto">Choose a plan that fits your mobile development needs. We offer flexible pricing for startups and enterprises.</p>
                     </PricingToggle>
                 </div>
             </section>
@@ -312,3 +312,5 @@ export default function MobileDevelopmentPage() {
         </div>
     )
 }
+
+    

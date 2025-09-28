@@ -269,11 +269,11 @@ export default function EducationPage() {
             </section>
 
             {/* Pricing Section */}
-            <section className="py-20 md:py-24 bg-secondary/30">
+            <section className="py-20 md:py-24 bg-gradient-to-r from-[#0f172a] to-[#334155] text-white">
                 <div className="container mx-auto px-4 md:px-6">
                     <PricingToggle tiers={pricingTiers} supportFeatures={supportFeatures}>
-                        <h2 className="text-4xl md:text-5xl font-bold text-black">EdTech Solution Plans</h2>
-                        <p className="text-black">Choose a plan that fits your institution's needs. We offer scalable solutions for schools, universities, and corporate training.</p>
+                        <h2 className="text-4xl md:text-5xl font-bold">EdTech Solution Plans</h2>
+                        <p className="text-gray-300">Choose a plan that fits your institution's needs. We offer scalable solutions for schools, universities, and corporate training.</p>
                     </PricingToggle>
                 </div>
             </section>
@@ -316,3 +316,5 @@ export default function EducationPage() {
         </div>
     )
 }
+
+    

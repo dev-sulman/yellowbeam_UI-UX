@@ -269,11 +269,11 @@ export default function ManufacturingPage() {
             </section>
 
             {/* Pricing Section */}
-            <section className="py-20 md:py-24 bg-secondary/30">
+            <section className="py-20 md:py-24 bg-gradient-to-r from-[#0f172a] to-[#334155] text-white">
                 <div className="container mx-auto px-4 md:px-6">
                     <PricingToggle tiers={pricingTiers} supportFeatures={supportFeatures}>
-                        <h2 className="text-4xl md:text-5xl font-bold text-black">Industry 4.0 Solution Plans</h2>
-                        <p className="text-black">Choose a plan that fits your manufacturing needs. We offer scalable solutions to bring your factory into the digital age.</p>
+                        <h2 className="text-4xl md:text-5xl font-bold">Industry 4.0 Solution Plans</h2>
+                        <p className="text-gray-300">Choose a plan that fits your manufacturing needs. We offer scalable solutions to bring your factory into the digital age.</p>
                     </PricingToggle>
                 </div>
             </section>
@@ -316,3 +316,5 @@ export default function ManufacturingPage() {
         </div>
     )
 }
+
+    

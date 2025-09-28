@@ -165,7 +165,7 @@ export default function Header() {
     if (children) {
         return (
             <Collapsible>
-                <CollapsibleTrigger className="flex justify-between items-center w-full px-2 py-2 text-lg font-semibold">
+                <CollapsibleTrigger className="flex justify-between items-center w-full px-2 py-2 text-lg font-semibold text-white">
                     {label}
                     <ChevronDown className="w-5 h-5" />
                 </CollapsibleTrigger>
@@ -184,7 +184,7 @@ export default function Header() {
             onClick={() => setIsSheetOpen(false)}
             className={cn(
                 'block px-2 py-2 text-lg font-semibold',
-                pathname === href ? 'text-accent' : 'text-foreground'
+                pathname === href ? 'text-accent' : 'text-white'
             )}
         >
             {label}
@@ -194,11 +194,11 @@ export default function Header() {
 
 const MobileServiceLinks = () => (
     <>
-        <h4 className="font-bold text-muted-foreground text-base mb-2 mt-3">Development</h4>
+        <h4 className="font-bold text-gray-400 text-base mb-2 mt-3">Development</h4>
         {serviceCategories.development.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
-        <h4 className="font-bold text-muted-foreground text-base mb-2 mt-3">Design</h4>
+        <h4 className="font-bold text-gray-400 text-base mb-2 mt-3">Design</h4>
         {serviceCategories.design.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
-        <h4 className="font-bold text-muted-foreground text-base mb-2 mt-3">Marketing</h4>
+        <h4 className="font-bold text-gray-400 text-base mb-2 mt-3">Marketing</h4>
         {serviceCategories.marketing.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
     </>
 );
@@ -247,19 +247,34 @@ const MobileServiceLinks = () => (
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px] p-0">
-                <SheetClose asChild>
-                  <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
-                </SheetClose>
-                 <ScrollArea className="h-full">
-                    <nav className="flex flex-col gap-1 p-6">
-                        {navLinks.map((link) => (
-                             <MobileNavLink key={link.href} href={link.href} label={link.label}>
-                                {link.isMega ? <MobileServiceLinks /> : undefined}
-                             </MobileNavLink>
-                        ))}
-                    </nav>
-                 </ScrollArea>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px] p-0 bg-transparent border-none">
+                 <div className="h-full w-full bg-black relative">
+                    <div
+                        className="absolute inset-0 z-0"
+                        style={{
+                        background: "#000000",
+                        backgroundImage: `
+                            linear-gradient(to right, rgba(75, 85, 99, 0.4) 1px, transparent 1px),
+                            linear-gradient(to bottom, rgba(75, 85, 99, 0.4) 1px, transparent 1px)
+                        `,
+                        backgroundSize: "40px 40px",
+                        }}
+                    />
+                    <div className="relative z-10 h-full">
+                        <SheetClose asChild>
+                        <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+                        </SheetClose>
+                        <ScrollArea className="h-full">
+                            <nav className="flex flex-col gap-1 p-6">
+                                {navLinks.map((link) => (
+                                    <MobileNavLink key={link.href} href={link.href} label={link.label}>
+                                        {link.isMega ? <MobileServiceLinks /> : undefined}
+                                    </MobileNavLink>
+                                ))}
+                            </nav>
+                        </ScrollArea>
+                    </div>
+                </div>
               </SheetContent>
             </Sheet>
           </div>
@@ -268,3 +283,5 @@ const MobileServiceLinks = () => (
     </header>
   );
 }
+
+    

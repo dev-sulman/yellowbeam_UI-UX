@@ -316,7 +316,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="expertise" className="w-full py-16 md:py-24 lg:py-32 bg-white">
+      <section id="expertise" className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-r from-slate-500 to-slate-400">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {expertisePoints.map((point, index) => (
@@ -324,8 +324,8 @@ export default function Home() {
                 <div className="flex justify-center items-center mb-4">
                   {point.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-black dark:text-white mb-2">{point.title}</h3>
-                <p className="text-muted-foreground">{point.description}</p>
+                <h3 className="text-xl font-semibold text-white mb-2">{point.title}</h3>
+                <p className="text-slate-200">{point.description}</p>
               </Card>
             ))}
           </div>

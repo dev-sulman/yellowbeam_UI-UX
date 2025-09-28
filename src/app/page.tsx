@@ -332,21 +332,19 @@ export default function Home() {
                     "shadow-lg rounded-lg p-8 text-center hover:shadow-xl transition-shadow duration-300 h-full",
                     service.title === 'Mobile Development'
                       ? "bg-gradient-to-t from-[#0f172a] to-[#334155] text-white"
-                      : service.title === 'Software Development'
-                      ? "bg-gradient-to-r from-[#d1d5db] via-[#6b7280] to-[#374151] text-white"
                       : "bg-white dark:bg-card"
                   )}>
                   <div className="flex justify-center items-center mb-4">
                     <div className={cn(
                         "p-3 rounded-full",
-                        service.title === 'Mobile Development' || service.title === 'Software Development'
+                        service.title === 'Mobile Development'
                           ? "bg-white/10"
                           : "bg-secondary/50"
                       )}>
                       {React.cloneElement(service.icon, {
                         className: cn(
                           "w-8 h-8",
-                          service.title === 'Mobile Development' || service.title === 'Software Development'
+                          service.title === 'Mobile Development'
                             ? "text-white"
                             : "text-accent"
                         ),
@@ -355,20 +353,20 @@ export default function Home() {
                   </div>
                   <h3 className={cn(
                       "text-xl font-normal mb-2 relative inline-block",
-                      service.title === 'Mobile Development' || service.title === 'Software Development'
+                      service.title === 'Mobile Development'
                         ? "text-white"
                         : "text-black dark:text-white"
                     )}>
                     {service.title}
                     <span className={cn(
                         "absolute bottom-0 left-0 w-0 h-[1px] transition-all duration-300 group-hover:w-full",
-                        service.title === 'Mobile Development' || service.title === 'Software Development'
+                        service.title === 'Mobile Development'
                           ? "bg-white"
                           : "bg-black dark:bg-white"
                       )}></span>
                   </h3>
                   <p className={cn(
-                      service.title === 'Mobile Development' || service.title === 'Software Development'
+                      service.title === 'Mobile Development'
                         ? "text-gray-300"
                         : "text-muted-foreground"
                     )}>{service.description}</p>

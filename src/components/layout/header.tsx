@@ -239,7 +239,7 @@ const MobileServiceLinks = () => (
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md animate-fade-in-down transition-shadow',
+        'sticky top-0 z-50 w-full border-b bg-white animate-fade-in-down transition-shadow',
         isScrolled ? 'shadow-md' : 'shadow-none'
       )}
     >
@@ -299,3 +299,5 @@ const MobileServiceLinks = () => (
     </header>
   );
 }
+
+    

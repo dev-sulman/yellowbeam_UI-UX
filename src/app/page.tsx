@@ -167,66 +167,61 @@ const expertisePoints = [
   }
 ];
 
-
 const SulzaXLogo = () => (
-    <svg width="120" height="32" viewBox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg" className="text-white">
-      <defs>
-        <linearGradient id="gBlue" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#05D1FF"/>
-          <stop offset="1" stopColor="#0B52FF"/>
-        </linearGradient>
-        <linearGradient id="gSilver" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#FFFFFF"/>
-          <stop offset="0.45" stopColor="#E9F0FA"/>
-          <stop offset="1" stopColor="#A9B7CB"/>
-        </linearGradient>
-        <linearGradient id="gWordFooter" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#FFFFFF"/>
-          <stop offset="1" stopColor="#FFFFFF"/>
-        </linearGradient>
-        <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
-          <feOffset dx="0" dy="2" result="offsetblur"/>
-          <feMerge>
-            <feMergeNode/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-        </filter>
-      </defs>
-      <g transform="translate(60,30) scale(0.8)">
-        <g filter="url(#softShadow)">
-            <circle cx="120" cy="130" r="92" fill="none" stroke="url(#gBlue)" strokeWidth="18"/>
-            <circle cx="120" cy="130" r="70" fill="none" stroke="url(#gBlue)" strokeWidth="6" opacity="0.9"/>
-            <g stroke="url(#gBlue)" strokeWidth="8" strokeLinecap="round" fill="url(#gBlue)">
-            <line x1="160" y1="80" x2="194" y2="50"/>
-            <circle cx="194" cy="50" r="7"/>
-            <line x1="170" y1="100" x2="220" y2="84"/>
-            <circle cx="220" cy="84" r="7"/>
-            </g>
-            <text x="120" y="151"
-            textAnchor="middle"
-            fontFamily="Outfit, Poppins, Montserrat, Segoe UI, Arial, sans-serif"
-            fontSize="132"
-            fontWeight="900"
-            fill="black"
-            letterSpacing="0.5">S</text>
+    <svg width="180" height="48" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+        <style>
+            {`
+                .letter-home { fill: none; stroke: black; stroke-width: 2; }
+                .hex-home { fill: black; }
+                
+                .dark .letter-home { stroke: white; }
+                .dark .hex-home { fill: white; }
+
+
+            `}
+        </style>
+        <text x="20" y="100" fontFamily="Arial, sans-serif" fontSize="60" className="letter-home">SULZA</text>
+        <g transform="translate(250, 95)">
+            <defs>
+                <polygon id="hex-home" points="10,0 5,8.66 -5,8.66 -10,0 -5,-8.66 5,-8.66" />
+            </defs>
+            <use href="#hex-home" className="hex-home" x="0" y="0" />
+            <use href="#hex-home" className="hex-home" x="20" y="0" />
+            <use href="#hex-home" className="hex-home" x="-20" y="0" />
+            <use href="#hex-home" className="hex-home" x="10" y="17" />
+            <use href="#hex-home" className="hex-home" x="-10" y="17" />
+            <use href="#hex-home" className="hex-home" x="10" y="-17" />
+            <use href="#hex-home" className="hex-home" x="-10" y="-17" />
         </g>
-      </g>
-       <text x="300" y="175"
-            fontFamily="Outfit, Poppins, Montserrat, Segoe UI, Arial, sans-serif"
-            fontSize="140" fontWeight="800"
-            fill="black" letterSpacing="-1">
-        Sulza<tspan fill="url(#gBlue)">X</tspan>
-      </text>
     </svg>
 );
 
 
 const MarqueeItem = ({ text }: { text: string }) => (
-  <div className="flex items-center space-x-4">
-    <span className="text-xl font-semibold">{text}</span>
-    <SulzaXLogo />
-  </div>
+    <div className="flex items-center space-x-4">
+        <span className="text-xl font-semibold">{text}</span>
+        <svg width="180" height="48" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+            <style>
+                {`
+                    .letter-marquee { fill: none; stroke: white; stroke-width: 2; }
+                    .hex-marquee { fill: white; }
+                `}
+            </style>
+            <text x="20" y="100" fontFamily="Arial, sans-serif" fontSize="60" className="letter-marquee">SULZA</text>
+            <g transform="translate(250, 95)">
+                <defs>
+                    <polygon id="hex-marquee" points="10,0 5,8.66 -5,8.66 -10,0 -5,-8.66 5,-8.66" />
+                </defs>
+                <use href="#hex-marquee" className="hex-marquee" x="0" y="0" />
+                <use href="#hex-marquee" className="hex-marquee" x="20" y="0" />
+                <use href="#hex-marquee" className="hex-marquee" x="-20" y="0" />
+                <use href="#hex-marquee" className="hex-marquee" x="10" y="17" />
+                <use href="#hex-marquee" className="hex-marquee" x="-10" y="17" />
+                <use href="#hex-marquee" className="hex-marquee" x="10" y="-17" />
+                <use href="#hex-marquee" className="hex-marquee" x="-10" y="-17" />
+            </g>
+        </svg>
+    </div>
 );
 
 

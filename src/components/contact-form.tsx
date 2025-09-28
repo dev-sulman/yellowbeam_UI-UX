@@ -61,7 +61,7 @@ export function ContactForm() {
   }
 
   return (
-    <Card className="bg-transparent border-0 shadow-none w-full max-w-lg mx-auto">
+    <Card className="bg-transparent border border-white/20 shadow-none w-full max-w-lg mx-auto rounded-xl">
         <CardHeader className="text-center">
             <CardTitle className="text-2xl font-bold text-white">Schedule A Free Consultation</CardTitle>
         </CardHeader>

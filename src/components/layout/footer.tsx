@@ -44,7 +44,7 @@ export default function Footer() {
     }, []);
 
   return (
-    <footer className="w-full bg-gradient-to-r from-[#0f172a] to-[#334155] text-white border-t border-transparent animate-fade-in-up relative">
+    <footer className="w-full bg-gradient-to-r from-[#0f172a] to-[#334155] text-white border-t border-transparent animate-fade-in-up relative rounded-b-xl">
       <div className="container mx-auto py-12 px-5" suppressHydrationWarning={true}>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           

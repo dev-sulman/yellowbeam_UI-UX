@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
-import { Menu, ChevronDown, Phone, Briefcase, Code, Smartphone, Palette, AppWindow, Search, Megaphone, Target, MessageCircle, Mail, Youtube, Instagram, Twitter, Linkedin, Facebook, Settings, BarChart, Cloud, ShieldCheck, BrainCircuit, Bot, ShoppingCart, Users } from 'lucide-react';
+import { Menu, ChevronDown, Phone, Briefcase, Code, Smartphone, Palette, AppWindow, Search, Megaphone, Target, MessageCircle, Mail, Youtube, Instagram, Twitter, Linkedin, Facebook, Settings, Users, BarChart, Cloud, ShieldCheck, BrainCircuit, Bot, ShoppingCart } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
@@ -68,51 +68,51 @@ const ServiceMegaMenu = () => {
         <div className="grid grid-cols-3 gap-6 p-6 w-full">
             <div className="col-span-2 grid grid-cols-2 gap-x-6 gap-y-8">
                 <div>
-                    <h4 className="font-semibold text-lg mb-4 text-foreground px-2">IT Services</h4>
+                    <h4 className="font-semibold text-lg mb-4 text-white px-2">IT Services</h4>
                     <div className="grid grid-cols-2 gap-4">
                         {serviceCategories.itServices.map(link => (
-                            <Link key={link.href} href={link.href} className="group/item flex items-center gap-3 p-2 rounded-md hover:bg-secondary/70 transition-colors">
+                            <Link key={link.href} href={link.href} className="group/item flex items-center gap-3 p-2 rounded-md hover:bg-white/10 transition-colors">
                                 <div className="text-accent">{React.cloneElement(link.icon, { className: 'w-5 h-5' })}</div>
-                                <span className="font-medium text-sm text-foreground">{link.label}</span>
+                                <span className="font-medium text-sm text-white">{link.label}</span>
                             </Link>
                         ))}
                     </div>
                 </div>
                 <div className="col-start-1">
-                    <h4 className="font-semibold text-lg mb-4 text-foreground px-2">Digital Agency</h4>
+                    <h4 className="font-semibold text-lg mb-4 text-white px-2">Digital Agency</h4>
                      <div className="grid grid-cols-2 gap-4">
                         {serviceCategories.digitalAgency.map(link => (
-                            <Link key={link.href} href={link.href} className="group/item flex items-center gap-3 p-2 rounded-md hover:bg-secondary/70 transition-colors">
+                            <Link key={link.href} href={link.href} className="group/item flex items-center gap-3 p-2 rounded-md hover:bg-white/10 transition-colors">
                                 <div className="text-accent">{React.cloneElement(link.icon, { className: 'w-5 h-5' })}</div>
-                                <span className="font-medium text-sm text-foreground">{link.label}</span>
+                                <span className="font-medium text-sm text-white">{link.label}</span>
                             </Link>
                         ))}
                     </div>
                 </div>
             </div>
-            <div className="bg-secondary/30 rounded-lg p-6 flex flex-col justify-between">
+            <div className="bg-black/20 rounded-lg p-6 flex flex-col justify-between">
                 <div>
-                     <h4 className="font-bold text-lg text-primary mb-2">Explore All Services</h4>
-                     <p className="text-sm text-muted-foreground mb-4">Unlocking the Full Spectrum of IT Solutions and Business Consulting for your needs</p>
+                     <h4 className="font-bold text-lg text-white mb-2">Explore All Services</h4>
+                     <p className="text-sm text-gray-300 mb-4">Unlocking the Full Spectrum of IT Solutions and Business Consulting for your needs</p>
                      <Button asChild>
                         <Link href="/services">Explore Now</Link>
                      </Button>
                 </div>
-                 <div className="mt-6 pt-6 border-t">
-                    <a href="mailto:contact@zeofix.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-3">
+                 <div className="mt-6 pt-6 border-t border-white/20">
+                    <a href="mailto:contact@zeofix.com" className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors mb-3">
                         <Mail className="w-4 h-4"/>
                         contact@zeofix.com
                     </a>
-                     <a href="tel:+12013740018" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-4">
+                     <a href="tel:+12013740018" className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors mb-4">
                         <Phone className="w-4 h-4"/>
                         +1 (201) 374-0018
                     </a>
                     <div className="flex space-x-2">
-                        <Link href="#" aria-label="Facebook" className="p-2 rounded-full bg-white text-muted-foreground hover:bg-accent/10 hover:text-accent transition-colors"><Facebook className="h-4 w-4" /></Link>
-                        <Link href="#" aria-label="LinkedIn" className="p-2 rounded-full bg-white text-muted-foreground hover:bg-accent/10 hover:text-accent transition-colors"><Linkedin className="h-4 w-4" /></Link>
-                        <Link href="#" aria-label="Twitter" className="p-2 rounded-full bg-white text-muted-foreground hover:bg-accent/10 hover:text-accent transition-colors"><Twitter className="h-4 w-4" /></Link>
-                        <Link href="#" aria-label="Instagram" className="p-2 rounded-full bg-white text-muted-foreground hover:bg-accent/10 hover:text-accent transition-colors"><Instagram className="h-4 w-4" /></Link>
-                        <Link href="#" aria-label="YouTube" className="p-2 rounded-full bg-white text-muted-foreground hover:bg-accent/10 hover:text-accent transition-colors"><Youtube className="h-4 w-4" /></Link>
+                        <Link href="#" aria-label="Facebook" className="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"><Facebook className="h-4 w-4" /></Link>
+                        <Link href="#" aria-label="LinkedIn" className="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"><Linkedin className="h-4 w-4" /></Link>
+                        <Link href="#" aria-label="Twitter" className="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"><Twitter className="h-4 w-4" /></Link>
+                        <Link href="#" aria-label="Instagram" className="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"><Instagram className="h-4 w-4" /></Link>
+                        <Link href="#" aria-label="YouTube" className="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"><Youtube className="h-4 w-4" /></Link>
                     </div>
                  </div>
             </div>
@@ -165,7 +165,17 @@ export default function Header() {
               {children}
               <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover/mega:rotate-180" />
             </span>
-            <div className="absolute top-full left-0 right-0 bg-background border-t border-b shadow-lg opacity-0 pointer-events-none group-hover/mega:opacity-100 group-hover/mega:pointer-events-auto transition-opacity duration-300 transform-gpu translate-y-2 group-hover/mega:translate-y-0">
+            <div className="absolute top-full left-0 right-0 border-t border-b shadow-lg opacity-0 pointer-events-none group-hover/mega:opacity-100 group-hover/mega:pointer-events-auto transition-opacity duration-300 transform-gpu translate-y-2 group-hover/mega:translate-y-0"
+             style={{
+                background: "#0f172a",
+                backgroundImage: `
+                  linear-gradient(to right, rgba(148,163,184,0.1) 1px, transparent 1px),
+                  linear-gradient(to bottom, rgba(148,163,184,0.1) 1px, transparent 1px)
+                `,
+                backgroundSize: "40px 40px",
+                borderColor: 'rgba(148,163,184,0.2)'
+              }}
+            >
                 <div className="container mx-auto">
                     <ServiceMegaMenu />
                 </div>

@@ -237,9 +237,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about-us" className="w-full py-16 md:py-24 mb-[5px] bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="rounded-xl p-6 md:space-y-0 md:p-8 lg:p-12 bg-gradient-to-r from-[#0f172a] to-[#334155] border shadow-sm">
+      <section id="about-us" className="w-full relative bg-black py-16 md:py-24">
+          <div
+            className="absolute inset-0 z-0"
+            style={{
+              background: "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(226, 232, 240, 0.15), transparent 70%), #000000",
+            }}
+          />
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="rounded-xl p-6 md:space-y-0 md:p-8 lg:p-12 bg-transparent border-none shadow-none">
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
               <div className="space-y-4 md:space-y-6">
                 <Badge className="bg-accent text-accent-foreground">ABOUT US</Badge>

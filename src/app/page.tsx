@@ -201,15 +201,21 @@ export default function Home() {
 
   return (
     <div className="font-body text-base">
-      <section className="w-full pt-8 md:pt-16 lg:pt-24 bg-white rounded-b-xl">
-        <div className="container mx-auto px-4 md:px-6">
+       <section className="w-full relative bg-black">
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(226, 232, 240, 0.15), transparent 70%), #000000",
+          }}
+        />
+        <div className="container mx-auto px-4 md:px-6 relative z-10 pt-8 md:pt-16 lg:pt-24 pb-8 md:pb-16 lg:pb-24">
           <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter text-primary sm:text-5xl xl:text-6xl/none">
+                <h1 className="text-3xl font-bold tracking-tighter text-white sm:text-5xl xl:text-6xl/none">
                   Transform Your Business with Custom IT Solutions
                 </h1>
-                <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                <p className="max-w-[600px] text-gray-300 md:text-xl">
                   At SulzaX, we create high-quality, custom websites that are both visually appealing and functional. We also integrate SEO to boost your site's visibility and help attract the right audience, driving business growth.
                 </p>
               </div>

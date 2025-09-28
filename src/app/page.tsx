@@ -275,24 +275,24 @@ export default function Home() {
 
       <section id="about-us" className="w-full py-16 md:py-24 mb-[5px] bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="rounded-xl p-8 md:p-12 bg-gradient-to-r from-[#0f172a] to-[#334155] border shadow-sm">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-8">
+          <div className="rounded-xl p-6 md:p-8 lg:p-12 bg-gradient-to-r from-[#0f172a] to-[#334155] border shadow-sm">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+              <div className="space-y-4 md:space-y-6">
                 <Badge className="bg-accent text-accent-foreground">ABOUT US</Badge>
-                <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-white">We Solve Technology Challenges.</h2>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white">We Solve Technology Challenges.</h2>
               </div>
-              <div className="space-y-6">
-                <h3 className="text-xl font-semibold text-white">Your IT Services Partner!</h3>
+              <div className="space-y-4">
+                <h3 className="text-lg md:text-xl font-semibold text-white">Your IT Services Partner!</h3>
                 <p className='text-gray-300'>We offer customized IT solutions, from managed services to cloud computing and cybersecurity. Empower your business with our expertise for growth and efficiency.</p>
                 <Link href="/contact" className="font-semibold text-white hover:underline">Join us today!</Link>
               </div>
             </div>
-            <div className="border-t border-gray-700 mt-8 lg:mt-12 pt-8 pb-4">
+            <div className="border-t border-gray-700 mt-8 pt-8">
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-8 gap-x-4 text-white">
                 {aboutStats.map((stat, index) => (
                   <div key={index} className="text-center">
-                    <p className="text-4xl font-bold">{stat.value}</p>
-                    <p className="text-sm text-gray-400">{stat.label}</p>
+                    <p className="text-3xl md:text-4xl font-bold">{stat.value}</p>
+                    <p className="text-xs md:text-sm text-gray-400">{stat.label}</p>
                   </div>
                 ))}
               </div>

@@ -21,20 +21,20 @@ const SulzaXLogo = () => (
 
 const serviceCategories = {
     itServices: [
-        { href: '/services', label: 'Managed IT Services', icon: <Settings /> },
+        { href: '/services/managed-it', label: 'Managed IT Services', icon: <Settings /> },
         { href: '/it-telecom', label: 'IT Consulting', icon: <Users /> },
-        { href: '/services', label: 'Cloud Computing', icon: <Cloud /> },
-        { href: '/services', label: 'Cybersecurity Solutions', icon: <ShieldCheck /> },
-        { href: '/services', label: 'Data Analytics', icon: <BarChart /> },
+        { href: '/services/cloud-computing', label: 'Cloud Computing', icon: <Cloud /> },
+        { href: '/services/cybersecurity', label: 'Cybersecurity Solutions', icon: <ShieldCheck /> },
+        { href: '/services/data-analytics', label: 'Data Analytics', icon: <BarChart /> },
         { href: '/software-development', label: 'Software Development', icon: <Code /> },
     ],
     digitalAgency: [
-        { href: '/services', label: 'Business Strategy Analysis', icon: <BrainCircuit /> },
-        { href: '/services', label: 'Project Management', icon: <Briefcase /> },
-        { href: '/services', label: 'Operational Optimization', icon: <Bot /> },
-        { href: '/services', label: 'Digital Consulting', icon: <AppWindow /> },
+        { href: '/services/business-strategy', label: 'Business Strategy Analysis', icon: <BrainCircuit /> },
+        { href: '/services/project-management', label: 'Project Management', icon: <Briefcase /> },
+        { href: '/services/operational-optimization', label: 'Operational Optimization', icon: <Bot /> },
+        { href: '/services/digital-consulting', label: 'Digital Consulting', icon: <AppWindow /> },
         { href: '/social-media-marketing', label: 'Marketing Strategy', icon: <Megaphone /> },
-        { href: '/services', label: 'Leadership Development', icon: <Users /> },
+        { href: '/services/leadership-development', label: 'Leadership Development', icon: <Users /> },
     ],
     development: [
         { href: '/web-development', label: 'Web Development', icon: <Code /> },

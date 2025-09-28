@@ -123,10 +123,10 @@ export default function UiUxDevelopmentPage() {
     return (
         <div className="bg-background text-foreground">
             {/* Hero Section */}
-            <section className="relative py-20 md:py-32 bg-secondary/30">
+            <section className="relative py-20 md:py-32 bg-gradient-to-r from-[#0f172a] to-[#334155] text-white">
                 <div className="container mx-auto px-4 md:px-6 text-center">
-                    <h1 className="text-4xl md:text-6xl font-bold text-primary">UI/UX Development</h1>
-                    <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+                    <h1 className="text-4xl md:text-6xl font-bold">UI/UX Development</h1>
+                    <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
                         Creating intuitive, beautiful digital experiences that users love and that drive business results.
                     </p>
                     <Button asChild className="mt-8">
@@ -244,17 +244,17 @@ export default function UiUxDevelopmentPage() {
             </section>
 
              {/* Values Section */}
-            <section className="w-full py-20 md:py-24">
+            <section className="w-full py-20 md:py-24 bg-gradient-to-r from-slate-500 to-slate-400 text-white">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Design Principles</h2>
-                        <p className="mt-2 text-muted-foreground">The foundation of our approach to creating exceptional user experiences.</p>
+                        <h2 className="text-3xl md:text-4xl font-bold">Our Design Principles</h2>
+                        <p className="mt-2 text-slate-200">The foundation of our approach to creating exceptional user experiences.</p>
                     </div>
                     <div className="grid md:grid-cols-2 gap-8">
                         {values.map(value => (
-                            <Card key={value.title} className="p-6 hover:shadow-lg transition-all duration-300">
+                            <Card key={value.title} className="p-6 bg-white/10 border-white/20 text-white">
                                 <CardTitle className="text-xl mb-2">{value.title}</CardTitle>
-                                <CardDescription>{value.description}</CardDescription>
+                                <CardDescription className="text-gray-300">{value.description}</CardDescription>
                             </Card>
                         ))}
                     </div>
@@ -304,36 +304,36 @@ export default function UiUxDevelopmentPage() {
             </section>
 
             {/* Contact Section */}
-            <section id="contact" className="w-full py-20 md:py-24">
+            <section id="contact" className="w-full py-20 md:py-24 bg-gradient-to-r from-[#d1d5db] via-[#6b7280] to-[#374151]">
                  <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="flex flex-col space-y-8">
                             <div>
-                                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Free Consultation - Discuss Your UX Needs</h2>
-                                <p className="mt-4 max-w-2xl text-muted-foreground">
+                                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gray-800">Free Consultation - Discuss Your UX Needs</h2>
+                                <p className="mt-4 max-w-2xl text-gray-700">
                                     Let's talk about how we can improve your product's user experience. Our experts will provide a free analysis and tailored recommendations.
                                 </p>
                             </div>
                             <div className="space-y-6">
                                 <div className="flex items-center gap-4">
-                                    <Mail className="w-6 h-6 text-accent" />
-                                    <a href="mailto:sulzax0@gmail.com" className="text-lg hover:text-accent transition-colors">sulzax0@gmail.com</a>
+                                    <Mail className="w-6 h-6 text-gray-800" />
+                                    <a href="mailto:sulzax0@gmail.com" className="text-lg text-gray-700 hover:text-gray-800 transition-colors">sulzax0@gmail.com</a>
                                 </div>
                                 <div className="flex items-center gap-4">
-                                    <Phone className="w-6 h-6 text-accent" />
-                                    <a href="tel:03045865181" className="text-lg hover:text-accent transition-colors">03045865181</a>
+                                    <Phone className="w-6 h-6 text-gray-800" />
+                                    <a href="tel:03045865181" className="text-lg text-gray-700 hover:text-gray-800 transition-colors">03045865181</a>
                                 </div>
                                 <div className="flex items-center gap-4">
-                                    <MapPin className="w-6 h-6 text-accent" />
+                                    <MapPin className="w-6 h-6 text-gray-800" />
                                     <div>
-                                        <p className="text-lg">5 South Forge Lane Cherry Hill, NJ 08002</p>
-                                        <a href="#" className="text-sm text-accent hover:underline">Open map</a>
+                                        <p className="text-lg text-gray-700">5 South Forge Lane Cherry Hill, NJ 08002</p>
+                                        <a href="#" className="text-sm text-gray-800 hover:underline">Open map</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="w-full max-w-md mx-auto">
-                        <ContactForm cardTitle="Schedule A Free Consultation" cardDescription="" />
+                        <ContactForm />
                         </div>
                     </div>
                 </div>

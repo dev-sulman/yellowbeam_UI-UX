@@ -316,7 +316,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="expertise" className="w-full py-16 md:py-24 lg:py-32 bg-secondary/30">
+      <section id="expertise" className="w-full py-16 md:py-24 lg:py-32 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {expertisePoints.map((point, index) => (
@@ -361,7 +361,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="industries" className="w-full pt-16 md:pt-24 pb-16 md:pb-24 lg:pb-32 bg-white dark:bg-background">
+      <section id="industries" className="w-full pt-16 md:pt-24 pb-16 md:pb-24 lg:pb-32 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
             <div className="space-y-4">

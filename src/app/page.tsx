@@ -281,11 +281,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services-grid" className="w-full py-16 md:py-24 lg:py-32 bg-white dark:bg-background">
+      <section id="services-grid" className="w-full py-16 md:py-24 lg:py-32">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
             <Badge variant="outline" className="border-accent/20 text-accent font-semibold mb-4">We are a team of humans</Badge>
-            <h2 className="text-3xl font-normal tracking-tighter sm:text-4xl text-black dark:text-white">
+            <h2 className="text-3xl font-normal tracking-tighter sm:text-4xl text-white">
               Our Services for Growing Your Business
             </h2>
           </div>

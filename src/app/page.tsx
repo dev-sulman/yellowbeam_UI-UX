@@ -315,16 +315,26 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="industries" className="w-full pt-16 md:pt-24 pb-16 md:pb-24 lg:pb-32 bg-white">
+      <section 
+        id="industries" 
+        className="w-full pt-16 md:pt-24 pb-16 md:pb-24 lg:pb-32 relative bg-black"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(75, 85, 99, 0.4) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(75, 85, 99, 0.4) 1px, transparent 1px)
+          `,
+          backgroundSize: "40px 40px",
+        }}
+      >
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
             <div className="space-y-4">
-              <Badge variant="outline" className="bg-secondary text-accent font-semibold border-accent/20">INDUSTRIES</Badge>
-              <h2 className="text-3xl font-normal tracking-tighter sm:text-4xl text-black dark:text-white">
+              <Badge variant="outline" className="bg-accent/10 text-accent font-semibold border-accent/20">INDUSTRIES</Badge>
+              <h2 className="text-3xl font-normal tracking-tighter sm:text-4xl text-white">
                 We Help Power Industries Of All Kinds To <br /> Boost ROI And Find New Clients
               </h2>
             </div>
-            <Link href="/services" className="text-sm font-semibold text-black dark:text-white hover:underline mt-4 md:mt-0">
+            <Link href="/services" className="text-sm font-semibold text-white hover:underline mt-4 md:mt-0">
               View All Industries <ArrowRight className="inline-block ml-1 h-4 w-4" />
             </Link>
           </div>
@@ -333,7 +343,7 @@ export default function Home() {
                 <Link 
                     href={industry.href} 
                     key={industry.name} 
-                    className="group flex items-center gap-4 p-4 rounded-lg bg-secondary/50 text-foreground hover:bg-[#2D4FE1] hover:text-white transition-all duration-300 ease-in-out hover:translate-x-1"
+                    className="group flex items-center gap-4 p-4 rounded-lg bg-gray-900/50 text-white hover:bg-accent/80 hover:text-white transition-all duration-300 ease-in-out hover:translate-x-1 border border-gray-700 hover:border-accent"
                 >
                     <div className="text-accent group-hover:text-white transition-colors duration-300">
                         {React.cloneElement(industry.icon, { className: 'w-6 h-6' })}

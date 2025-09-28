@@ -167,7 +167,7 @@ export default function Header() {
     if (children) {
         return (
             <Collapsible>
-                <CollapsibleTrigger className="flex justify-between items-center w-full px-2 py-2 text-lg font-semibold text-foreground">
+                <CollapsibleTrigger className="flex justify-between items-center w-full px-2 py-2 text-base font-normal text-white">
                     {label}
                     <ChevronDown className="w-5 h-5" />
                 </CollapsibleTrigger>
@@ -185,8 +185,8 @@ export default function Header() {
             href={href}
             onClick={() => setIsSheetOpen(false)}
             className={cn(
-                'block px-2 py-2 text-lg font-semibold',
-                pathname === href ? 'text-accent' : 'text-foreground'
+                'block px-2 py-2 text-base font-normal',
+                pathname === href ? 'text-accent' : 'text-white'
             )}
         >
             {label}
@@ -196,11 +196,11 @@ export default function Header() {
 
 const MobileServiceLinks = () => (
     <>
-        <h4 className="font-bold text-muted-foreground text-base mb-2 mt-3">Development</h4>
+        <h4 className="font-semibold text-muted-foreground text-sm mb-2 mt-3 px-2">Development</h4>
         {serviceCategories.development.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
-        <h4 className="font-bold text-muted-foreground text-base mb-2 mt-3">Design</h4>
+        <h4 className="font-semibold text-muted-foreground text-sm mb-2 mt-3 px-2">Design</h4>
         {serviceCategories.design.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
-        <h4 className="font-bold text-muted-foreground text-base mb-2 mt-3">Marketing</h4>
+        <h4 className="font-semibold text-muted-foreground text-sm mb-2 mt-3 px-2">Marketing</h4>
         {serviceCategories.marketing.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
     </>
 );
@@ -249,12 +249,12 @@ const MobileServiceLinks = () => (
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px] p-0 bg-background border-l">
+              <SheetContent side="right" className="w-[300px] sm:w-[400px] p-0 bg-[#1e293b] border-l-0" showCloseButton={false}>
                  <div className="h-full w-full">
                     <ScrollArea className="h-full">
                         <div className="p-6">
                             <div className="relative mb-6">
-                                <Input placeholder="What are you looking for?" className="pr-10 h-11" />
+                                <Input placeholder="What are you looking for?" className="pr-10 h-11 bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400 focus:ring-accent" />
                                 <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                             </div>
                             <nav className="flex flex-col gap-1">
@@ -275,4 +275,3 @@ const MobileServiceLinks = () => (
     </header>
   );
 }
-

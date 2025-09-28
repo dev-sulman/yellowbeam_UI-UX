@@ -35,7 +35,7 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
        <body className={cn("font-body bg-background text-foreground antialiased min-h-screen flex flex-col", fontHeadline.variable, fontBody.variable)}>
-        <div className="flex-grow w-full">
+        <div className="flex-grow">
           <div className="p-2">
             <div className="mx-auto max-w-screen-2xl">
               <Header />
@@ -43,7 +43,13 @@ export default async function RootLayout({
             </div>
           </div>
         </div>
-        <Footer />
+        <div className="w-full">
+            <div className="p-2 pt-0">
+                 <div className="mx-auto max-w-screen-2xl">
+                    <Footer />
+                </div>
+            </div>
+        </div>
         <Toaster />
       </body>
     </html>

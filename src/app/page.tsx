@@ -236,7 +236,7 @@ export default function Home() {
 
   return (
     <div className="font-body text-base">
-      <section className="w-full pt-16 md:pt-24 lg:pt-32">
+      <section className="w-full pt-16 md:pt-24 lg:pt-32 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
             <div className="flex flex-col justify-center space-y-4">

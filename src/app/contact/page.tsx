@@ -43,13 +43,13 @@ const locations = [
 export default function ContactPage() {
   return (
     <div className="bg-background text-foreground">
-      <div className="bg-secondary/30 flex items-center justify-center pt-20 md:pt-24 pb-12">
+      <div className="bg-gradient-to-r from-[#0f172a] to-[#334155] flex items-center justify-center pt-20 md:pt-24 pb-12">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-8">
+              <div className="space-y-8 text-white">
                   <Badge className="bg-accent/10 text-accent border-accent/20">CONTACT US</Badge>
-                  <h1 className="text-5xl md:text-6xl font-bold text-primary tracking-tight">We'd Love To Help</h1>
-                  <p className="text-muted-foreground text-lg max-w-lg">
+                  <h1 className="text-5xl md:text-6xl font-bold tracking-tight">We'd Love To Help</h1>
+                  <p className="text-gray-300 text-lg max-w-lg">
                       Enabled a startup to launch a successful mobile app by providing end-to-end development, leading to high downloads and recognition.
                   </p>
                   <div className="flex space-x-4">
@@ -59,24 +59,24 @@ export default function ContactPage() {
                           </Link>
                       ))}
                   </div>
-                  <div className="space-y-6 pt-6 border-t">
+                  <div className="space-y-6 pt-6 border-t border-gray-700">
                       <div className="flex items-center gap-4">
                           <div className="p-3 bg-accent rounded-full">
                               <Phone className="w-6 h-6 text-accent-foreground" />
                           </div>
-                          <a href="tel:03045865181" className="text-lg text-foreground hover:text-accent transition-colors">03045865181</a>
+                          <a href="tel:03045865181" className="text-lg text-white hover:text-accent transition-colors">03045865181</a>
                       </div>
                       <div className="flex items-center gap-4">
                           <div className="p-3 bg-accent rounded-full">
                               <Mail className="w-6 h-6 text-accent-foreground" />
                           </div>
-                          <a href="mailto:sulzax0@gmail.com" className="text-lg text-foreground hover:text-accent transition-colors">sulzax0@gmail.com</a>
+                          <a href="mailto:sulzax0@gmail.com" className="text-lg text-white hover:text-accent transition-colors">sulzax0@gmail.com</a>
                       </div>
                       <div className="flex items-center gap-4">
                           <div className="p-3 bg-accent rounded-full">
                               <MapPin className="w-6 h-6 text-accent-foreground" />
                           </div>
-                          <p className="text-lg text-foreground">5 South Forge Lane, Cherry Hill, NJ 08002</p>
+                          <p className="text-lg text-white">5 South Forge Lane, Cherry Hill, NJ 08002</p>
                       </div>
                   </div>
               </div>

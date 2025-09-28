@@ -74,7 +74,7 @@ export default function AboutUsPage() {
             </section>
 
              {/* Values Section */}
-            <section className="w-full py-20 md:py-24 bg-gradient-to-r from-slate-500 to-slate-400">
+            <section className="w-full py-20 md:py-24 bg-gradient-to-r from-[#0f172a] to-[#334155]">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-white">Our Core Values</h2>
@@ -116,10 +116,10 @@ export default function AboutUsPage() {
             </section>
 
              {/* CTA Section */}
-            <section className="w-full py-20 md:py-24 bg-gradient-to-r from-[#d1d5db] via-[#6b7280] to-[#374151]">
+            <section className="w-full py-20 md:py-24 bg-gradient-to-r from-[#0f172a] to-[#334155]">
                 <div className="container mx-auto px-4 md:px-6 text-center">
-                     <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Ready to Start Your Project?</h2>
-                     <p className="text-gray-700 max-w-2xl mx-auto mb-8">Let's build something amazing together. Contact us today for a free consultation and let's discuss how we can help you achieve your business goals.</p>
+                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Start Your Project?</h2>
+                     <p className="text-gray-300 max-w-2xl mx-auto mb-8">Let's build something amazing together. Contact us today for a free consultation and let's discuss how we can help you achieve your business goals.</p>
                      <Button asChild size="lg">
                         <Link href="/contact">Get in Touch</Link>
                     </Button>

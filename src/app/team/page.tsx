@@ -90,7 +90,7 @@ export default function TeamPage() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {teamMembers.map((member) => (
               <Card key={member.name} className="overflow-hidden text-center group hover:shadow-xl transition-shadow duration-300">
-                <div className="relative bg-gradient-to-r from-slate-500 to-slate-400">
+                <div className="relative bg-gradient-to-r from-[#0f172a] to-[#334155]">
                   <Image
                     src={member.image}
                     alt={member.name}

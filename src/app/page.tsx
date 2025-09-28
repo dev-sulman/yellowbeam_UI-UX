@@ -206,10 +206,10 @@ export default function Home() {
           <div className="grid gap-6 md:grid-cols-2 md:gap-12 items-center">
             <div className="flex flex-col justify-center space-y-4 text-center md:text-left">
               <div className="space-y-2">
-                <h1 className="text-4xl font-bold tracking-tighter text-white sm:text-5xl lg:text-6xl/none">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tighter text-white">
                   Transform Your Business with Custom IT Solutions
                 </h1>
-                <p className="max-w-[600px] text-gray-300 text-base sm:text-lg md:text-xl mx-auto md:mx-0">
+                <p className="max-w-[600px] text-gray-300 text-sm sm:text-base md:text-lg mx-auto md:mx-0">
                   At SulzaX, we create high-quality, custom websites that are both visually appealing and functional. We also integrate SEO to boost your site's visibility and help attract the right audience, driving business growth.
                 </p>
               </div>

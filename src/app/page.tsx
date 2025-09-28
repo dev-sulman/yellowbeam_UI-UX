@@ -275,7 +275,7 @@ export default function Home() {
 
       <section id="about-us" className="w-full py-16 md:py-24 mb-[5px] bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="rounded-xl p-6 md:p-8 lg:p-12 bg-gradient-to-r from-[#0f172a] to-[#334155] border shadow-sm">
+          <div className="rounded-xl p-6 md:space-y-0 md:p-8 lg:p-12 bg-gradient-to-r from-[#0f172a] to-[#334155] border shadow-sm">
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
               <div className="space-y-4 md:space-y-6">
                 <Badge className="bg-accent text-accent-foreground">ABOUT US</Badge>
@@ -325,11 +325,11 @@ export default function Home() {
               Our Services for Growing Your Business
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Link key={index} href={service.href || '#'} className="group">
                 <Card className={cn(
-                    "shadow-lg rounded-lg p-8 text-center hover:shadow-xl transition-shadow duration-300 h-full",
+                    "shadow-lg rounded-lg p-6 md:p-8 text-center hover:shadow-xl transition-shadow duration-300 h-full",
                     service.title === 'Mobile Development'
                       ? "bg-gradient-to-t from-[#0f172a] to-[#334155] text-white"
                       : "bg-white dark:bg-card"

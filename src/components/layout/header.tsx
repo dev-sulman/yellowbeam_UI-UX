@@ -54,9 +54,9 @@ const SulzaXLogo = () => (
           fill="black"
           letterSpacing="0.5">S</text>
       </g>
-      <text x="350" y="170"
+      <text x="350" y="175"
             fontFamily="Outfit, Poppins, Montserrat, Segoe UI, Arial, sans-serif"
-            fontSize="120" fontWeight="800"
+            fontSize="140" fontWeight="800"
             fill="black" letterSpacing="-1">
         Sulza<tspan fill="url(#gBlue)">X</tspan>
       </text>

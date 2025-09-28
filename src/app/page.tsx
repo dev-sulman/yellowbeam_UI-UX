@@ -281,11 +281,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services-grid" className="w-full py-16 md:py-24 lg:py-32 bg-black">
+      <section id="services-grid" className="w-full py-16 md:py-24 lg:py-32 bg-white dark:bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
             <Badge variant="outline" className="border-accent/20 text-accent font-semibold mb-4">We are a team of humans</Badge>
-            <h2 className="text-3xl font-normal tracking-tighter sm:text-4xl text-white">
+            <h2 className="text-3xl font-normal tracking-tighter sm:text-4xl text-foreground">
               Our Services for Growing Your Business
             </h2>
           </div>
@@ -294,20 +294,20 @@ export default function Home() {
               <Link key={index} href={service.href || '#'} className="group">
                 <Card className={cn(
                     "shadow-lg rounded-lg p-6 md:p-8 text-center hover:shadow-xl transition-shadow duration-300 h-full",
-                    "bg-gradient-to-t from-[#0f172a] to-[#334155] text-white"
+                    "bg-card text-card-foreground"
                 )}>
                   <div className="flex justify-center items-center mb-4">
-                    <div className="p-3 rounded-full bg-white/10">
+                    <div className="p-3 rounded-full bg-secondary">
                       {React.cloneElement(service.icon, {
-                        className: "w-8 h-8 text-white",
+                        className: "w-8 h-8 text-accent",
                       })}
                     </div>
                   </div>
-                  <h3 className="text-xl font-normal mb-2 relative inline-block text-white">
+                  <h3 className="text-xl font-normal mb-2 relative inline-block text-primary">
                     {service.title}
-                    <span className="absolute bottom-0 left-0 w-0 h-[1px] transition-all duration-300 group-hover:w-full bg-white"></span>
+                    <span className="absolute bottom-0 left-0 w-0 h-[1px] transition-all duration-300 group-hover:w-full bg-primary"></span>
                   </h3>
-                  <p className="text-gray-300">{service.description}</p>
+                  <p className="text-muted-foreground">{service.description}</p>
                 </Card>
               </Link>
             ))}
@@ -502,4 +502,6 @@ export default function Home() {
 }
 
     
+    
+
     

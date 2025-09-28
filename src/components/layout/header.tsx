@@ -51,13 +51,12 @@ const SulzaXLogo = () => (
           fontFamily="Outfit, Poppins, Montserrat, Segoe UI, Arial, sans-serif"
           fontSize="132"
           fontWeight="900"
-          fill="black"
-          letterSpacing="0.5">S</text>
+          fill="white">S</text>
       </g>
       <text x="350" y="175"
             fontFamily="Outfit, Poppins, Montserrat, Segoe UI, Arial, sans-serif"
             fontSize="140" fontWeight="800"
-            fill="black" letterSpacing="-1">
+            fill="white" letterSpacing="-1">
         Sulza<tspan fill="url(#gBlue)">X</tspan>
       </text>
     </svg>
@@ -160,8 +159,8 @@ export default function Header() {
   const NavLink = ({ href, children, isMega }: { href: string; children: React.ReactNode; isMega?: boolean }) => {
     const isActive = pathname === href;
     const linkClasses = cn(
-      'relative transition-colors text-sm font-medium text-foreground group flex items-center gap-1',
-      isActive ? 'text-accent' : 'hover:text-foreground/80'
+      'relative transition-colors text-sm font-medium text-white group flex items-center gap-1',
+      isActive ? 'text-accent' : 'hover:text-white/80'
     );
 
     if (isMega) {
@@ -239,7 +238,7 @@ const MobileServiceLinks = () => (
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 w-full border-b bg-white animate-fade-in-down transition-shadow',
+        'sticky top-0 z-50 w-full border-b bg-gradient-to-r from-[#0f172a] to-[#334155] border-transparent animate-fade-in-down transition-shadow',
         isScrolled ? 'shadow-md' : 'shadow-none'
       )}
     >
@@ -258,23 +257,23 @@ const MobileServiceLinks = () => (
 
         <div className="flex items-center gap-4">
             <div className="hidden md:flex items-center gap-3">
-                <div className="p-2.5 bg-secondary rounded-full text-primary">
+                <div className="p-2.5 bg-white/10 rounded-full text-white">
                     <Phone className="w-5 h-5"/>
                 </div>
                 <div>
-                    <p className="text-xs text-muted-foreground">Call us for a quote</p>
-                    <a href="tel:+12013740018" className="font-semibold text-sm hover:text-accent transition-colors">+1 (201) 374-0018</a>
+                    <p className="text-xs text-gray-300">Call us for a quote</p>
+                    <a href="tel:+12013740018" className="font-semibold text-sm text-white hover:text-accent transition-colors">+1 (201) 374-0018</a>
                 </div>
             </div>
             
-             <Button asChild>
+             <Button asChild variant="secondary">
                 <Link href="/contact" className='shine-button-2'>Contact</Link>
             </Button>
 
           <div className="lg:hidden">
             <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
+                <Button variant="ghost" size="icon" className="text-white hover:bg-white/10 hover:text-white">
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>

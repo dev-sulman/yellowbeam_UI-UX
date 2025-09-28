@@ -175,27 +175,7 @@ const SulzaXLogo = () => (
 const MarqueeItem = ({ text }: { text: string }) => (
     <div className="flex items-center space-x-4">
         <span className="text-xl font-semibold">{text}</span>
-        <svg width="180" height="48" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
-            <style>
-                {`
-                    .letter-marquee { fill: none; stroke: white; stroke-width: 2; }
-                    .hex-marquee { fill: white; }
-                `}
-            </style>
-            <text x="20" y="100" fontFamily="Arial, sans-serif" fontSize="60" className="letter-marquee">SULZA</text>
-            <g transform="translate(250, 95)">
-                <defs>
-                    <polygon id="hex-marquee" points="10,0 5,8.66 -5,8.66 -10,0 -5,-8.66 5,-8.66" />
-                </defs>
-                <use href="#hex-marquee" className="hex-marquee" x="0" y="0" />
-                <use href="#hex-marquee" className="hex-marquee" x="20" y="0" />
-                <use href="#hex-marquee" className="hex-marquee" x="-20" y="0" />
-                <use href="#hex-marquee" className="hex-marquee" x="10" y="17" />
-                <use href="#hex-marquee" className="hex-marquee" x="-10" y="17" />
-                <use href="#hex-marquee" className="hex-marquee" x="10" y="-17" />
-                <use href="#hex-marquee" className="hex-marquee" x="-10" y="-17" />
-            </g>
-        </svg>
+        <Image src="/Sulzax.svg" alt="SulzaX Logo" width={180} height={48} className="brightness-0 invert" />
     </div>
 );
 

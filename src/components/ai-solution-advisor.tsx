@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -22,18 +23,18 @@ type FormValues = z.infer<typeof FormSchema>;
 
 function SolutionCard({ solution }: { solution: SolutionRecommendation }) {
   return (
-    <Card className="flex flex-col bg-secondary/50">
+    <Card className="flex flex-col bg-gray-800/50 border-gray-700">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          <Package className="w-6 h-6 text-primary" />
+        <CardTitle className="flex items-center gap-2 text-white">
+          <Package className="w-6 h-6 text-accent" />
           {solution.solutionName}
         </CardTitle>
       </CardHeader>
       <CardContent className="flex-grow">
-        <p className="text-muted-foreground">{solution.description}</p>
+        <p className="text-gray-400">{solution.description}</p>
       </CardContent>
-      <CardFooter className="bg-secondary p-4 rounded-b-lg mt-4">
-        <div className="flex items-center font-semibold">
+      <CardFooter className="bg-gray-800 p-4 rounded-b-lg mt-4">
+        <div className="flex items-center font-semibold text-white">
           <DollarSign className="w-5 h-5 mr-2 text-accent" />
           Estimated Budget: {solution.estimatedBudget}
         </div>
@@ -90,13 +91,13 @@ export default function AiSolutionAdvisor() {
   }
 
   return (
-    <Card className="w-full shadow-lg border-accent/20">
+    <Card className="w-full shadow-lg bg-gray-900/50 backdrop-blur-sm border-gray-700">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2">
+        <CardTitle className="flex items-center gap-2 text-white">
           <Lightbulb className="w-6 h-6 text-accent" />
           Your Business Needs
         </CardTitle>
-        <CardDescription>
+        <CardDescription className="text-gray-400">
           Tell us about your project, challenges, and goals. The more detail, the better our recommendations.
         </CardDescription>
       </CardHeader>
@@ -112,7 +113,7 @@ export default function AiSolutionAdvisor() {
                   <FormControl>
                     <Textarea
                       placeholder="e.g., 'We are a growing e-commerce business and need a system to manage our inventory across multiple warehouses, integrate with our Shopify store, and provide sales analytics...'"
-                      className="min-h-[150px] text-base focus:ring-accent"
+                      className="min-h-[150px] text-base text-white bg-gray-800/50 border-gray-700 focus:ring-accent"
                       {...field}
                     />
                   </FormControl>
@@ -130,7 +131,7 @@ export default function AiSolutionAdvisor() {
       </CardContent>
 
       {(isLoading || error || recommendations.length > 0) && (
-        <CardFooter className="flex-col items-start gap-4 pt-6 border-t">
+        <CardFooter className="flex-col items-start gap-4 pt-6 border-t border-gray-700">
           {isLoading && <LoadingSpinner />}
           {error && (
             <Alert variant="destructive">
@@ -141,7 +142,7 @@ export default function AiSolutionAdvisor() {
           )}
           {recommendations.length > 0 && (
             <div className="w-full space-y-4">
-              <h3 className="text-xl font-bold">Recommended Solutions</h3>
+              <h3 className="text-xl font-bold text-white">Recommended Solutions</h3>
               <div className="grid md:grid-cols-2 gap-6">
                 {recommendations.map((rec, index) => (
                   <SolutionCard key={index} solution={rec} />

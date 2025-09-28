@@ -123,11 +123,11 @@ export default function Footer() {
       {isVisible && (
         <Button 
             onClick={scrollToTop} 
-            className="fixed bottom-8 right-5 h-10 w-10 rounded-full bg-background/80 backdrop-blur-sm shadow-lg hover:bg-slate-950 hover:text-white border text-foreground"
+            className="fixed bottom-8 right-5 h-8 w-8 rounded-full bg-background/80 backdrop-blur-sm shadow-lg hover:bg-slate-950 hover:text-white border text-foreground"
             variant="outline"
             size="icon"
         >
-            <ChevronUp className="h-5 w-5" />
+            <ChevronUp className="h-4 w-4" />
         </Button>
       )}
     </footer>

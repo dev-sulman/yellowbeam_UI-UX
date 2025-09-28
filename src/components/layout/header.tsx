@@ -247,33 +247,17 @@ const MobileServiceLinks = () => (
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px] p-0 bg-transparent border-none">
-                 <div className="h-full w-full bg-black relative">
-                    <div
-                        className="absolute inset-0 z-0"
-                        style={{
-                        background: "#000000",
-                        backgroundImage: `
-                            linear-gradient(to right, rgba(75, 85, 99, 0.4) 1px, transparent 1px),
-                            linear-gradient(to bottom, rgba(75, 85, 99, 0.4) 1px, transparent 1px)
-                        `,
-                        backgroundSize: "40px 40px",
-                        }}
-                    />
-                    <div className="relative z-10 h-full">
-                        <SheetClose asChild>
-                        <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
-                        </SheetClose>
-                        <ScrollArea className="h-full">
-                            <nav className="flex flex-col gap-1 p-6">
-                                {navLinks.map((link) => (
-                                    <MobileNavLink key={link.href} href={link.href} label={link.label}>
-                                        {link.isMega ? <MobileServiceLinks /> : undefined}
-                                    </MobileNavLink>
-                                ))}
-                            </nav>
-                        </ScrollArea>
-                    </div>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px] p-0 bg-[rgb(30,41,59)] border-none">
+                 <div className="h-full w-full">
+                    <ScrollArea className="h-full">
+                        <nav className="flex flex-col gap-1 p-6">
+                            {navLinks.map((link) => (
+                                <MobileNavLink key={link.href} href={link.href} label={link.label}>
+                                    {link.isMega ? <MobileServiceLinks /> : undefined}
+                                </MobileNavLink>
+                            ))}
+                        </nav>
+                    </ScrollArea>
                 </div>
               </SheetContent>
             </Sheet>
@@ -283,5 +267,3 @@ const MobileServiceLinks = () => (
     </header>
   );
 }
-
-    

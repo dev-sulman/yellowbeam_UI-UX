@@ -34,8 +34,8 @@ export default async function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn("font-body bg-background text-foreground antialiased min-h-screen", fontHeadline.variable, fontBody.variable)}>
-        <div className="flex flex-col flex-1 max-w-screen-2xl mx-auto w-full">
+      <body className={cn("font-body bg-background text-foreground antialiased min-h-screen flex flex-col", fontHeadline.variable, fontBody.variable)}>
+        <div className="flex-grow">
             <Header />
             <main>{children}</main>
         </div>

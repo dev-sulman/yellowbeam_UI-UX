@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
-import { Menu, ChevronDown, Phone, Briefcase, Code, Smartphone, Palette, AppWindow, Search, Megaphone, Target, MessageCircle, Mail, Youtube, Instagram, Twitter, Linkedin, Facebook, Settings, Users, BarChart, Cloud, ShieldCheck, BrainCircuit, Bot, ShoppingCart } from 'lucide-react';
+import { Menu, ChevronDown, Phone, Briefcase, Code, Smartphone, Palette, AppWindow, Search, Megaphone, Target, MessageCircle, Mail, Youtube, Instagram, Twitter, Linkedin, Facebook, Settings, BarChart, Cloud, ShieldCheck, BrainCircuit, Bot, ShoppingCart } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
@@ -13,6 +13,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
 import { Input } from '@/components/ui/input';
+import { Users } from 'lucide-react';
 
 
 const SulzaXLogo = () => (
@@ -66,28 +67,26 @@ const navLinks = [
 const ServiceMegaMenu = () => {
     return (
         <div className="grid grid-cols-3 gap-6 p-6 w-full">
-            <div className="col-span-2 grid grid-cols-2 gap-x-6 gap-y-8">
-                <div>
-                    <h4 className="font-semibold text-lg mb-4 text-white px-2">IT Services</h4>
-                    <div className="grid grid-cols-2 gap-4">
-                        {serviceCategories.itServices.map(link => (
-                            <Link key={link.href} href={link.href} className="group/item flex items-center gap-3 p-2 rounded-md hover:bg-white/10 transition-colors">
-                                <div className="text-accent">{React.cloneElement(link.icon, { className: 'w-5 h-5' })}</div>
-                                <span className="font-medium text-sm text-white">{link.label}</span>
-                            </Link>
-                        ))}
-                    </div>
+            <div>
+                <h4 className="font-semibold text-lg mb-4 text-white px-2">IT Services</h4>
+                <div className="grid grid-cols-1 gap-4">
+                    {serviceCategories.itServices.map(link => (
+                        <Link key={link.href} href={link.href} className="group/item flex items-center gap-3 p-2 rounded-md hover:bg-white/10 transition-colors">
+                            <div className="text-accent">{React.cloneElement(link.icon, { className: 'w-5 h-5' })}</div>
+                            <span className="font-medium text-sm text-white">{link.label}</span>
+                        </Link>
+                    ))}
                 </div>
-                <div className="col-start-1">
-                    <h4 className="font-semibold text-lg mb-4 text-white px-2">Digital Agency</h4>
-                     <div className="grid grid-cols-2 gap-4">
-                        {serviceCategories.digitalAgency.map(link => (
-                            <Link key={link.href} href={link.href} className="group/item flex items-center gap-3 p-2 rounded-md hover:bg-white/10 transition-colors">
-                                <div className="text-accent">{React.cloneElement(link.icon, { className: 'w-5 h-5' })}</div>
-                                <span className="font-medium text-sm text-white">{link.label}</span>
-                            </Link>
-                        ))}
-                    </div>
+            </div>
+            <div>
+                <h4 className="font-semibold text-lg mb-4 text-white px-2">Digital Agency</h4>
+                 <div className="grid grid-cols-1 gap-4">
+                    {serviceCategories.digitalAgency.map(link => (
+                        <Link key={link.href} href={link.href} className="group/item flex items-center gap-3 p-2 rounded-md hover:bg-white/10 transition-colors">
+                            <div className="text-accent">{React.cloneElement(link.icon, { className: 'w-5 h-5' })}</div>
+                            <span className="font-medium text-sm text-white">{link.label}</span>
+                        </Link>
+                    ))}
                 </div>
             </div>
             <div className="bg-black/20 rounded-lg p-6 flex flex-col justify-between">

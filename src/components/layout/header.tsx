@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
-import { Menu, ChevronDown, Phone, Briefcase, Code, Smartphone, Palette, AppWindow, Search, Megaphone, Target, MessageCircle, Mail, Youtube, Instagram, Twitter, Linkedin, Facebook, Settings, BarChart, Cloud, ShieldCheck, BrainCircuit, Bot, ShoppingCart } from 'lucide-react';
+import { Menu, ChevronDown, Phone, Briefcase, Code, Smartphone, Palette, AppWindow, Search, Megaphone, Target, MessageCircle, Mail, Youtube, Instagram, Twitter, Linkedin, Facebook, Settings, BarChart, Cloud, ShieldCheck, BrainCircuit, Bot, ShoppingCart, Users } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
@@ -13,7 +13,6 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
 import { Input } from '@/components/ui/input';
-import { Users } from 'lucide-react';
 
 
 const SulzaXLogo = () => (
@@ -98,9 +97,9 @@ const ServiceMegaMenu = () => {
                      </Button>
                 </div>
                  <div className="mt-6 pt-6 border-t border-white/20">
-                    <a href="mailto:contact@zeofix.com" className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors mb-3">
+                    <a href="mailto:sulzax0@gmail.com" className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors mb-3">
                         <Mail className="w-4 h-4"/>
-                        contact@zeofix.com
+                        sulzax0@gmail.com
                     </a>
                      <a href="tel:+12013740018" className="flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors mb-4">
                         <Phone className="w-4 h-4"/>

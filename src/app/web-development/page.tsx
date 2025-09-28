@@ -54,24 +54,26 @@ export default function WebDevelopmentPage() {
             </section>
 
             {/* History Section */}
-            <section className="container mx-auto px-4 md:px-6 py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">100 Years Of History Serving The Poconos Region</h2>
-                        <div className="flex items-center gap-4">
-                            <Image src="https://cdn.dribbble.com/users/3562273/avatars/small/0c694d76da8cc6696453f2c301fe51f3.jpg?1744785508/80x80.png" alt="Tony Nguyen" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
-                            <div>
-                                <p className="font-semibold">Tony Nguyen, CEO, SulzaX</p>
-                                <p className="text-muted-foreground">"Unlock your business potential today!"</p>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">100 Years Of History Serving The Poconos Region</h2>
+                            <div className="flex items-center gap-4">
+                                <Image src="https://cdn.dribbble.com/users/3562273/avatars/small/0c694d76da8cc6696453f2c301fe51f3.jpg?1744785508/80x80.png" alt="Tony Nguyen" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                                <div>
+                                    <p className="font-semibold">Tony Nguyen, CEO, SulzaX</p>
+                                    <p className="text-muted-foreground">"Unlock your business potential today!"</p>
+                                </div>
                             </div>
+                            <p className="text-muted-foreground">Supported by experienced web development experts, we focus on creating beautiful, functional websites that drive results. We build stable, scalable platforms and ensure your digital presence is secure and effective.</p>
+                            <Button asChild>
+                                <Link href="/about">About Us</Link>
+                            </Button>
                         </div>
-                        <p className="text-muted-foreground">Supported by experienced web development experts, we focus on creating beautiful, functional websites that drive results. We build stable, scalable platforms and ensure your digital presence is secure and effective.</p>
-                        <Button asChild>
-                            <Link href="/about">About Us</Link>
-                        </Button>
-                    </div>
-                    <div>
-                        <Image src="https://images.unsplash.com/photo-1669023414180-4dcf35d943e1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fHdlYiUyMGRldmVsb3BtZW50fGVufDB8fDB8fHww/600x400.png" alt="Team discussing web design" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="web design meeting" />
+                        <div>
+                            <Image src="https://images.unsplash.com/photo-1669023414180-4dcf35d943e1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fHdlYiUyMGRldmVsb3BtZW50fGVufDB8fDB8fHww/600x400.png" alt="Team discussing web design" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="web design meeting" />
+                        </div>
                     </div>
                 </div>
             </section>
@@ -95,58 +97,62 @@ export default function WebDevelopmentPage() {
             </section>
 
             {/* About Us Snippet */}
-            <section className="container mx-auto px-4 md:px-6 py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                         <Image src="https://images.unsplash.com/photo-1554902843-260acd0993f8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D/600x400.png" alt="Team working on code" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team coding" />
-                    </div>
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Simplify Tech Challenges with Our Responsive Development Team</h2>
-                        <p className="text-muted-foreground">Welcome to SulzaX, your trusted companion in the realm of IT services. We take pride in being a dedicated partner, committed to delivering state-of-the-art solutions that propel the future of your business.</p>
-                        <div className="flex gap-8">
-                            <div>
-                                <p className="text-4xl font-bold text-accent">20</p>
-                                <p className="text-muted-foreground">Years experience</p>
-                            </div>
-                            <div>
-                                <p className="text-4xl font-bold text-accent">1.8k</p>
-                                <p className="text-muted-foreground">Happy customers</p>
-                            </div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                             <Image src="https://images.unsplash.com/photo-1554902843-260acd0993f8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D/600x400.png" alt="Team working on code" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team coding" />
                         </div>
-                        <Button asChild variant="outline">
-                            <Link href="/team">Meet our team</Link>
-                        </Button>
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Simplify Tech Challenges with Our Responsive Development Team</h2>
+                            <p className="text-muted-foreground">Welcome to SulzaX, your trusted companion in the realm of IT services. We take pride in being a dedicated partner, committed to delivering state-of-the-art solutions that propel the future of your business.</p>
+                            <div className="flex gap-8">
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">20</p>
+                                    <p className="text-muted-foreground">Years experience</p>
+                                </div>
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">1.8k</p>
+                                    <p className="text-muted-foreground">Happy customers</p>
+                                </div>
+                            </div>
+                            <Button asChild variant="outline">
+                                <Link href="/team">Meet our team</Link>
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* Why Choose Us Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Elevate Productivity with Our Expert Web Services</h2>
-                         <p className="text-muted-foreground">Welcome to SulzaX, your trusted companion in the realm of IT services. We are committed to delivering state-of-the-art solutions.</p>
-                        <div className="space-y-4">
-                            {whyChooseUsPoints.map(point => (
-                                <div key={point.title} className="flex items-start gap-4">
-                                    <CheckCircle className="w-6 h-6 text-accent mt-1" />
-                                    <div>
-                                        <h3 className="font-semibold text-lg">{point.title}</h3>
-                                        <p className="text-muted-foreground">{point.description}</p>
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Elevate Productivity with Our Expert Web Services</h2>
+                             <p className="text-muted-foreground">Welcome to SulzaX, your trusted companion in the realm of IT services. We are committed to delivering state-of-the-art solutions.</p>
+                            <div className="space-y-4">
+                                {whyChooseUsPoints.map(point => (
+                                    <div key={point.title} className="flex items-start gap-4">
+                                        <CheckCircle className="w-6 h-6 text-accent mt-1" />
+                                        <div>
+                                            <h3 className="font-semibold text-lg">{point.title}</h3>
+                                            <p className="text-muted-foreground">{point.description}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <Image src="https://images.unsplash.com/photo-1556565681-67b9cd907d20?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D/600x400.png" alt="Website analytics" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="website analytics" />
+                        <div>
+                            <Image src="https://images.unsplash.com/photo-1556565681-67b9cd907d20?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D/600x400.png" alt="Website analytics" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="website analytics" />
+                        </div>
                     </div>
                 </div>
             </section>
 
              {/* Values Section */}
-            <section className="container mx-auto px-4 md:px-6 py-20 md:py-24">
-                <div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Journey Through Time</h2>
                         <p className="mt-2 text-muted-foreground">Discover exceptional experiences through testimonials from our satisfied customers.</p>
@@ -175,8 +181,8 @@ export default function WebDevelopmentPage() {
             </section>
 
              {/* Testimonials Section */}
-            <section className="container mx-auto px-4 md:px-6 py-20 md:py-24">
-                <div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-8">
                         {teamMembers.map((member) => (
                             <Card key={member.name} className="p-6 flex items-start gap-4">
@@ -193,35 +199,37 @@ export default function WebDevelopmentPage() {
             </section>
 
             {/* Contact Section */}
-            <section className="container mx-auto px-4 md:px-6 py-20 md:py-24">
-                 <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="flex flex-col space-y-8">
-                        <div>
-                            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Free Consultation - Discover Web Solutions</h2>
-                            <p className="mt-4 max-w-2xl text-muted-foreground">
-                                Unlock the full potential of your business with our free consultation. Our expert team will assess your web needs, recommend tailored solutions, and chart a path to success.
-                            </p>
-                        </div>
-                        <div className="space-y-6">
-                            <div className="flex items-center gap-4">
-                                <Mail className="w-6 h-6 text-accent" />
-                                <a href="mailto:sulzax0@gmail.com" className="text-lg hover:text-accent transition-colors">sulzax0@gmail.com</a>
+            <section className="py-20 md:py-24">
+                 <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="flex flex-col space-y-8">
+                            <div>
+                                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Free Consultation - Discover Web Solutions</h2>
+                                <p className="mt-4 max-w-2xl text-muted-foreground">
+                                    Unlock the full potential of your business with our free consultation. Our expert team will assess your web needs, recommend tailored solutions, and chart a path to success.
+                                </p>
                             </div>
-                            <div className="flex items-center gap-4">
-                                <Phone className="w-6 h-6 text-accent" />
-                                <a href="tel:03045865181" className="text-lg hover:text-accent transition-colors">03045865181</a>
-                            </div>
-                            <div className="flex items-center gap-4">
-                                <MapPin className="w-6 h-6 text-accent" />
-                                <div>
-                                    <p className="text-lg">5 South Forge Lane Cherry Hill, NJ 08002</p>
-                                    <a href="#" className="text-sm text-accent hover:underline">Open map</a>
+                            <div className="space-y-6">
+                                <div className="flex items-center gap-4">
+                                    <Mail className="w-6 h-6 text-accent" />
+                                    <a href="mailto:sulzax0@gmail.com" className="text-lg hover:text-accent transition-colors">sulzax0@gmail.com</a>
+                                </div>
+                                <div className="flex items-center gap-4">
+                                    <Phone className="w-6 h-6 text-accent" />
+                                    <a href="tel:03045865181" className="text-lg hover:text-accent transition-colors">03045865181</a>
+                                </div>
+                                <div className="flex items-center gap-4">
+                                    <MapPin className="w-6 h-6 text-accent" />
+                                    <div>
+                                        <p className="text-lg">5 South Forge Lane Cherry Hill, NJ 08002</p>
+                                        <a href="#" className="text-sm text-accent hover:underline">Open map</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="w-full max-w-md mx-auto">
-                    <ContactForm cardTitle="Schedule A Free Consultation" cardDescription="" />
+                        <div className="w-full max-w-md mx-auto">
+                        <ContactForm cardTitle="Schedule A Free Consultation" cardDescription="" />
+                        </div>
                     </div>
                 </div>
             </section>

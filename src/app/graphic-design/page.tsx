@@ -125,45 +125,47 @@ export default function GraphicDesignPage() {
         <div className="bg-background text-foreground">
             {/* Hero Section */}
             <section className="relative py-20 md:py-32 bg-secondary/30">
-                <div className="container text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold text-primary">Graphic Design</h1>
                     <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">We work with your company to make sure your brand is positioned as a central signature with a consistent identity displayed across multiple media channels and applications.</p>
                 </div>
             </section>
 
             {/* Intro Section */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Crafting Visual Stories That Connect</h2>
-                        <div className="flex items-center gap-4">
-                            <Image src="/two.jpg" alt="Laura Chen" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
-                            <div>
-                                <p className="font-semibold">Laura Chen, Head of Design, SulzaX</p>
-                                <p className="text-muted-foreground">"Good design is good business."</p>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Crafting Visual Stories That Connect</h2>
+                            <div className="flex items-center gap-4">
+                                <Image src="/two.jpg" alt="Laura Chen" width={80} height={80} className="rounded-full" data-ai-hint="professional headshot" />
+                                <div>
+                                    <p className="font-semibold">Laura Chen, Head of Design, SulzaX</p>
+                                    <p className="text-muted-foreground">"Good design is good business."</p>
+                                </div>
                             </div>
+                            <p className="text-muted-foreground">We are a team of passionate designers who believe in the power of visual communication. We create compelling designs that captivate audiences and elevate brands.</p>
+                            <Button asChild>
+                                <Link href="/about">About Us</Link>
+                            </Button>
                         </div>
-                        <p className="text-muted-foreground">We are a team of passionate designers who believe in the power of visual communication. We create compelling designs that captivate audiences and elevate brands.</p>
-                        <Button asChild>
-                            <Link href="/about">About Us</Link>
-                        </Button>
-                    </div>
-                    <div>
-                        <Image 
-                            src="https://plus.unsplash.com/premium_photo-1720032305135-a87c5e0888b6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQ3fHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D" 
-                            alt="Design team collaborating" 
-                            width={600} 
-                            height={400} 
-                            className="rounded-lg shadow-lg" 
-                            data-ai-hint="design team meeting" 
-                        />
+                        <div>
+                            <Image 
+                                src="https://plus.unsplash.com/premium_photo-1720032305135-a87c5e0888b6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQ3fHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D" 
+                                alt="Design team collaborating" 
+                                width={600} 
+                                height={400} 
+                                className="rounded-lg shadow-lg" 
+                                data-ai-hint="design team meeting" 
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
             
             {/* Services Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Design Services</h2>
                         <p className="mt-2 text-muted-foreground">Comprehensive design solutions to meet your brand's needs.</p>
@@ -181,72 +183,76 @@ export default function GraphicDesignPage() {
             </section>
 
             {/* About Us Snippet */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                         <Image 
-                            src="https://plus.unsplash.com/premium_photo-1688704908992-7429b43db20d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTgzfHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D" 
-                            alt="Designer at work" 
-                            width={600} 
-                            height={400} 
-                            className="rounded-lg shadow-lg" 
-                            data-ai-hint="designer working computer" 
-                         />
-                    </div>
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Creative Partner</h2>
-                        <p className="text-muted-foreground">At SulzaX, we blend artistry with strategy. We are dedicated to creating designs that not only look good but also achieve business objectives and resonate with your target audience.</p>
-                        <div className="flex gap-8">
-                            <div>
-                                <p className="text-4xl font-bold text-accent">300+</p>
-                                <p className="text-muted-foreground">Brands Transformed</p>
-                            </div>
-                            <div>
-                                <p className="text-4xl font-bold text-accent">1000+</p>
-                                <p className="text-muted-foreground">Projects Completed</p>
-                            </div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                             <Image 
+                                src="https://plus.unsplash.com/premium_photo-1688704908992-7429b43db20d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTgzfHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D" 
+                                alt="Designer at work" 
+                                width={600} 
+                                height={400} 
+                                className="rounded-lg shadow-lg" 
+                                data-ai-hint="designer working computer" 
+                             />
                         </div>
-                        <Button asChild variant="outline">
-                            <Link href="/team">Meet our team</Link>
-                        </Button>
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Creative Partner</h2>
+                            <p className="text-muted-foreground">At SulzaX, we blend artistry with strategy. We are dedicated to creating designs that not only look good but also achieve business objectives and resonate with your target audience.</p>
+                            <div className="flex gap-8">
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">300+</p>
+                                    <p className="text-muted-foreground">Brands Transformed</p>
+                                </div>
+                                <div>
+                                    <p className="text-4xl font-bold text-accent">1000+</p>
+                                    <p className="text-muted-foreground">Projects Completed</p>
+                                </div>
+                            </div>
+                            <Button asChild variant="outline">
+                                <Link href="/team">Meet our team</Link>
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* Why Choose Us Section - ERROR FIXED HERE */}
+            {/* Why Choose Us Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
-                        <h2 className="text-3xl md:text-4xl font-bold text-primary">Why Partner with SulzaX for Design?</h2>
-                         <p className="text-muted-foreground">We combine artistic flair with strategic thinking to deliver designs that are not only beautiful but also effective.</p>
-                        <div className="space-y-4">
-                            {whyChooseUsPoints.map(point => (
-                                <div key={point.title} className="flex items-start gap-4">
-                                    <CheckCircle className="w-6 h-6 text-accent mt-1" />
-                                    <div>
-                                        <h3 className="font-semibold text-lg">{point.title}</h3>
-                                        <p className="text-muted-foreground">{point.description}</p>
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                            <h2 className="text-3xl md:text-4xl font-bold text-primary">Why Partner with SulzaX for Design?</h2>
+                             <p className="text-muted-foreground">We combine artistic flair with strategic thinking to deliver designs that are not only beautiful but also effective.</p>
+                            <div className="space-y-4">
+                                {whyChooseUsPoints.map(point => (
+                                    <div key={point.title} className="flex items-start gap-4">
+                                        <CheckCircle className="w-6 h-6 text-accent mt-1" />
+                                        <div>
+                                            <h3 className="font-semibold text-lg">{point.title}</h3>
+                                            <p className="text-muted-foreground">{point.description}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <Image 
-                            src="https://plus.unsplash.com/premium_photo-1689700527718-257b67a4abd0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTk1fHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D" 
-                            alt="Moodboard with design concepts" 
-                            width={600} 
-                            height={400} 
-                            className="rounded-lg shadow-lg" 
-                            data-ai-hint="design moodboard concepts" 
-                        />
+                        <div>
+                            <Image 
+                                src="https://plus.unsplash.com/premium_photo-1689700527718-257b67a4abd0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTk1fHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D" 
+                                alt="Moodboard with design concepts" 
+                                width={600} 
+                                height={400} 
+                                className="rounded-lg shadow-lg" 
+                                data-ai-hint="design moodboard concepts" 
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
 
              {/* Values Section */}
-            <section className="container py-20 md:py-24">
-                <div>
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary">Our Design Philosophy</h2>
                         <p className="mt-2 text-muted-foreground">The core principles that inspire our creative process.</p>
@@ -263,24 +269,26 @@ export default function GraphicDesignPage() {
             </section>
 
              {/* Testimonials Section */}
-            <section className="container py-20 md:py-24">
-                <div className="grid lg:grid-cols-2 gap-8">
-                    {teamMembers.map((member) => (
-                        <Card key={member.name} className="p-6 flex items-start gap-4">
-                            <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member['data-ai-hint']} />
-                            <div>
-                                <p className="text-muted-foreground">"{member.testimonial}"</p>
-                                <p className="font-bold mt-4">{member.name}</p>
-                                <p className="text-sm text-muted-foreground">{member.role}</p>
-                            </div>
-                        </Card>
-                    ))}
+            <section className="py-20 md:py-24">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid lg:grid-cols-2 gap-8">
+                        {teamMembers.map((member) => (
+                            <Card key={member.name} className="p-6 flex items-start gap-4">
+                                <Image src={member.avatar} alt={member.name} width={80} height={80} className="rounded-full" data-ai-hint={member['data-ai-hint']} />
+                                <div>
+                                    <p className="text-muted-foreground">"{member.testimonial}"</p>
+                                    <p className="font-bold mt-4">{member.name}</p>
+                                    <p className="text-sm text-muted-foreground">{member.role}</p>
+                                </div>
+                            </Card>
+                        ))}
+                    </div>
                 </div>
             </section>
 
             {/* Pricing Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
-                <div className="container">
+                <div className="container mx-auto px-4 md:px-6">
                     <PricingToggle tiers={pricingTiers} supportFeatures={supportFeatures}>
                          <h2 className="text-4xl md:text-5xl font-bold text-primary">Ready to Elevate Your Brand?</h2>
                          <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">Choose a design package that fits your needs. We offer flexible pricing for businesses of all sizes.</p>
@@ -289,8 +297,8 @@ export default function GraphicDesignPage() {
             </section>
 
             {/* Contact Section */}
-            <section className="container py-20 md:py-24">
-                 <div className="px-4 md:px-6">
+            <section className="py-20 md:py-24">
+                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="flex flex-col space-y-8">
                             <div>

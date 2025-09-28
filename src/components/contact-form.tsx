@@ -65,13 +65,13 @@ export function ContactForm() {
         <CardHeader className="text-center">
             <CardTitle className="text-2xl font-bold">Schedule A Free Consultation</CardTitle>
         </CardHeader>
-      <CardContent className="p-8">
+      <CardContent className="p-6">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                 <FormField name="name" control={form.control} render={({ field }) => (
                   <FormItem>
                     <FormLabel>Name</FormLabel>
-                    <FormControl><Input placeholder="" {...field} className="bg-white border-gray-300 h-12 focus:ring-accent" /></FormControl>
+                    <FormControl><Input placeholder="" {...field} className="bg-white border-gray-300 focus:ring-accent" /></FormControl>
                     <FormMessage />
                   </FormItem>
                 )} />
@@ -79,7 +79,7 @@ export function ContactForm() {
                 <FormField name="phone" control={form.control} render={({ field }) => (
                   <FormItem>
                     <FormLabel>Phone</FormLabel>
-                    <FormControl><Input placeholder="" {...field} className="bg-white border-gray-300 h-12 focus:ring-accent" /></FormControl>
+                    <FormControl><Input placeholder="" {...field} className="bg-white border-gray-300 focus:ring-accent" /></FormControl>
                     <FormMessage />
                   </FormItem>
                 )} />
@@ -87,7 +87,7 @@ export function ContactForm() {
                 <FormField name="companyEmail" control={form.control} render={({ field }) => (
                   <FormItem>
                     <FormLabel>Company Email</FormLabel>
-                    <FormControl><Input placeholder="" {...field} className="bg-white border-gray-300 h-12 focus:ring-accent"/></FormControl>
+                    <FormControl><Input placeholder="" {...field} className="bg-white border-gray-300 focus:ring-accent"/></FormControl>
                     <FormMessage />
                   </FormItem>
                 )} />
@@ -95,7 +95,7 @@ export function ContactForm() {
                 <FormField name="company" control={form.control} render={({ field }) => (
                   <FormItem>
                     <FormLabel>Company/Organization</FormLabel>
-                    <FormControl><Input placeholder="" {...field} className="bg-white border-gray-300 h-12 focus:ring-accent" /></FormControl>
+                    <FormControl><Input placeholder="" {...field} className="bg-white border-gray-300 focus:ring-accent" /></FormControl>
                     <FormMessage />
                   </FormItem>
                 )} />
@@ -108,7 +108,7 @@ export function ContactForm() {
                   <FormLabel>How can we help you?</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
-                      <SelectTrigger className="h-12 bg-white border-gray-300">
+                      <SelectTrigger className="bg-white border-gray-300">
                         <SelectValue placeholder="Financial Planning" />
                       </SelectTrigger>
                     </FormControl>
@@ -126,12 +126,12 @@ export function ContactForm() {
             <FormField name="message" control={form.control} render={({ field }) => (
               <FormItem>
                 <FormLabel>Message</FormLabel>
-                <FormControl><Textarea placeholder="" className="min-h-[120px] bg-white border-gray-300 focus:ring-accent" {...field} /></FormControl>
+                <FormControl><Textarea placeholder="" className="min-h-[100px] bg-white border-gray-300 focus:ring-accent" {...field} /></FormControl>
                 <FormMessage />
               </FormItem>
             )} />
 
-            <Button type="submit" size="lg" className="w-full font-semibold bg-accent hover:bg-accent/90 text-accent-foreground h-12" disabled={form.formState.isSubmitting}>
+            <Button type="submit" size="lg" className="w-full font-semibold bg-accent hover:bg-accent/90 text-accent-foreground" disabled={form.formState.isSubmitting}>
               {form.formState.isSubmitting ? 'Sending...' : 'Submit'}
             </Button>
           </form>

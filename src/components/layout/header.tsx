@@ -195,9 +195,13 @@ export default function Header() {
 
   const allServiceLinks = Object.values(serviceCategories).flat();
 
-  const filteredNavLinks = navLinks.filter(link => 
-    link.label.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredNavLinks = navLinks.filter(link => {
+    if (link.isMega) {
+        // Always include the "Services" link if any sub-link matches
+        return allServiceLinks.some(subLink => subLink.label.toLowerCase().includes(searchTerm.toLowerCase()));
+    }
+    return link.label.toLowerCase().includes(searchTerm.toLowerCase());
+  });
 
   const filteredServiceLinks = allServiceLinks.filter(link => 
     link.label.toLowerCase().includes(searchTerm.toLowerCase())
@@ -319,7 +323,7 @@ export default function Header() {
                                         {link.isMega ? <MobileServiceLinks /> : undefined}
                                     </MobileNavLink>
                                 ))}
-                                {searchTerm && filteredNavLinks.length === 0 && <p className="p-2 text-muted-foreground">No results found.</p>}
+                                {searchTerm && filteredNavLinks.length === 0 && <p className="p-2 text-muted-foreground text-sm">No results found.</p>}
                             </nav>
                         </div>
                     </ScrollArea>

@@ -21,20 +21,20 @@ const SulzaXLogo = () => (
 
 const serviceCategories = {
     itServices: [
-        { href: '/services/managed-it', label: 'Managed IT Services', icon: <Settings /> },
+        { href: '/it-telecom', label: 'Managed IT Services', icon: <Settings /> },
         { href: '/it-telecom', label: 'IT Consulting', icon: <Users /> },
-        { href: '/services/cloud-computing', label: 'Cloud Computing', icon: <Cloud /> },
-        { href: '/services/cybersecurity', label: 'Cybersecurity Solutions', icon: <ShieldCheck /> },
-        { href: '/services/data-analytics', label: 'Data Analytics', icon: <BarChart /> },
+        { href: '/it-telecom', label: 'Cloud Computing', icon: <Cloud /> },
+        { href: '/it-telecom', label: 'Cybersecurity Solutions', icon: <ShieldCheck /> },
+        { href: '/it-telecom', label: 'Data Analytics', icon: <BarChart /> },
         { href: '/software-development', label: 'Software Development', icon: <Code /> },
     ],
     digitalAgency: [
-        { href: '/services/business-strategy', label: 'Business Strategy Analysis', icon: <BrainCircuit /> },
-        { href: '/services/project-management', label: 'Project Management', icon: <Briefcase /> },
-        { href: '/services/operational-optimization', label: 'Operational Optimization', icon: <Bot /> },
-        { href: '/services/digital-consulting', label: 'Digital Consulting', icon: <AppWindow /> },
+        { href: '/web-development', label: 'Business Strategy Analysis', icon: <BrainCircuit /> },
+        { href: '/software-development', label: 'Project Management', icon: <Briefcase /> },
+        { href: '/software-development', label: 'Operational Optimization', icon: <Bot /> },
+        { href: '/web-development', label: 'Digital Consulting', icon: <AppWindow /> },
         { href: '/social-media-marketing', label: 'Marketing Strategy', icon: <Megaphone /> },
-        { href: '/services/leadership-development', label: 'Leadership Development', icon: <Users /> },
+        { href: '/team', label: 'Leadership Development', icon: <Users /> },
     ],
     development: [
         { href: '/web-development', label: 'Web Development', icon: <Code /> },
@@ -305,11 +305,11 @@ export default function Header() {
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px] p-0 bg-slate-800 border-l-0" showCloseButton={false}>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px] p-0 bg-slate-800 border-l-0">
+                 <SheetTitle className="sr-only">Main menu</SheetTitle>
                  <div className="h-full w-full">
                     <ScrollArea className="h-full">
                         <div className="p-6">
-                            <SheetTitle className="sr-only">Main menu</SheetTitle>
                             <div className="relative mb-6">
                                 <Input 
                                     placeholder="What are you looking for?" 

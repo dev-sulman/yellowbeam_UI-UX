@@ -216,15 +216,15 @@ export default function Header() {
     return (
       <>
         {itServiceLinks.length > 0 && <h4 className="font-semibold text-slate-400 text-xs mb-2 mt-3 px-2">IT Services</h4>}
-        {itServiceLinks.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
+        {itServiceLinks.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} isSubmenu={true} />)}
         
         {agencyLinks.length > 0 && <h4 className="font-semibold text-slate-400 text-xs mb-2 mt-3 px-2">Digital Agency</h4>}
-        {agencyLinks.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
+        {agencyLinks.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} isSubmenu={true} />)}
       </>
     )
   };
 
-  const MobileNavLink = ({ href, label, children }: { href: string; label: string; children?: React.ReactNode }) => {
+  const MobileNavLink = ({ href, label, children, isSubmenu = false }: { href: string; label: string; children?: React.ReactNode; isSubmenu?: boolean }) => {
     if (children) {
         return (
             <Collapsible>
@@ -246,7 +246,8 @@ export default function Header() {
             href={href}
             onClick={() => setIsSheetOpen(false)}
             className={cn(
-                'block px-2 py-2 text-sm font-normal',
+                'block px-2 py-2 font-normal',
+                isSubmenu ? 'text-xs' : 'text-sm',
                 pathname === href ? 'text-accent' : 'text-white'
             )}
         >

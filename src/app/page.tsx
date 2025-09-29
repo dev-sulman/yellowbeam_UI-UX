@@ -89,55 +89,55 @@ const industries = [
 
 const services = [
   {
-    icon: <Code className="w-8 h-8 text-accent" />,
+    icon: <Image src="/icons/web.png" alt="Web Development" width={32} height={32} />,
     title: 'Web Development',
     description: 'Your website is a tool that should be used in order to draw traffic, convert traffic into customers, and maintain the relationship you have with your customers.',
     href: '/web-development',
   },
   {
-    icon: <Smartphone className="w-8 h-8 text-accent" />,
+    icon: <Image src="/icons/app.png" alt="Mobile Development" width={32} height={32} />,
     title: 'Mobile Development',
     description: 'Strategic guidance on IT strategy, digital transformation, software implementation, and project management for mobile.',
     href: '/mobile-development',
   },
   {
-    icon: <PenSquare className="w-8 h-8 text-accent" />,
+    icon: <Image src="/icons/soft.png" alt="Software Development" width={32} height={32} />,
     title: 'Software Development',
     description: 'Custom software development and integration services to meet specific business needs.',
     href: '/software-development',
   },
   {
-    icon: <Palette className="w-8 h-8 text-accent" />,
+    icon: <Image src="/icons/graphic.png" alt="Graphic Design" width={32} height={32} />,
     title: 'Graphic Design',
     description: 'We work with your company to make sure your brand is positioned as a central signature with a consistent identity displayed across multiple media channels and applications.',
     href: '/graphic-design',
   },
   {
-    icon: <AppWindow className="w-8 h-8 text-accent" />,
+    icon: <Image src="/icons/ui.png" alt="UI/UX Development" width={32} height={32} />,
     title: 'UI/UX Development',
     description: "Enhancing your website's visibility on search engines to attract organic traffic and improve search rankings.",
     href: '/ui-ux-development',
   },
   {
-    icon: <Search className="w-8 h-8 text-accent" />,
+    icon: <Image src="/icons/seo.png" alt="Search Engine Optimization" width={32} height={32} />,
     title: 'Search Engine Optimization',
     description: "Enhancing your website's visibility on search engines to attract organic traffic and improve search rankings.",
     href: '/search-engine-optimization',
   },
   {
-    icon: <Megaphone className="w-8 h-8 text-accent" />,
+    icon: <Image src="/icons/social.png" alt="Social Media Marketing" width={32} height={32} />,
     title: 'Social Media Marketing',
     description: 'Creating and managing engaging social media campaigns to connect with your audience, increase brand awareness.',
     href: '/social-media-marketing',
   },
   {
-    icon: <Target className="w-8 h-8 text-accent" />,
+    icon: <Image src="/icons/pay.png" alt="Pay-Per-Click Advertising" width={32} height={32} />,
     title: 'Pay-Per-Click Advertising',
     description: 'Running targeted advertising campaigns on platforms like Google Ads to drive immediate traffic and conversions.',
     href: '/pay-per-click-advertising',
   },
   {
-    icon: <MessageCircle className="w-8 h-8 text-accent" />,
+    icon: <Image src="/icons/content.png" alt="Content Marketing" width={32} height={32} />,
     title: 'Content Marketing',
     description: 'Creating valuable and relevant content to attract and engage your target audience, building trust and authority.',
     href: '/content-marketing',
@@ -294,9 +294,7 @@ export default function Home() {
                 )}>
                   <div className="flex justify-center items-center mb-4">
                     <div className="p-3 rounded-full bg-secondary">
-                      {React.cloneElement(service.icon, {
-                        className: "w-8 h-8 text-accent",
-                      })}
+                      {service.icon}
                     </div>
                   </div>
                   <h3 className="text-xl font-normal mb-2 relative inline-block text-primary">
@@ -498,4 +496,3 @@ export default function Home() {
 
     
 
-    

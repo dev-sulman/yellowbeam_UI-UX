@@ -89,55 +89,55 @@ const industries = [
 
 const services = [
   {
-    icon: <Image src="/icons/web.png" alt="Web Development" width={32} height={32} />,
+    icon: <Image src="/icons/coding.png" alt="Web Development" width={42} height={42} />,
     title: 'Web Development',
     description: 'Your website is a tool that should be used in order to draw traffic, convert traffic into customers, and maintain the relationship you have with your customers.',
     href: '/web-development',
   },
   {
-    icon: <Image src="/icons/app.png" alt="Mobile Development" width={32} height={32} />,
+    icon: <Image src="/icons/Mobile.png" alt="Mobile Development" width={42} height={42} />,
     title: 'Mobile Development',
     description: 'Strategic guidance on IT strategy, digital transformation, software implementation, and project management for mobile.',
     href: '/mobile-development',
   },
   {
-    icon: <Image src="/icons/soft.png" alt="Software Development" width={32} height={32} />,
+    icon: <Image src="/icons/SoftwareDevelopment.png" alt="Software Development" width={42} height={42} />,
     title: 'Software Development',
     description: 'Custom software development and integration services to meet specific business needs.',
     href: '/software-development',
   },
   {
-    icon: <Image src="/icons/graphic.png" alt="Graphic Design" width={32} height={32} />,
+    icon: <Image src="/icons/GraphicDesign.png" alt="Graphic Design" width={42} height={42} />,
     title: 'Graphic Design',
     description: 'We work with your company to make sure your brand is positioned as a central signature with a consistent identity displayed across multiple media channels and applications.',
     href: '/graphic-design',
   },
   {
-    icon: <Image src="/icons/ui.png" alt="UI/UX Development" width={32} height={32} />,
+    icon: <Image src="/icons/UIUXDevelopment.png" alt="UI/UX Development" width={42} height={42} />,
     title: 'UI/UX Development',
     description: "Enhancing your website's visibility on search engines to attract organic traffic and improve search rankings.",
     href: '/ui-ux-development',
   },
   {
-    icon: <Image src="/icons/seo.png" alt="Search Engine Optimization" width={32} height={32} />,
+    icon: <Image src="/icons/SearchEngineOptimization.png" alt="Search Engine Optimization" width={42} height={42} />,
     title: 'Search Engine Optimization',
     description: "Enhancing your website's visibility on search engines to attract organic traffic and improve search rankings.",
     href: '/search-engine-optimization',
   },
   {
-    icon: <Image src="/icons/social.png" alt="Social Media Marketing" width={32} height={32} />,
+    icon: <Image src="/icons/SocialMediaMarketing.png" alt="Social Media Marketing" width={42} height={42} />,
     title: 'Social Media Marketing',
     description: 'Creating and managing engaging social media campaigns to connect with your audience, increase brand awareness.',
     href: '/social-media-marketing',
   },
   {
-    icon: <Image src="/icons/pay.png" alt="Pay-Per-Click Advertising" width={32} height={32} />,
+    icon: <Image src="/icons/Pay-Per-Click.png" alt="Pay-Per-Click Advertising" width={42} height={42} />,
     title: 'Pay-Per-Click Advertising',
     description: 'Running targeted advertising campaigns on platforms like Google Ads to drive immediate traffic and conversions.',
     href: '/pay-per-click-advertising',
   },
   {
-    icon: <Image src="/icons/content.png" alt="Content Marketing" width={32} height={32} />,
+    icon: <Image src="/icons/ContentWriting.png" alt="Content Marketing" width={42} height={42} />,
     title: 'Content Marketing',
     description: 'Creating valuable and relevant content to attract and engage your target audience, building trust and authority.',
     href: '/content-marketing',
@@ -146,22 +146,22 @@ const services = [
 
 const expertisePoints = [
   {
-    icon: <BrainCircuit className="w-10 h-10 text-accent" />,
+    icon: <Image src="/icons/Expertise.png" alt="Expertise" width={40} height={40} />,
     title: "Expertise",
     description: "Access to specialized knowledge and technology expertise for effective IT solutions."
   },
   {
-    icon: <CircleDollarSign className="w-10 h-10 text-accent" />,
+    icon: <Image src="/icons/CostSavings.png" alt="Cost Savings" width={40} height={40} />,
     title: "Cost Savings",
     description: "Avoiding expenses associated with maintaining an in-house IT department."
   },
   {
-    icon: <ShieldCheck className="w-10 h-10 text-accent" />,
+    icon: <Image src="/icons/EnhancedSecurity.png" alt="Enhanced Security" width={40} height={40} />,
     title: "Enhanced Security",
     description: "Robust measures to protect against cyber threats and ensure data security."
   },
   {
-    icon: <GaugeCircle className="w-10 h-10 text-accent" />,
+    icon: <Image src="/icons/IncreasedEfficiency.png" alt="Increased Efficiency" width={40} height={40} />,
     title: "Increased Efficiency",
     description: "Streamlined operations, automation, and proactive monitoring for improved productivity."
   }
@@ -495,4 +495,3 @@ export default function Home() {
     
 
     
-

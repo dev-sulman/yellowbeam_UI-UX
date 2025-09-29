@@ -146,22 +146,22 @@ const services = [
 
 const expertisePoints = [
   {
-    icon: <Image src="/icons/Expertise.png" alt="Expertise" width={40} height={40} />,
+    icon: <Image src="../icons/Expertise.png" alt="Expertise" width={40} height={40} />,
     title: "Expertise",
     description: "Access to specialized knowledge and technology expertise for effective IT solutions."
   },
   {
-    icon: <Image src="/icons/CostSavings.png" alt="Cost Savings" width={40} height={40} />,
+    icon: <Image src="../icons/savingMoney.png" alt="Cost Savings" width={40} height={40} />,
     title: "Cost Savings",
     description: "Avoiding expenses associated with maintaining an in-house IT department."
   },
   {
-    icon: <Image src="/icons/EnhancedSecurity.png" alt="Enhanced Security" width={40} height={40} />,
+    icon: <Image src="../icons/EnhancedSecurity.png" alt="Enhanced Security" width={40} height={40} />,
     title: "Enhanced Security",
     description: "Robust measures to protect against cyber threats and ensure data security."
   },
   {
-    icon: <Image src="/icons/IncreasedEfficiency.png" alt="Increased Efficiency" width={40} height={40} />,
+    icon: <Image src="../icons/IncreasedEfficiency1.png" alt="Increased Efficiency" width={40} height={40} />,
     title: "Increased Efficiency",
     description: "Streamlined operations, automation, and proactive monitoring for improved productivity."
   }
@@ -293,9 +293,7 @@ export default function Home() {
                     "bg-card text-card-foreground"
                 )}>
                   <div className="flex justify-center items-center mb-4">
-                    <div className="p-3 rounded-full bg-secondary">
-                      {service.icon}
-                    </div>
+                    {service.icon}
                   </div>
                   <h3 className="text-xl font-normal mb-2 relative inline-block text-primary">
                     {service.title}
@@ -494,4 +492,3 @@ export default function Home() {
 
     
 
-    

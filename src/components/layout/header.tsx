@@ -196,11 +196,12 @@ export default function Header() {
   const allServiceLinks = Object.values(serviceCategories).flat();
 
   const filteredNavLinks = navLinks.filter(link => {
+    if (searchTerm.trim() === '') return true;
+    if (link.label.toLowerCase().includes(searchTerm.toLowerCase())) return true;
     if (link.isMega) {
-        // Always include the "Services" link if any sub-link matches
         return allServiceLinks.some(subLink => subLink.label.toLowerCase().includes(searchTerm.toLowerCase()));
     }
-    return link.label.toLowerCase().includes(searchTerm.toLowerCase());
+    return false;
   });
 
   const filteredServiceLinks = allServiceLinks.filter(link => 
@@ -208,21 +209,21 @@ export default function Header() {
   );
   
   const MobileServiceLinks = () => {
-    const itServiceLinks = serviceCategories.itServices.filter(l => l.label.toLowerCase().includes(searchTerm.toLowerCase()));
-    const agencyLinks = serviceCategories.digitalAgency.filter(l => l.label.toLowerCase().includes(searchTerm.toLowerCase()));
+    const itServiceLinks = serviceCategories.itServices.filter(l => searchTerm.trim() === '' || l.label.toLowerCase().includes(searchTerm.toLowerCase()));
+    const agencyLinks = serviceCategories.digitalAgency.filter(l => searchTerm.trim() === '' || l.label.toLowerCase().includes(searchTerm.toLowerCase()));
     
     const hasResults = itServiceLinks.length > 0 || agencyLinks.length > 0;
 
-    if (searchTerm && !hasResults) {
+    if (!hasResults && searchTerm.trim() !== '') {
       return null;
     }
 
     return (
       <>
-        {itServiceLinks.length > 0 && <h4 className="font-semibold text-slate-400 text-xs mb-2 mt-3 px-2">IT Services</h4>}
+        {(itServiceLinks.length > 0) && <h4 className="font-semibold text-slate-400 text-xs mb-2 mt-3 px-2">IT Services</h4>}
         {itServiceLinks.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} isSubmenu={true} />)}
         
-        {agencyLinks.length > 0 && <h4 className="font-semibold text-slate-400 text-xs mb-2 mt-3 px-2">Digital Agency</h4>}
+        {(agencyLinks.length > 0) && <h4 className="font-semibold text-slate-400 text-xs mb-2 mt-3 px-2">Digital Agency</h4>}
         {agencyLinks.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} isSubmenu={true} />)}
       </>
     )
@@ -308,6 +309,7 @@ export default function Header() {
                  <div className="h-full w-full">
                     <ScrollArea className="h-full">
                         <div className="p-6">
+                            <SheetTitle className="sr-only">Main menu</SheetTitle>
                             <div className="relative mb-6">
                                 <Input 
                                     placeholder="What are you looking for?" 

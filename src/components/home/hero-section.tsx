@@ -21,7 +21,7 @@ export default function HeroSection() {
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center md:justify-start">
-              <Button asChild size="lg">
+               <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 shine-button-2">
                 <Link href="/contact">Free Assessment</Link>
               </Button>
             </div>

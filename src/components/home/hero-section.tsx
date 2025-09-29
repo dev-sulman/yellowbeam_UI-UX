@@ -30,10 +30,10 @@ export default function HeroSection() {
             <Image
                 src="/main.jpeg"
                 width="950"
-                height="250"
+                height="550"
                 alt="Hero"
                 data-ai-hint="team meeting office"
-                className="mx-auto aspect-video w-full overflow-hidden rounded-xl object-cover"
+                className="mx-auto w-full overflow-hidden rounded-xl object-cover"
                 priority
             />
           </div>

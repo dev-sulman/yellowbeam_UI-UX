@@ -119,9 +119,6 @@ export default function Footer() {
                 <AnimatedLink href="#">Cookie Policy</AnimatedLink>
             </div>
         </div>
-        <div className="text-center mt-4 text-xs text-gray-500">
-          <a href="https://www.flaticon.com/free-icons/coding" title="coding icons" className="hover:text-gray-400">Coding icons created by Freepik - Flaticon</a>
-        </div>
       </div>
       {isVisible && (
         <Button 

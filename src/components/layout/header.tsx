@@ -70,7 +70,7 @@ const ServiceMegaMenu = () => {
                 <h4 className="font-semibold text-lg mb-4 text-white px-2">IT Services</h4>
                 <div className="grid grid-cols-1 gap-4">
                     {serviceCategories.itServices.map(link => (
-                        <Link key={link.href} href={link.href} className="group/item flex items-center gap-3 p-2 rounded-md hover:bg-white/10 transition-colors">
+                        <Link key={link.label} href={link.href} className="group/item flex items-center gap-3 p-2 rounded-md hover:bg-white/10 transition-colors">
                             <div className="text-accent">{React.cloneElement(link.icon, { className: 'w-5 h-5' })}</div>
                             <span className="font-medium text-sm text-white">{link.label}</span>
                         </Link>
@@ -81,7 +81,7 @@ const ServiceMegaMenu = () => {
                 <h4 className="font-semibold text-lg mb-4 text-white px-2">Digital Agency</h4>
                  <div className="grid grid-cols-1 gap-4">
                     {serviceCategories.digitalAgency.map(link => (
-                        <Link key={link.href} href={link.href} className="group/item flex items-center gap-3 p-2 rounded-md hover:bg-white/10 transition-colors">
+                        <Link key={link.label} href={link.href} className="group/item flex items-center gap-3 p-2 rounded-md hover:bg-white/10 transition-colors">
                             <div className="text-accent">{React.cloneElement(link.icon, { className: 'w-5 h-5' })}</div>
                             <span className="font-medium text-sm text-white">{link.label}</span>
                         </Link>
@@ -221,10 +221,10 @@ export default function Header() {
     return (
       <>
         {(itServiceLinks.length > 0) && <h4 className="font-semibold text-slate-400 text-xs mb-2 mt-3 px-2">IT Services</h4>}
-        {itServiceLinks.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} isSubmenu={true} />)}
+        {itServiceLinks.map(link => <MobileNavLink key={link.label} href={link.href} label={link.label} isSubmenu={true} />)}
         
         {(agencyLinks.length > 0) && <h4 className="font-semibold text-slate-400 text-xs mb-2 mt-3 px-2">Digital Agency</h4>}
-        {agencyLinks.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} isSubmenu={true} />)}
+        {agencyLinks.map(link => <MobileNavLink key={link.label} href={link.href} label={link.label} isSubmenu={true} />)}
       </>
     )
   };
@@ -321,7 +321,7 @@ export default function Header() {
                             </div>
                              <nav className="flex flex-col gap-1">
                                 {filteredNavLinks.map((link) => (
-                                    <MobileNavLink key={link.href} href={link.href} label={link.label}>
+                                    <MobileNavLink key={link.label} href={link.href} label={link.label}>
                                         {link.isMega ? <MobileServiceLinks /> : undefined}
                                     </MobileNavLink>
                                 ))}

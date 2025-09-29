@@ -6,8 +6,8 @@ const MarqueeItem = ({ text }: { text: string }) => (
     <Image
       src="/Xlogo.svg"
       alt="SulzaX Logo"
-      width={120}
-      height={32}
+      width={90}
+      height={24}
       className="brightness-0 invert shrink-0"
     />
   </div>

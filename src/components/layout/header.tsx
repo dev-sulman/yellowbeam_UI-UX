@@ -215,10 +215,10 @@ export default function Header() {
 
     return (
       <>
-        {itServiceLinks.length > 0 && <h4 className="font-semibold text-muted-foreground text-sm mb-2 mt-3 px-2">IT Services</h4>}
+        {itServiceLinks.length > 0 && <h4 className="font-semibold text-slate-400 text-xs mb-2 mt-3 px-2">IT Services</h4>}
         {itServiceLinks.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
         
-        {agencyLinks.length > 0 && <h4 className="font-semibold text-muted-foreground text-sm mb-2 mt-3 px-2">Digital Agency</h4>}
+        {agencyLinks.length > 0 && <h4 className="font-semibold text-slate-400 text-xs mb-2 mt-3 px-2">Digital Agency</h4>}
         {agencyLinks.map(link => <MobileNavLink key={link.href} href={link.href} label={link.label} />)}
       </>
     )
@@ -228,7 +228,7 @@ export default function Header() {
     if (children) {
         return (
             <Collapsible>
-                <CollapsibleTrigger className="flex justify-between items-center w-full px-2 py-2 text-base font-normal text-black">
+                <CollapsibleTrigger className="flex justify-between items-center w-full px-2 py-2 text-sm font-normal text-white">
                     {label}
                     <ChevronDown className="w-5 h-5" />
                 </CollapsibleTrigger>
@@ -246,8 +246,8 @@ export default function Header() {
             href={href}
             onClick={() => setIsSheetOpen(false)}
             className={cn(
-                'block px-2 py-2 text-base font-normal',
-                pathname === href ? 'text-accent' : 'text-black'
+                'block px-2 py-2 text-sm font-normal',
+                pathname === href ? 'text-accent' : 'text-white'
             )}
         >
             {label}
@@ -299,14 +299,14 @@ export default function Header() {
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px] p-0 bg-white border-l-0" showCloseButton={false}>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px] p-0 bg-slate-800 border-l-0" showCloseButton={false}>
                  <div className="h-full w-full">
                     <ScrollArea className="h-full">
                         <div className="p-6">
                             <div className="relative mb-6">
                                 <Input 
                                     placeholder="What are you looking for?" 
-                                    className="pr-10 h-11 bg-slate-100 border-slate-200 text-black placeholder:text-slate-500 focus:ring-accent"
+                                    className="pr-10 h-11 bg-slate-700 border-slate-600 text-white placeholder:text-slate-400 focus:ring-accent"
                                     value={searchTerm}
                                     onChange={(e) => setSearchTerm(e.target.value)}
                                 />

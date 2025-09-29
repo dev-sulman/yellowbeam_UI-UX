@@ -436,6 +436,7 @@ export default function Home() {
       <div className="bg-primary text-white h-[80px] flex items-center overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap space-x-8">
             {marqueeContent.map((item, index) => <MarqueeItem key={index} text={item.text} />)}
+            {marqueeContent.map((item, index) => <MarqueeItem key={index + marqueeContent.length} text={item.text} />)}
         </div>
       </div>
       <section id="consultation" className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-r from-[#d1d5db] via-[#6b7280] to-[#374151]">
@@ -491,6 +492,7 @@ export default function Home() {
     
 
     
+
 
 
 

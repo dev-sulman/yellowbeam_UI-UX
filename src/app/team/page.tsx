@@ -6,7 +6,7 @@ const teamMembers = [
   {
     name: 'John Doe',
     role: 'CEO & Founder',
-    image: 'https://picsum.photos/seed/team1/400/400',
+    image: '/team/team1.jpg',
     'data-ai-hint': 'professional headshot',
     social: {
       linkedin: '#',
@@ -17,7 +17,7 @@ const teamMembers = [
   {
     name: 'Jane Smith',
     role: 'Chief Technology Officer',
-    image: 'https://picsum.photos/seed/team2/400/400',
+    image: '/team/team2.jpg',
     'data-ai-hint': 'professional headshot',
     social: {
       linkedin: '#',
@@ -28,7 +28,7 @@ const teamMembers = [
   {
     name: 'Peter Jones',
     role: 'Lead Developer',
-    image: 'https://picsum.photos/seed/team3/400/400',
+    image: '/team/team3.jpg',
     'data-ai-hint': 'professional headshot',
     social: {
       linkedin: '#',
@@ -39,7 +39,7 @@ const teamMembers = [
     {
     name: 'Emily White',
     role: 'Project Manager',
-    image: 'https://picsum.photos/seed/team4/400/400',
+    image: '/team/team4.jpg',
     'data-ai-hint': 'professional headshot',
     social: {
       linkedin: '#',
@@ -50,7 +50,7 @@ const teamMembers = [
     {
     name: 'Michael Brown',
     role: 'UI/UX Design Lead',
-    image: 'https://picsum.photos/seed/team5/400/400',
+    image: '/team/team5.jpg',
     'data-ai-hint': 'professional headshot',
     social: {
       linkedin: '#',
@@ -61,7 +61,7 @@ const teamMembers = [
     {
     name: 'Sarah Green',
     role: 'Marketing Director',
-    image: 'https://picsum.photos/seed/team6/400/400',
+    image: '/team/team6.jpg',
     'data-ai-hint': 'professional headshot',
     social: {
       linkedin: '#',

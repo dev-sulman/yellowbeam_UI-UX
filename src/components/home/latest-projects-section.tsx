@@ -93,8 +93,9 @@ export default function LatestProjectsSection() {
                       <Link
                         href="/portfolio"
                         className="text-sm font-semibold text-accent hover:underline"
+                        aria-label={`View project: ${project.title}`}
                       >
-                        Learn more{' '}
+                        View Project{' '}
                         <ArrowRight className="inline-block ml-1 h-4 w-4" />
                       </Link>
                     </CardContent>

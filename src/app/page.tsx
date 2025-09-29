@@ -335,7 +335,7 @@ export default function Home() {
                 <Link 
                     href={industry.href} 
                     key={industry.name} 
-                    className="group flex items-center gap-4 p-4 rounded-lg bg-gray-900/50 text-white hover:bg-accent/80 hover:text-white transition-all duration-300 ease-in-out hover:translate-x-1 border border-gray-700 hover:border-accent"
+                    className="group flex items-center gap-4 p-4 rounded-lg bg-gray-900/50 text-white hover:bg-gray-800 transition-all duration-300 ease-in-out hover:translate-x-1 border border-gray-700 hover:border-gray-600"
                 >
                     <div className="text-white transition-colors duration-300">
                         {React.cloneElement(industry.icon, { className: 'w-6 h-6' })}
@@ -491,5 +491,6 @@ export default function Home() {
     
 
     
+
 
 

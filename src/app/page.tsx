@@ -277,11 +277,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services-grid" className="w-full py-16 md:py-24 lg:py-32 bg-white dark:bg-background">
+      <section id="services-grid" className="w-full py-16 md:py-24 lg:py-32 bg-slate-400">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
-            <Badge variant="outline" className="border-accent/20 text-accent font-semibold mb-4">We are a team of humans</Badge>
-            <h2 className="text-3xl font-normal tracking-tighter sm:text-4xl text-foreground">
+            <Badge variant="outline" className="border-white/20 text-white font-semibold mb-4">We are a team of humans</Badge>
+            <h2 className="text-3xl font-normal tracking-tighter sm:text-4xl text-white">
               Our Services for Growing Your Business
             </h2>
           </div>
@@ -290,16 +290,16 @@ export default function Home() {
               <Link key={index} href={service.href || '#'} className="group">
                 <Card className={cn(
                     "shadow-lg rounded-lg p-6 md:p-8 text-center hover:shadow-xl transition-shadow duration-300 h-full",
-                    "bg-card text-card-foreground"
+                    "bg-slate-500/50 text-white border-slate-500"
                 )}>
                   <div className="flex justify-center items-center mb-4">
                     {service.icon}
                   </div>
-                  <h3 className="text-xl font-normal mb-2 relative inline-block text-primary">
+                  <h3 className="text-xl font-normal mb-2 relative inline-block">
                     {service.title}
-                    <span className="absolute bottom-0 left-0 w-0 h-[1px] transition-all duration-300 group-hover:w-full bg-primary"></span>
+                    <span className="absolute bottom-0 left-0 w-0 h-[1px] transition-all duration-300 group-hover:w-full bg-white"></span>
                   </h3>
-                  <p className="text-muted-foreground">{service.description}</p>
+                  <p className="text-slate-200">{service.description}</p>
                 </Card>
               </Link>
             ))}
@@ -491,6 +491,7 @@ export default function Home() {
     
 
     
+
 
 
 

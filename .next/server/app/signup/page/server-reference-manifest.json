@@ -1,0 +1,27 @@
+{
+  "node": {
+    "00a2051cb94474aac14ba51d6933b5c92f7d6b82d4": {
+      "workers": {
+        "app/signup/page": {
+          "moduleId": "[project]/.next-internal/server/app/signup/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true
+        }
+      },
+      "layer": {
+        "app/signup/page": "action-browser"
+      }
+    },
+    "40976d1c84f0c8fb6d50bcdf3616645fcd6035f548": {
+      "workers": {
+        "app/signup/page": {
+          "moduleId": "[project]/.next-internal/server/app/signup/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true
+        }
+      },
+      "layer": {
+        "app/signup/page": "action-browser"
+      }
+    }
+  },
+  "edge": {}
+}

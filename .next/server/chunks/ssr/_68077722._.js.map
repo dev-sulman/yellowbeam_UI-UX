@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///home/user/studio/src/app/actions/auth.ts"],"sourcesContent":["\n'use server';\n\nimport { adminAuth } from '@/lib/firebase-admin';\nimport { cookies } from 'next/headers';\n\nexport async function createSessionCookie(idToken: string) {\n  const expiresIn = 60 * 60 * 24 * 5 * 1000; // 5 days\n  const sessionCookie = await adminAuth.createSessionCookie(idToken, { expiresIn });\n  cookies().set('session', sessionCookie, {\n    maxAge: expiresIn,\n    httpOnly: true,\n    secure: process.env.NODE_ENV === 'production',\n  });\n}\n\nexport async function clearSessionCookie() {\n  cookies().delete('session');\n}\n"],"names":[],"mappings":";;;;;;AAGA;AACA;;;;;;;;;;AAEO,eAAe,oBAAoB,OAAe;IACvD,MAAM,YAAY,KAAK,KAAK,KAAK,IAAI,MAAM,SAAS;IACpD,MAAM,gBAAgB,MAAM,+HAAA,CAAA,YAAS,CAAC,mBAAmB,CAAC,SAAS;QAAE;IAAU;IAC/E,CAAA,GAAA,+HAAA,CAAA,UAAO,AAAD,IAAI,GAAG,CAAC,WAAW,eAAe;QACtC,QAAQ;QACR,UAAU;QACV,QAAQ,oDAAyB;IACnC;AACF;AAEO,eAAe;IACpB,CAAA,GAAA,+HAAA,CAAA,UAAO,AAAD,IAAI,MAAM,CAAC;AACnB;;;IAZsB;IAUA;;AAVA,+OAAA;AAUA,+OAAA","debugId":null}},
+    {"offset": {"line": 52, "column": 0}, "map": {"version":3,"sources":["file:///home/user/studio/.next-internal/server/app/ui-ux-development/page/actions.js%20%28server%20actions%20loader%29"],"sourcesContent":["export {clearSessionCookie as '00a2051cb94474aac14ba51d6933b5c92f7d6b82d4'} from 'ACTIONS_MODULE0'\n"],"names":[],"mappings":";AAAA","debugId":null}}]
+}

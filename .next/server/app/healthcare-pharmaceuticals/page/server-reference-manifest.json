@@ -1,0 +1,27 @@
+{
+  "node": {
+    "00a2051cb94474aac14ba51d6933b5c92f7d6b82d4": {
+      "workers": {
+        "app/healthcare-pharmaceuticals/page": {
+          "moduleId": "[project]/.next-internal/server/app/healthcare-pharmaceuticals/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/contact.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true
+        }
+      },
+      "layer": {
+        "app/healthcare-pharmaceuticals/page": "action-browser"
+      }
+    },
+    "4083b34556f294bc22db8551541872900e43f3c53b": {
+      "workers": {
+        "app/healthcare-pharmaceuticals/page": {
+          "moduleId": "[project]/.next-internal/server/app/healthcare-pharmaceuticals/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/actions/auth.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/actions/contact.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true
+        }
+      },
+      "layer": {
+        "app/healthcare-pharmaceuticals/page": "action-browser"
+      }
+    }
+  },
+  "edge": {}
+}

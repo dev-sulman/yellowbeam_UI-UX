@@ -6,12 +6,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Image from "next/image";
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Portfolio | SulzaX IT Services',
-  description: 'Explore our portfolio of successful projects, showcasing our expertise in web development, mobile solutions, and custom applications across various industries.',
-};
 
 const projects = [
   {

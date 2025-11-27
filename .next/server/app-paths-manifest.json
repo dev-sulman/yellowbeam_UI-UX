@@ -3,7 +3,9 @@
   "/about/page": "app/about/page.js",
   "/contact/page": "app/contact/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/finance-banking/page": "app/finance-banking/page.js",
   "/mobile-development/page": "app/mobile-development/page.js",
   "/page": "app/page.js",
+  "/services/page": "app/services/page.js",
   "/web-development/page": "app/web-development/page.js"
 }

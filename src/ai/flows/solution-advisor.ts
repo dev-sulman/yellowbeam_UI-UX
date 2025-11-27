@@ -1,59 +1,63 @@
-'use server';
-
-/**
- * @fileOverview AI-powered IT solution advisor flow.
- *
- * - getSolutionRecommendations - A function that provides tailored IT solution recommendations based on user input.
- * - SolutionAdvisorInput - The input type for the getSolutionRecommendations function.
- * - SolutionRecommendation - The return type for the getSolutionRecommendations function.
- */
-
-import {ai} from '@/ai/genkit';
-import {z} from 'genkit';
-
-const SolutionAdvisorInputSchema = z.object({
-  businessNeeds: z
-    .string()
-    .describe('A detailed description of the business needs and requirements.'),
-});
-export type SolutionAdvisorInput = z.infer<typeof SolutionAdvisorInputSchema>;
-
-const SolutionRecommendationSchema = z.object({
-  solutionName: z.string().describe('The name of the recommended IT solution.'),
-  description: z
-    .string()
-    .describe('A detailed description of the IT solution and its benefits.'),
-  estimatedBudget: z
-    .string()
-    .describe('The estimated budget for implementing the IT solution.'),
-});
-
-export type SolutionRecommendation = z.infer<typeof SolutionRecommendationSchema>;
-
-export async function getSolutionRecommendations(input: SolutionAdvisorInput): Promise<SolutionRecommendation[]> {
-  return solutionAdvisorFlow(input);
-}
-
-const solutionAdvisorPrompt = ai.definePrompt({
-  name: 'solutionAdvisorPrompt',
-  input: {schema: SolutionAdvisorInputSchema},
-  output: {schema: z.array(SolutionRecommendationSchema).describe('Array of IT solution recommendations')},
-  prompt: `You are an IT solutions expert at SulzaX IT Services. A user will describe their business needs, and you should provide a list of tailored IT solution recommendations with estimated budgets. Consider SulzaX's project portfolio and expertise when making recommendations.
-
-Business Needs: {{{businessNeeds}}}
-
-Respond with a JSON array of IT solution recommendations, including the solution name, a detailed description, and an estimated budget.
-`,
-});
-
-const solutionAdvisorFlow = ai.defineFlow(
-  {
-    name: 'solutionAdvisorFlow',
-    inputSchema: SolutionAdvisorInputSchema,
-    outputSchema: z.array(SolutionRecommendationSchema),
+{
+  "name": "nextn",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack -p 9002",
+    "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
+    "genkit:watch": "genkit start -- tsx --watch src/ai/dev.ts",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
   },
-  async input => {
-    const {output} = await solutionAdvisorPrompt(input);
-    return output!;
+  "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
+    "@radix-ui/react-accordion": "^1.2.3",
+    "@radix-ui/react-alert-dialog": "^1.1.6",
+    "@radix-ui/react-avatar": "^1.1.3",
+    "@radix-ui/react-checkbox": "^1.1.4",
+    "@radix-ui/react-collapsible": "^1.1.11",
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-dropdown-menu": "^2.1.6",
+    "@radix-ui/react-label": "^2.1.2",
+    "@radix-ui/react-menubar": "^1.1.6",
+    "@radix-ui/react-popover": "^1.1.6",
+    "@radix-ui/react-progress": "^1.1.2",
+    "@radix-ui/react-radio-group": "^1.2.3",
+    "@radix-ui/react-scroll-area": "^1.2.3",
+    "@radix-ui/react-select": "^2.1.6",
+    "@radix-ui/react-separator": "^1.1.2",
+    "@radix-ui/react-slider": "^1.2.3",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@radix-ui/react-switch": "^1.1.3",
+    "@radix-ui/react-tabs": "^1.1.3",
+    "@radix-ui/react-toast": "^1.2.6",
+    "@radix-ui/react-tooltip": "^1.1.8",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^3.6.0",
+    "embla-carousel-react": "^8.6.0",
+    "genkit": "^1.14.1",
+    "lucide-react": "^0.475.0",
+    "next": "15.3.3",
+    "patch-package": "^8.0.0",
+    "react": "^18.3.1",
+    "react-day-picker": "^8.10.1",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.52.1",
+    "recharts": "^2.15.1",
+    "tailwind-merge": "^3.0.1",
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "genkit-cli": "^1.14.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
-);
+}

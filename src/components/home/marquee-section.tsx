@@ -2,14 +2,8 @@ import Image from 'next/image';
 
 const MarqueeItem = ({ text }: { text: string }) => (
   <div className="flex items-center space-x-4">
-    <span className="text-xl font-semibold">{text}</span>
-    <Image
-      src="/Xlogo.svg"
-      alt="SulzaX Logo"
-      width={90}
-      height={24}
-      className="brightness-0 invert shrink-0"
-    />
+    <span className="text-xl font-semibold uppercase tracking-widest">{text}</span>
+    <span className="text-xl font-black italic text-accent px-4 border-l border-white/20">yellowbeamtech</span>
   </div>
 );
 

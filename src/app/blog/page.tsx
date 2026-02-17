@@ -26,7 +26,7 @@ const blogPosts = [
     'data-ai-hint': "mobile app business",
     href: "#"
   },
-   {
+  {
     title: "Mastering UI/UX: A Guide for Beginners",
     category: "UI/UX Design",
     date: "October 18, 2023",
@@ -46,12 +46,42 @@ const blogPosts = [
     'data-ai-hint': "seo guide 2024",
     href: "#"
   },
+  {
+    title: "Optimizing User Experience with Web and App Development",
+    category: "Web & App Development",
+    date: "February 18, 2024",
+    author: "yellowbeamtech Team",
+    excerpt: "The digital experience a business provides its customers plays a pivotal role in its success. Learn how to optimize UX for both web and mobile.",
+    image: "/web1.jpeg",
+    'data-ai-hint': "ux optimization guide",
+    href: "#"
+  },
+  {
+    title: "Transforming Your Business with Custom Software Development",
+    category: "Software Development",
+    date: "February 16, 2024",
+    author: "yellowbeamtech Team",
+    excerpt: "In today’s fast-paced digital world, businesses are constantly seeking ways to stay ahead. Discover the power of custom software solutions.",
+    image: "/customapp.png",
+    'data-ai-hint': "custom software transformation",
+    href: "#"
+  },
+  {
+    title: "Blockchain Beyond Cryptocurrency: Transforming Industries in 2025",
+    category: "Emerging Tech",
+    date: "February 14, 2024",
+    author: "yellowbeamtech Team",
+    excerpt: "Blockchain technology is finding applications across various industries in 2025, reaching far beyond just cryptocurrencies.",
+    image: "/aim.png",
+    'data-ai-hint': "blockchain industry trends",
+    href: "#"
+  },
 ];
 
 export default function BlogPage() {
   return (
     <div className="bg-background text-foreground">
-       <section className="w-full py-20 md:py-24 bg-gradient-to-r from-[#0f172a] to-[#334155] text-white">
+      <section className="w-full py-20 md:py-24 bg-gradient-to-r from-[#0360AA] to-[#014c8a] text-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center text-center">
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">Our Blog</h1>
@@ -68,16 +98,16 @@ export default function BlogPage() {
             {blogPosts.map((post) => (
               <Card key={post.title} className="overflow-hidden group hover:shadow-xl transition-shadow duration-300 flex flex-col">
                 <Link href={post.href} className="block">
-                    <div className="overflow-hidden">
-                        <Image
-                            src={post.image}
-                            alt={post.title}
-                            width={600}
-                            height={400}
-                            data-ai-hint={post['data-ai-hint']}
-                            className="group-hover:scale-105 transition-transform duration-500 object-cover"
-                        />
-                    </div>
+                  <div className="overflow-hidden">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      width={600}
+                      height={400}
+                      data-ai-hint={post['data-ai-hint']}
+                      className="group-hover:scale-105 transition-transform duration-500 object-cover"
+                    />
+                  </div>
                 </Link>
                 <CardContent className="p-6 flex flex-col flex-grow">
                   <div className="mb-4">

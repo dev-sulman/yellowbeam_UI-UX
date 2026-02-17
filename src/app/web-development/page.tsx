@@ -73,12 +73,12 @@ export default function WebDevelopmentPage() {
                             </Button>
                         </div>
                         <div>
-                            <Image src="https://images.unsplash.com/photo-1669023414180-4dcf35d943e1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fHdlYiUyMGRldmVsb3BtZW50fGVufDB8fDB8fHww/600x400.png" alt="Team discussing web design" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="web design meeting" />
+                            <Image src="/web1.jpeg" alt="Team discussing web design" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="web design meeting" />
                         </div>
                     </div>
                 </div>
             </section>
-            
+
             {/* Services Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6">
@@ -102,7 +102,7 @@ export default function WebDevelopmentPage() {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
-                             <Image src="https://images.unsplash.com/photo-1554902843-260acd0993f8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D/600x400.png" alt="Team working on code" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team coding" />
+                            <Image src="/web2.jpeg" alt="Team working on code" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team coding" />
                         </div>
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Simplify Tech Challenges with Our Responsive Development Team</h2>
@@ -131,7 +131,7 @@ export default function WebDevelopmentPage() {
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Elevate Productivity with Our Expert Web Services</h2>
-                             <p className="text-muted-foreground">Welcome to SulzaX, your trusted companion in the realm of IT services. We are committed to delivering state-of-the-art solutions.</p>
+                            <p className="text-muted-foreground">Welcome to SulzaX, your trusted companion in the realm of IT services. We are committed to delivering state-of-the-art solutions.</p>
                             <div className="space-y-4">
                                 {whyChooseUsPoints.map(point => (
                                     <div key={point.title} className="flex items-start gap-4">
@@ -145,13 +145,13 @@ export default function WebDevelopmentPage() {
                             </div>
                         </div>
                         <div>
-                            <Image src="https://images.unsplash.com/photo-1556565681-67b9cd907d20?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D/600x400.png" alt="Website analytics" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="website analytics" />
+                            <Image src="/ecommer.webp" alt="Website analytics" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="website analytics" />
                         </div>
                     </div>
                 </div>
             </section>
 
-             {/* Values Section */}
+            {/* Values Section */}
             <section className="py-20 md:py-24 bg-gradient-to-r from-slate-500 to-slate-400 text-white">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
@@ -169,19 +169,19 @@ export default function WebDevelopmentPage() {
                 </div>
             </section>
 
-             {/* Awards Section */}
+            {/* Awards Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6 text-center">
-                     <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Outstanding Customer Service Recognition</h2>
-                     <div className="flex justify-center items-center flex-wrap gap-8">
+                    <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Outstanding Customer Service Recognition</h2>
+                    <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(5)].map((_, i) => (
-                             <Image key={i} src="https://images.unsplash.com/photo-1713947503588-8ff8196dc4a3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIxfHx8ZW58MHx8fHx8/120x120.png" alt="Award" width={120} height={120} data-ai-hint="award trophy" />
+                            <Image key={i} src="https://images.unsplash.com/photo-1713947503588-8ff8196dc4a3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDIxfHx8ZW58MHx8fHx8/120x120.png" alt="Award" width={120} height={120} data-ai-hint="award trophy" />
                         ))}
-                     </div>
+                    </div>
                 </div>
             </section>
 
-             {/* Testimonials Section */}
+            {/* Testimonials Section */}
             <section className="py-20 md:py-24">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-8">
@@ -201,7 +201,7 @@ export default function WebDevelopmentPage() {
 
             {/* Contact Section */}
             <section className="py-20 md:py-24 bg-gradient-to-r from-[#d1d5db] via-[#6b7280] to-[#374151]">
-                 <div className="container mx-auto px-4 md:px-6">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="flex flex-col space-y-8">
                             <div>
@@ -229,7 +229,7 @@ export default function WebDevelopmentPage() {
                             </div>
                         </div>
                         <div className="w-full max-w-md mx-auto">
-                        <ContactForm />
+                            <ContactForm />
                         </div>
                     </div>
                 </div>

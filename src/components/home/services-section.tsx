@@ -1,13 +1,14 @@
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
+import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const services = [
   {
     icon: (
-      <Image src="/icons/coding.png" alt="Web Development" width={42} height={42} />
+      <Image src="/icons/coding.png" alt="Web Development" width={48} height={48} className="brightness-110" />
     ),
     title: 'Web Development',
     description:
@@ -16,12 +17,7 @@ const services = [
   },
   {
     icon: (
-      <Image
-        src="/icons/Mobile.png"
-        alt="Mobile Development"
-        width={42}
-        height={42}
-      />
+      <Image src="/icons/Mobile.png" alt="Mobile Development" width={48} height={48} className="brightness-110" />
     ),
     title: 'Mobile Development',
     description:
@@ -67,7 +63,7 @@ const services = [
     ),
     title: 'UI/UX Development',
     description:
-      "Enhancing your website's visibility on search engines to attract organic traffic and improve search rankings.",
+      "Crafting intuitive and engaging user experiences through meticulous research, wireframing, and pixel-perfect design.",
     href: '/ui-ux-development',
   },
   {
@@ -132,38 +128,60 @@ export default function ServicesSection() {
   return (
     <section
       id="services-grid"
-      className="w-full py-16 md:py-24 lg:py-32 bg-slate-400"
+      className="w-full py-20 md:py-32 relative overflow-hidden bg-[#023055]/5"
     >
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-accent/15 blur-[120px] rounded-full"></div>
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-primary/15 blur-[120px] rounded-full"></div>
+      </div>
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="text-center mb-16 md:mb-24">
           <Badge
             variant="outline"
-            className="border-white/20 text-white font-semibold mb-4"
+            className="border-accent/30  text-accent bg-accent/5 px-4 py-1 rounded-full text-sm font-medium mb-6 uppercase tracking-wider"
           >
-            We are a team of humans
+            Our Expertise
           </Badge>
-          <h2 className="text-3xl font-normal tracking-tighter sm:text-4xl text-white">
-            Our Services for Growing Your Business
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black mb-6">
+            Innovative <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary animate-gradient">Solutions</span> for Growth
           </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+            We combine human creativity with cutting-edge technology to deliver digital experiences that transform businesses and delight users.
+          </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, index) => (
-            <Link key={index} href={service.href || '#'} className="group">
-              <Card
-                className={cn(
-                  'shadow-lg rounded-lg p-6 md:p-8 text-center hover:shadow-xl transition-shadow duration-300 h-full',
-                  'bg-slate-500/50 text-white border-slate-500'
-                )}
-              >
-                <div className="flex justify-center items-center mb-4">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-normal mb-2 relative inline-block">
-                  {service.title}
-                  <span className="absolute bottom-0 left-0 w-0 h-[1px] transition-all duration-300 group-hover:w-full bg-white"></span>
-                </h3>
-                <p className="text-slate-200">{service.description}</p>
-              </Card>
+            <Link key={index} href={service.href || '#'} className="group block h-full">
+              <div className="relative h-full">
+                <div className="absolute inset-0.5 bg-black/60 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 blur-sm"></div>
+                <Card
+                  className={cn(
+                    'relative flex flex-col  h-full p-8 md:p-10 transition-all duration-300 rounded-2xl overflow-hidden',
+                    'bg-white/[0.04] backdrop-blur-xl border-black group-hover:bg-[#023055] group-hover:border-accent/30'
+                  )}
+                >
+                  <div className="mb-8 p-4 w-fit rounded-2xl bg-white/[0.05] border  group-hover:scale-110 transition-transform duration-500 shadow-xl">
+                    <div className="relative z-10">
+                      {service.icon}
+                    </div>
+                  </div>
+
+                  <h3 className="text-2xl font-bold text-black mb-4 group-hover:text-accent transition-colors duration-300">
+                    {service.title}
+                  </h3>
+
+                  <p className="text-gray-400 leading-relaxed mb-8 flex-grow">
+                    {service.description}
+                  </p>
+
+                  <div className="flex items-center text-accent font-semibold text-sm">
+                    EXPLORE SERVICE
+                    <ArrowRight className="ml-2 w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" />
+                  </div>
+                </Card>
+              </div>
             </Link>
           ))}
         </div>

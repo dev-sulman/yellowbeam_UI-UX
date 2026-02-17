@@ -55,7 +55,7 @@ export default function ExpertiseSection() {
   return (
     <section id="expertise" className="w-full py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="bg-gradient-to-r from-slate-500 to-slate-400 rounded-xl p-8 md:p-12">
+        <div className="bg-gradient-to-r from-[#0360AA] to-[#014c8a] rounded-xl p-8 md:p-12 shadow-xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {expertisePoints.map((point, index) => (
               <Card

@@ -12,7 +12,8 @@ export default function AboutSection() {
   return (
     <section id="about-us" className="w-full py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="rounded-xl p-6 md:space-y-0 md:p-8 lg:p-12 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#334155] shadow-2xl">
+        <div className="rounded-xl p-6 md:space-y-0 md:p-8 lg:p-12 bg-gradient-to-br from-[#014c8a] via-[#0360AA] to-[#0477cf] shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full bg-accent/5 pointer-events-none"></div>
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="space-y-4 md:space-y-6">
               <Badge className="bg-accent text-accent-foreground">

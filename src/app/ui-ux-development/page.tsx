@@ -155,19 +155,19 @@ export default function UiUxDevelopmentPage() {
                         </div>
                         <div className="relative">
                             <div className="absolute -inset-4 bg-gradient-to-r from-blue-100 to-purple-100 rounded-lg transform rotate-2"></div>
-                            <Image 
-                                src="https://plus.unsplash.com/premium_photo-1690303193725-e3a9c08cfca4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQzfHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D" 
-                                alt="UI/UX design workshop" 
-                                width={600} 
-                                height={400} 
-                                className="rounded-lg shadow-lg relative z-10" 
-                                data-ai-hint="design workshop" 
+                            <Image
+                                src="/about.png"
+                                alt="UI/UX design workshop"
+                                width={600}
+                                height={400}
+                                className="rounded-lg shadow-lg relative z-10"
+                                data-ai-hint="design workshop"
                             />
                         </div>
                     </div>
                 </div>
             </section>
-            
+
             {/* Services Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6">
@@ -222,7 +222,7 @@ export default function UiUxDevelopmentPage() {
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Why Choose SulzaX for UI/UX?</h2>
-                             <p className="text-muted-foreground">We blend creativity, psychology, and technology to build digital experiences that drive engagement and business growth.</p>
+                            <p className="text-muted-foreground">We blend creativity, psychology, and technology to build digital experiences that drive engagement and business growth.</p>
                             <div className="space-y-4">
                                 {whyChooseUsPoints.map(point => (
                                     <div key={point.title} className="flex items-start gap-4">
@@ -243,7 +243,7 @@ export default function UiUxDevelopmentPage() {
                 </div>
             </section>
 
-             {/* Values Section */}
+            {/* Values Section */}
             <section className="w-full py-20 md:py-24 bg-gradient-to-r from-slate-500 to-slate-400 text-white">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
@@ -261,21 +261,21 @@ export default function UiUxDevelopmentPage() {
                 </div>
             </section>
 
-             {/* Awards Section */}
+            {/* Awards Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6 text-center">
-                     <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Recognized for UX Excellence</h2>
-                     <div className="flex justify-center items-center flex-wrap gap-8">
+                    <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Recognized for UX Excellence</h2>
+                    <div className="flex justify-center items-center flex-wrap gap-8">
                         {[...Array(3)].map((_, i) => (
-                             <div key={i} className="bg-white p-6 rounded-lg shadow-md w-40 h-40 flex items-center justify-center">
-                                <span className="text-2xl font-bold text-accent">Award {i+1}</span>
-                             </div>
+                            <div key={i} className="bg-white p-6 rounded-lg shadow-md w-40 h-40 flex items-center justify-center">
+                                <span className="text-2xl font-bold text-accent">Award {i + 1}</span>
+                            </div>
                         ))}
-                     </div>
+                    </div>
                 </div>
             </section>
 
-             {/* Testimonials Section */}
+            {/* Testimonials Section */}
             <section className="w-full py-20 md:py-24">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-8">
@@ -297,15 +297,15 @@ export default function UiUxDevelopmentPage() {
             <section className="py-20 md:py-24 bg-gradient-to-r from-[#0f172a] to-[#334155] text-white">
                 <div className="container mx-auto px-4 md:px-6">
                     <PricingToggle tiers={pricingTiers} supportFeatures={supportFeatures}>
-                         <h2 className="text-4xl md:text-5xl font-bold">Ready to Build a Better Product?</h2>
-                         <p className="text-gray-300 mt-2 max-w-2xl mx-auto">Choose a design package that suits your needs. We provide flexible options for businesses at any stage.</p>
+                        <h2 className="text-4xl md:text-5xl font-bold">Ready to Build a Better Product?</h2>
+                        <p className="text-gray-300 mt-2 max-w-2xl mx-auto">Choose a design package that suits your needs. We provide flexible options for businesses at any stage.</p>
                     </PricingToggle>
                 </div>
             </section>
 
             {/* Contact Section */}
             <section id="contact" className="w-full py-20 md:py-24 bg-gradient-to-r from-[#d1d5db] via-[#6b7280] to-[#374151]">
-                 <div className="container mx-auto px-4 md:px-6">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="flex flex-col space-y-8">
                             <div>
@@ -333,7 +333,7 @@ export default function UiUxDevelopmentPage() {
                             </div>
                         </div>
                         <div className="w-full max-w-md mx-auto">
-                        <ContactForm />
+                            <ContactForm />
                         </div>
                     </div>
                 </div>
@@ -342,4 +342,3 @@ export default function UiUxDevelopmentPage() {
     );
 }
 
-    

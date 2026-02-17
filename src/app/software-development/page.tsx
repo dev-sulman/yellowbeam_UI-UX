@@ -61,7 +61,7 @@ const pricingTiers = {
         }
     ],
     yearly: [
-         {
+        {
             name: 'Project-Based',
             price: 'Custom',
             period: '',
@@ -113,7 +113,7 @@ export default function SoftwareDevelopmentPage() {
 
             {/* Intro Section */}
             <section className="py-20 md:py-24">
-                 <div className="container mx-auto px-4 md:px-6">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Building the Backbone of Your Business</h2>
@@ -130,12 +130,12 @@ export default function SoftwareDevelopmentPage() {
                             </Button>
                         </div>
                         <div>
-                            <Image src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTgwfHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D/600x400.png" alt="Software architecture diagram" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="software architecture diagram" />
+                            <Image src="/customapp.png" alt="Software architecture diagram" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="software architecture diagram" />
                         </div>
                     </div>
                 </div>
             </section>
-            
+
             {/* Services Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6">
@@ -160,7 +160,7 @@ export default function SoftwareDevelopmentPage() {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
-                             <Image src="https://cdn.dribbble.com/userupload/3072765/file/original-663c73b5a971cbb2a978fe10f03085d2.png?format=webp&resize=400x300&vertical=center/600x400.png" alt="Developers collaborating" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team developers meeting" />
+                            <Image src="/why-choose-us.png" alt="Developers collaborating" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team developers meeting" />
                         </div>
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Digital Transformation</h2>
@@ -189,7 +189,7 @@ export default function SoftwareDevelopmentPage() {
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Why Trust SulzaX With Your Software?</h2>
-                             <p className="text-muted-foreground">We combine deep technical expertise with a commitment to understanding your business, ensuring we deliver software that truly works for you.</p>
+                            <p className="text-muted-foreground">We combine deep technical expertise with a commitment to understanding your business, ensuring we deliver software that truly works for you.</p>
                             <div className="space-y-4">
                                 {whyChooseUsPoints.map(point => (
                                     <div key={point.title} className="flex items-start gap-4">
@@ -203,13 +203,13 @@ export default function SoftwareDevelopmentPage() {
                             </div>
                         </div>
                         <div>
-                            <Image src="https://plus.unsplash.com/premium_photo-1683134150358-2cb9a4de1c57?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzI2fHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D/600x400.png" alt="Secure data center" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="data center security" />
+                            <Image src="/aim.png" alt="Secure data center" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="data center security" />
                         </div>
                     </div>
                 </div>
             </section>
 
-             {/* Values Section */}
+            {/* Values Section */}
             <section className="py-20 md:py-24 bg-gradient-to-r from-slate-500 to-slate-400 text-white">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
@@ -231,15 +231,15 @@ export default function SoftwareDevelopmentPage() {
             <section className="py-20 md:py-24 bg-gradient-to-r from-[#0f172a] to-[#334155] text-white">
                 <div className="container mx-auto px-4 md:px-6">
                     <PricingToggle tiers={pricingTiers} supportFeatures={supportFeatures}>
-                         <h2 className="text-4xl md:text-5xl font-bold">Flexible Engagement Models</h2>
-                         <p className="text-gray-300 mt-2 max-w-2xl mx-auto">We offer flexible engagement models to suit your project needs, from fixed-scope projects to dedicated development teams.</p>
+                        <h2 className="text-4xl md:text-5xl font-bold">Flexible Engagement Models</h2>
+                        <p className="text-gray-300 mt-2 max-w-2xl mx-auto">We offer flexible engagement models to suit your project needs, from fixed-scope projects to dedicated development teams.</p>
                     </PricingToggle>
                 </div>
             </section>
 
             {/* Contact Section */}
             <section className="py-20 md:py-24 bg-gradient-to-r from-[#d1d5db] via-[#6b7280] to-[#374151]">
-                 <div className="container mx-auto px-4 md:px-6">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="flex flex-col space-y-8">
                             <div>
@@ -267,7 +267,7 @@ export default function SoftwareDevelopmentPage() {
                             </div>
                         </div>
                         <div className="w-full max-w-md mx-auto">
-                        <ContactForm />
+                            <ContactForm />
                         </div>
                     </div>
                 </div>
@@ -276,4 +276,3 @@ export default function SoftwareDevelopmentPage() {
     )
 }
 
-    

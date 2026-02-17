@@ -24,16 +24,17 @@ export default function ConsultationSection() {
   return (
     <section
       id="consultation"
-      className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-r from-[#d1d5db] via-[#6b7280] to-[#374151]"
+      className="w-full py-16 md:py-24 lg:py-32 bg-[#023055] relative overflow-hidden"
     >
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="absolute top-0 left-0 w-full h-full bg-accent/5 pointer-events-none"></div>
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col text-white space-y-8">
             <div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gray-800">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">
                 Free Consultation - Discover IT Solutions For Your Business
               </h2>
-              <p className="mt-4 max-w-2xl text-gray-600">
+              <p className="mt-4 max-w-2xl text-white/70">
                 Unlock the full potential of your business with our free
                 consultation. Our expert team will assess your IT needs,
                 recommend tailored solutions, and chart a path to success. Book
@@ -44,28 +45,32 @@ export default function ConsultationSection() {
             <ul className="space-y-4">
               {consultationPoints.map((point, index) => (
                 <li key={index} className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-gray-800" />
-                  <span className="text-gray-700">{point}</span>
+                  <CheckCircle className="w-5 h-5 text-accent" />
+                  <span className="text-white/80">{point}</span>
                 </li>
               ))}
             </ul>
-            <div className="border-t border-gray-500 pt-8 space-y-6">
-              <div className="flex items-center gap-4">
-                <Mail className="w-6 h-6 text-gray-800" />
+            <div className="border-t border-white/10 pt-8 space-y-6">
+              <div className="flex items-center gap-4 group">
+                <div className="p-3 rounded-full bg-white/5 border border-white/10 group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                  <Mail className="w-6 h-6 text-accent group-hover:text-inherit" />
+                </div>
                 <a
-                  href="mailto:sulzax0@gmail.com"
-                  className="text-lg text-gray-700 hover:text-gray-800 transition-colors"
+                  href="mailto:info@yellowbeamtech.com"
+                  className="text-lg text-white/80 hover:text-white transition-colors"
                 >
-                  sulzax0@gmail.com
+                  info@yellowbeamtech.com
                 </a>
               </div>
-              <div className="flex items-center gap-4">
-                <Phone className="w-6 h-6 text-gray-800" />
+              <div className="flex items-center gap-4 group">
+                <div className="p-3 rounded-full bg-white/5 border border-white/10 group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                  <Phone className="w-6 h-6 text-accent group-hover:text-inherit" />
+                </div>
                 <a
-                  href="tel:03045865181"
-                  className="text-lg text-gray-700 hover:text-gray-800 transition-colors"
+                  href="tel:+12013740018"
+                  className="text-lg text-white/80 hover:text-white transition-colors"
                 >
-                  03045865181
+                  +1 (201) 374-0018
                 </a>
               </div>
               <div className="flex items-center gap-4">

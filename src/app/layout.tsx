@@ -8,7 +8,7 @@ import { Poppins, Open_Sans } from 'next/font/google';
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'SulzaX IT Compney',
+  title: 'yellowbeamtech',
   description: 'Transform Your Business with Custom IT Solutions',
 };
 

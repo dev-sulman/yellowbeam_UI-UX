@@ -8,10 +8,10 @@ import { ContactForm } from '@/components/contact-form';
 import PricingToggle from '@/components/pricing-toggle';
 
 const services = [
-    { title: 'iOS & Android Apps', description: 'Native apps for the best performance and user experience.', icon: <Smartphone/> },
-    { title: 'Cross-Platform Development', description: 'Flutter & React Native for cost-effective solutions.', icon: <AppWindow/> },
-    { title: 'App Maintenance & Support', description: 'Ongoing support to keep your app up-to-date.', icon: <Cpu/> },
-    { title: 'App Security', description: 'Robust security features to protect user data.', icon: <ShieldCheck/> },
+    { title: 'iOS & Android Apps', description: 'Native apps for the best performance and user experience.', icon: <Smartphone /> },
+    { title: 'Cross-Platform Development', description: 'Flutter & React Native for cost-effective solutions.', icon: <AppWindow /> },
+    { title: 'App Maintenance & Support', description: 'Ongoing support to keep your app up-to-date.', icon: <Cpu /> },
+    { title: 'App Security', description: 'Robust security features to protect user data.', icon: <ShieldCheck /> },
 ];
 
 const teamMembers = [
@@ -147,12 +147,12 @@ export default function MobileDevelopmentPage() {
                             </Button>
                         </div>
                         <div>
-                            <Image src="https://cdn.dribbble.com/userupload/43607251/file/still-7820cced9b273aef48e1a863d9198bba.png?format=webp&resize=400x300&vertical=center/600x400.png" alt="Mobile app development discussion" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="mobile app meeting" />
+                            <Image src="/theapp.webp" alt="Mobile app development discussion" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="mobile app meeting" />
                         </div>
                     </div>
                 </div>
             </section>
-            
+
             {/* Services Section */}
             <section className="py-20 md:py-24 bg-secondary/30">
                 <div className="container mx-auto px-4 md:px-6">
@@ -177,7 +177,7 @@ export default function MobileDevelopmentPage() {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
-                             <Image src="https://cdn.dribbble.com/userupload/32675075/file/original-9cb113b6307cdbf5668caabe2b379dfc.png?format=webp&resize=400x300&vertical=center/600x400.png" alt="Team working on mobile app" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team mobile app" />
+                            <Image src="/app.webp" alt="Team working on mobile app" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="team mobile app" />
                         </div>
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Your Partner in Mobile Innovation</h2>
@@ -206,7 +206,7 @@ export default function MobileDevelopmentPage() {
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold text-primary">Why Build Your App With SulzaX?</h2>
-                             <p className="text-muted-foreground">We combine technical expertise with a creative vision to deliver mobile applications that stand out in a crowded market.</p>
+                            <p className="text-muted-foreground">We combine technical expertise with a creative vision to deliver mobile applications that stand out in a crowded market.</p>
                             <div className="space-y-4">
                                 {whyChooseUsPoints.map(point => (
                                     <div key={point.title} className="flex items-start gap-4">
@@ -220,13 +220,13 @@ export default function MobileDevelopmentPage() {
                             </div>
                         </div>
                         <div>
-                            <Image src="https://cdn.dribbble.com/userupload/43687882/file/original-d8c5452dd57d254a1fae5bf3e82af3a2.png?format=webp&resize=400x300&vertical=center/600x400.png" alt="Mobile app UI design" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="mobile app design" />
+                            <Image src="/mobile1 (1).webp" alt="Mobile app UI design" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="mobile app design" />
                         </div>
                     </div>
                 </div>
             </section>
 
-             {/* Values Section */}
+            {/* Values Section */}
             <section className="py-20 md:py-24 bg-gradient-to-r from-slate-500 to-slate-400 text-white">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="text-center mb-12">
@@ -244,9 +244,9 @@ export default function MobileDevelopmentPage() {
                 </div>
             </section>
 
-        
 
-             {/* Testimonials Section */}
+
+            {/* Testimonials Section */}
             <section className="py-20 md:py-24">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-8">
@@ -276,7 +276,7 @@ export default function MobileDevelopmentPage() {
 
             {/* Contact Section */}
             <section className="py-20 md:py-24 bg-gradient-to-r from-[#d1d5db] via-[#6b7280] to-[#374151]">
-                 <div className="container mx-auto px-4 md:px-6">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="flex flex-col space-y-8">
                             <div>
@@ -304,7 +304,7 @@ export default function MobileDevelopmentPage() {
                             </div>
                         </div>
                         <div className="w-full max-w-md mx-auto">
-                        <ContactForm />
+                            <ContactForm />
                         </div>
                     </div>
                 </div>
@@ -313,4 +313,3 @@ export default function MobileDevelopmentPage() {
     )
 }
 
-    

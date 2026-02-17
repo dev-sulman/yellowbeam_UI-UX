@@ -217,7 +217,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$
 ;
 ;
 const metadata = {
-    title: 'SulzaX IT Compney',
+    title: 'yellowbeamtech',
     description: 'Transform Your Business with Custom IT Solutions'
 };
 async function RootLayout({ children }) {

@@ -1,0 +1,199 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "dynamicRoutes": [],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/about",
+      "regex": "^/about(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about(?:/)?$"
+    },
+    {
+      "page": "/blog",
+      "regex": "^/blog(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog(?:/)?$"
+    },
+    {
+      "page": "/contact",
+      "regex": "^/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contact(?:/)?$"
+    },
+    {
+      "page": "/content-marketing",
+      "regex": "^/content\\-marketing(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/content\\-marketing(?:/)?$"
+    },
+    {
+      "page": "/ecommerce",
+      "regex": "^/ecommerce(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ecommerce(?:/)?$"
+    },
+    {
+      "page": "/education-training",
+      "regex": "^/education\\-training(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/education\\-training(?:/)?$"
+    },
+    {
+      "page": "/favicon.ico",
+      "regex": "^/favicon\\.ico(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/favicon\\.ico(?:/)?$"
+    },
+    {
+      "page": "/finance-banking",
+      "regex": "^/finance\\-banking(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/finance\\-banking(?:/)?$"
+    },
+    {
+      "page": "/graphic-design",
+      "regex": "^/graphic\\-design(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/graphic\\-design(?:/)?$"
+    },
+    {
+      "page": "/healthcare-pharmaceuticals",
+      "regex": "^/healthcare\\-pharmaceuticals(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/healthcare\\-pharmaceuticals(?:/)?$"
+    },
+    {
+      "page": "/it-telecom",
+      "regex": "^/it\\-telecom(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/it\\-telecom(?:/)?$"
+    },
+    {
+      "page": "/manufacturing-industry",
+      "regex": "^/manufacturing\\-industry(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/manufacturing\\-industry(?:/)?$"
+    },
+    {
+      "page": "/mobile-development",
+      "regex": "^/mobile\\-development(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/mobile\\-development(?:/)?$"
+    },
+    {
+      "page": "/pay-per-click-advertising",
+      "regex": "^/pay\\-per\\-click\\-advertising(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/pay\\-per\\-click\\-advertising(?:/)?$"
+    },
+    {
+      "page": "/portfolio",
+      "regex": "^/portfolio(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/portfolio(?:/)?$"
+    },
+    {
+      "page": "/real-estate",
+      "regex": "^/real\\-estate(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/real\\-estate(?:/)?$"
+    },
+    {
+      "page": "/search-engine-optimization",
+      "regex": "^/search\\-engine\\-optimization(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/search\\-engine\\-optimization(?:/)?$"
+    },
+    {
+      "page": "/services",
+      "regex": "^/services(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services(?:/)?$"
+    },
+    {
+      "page": "/social-media-marketing",
+      "regex": "^/social\\-media\\-marketing(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/social\\-media\\-marketing(?:/)?$"
+    },
+    {
+      "page": "/software-development",
+      "regex": "^/software\\-development(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/software\\-development(?:/)?$"
+    },
+    {
+      "page": "/software-quality-assurance",
+      "regex": "^/software\\-quality\\-assurance(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/software\\-quality\\-assurance(?:/)?$"
+    },
+    {
+      "page": "/team",
+      "regex": "^/team(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/team(?:/)?$"
+    },
+    {
+      "page": "/transportation-logistics",
+      "regex": "^/transportation\\-logistics(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/transportation\\-logistics(?:/)?$"
+    },
+    {
+      "page": "/ui-ux-development",
+      "regex": "^/ui\\-ux\\-development(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ui\\-ux\\-development(?:/)?$"
+    },
+    {
+      "page": "/web-development",
+      "regex": "^/web\\-development(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/web\\-development(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "RSC",
+    "varyHeader": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch",
+    "prefetchHeader": "Next-Router-Prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "Next-Router-Segment-Prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments"
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  },
+  "rewrites": []
+}

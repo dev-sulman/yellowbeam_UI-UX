@@ -54,11 +54,14 @@ export default function LatestProjectsSection() {
       <div className="container mx-auto px-4 md:px-6 py-16 md:py-24 lg:py-32">
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-start">
           <div className="space-y-4">
-            <div className="inline-block rounded-lg bg-secondary px-3 py-1 text-sm font-semibold">
+            <Badge
+              variant="outline"
+              className="px-3 py-1 border-accent/30 text-accent bg-accent/5 rounded-full mb-4 uppercase font-bold tracking-widest text-xs"
+            >
               EACH PROJECT IS A NEW CHALLENGE
-            </div>
+            </Badge>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-foreground">
-              Latest Projects
+              Latest <span className="text-primary">Case Studies</span>
             </h2>
           </div>
           <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed">

@@ -1,4 +1,4 @@
-# SulzaX IT Services Website
+# YellowBeam IT Services Website
 
 Welcome to the official repository for the SulzaX IT Services company website. This project is a modern, responsive, and feature-rich web application designed to showcase the company's services, portfolio, and industry expertise. It features an AI-powered solution advisor to provide users with instant, tailored IT recommendations.
 
